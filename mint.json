@@ -1,6 +1,7 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Superwhisper",
+  "theme": "quill",
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
@@ -18,34 +19,34 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:support@superwhisper.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Superwhisper",
+    "url": "https://superwhisper.com/"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
+  "tabs": [],
   "anchors": [
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "url": "https://superwhisper.com/docs"
     },
     {
       "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "icon": "discord",
+      "url": "https://discord.gg/tF98XvJNvB"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Twitter",
+      "icon": "twitter",
+      "url": "https://x.com/superwhisperapp"
+    },
+    {
+      "name": "Youtube",
+      "icon": "youtube",
+      "url": "https://www.youtube.com/channel/UCBQpNBU5mrPKge6UETN8i8g"
     }
   ],
   "navigation": [
@@ -84,8 +85,8 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "x": "https://x.com/superwhisperapp",
+    "discord": "https://discord.gg/tF98XvJNvB",
+    "youtube": "https://www.youtube.com/channel/UCBQpNBU5mrPKge6UETN8i8g"
   }
 }
