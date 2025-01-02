@@ -67,6 +67,12 @@
         "essentials/navigation",
         "essentials/reusable-snippets"
       ]
+    },
+    {
+      "group": "Modes",
+      "pages": [
+        "modes/super"
+      ]
     }
   ],
   "footerSocials": {
