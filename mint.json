@@ -58,16 +58,15 @@
       ]
     },
     {
-      "group": "Essentials",
-      "pages": [
-        "essentials/images",
-        "essentials/settings"
-      ]
-    },
-    {
       "group": "Modes",
       "pages": [
-        "modes/super"
+        "modes/voice",
+        "modes/message",
+        "modes/email",
+        "modes/note",
+        "modes/super",
+        "modes/meeting",
+        "modes/custom"
       ]
     }
   ],
