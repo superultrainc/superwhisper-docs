@@ -68,6 +68,12 @@
         "modes/meeting",
         "modes/custom"
       ]
+    },
+    {
+      "group": "Common Issues",
+      "pages": [
+        "common-issues/realtime"
+      ]
     }
   ],
   "footerSocials": {
