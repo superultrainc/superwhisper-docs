@@ -54,6 +54,7 @@
       "group": "Get Started",
       "pages": [
         "introduction",
+        "activate-ios",
         "report"
       ]
     },
