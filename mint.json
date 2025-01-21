@@ -53,9 +53,9 @@
     {
       "group": "Get Started",
       "pages": [
-        "introduction",
-        "activate-ios",
-        "report"
+        "get-started/introduction",
+        "get-started/activate-ios",
+        "get-started/report"
       ]
     },
     {
@@ -73,7 +73,8 @@
     {
       "group": "Common Issues",
       "pages": [
-        "common-issues/realtime"
+        "common-issues/realtime",
+        "common-issues/Hallucinations-silence"
       ]
     }
   ],
