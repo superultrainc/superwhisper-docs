@@ -54,6 +54,7 @@
       "group": "Get Started",
       "pages": [
         "get-started/introduction",
+        "get-started/settings",
         "get-started/activate-ios",
         "get-started/report"
       ]
