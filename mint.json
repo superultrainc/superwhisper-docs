@@ -6,6 +6,8 @@
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
   },
+  "modeToggle": {"default": "dark", "isHidden": true},
+  "rounded": "default",
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#0d0d0d",
@@ -28,11 +30,6 @@
   },
   "tabs": [],
   "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://superwhisper.com/docs"
-    },
     {
       "name": "Community",
       "icon": "discord",
@@ -62,13 +59,18 @@
     {
       "group": "Modes",
       "pages": [
+        "modes/modes",
         "modes/voice",
         "modes/message",
         "modes/email",
         "modes/note",
         "modes/super",
         "modes/meeting",
-        "modes/custom"
+        {
+          "group": "Custom",
+          "pages": ["modes/custom", "modes/customizing-modes", "modes/speaker-separated-meetings"]
+        },
+        "modes/switching-modes"
       ]
     },
     {

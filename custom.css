@@ -1,0 +1,41 @@
+.border-emerald-500\/20 {
+  /* Custom styles for Tip & Check callouts */
+  background-color: hsla(240, 4%, 46%, .1) !important;
+  border-color: hsla(240, 4%, 46%, .3) !important;
+}
+
+.border-sky-500\/20 {
+  /* Custom styles for Note callout */
+  background-color: hsla(240, 4%, 46%, .1) !important;
+  border-color: hsla(240, 4%, 46%, .3) !important;
+}
+
+.text-sky-900 {
+  /* Custom color for Note callout text */
+ color: rgba(228, 228, 231, 0.486 / var(--tw-text-opacity)) !important;
+}
+
+.text-emerald-900 {
+  /* Custom color for Tip & Check callout text */
+ color: rgba(228, 228, 231, 0.486 / var(--tw-text-opacity)) !important;
+}
+
+.text-zinc-900 {
+  /* Custom color for Info callout text */
+ color: rgba(228, 228, 231, 0.486 / var(--tw-text-opacity)) !important;
+}
+
+.text-emerald-600 {
+  /* Custom color for Tip icon */
+  color: rgb(228 228 231 / var(--tw-text-opacity)) !important;
+ }
+
+ .text-green-600 {
+  /* Custom color for Check icon */
+  color: rgb(228 228 231 / var(--tw-text-opacity)) !important;
+ }
+
+ .text-sky-500 {
+  /* Custom color for Note icon */
+  color: rgb(228 228 231 / var(--tw-text-opacity)) !important;
+ }

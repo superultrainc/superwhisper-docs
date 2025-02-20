@@ -1,0 +1,86 @@
+---
+title: "Switching Modes"
+description: "Learn four convenient ways to switch between Superwhisper modes: keyboard shortcuts, menu bar, auto-activation rules, and deep links. Choose the method that best fits your workflow."
+---
+
+<img
+style={{ borderRadius: '0.5rem', display: 'block', margin: '0 auto' }} width="80%"
+src="/images/modes/modes-switching-006.png"
+/>
+
+## Overview
+**Finding your preferred way to switch modes quickly is key to unlocking the full power of Superwhisper.** Whether you're writing emails, taking notes, or crafting messages, smooth mode switching helps you stay in flow while Superwhisper handles the heavy lifting of tailoring your voice input exactly how you need it.
+
+<AccordionGroup>
+<Accordion title="1. Keyboard Shortcut">
+
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-switching-001.png"
+/>
+
+**The quickest way to switch modes while dictating:**
+
+1. Trigger dictation to open the recording window
+2. Press your configured "Change Mode" keyboard shortcut
+3. Hold the modifier key and tap the other key repeatedly to cycle through modes
+4. Release when you reach your desired mode
+
+<Note>Mode switching shortcuts only work when the recording window is open. The active mode is visible only in the large recording window view.</Note>
+</Accordion>
+
+<Accordion title="2. Menu Bar">
+
+<img
+style={{ borderRadius: '0.5rem', display: 'block', margin: '0 auto' }} width="50%"
+src="/images/modes/modes-switching-002.png"
+/>
+
+**Switch modes before starting dictation:**
+
+1. Click the Superwhisper menu bar icon
+2. Look for your current mode
+3. Select a new mode from the "Select Mode" submenu
+</Accordion>
+
+<Accordion title="3. Auto-Activation Rules">
+
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-switching-003.png"
+/>
+
+Let Superwhisper switch modes automatically based on your active apps and websites. Set up rules in each mode's settings to match your workflow.
+
+[Learn more about Auto-Activation Rules →](modes#per-mode-settings)
+</Accordion>
+
+<Accordion title="4. Deep Links">
+**Deep links unlock powerful automation possibilities for mode switching—perfect for users familiar with automation tools who want to take their workflow to the next level.**
+
+You can use the following deep links with Superwhisper:
+```
+superwhisper://mode?key=YOUR_MODE_KEY
+superwhisper://record
+```
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-switching-005.png"
+/>
+
+**To find a mode's key:**
+1. Navigate to ~/Documents/superwhisper/modes
+2. Quick Look the mode's JSON file to fine your mode under its `name` key
+3. Find the "key" value to use in your deep link
+
+<Tip>Combine both deep links in automation tools to switch modes and start recording in one action. Here's a [sample shortcut](https://www.icloud.com/shortcuts/fbba08e7b50b42b493a5a792af6b0a6a) to get you started.</Tip>
+
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-switching-004.png"
+/>
+
+</Accordion>
+</AccordionGroup>
+
+<Tip>Looking for more advanced switching options? Check out the [Raycast](https://www.raycast.com/nchudleigh/superwhisper) and [Alfred](https://github.com/ognistik/alfred-superwhisper) integrations.</Tip>
