@@ -1,0 +1,48 @@
+---
+title: "Customizing Built-In Modes"
+description: "Want to tweak a built-in mode? Learn how to create customized versions of your favorite modes by accessing their AI instructions and adding your own adjustments—perfect for when you need something between built-in and fully custom."
+---
+
+<Note>This guide covers a more advanced workflow that requires basic understanding of AI prompting and Superwhisper's features. If you're new to Superwhisper, start with the built-in modes first.</Note>
+
+## Overview
+Built-in modes are regularly updated based on user feedback to cover common use cases. **To customize a built-in mode, you will essentially need to copy its AI instructions to create a new Custom Mode with this.** While your customized version won't receive AI instruction updates when enhancements are published for the original mode, it's still a great way to create something tailored to your needs without starting from scratch.
+
+## Step-by-Step
+<Steps>
+<Step title="Create a Test Recording">
+1. Create a new mode using the built-in mode you want to customize
+2. Make a quick test recording (a simple "This is a test" works fine)
+3. Let it process through AI
+</Step>
+
+<Step title="Access the Original Instructions">
+1. Open the History tab
+2. Find your test recording
+3. Look for the prompt box in the bottom right sidebar
+4. Select and copy all text
+5. Paste into a text editor for better visibility
+
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-customizing-001.png"
+/>
+
+</Step>
+
+<Step title="Extract What You Need">
+1. Find the `<instructions>` XML tags
+2. Copy only the content between these tags
+3. If present, note any `<examples>` sections
+</Step>
+
+<Step title="Create Your Custom Version">
+1. Create a new Custom Mode
+2. Click "Change Prompt"
+3. Paste the copied instructions
+4. Add any examples from the original mode
+5. Make your desired adjustments
+</Step>
+</Steps>
+
+<Tip>Not sure what to customize? From context awareness to capturing system audio, check out [Custom Mode](custom) to explore all the powerful features you can add to your workflow.</Tip>

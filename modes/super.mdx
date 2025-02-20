@@ -1,15 +1,85 @@
 ---
-title: Super
-description: "Superwhisper's experimental Super Mode enhances your dictation experience with advanced context awareness & dynamic output formatting"
+title: "Super"
+description: "Supercharge your dictation with advanced context-aware processing. Super Mode intelligently adapts to your active applications, selected text, and clipboard content to deliver more accurate and relevant results."
 ---
 
-<iframe
-  width="560"
-  height="315"
-  src="https://youtube.com/embed/-orvzgTRKSc"
-  title="YouTube video player"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-  style={{ width: '100%', borderRadius: '0.5rem' }}
-></iframe>
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-super-001.png"
+/>
+
+## Key Features
+**Super Mode enhances your dictation by:**
+- Adapting messages to match application context
+- Correcting spelling based on app-specific terms, names, and vocabulary
+- Converting spoken URLs and emails into proper format
+- Preserving message tone and intent while improving clarity
+
+---
+## Context Awareness
+**Super Mode uses accessibility APIs to gather three types of context:**
+<AccordionGroup>
+<Accordion title="1. Application Context">
+     - Identifies your active application
+     - Reads text from current input fields or text editor
+</Accordion>
+<Accordion title="2. Selected Text Context">
+     - Reads any text you've highlighted
+     - Uses selection to inform AI processing
+</Accordion>
+<Accordion title="3. Clipboard Context">
+     - Incorporates text copied within 3 seconds of dictation, or during dictation
+</Accordion>
+</AccordionGroup>
+
+---
+## Commands
+**Super Mode lets you dictate commands on selected text.** While it understands context, for best result use commands focused on text transformation or formatting rather than content analysis or generation.
+
+<CardGroup>
+   <Card title="Correct" icon="circle-check">
+   "Make this text title case"
+   "Convert selection to uppercase"
+   "Format my selected text as bullet points"
+   </Card>
+   <Card title="Incorrect" icon="circle-xmark">
+   "Summarize this paragraph"
+   "Expand on these ideas"
+   "Rewrite this section"
+   </Card>
+</CardGroup>
+
+<Tip>**While you can use commands for formatting, they're completely optional.** Just dictate naturally and Super Mode will intelligently adapt to your active app - no text selection or copying needed. It's that simple.</Tip>
+
+---
+## Troubleshooting
+If you're not getting expected results with Super Mode, check these common issues:
+
+<AccordionGroup>
+<Accordion title="Command Type Mismatch">
+- If you are dictating a command, ensure it is related to formatting or text transformation only
+- Review the Commands section above for examples
+</Accordion>
+
+<Accordion title="AI Models">
+For optimal results, use one of the following suggested AI models:
+  - Claude 3.5 Sonnet
+  - GPT-4o Mini
+  - GPT-4o
+  - Claude 3.5 Haiku
+</Accordion>
+
+<Accordion title="System Settings & User Error">
+- Check system settings for the correct permissions
+- For application context, make sure the correct app window is active
+- For selected text context, verify that the text is selected when triggering the dictation
+- Text copied to your clipboard will only be processed if done within 3 seconds of starting your dictation or while you're speaking
+</Accordion>
+
+<Accordion title="Verify Processing">
+Check the History tab to see if context was properly sent to AI. This can help you identify whether issues stem from system-level context capture or AI interpretation processing
+</Accordion>
+</AccordionGroup>
+
+---
+<Tip>**Super Mode focuses on context-aware dictation and formatting.** If you need a different type of command with similar smart features, check out [Custom Mode](custom).</Tip>

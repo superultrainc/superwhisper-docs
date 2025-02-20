@@ -1,11 +1,205 @@
 ---
-title: Custom
-description: "Custom mode allows you to create your own mode tailored to your specific needs and workflows."
+title: "Custom"
+description: "Take full control of your dictation processing with Custom Mode. Create specialized workflows by combining context-awareness with your own AI instructions for unlimited possibilities."
 ---
 
-
 <img
-  style={{ borderRadius: '0.5rem' }}
-  src="/images/mode-custom.png"
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-custom-001.png"
 />
 
+## Key Features
+**Custom Mode empowers you with:**
+- Complete control over AI processing instructions
+- Context-awareness capabilities
+- Advanced audio capture options
+- Flexible processing for any workflow
+
+---
+## Additional Settings
+Unlock advanced customization options beyond standard modes for ultimate control and flexibility
+<AccordionGroup>
+<Accordion title="AI Instructions">
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-custom-002.png"
+/>
+- Beyond selecting your preferred AI model, with Custom Mode you have the option to personalize your own AI processing instructions
+
+<Note>Instructions are empty by default. Select "Change Prompt" to modify them. If left blank, the system will only perform basic transcription. </Note>
+</Accordion>
+
+<Accordion title="Audio Options">
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-custom-003.png"
+/>
+- **Record from System Audio:** 
+  - Perfect for meetings, video content, interviews, or live audio coming your speakers
+  - Check History tab to verify system audio capture
+- **Identify Speakers**
+  - Useful for meeting transcriptions
+  - Speaker separation results appear in the Segments tab of History
+
+<Note>Speaker-separated transcripts won't process through AI automatically within the same mode. See [this guide](speaker-separated-meetings) on handling multi-speaker transcripts with AI processing.</Note>
+</Accordion>
+
+<Accordion title="Context Awareness">
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-custom-004.png"
+/>
+Inside the Change Prompt section, you'll discover two powerful features:
+- Application Context toggle
+- Copied Context toggle
+
+<Note>These toggles work identically to [Super Mode context awareness features](super#context-awareness).</Note>
+</Accordion>
+</AccordionGroup>
+
+---
+## Prompting Tips
+<AccordionGroup>
+<Accordion title="Referencing Content">
+**When writing AI instructions for use in Superwhisper, you can direct AI's attention to specific content using these XML-style tags:**
+
+- `<user_message>`
+  - Contains your dictated text
+- `<application_context>`
+  - Includes the data from your active application window
+- `<clipboard_context>`
+  - Contains the text you've copied
+
+---
+
+T**hese tags let you create targeted instructions for AI**. For example:
+- "Translate `<user_message>` to Spanish"
+- "Based on `<application_context>`, suggest relevant code comments"
+- "Format `<user_message>` accordingly based on the content found in `<clipboard_context>`"
+
+<Tip>If you want AI to know your input is dictated speech, include it explicitly. For example: *"The `<user_message>` contains dictated text. Please format it into proper paragraphs."*</Tip>
+
+---
+
+**Instruct AI exactly which content to focus on and what to do with it.** You can combine them in your instructions to create powerful workflows:
+```
+If <application_context> shows a code editor:
+- Format <user_message> as code comments
+- Use coding style from <clipboard_context> as reference
+```
+</Accordion>
+
+<Accordion title="Writing Effective Instructions">
+<Steps>
+
+<Step title="Clear Purpose">
+Define your AI instructions by starting with a clear role or purpose statement. This sets the foundation for how the AI will process your content.
+</Step>
+
+<Step title="Requirements">
+Create a detailed list of specific requirements and expectations. Being explicit helps ensure the AI understands exactly what you need.
+</Step>
+
+<Step title="Structure">
+Organize your instructions using separate sections for different components. This modular approach makes your instructions easier to understand and modify.
+</Step>
+
+<Step title="Keep Simple">
+Write direct, straightforward instructions without unnecessary complexity. Clear communication leads to better results.
+</Step>
+</Steps>
+
+</Accordion>
+<Accordion title="Using XML Tags">
+**It is suggested to structure your instructions with XML tags to communicate clearly with AI:**
+
+**Basic Tag Structure**
+- Set a role and Instructions:
+```xml
+<role>You are a text editor</role>
+<instructions>Format the content of `<user_message>` into clear paragraphs</instructions>
+```
+
+- Define specific requirements:
+```xml
+<requirements>
+- Use simple, clear language
+- Keep the casual tone
+- Break into short paragraphs
+</requirements>
+```
+
+- Provide context and style:
+```xml
+<context>
+- This content is for a cooking blog post
+- Target audience is home cooks
+- Should use casual, approachable language
+- Include cooking-specific terminology where relevant
+</context>
+
+<style>
+- Write in a warm, encouraging tone
+- Use descriptive but simple language
+- Include helpful cooking tips
+- Make instructions easy to follow
+</style>
+
+<output-format>
+- Title and introduction
+- Ingredient list
+- Step-by-step instructions
+- Cook's notes and tips
+</output-format>
+```
+
+<Note>Adjust and expand your XML tags based on your specific needs. The more detailed your instructions, the better the results.</Note>
+</Accordion>
+
+<Accordion title="Add Examples">
+**Examples help you teach AI exactly how to process your input and what kind of output you expect.** Located at the bottom of the Change Prompt section, below the context toggles, you'll find the Add Examples interface.
+
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-custom-005.png"
+/>
+
+**Each example consists of two parts:**
+- Input field: Shows how you'll phrase your requests
+- Output field: Demonstrates your expected AI response
+
+**How to set:**
+- Click "Add Example" to create your first example pair
+- Fill in both the input and output fields
+- Add more examples by clicking "Add Example" again
+- Right-click any example to duplicate or delete it
+
+<Note>Adding 2-3 examples significantly improves AI's understanding of your needs and leads to more accurate responses.</Note>
+</Accordion>
+</AccordionGroup>
+
+---
+## Advanced Tip
+Currently, Custom Mode doesn't include text selection context like [Super Mode](super). Enable this by editing your mode's JSON config file - just back up first and use a simple text editor like TextEdit or VS Code.
+
+<CardGroup cols={2}>
+<Card title="Locate Your Modes Folder" icon="circle-1">
+Open Finder and navigate to ~/Documents/SuperWhisper/modes/ to access your modes folder
+</Card>
+
+<Card title="Find Your Mode File" icon="circle-2">
+Use Quick Look (press Space) on JSON files to preview and identify your mode by its "name" field
+</Card>
+
+<Card title="Enable Selection Context" icon="circle-3">
+Open the JSON file and change "context_from_selection" from `false` to `true`
+</Card>
+
+<Card title="Restart to Apply" icon="circle-4">
+Save your changes and restart Superwhisper to activate the selection context feature
+</Card>
+</CardGroup>
+<Icon icon="check" iconType="solid" /> *Awesome! You can now reference `<text_selection_context>` in your custom instructions, as covered in the Prompting Tips section above.*
+
+---
+<Tip>Unlike other modes, Custom Mode isn't limited to text formatting. **Combine context-awareness with your instructions to create powerful, specialized workflows tailored to your needs.**</Tip>
