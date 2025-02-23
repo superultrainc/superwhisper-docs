@@ -10,12 +10,10 @@ This is an advanced workflow that requires editing configuration files and multi
 ## Overview
 In this guide, there's two key areas of focus. First, you'll learn how to capture accurate transcripts that identify and separate different speakers in your meetings. Then, we'll explore how to enhance these transcripts through AI processing, which can help you extract summaries, action items, or other valuable insights.
 
-## Step-by-Step
-<AccordionGroup>
-<Accordion title="1. Create a Speaker Separation Mode">
+## Transcription Setup and Recording
 <Steps>
-<Step title="Create a Custom Mode">
-Start by creating a new Custom Mode with these essential settings:
+<Step title="Create a Speaker Separation Mode">
+Create a new Custom Mode with these settings:
 - Enable "Identify Speakers" toggle
 - Enable "Record from System Audio" if recording live meetings
 - Select your preferred voice model
@@ -24,65 +22,71 @@ Start by creating a new Custom Mode with these essential settings:
 </Step>
 
 <Step title="Disable AI Processing">
-Disable AI processing initially to speed up transcription. This approach is suggest since Superwhisper currently can't process speaker-separated transcripts with AI in the same mode. Remember to back up your mode's config file before making changes
-1. Navigate to: ~/Documents/SuperWhisper/modes/
-2. Open your mode's JSON file in your preferred text editor
-3. Change "languageModelEnabled" from `true` to `false`
-4. Save and restart Superwhisper for changes to take effect
+Disable AI processing initially to speed up transcription. This approach is suggested since Superwhisper currently can't process speaker-separated transcripts with AI in the same mode. Remember to back up your mode's config file before making changes:
+- Navigate to: ~/Documents/SuperWhisper/modes/
+- Open your mode's JSON file in your preferred text editor
+- Change "languageModelEnabled" from `true` to `false`
+- Save and restart Superwhisper for changes to take effect
 </Step>
-</Steps>
-</Accordion>
 
-<Accordion title="2. Capture & Transcribe Your Meeting">
+<Step title="Capture & Transcribe Your Meeting">
 Choose your preferred recording method:
 
-**Option A: Live Recording**
+<AccordionGroup>
+<Accordion title="Live Recording">
 - Select your speaker separation mode
 - Start recording
-- Note: be aware that pressing Escape will stop recording
+<Note>Be aware that pressing Escape will stop recording</Note>
+</Accordion>
 
-**Option B: Process Existing Audio**
+<Accordion title="Process Existing Audio">
 - Record meeting with your preferred app
 - Click the Superwhisper menu bar icon
 - Select your speaker separation mode
 - Select "Transcribe File"
 - Choose your audio file
 </Accordion>
+</AccordionGroup>
+</Step>
 
-<Accordion title="3. Access Your Transcript">
-1. Open Superwhisper History
-2. Select the Segments tab
-3. Rename speakers (optional):
-   - Click speaker names directly, or
-   - Use the right sidebar's Speakers section
-4. Click "Copy to Clipboard" to get the full speaker-separated transcript
+<Step title="Access Your Transcript">
 
 <img
 style={{ borderRadius: '0.5rem' }}
 src="/images/modes/modes-speaker-separation-001.png"
 />
 
-</Accordion>
-
-<Accordion title="4. AI Processing">
-**Option A: External AI Services**
+1. Open Superwhisper History
+2. Select the Segments tab
+3. Rename speakers (optional):
+   - Click speaker names directly, or
+   - Use the right sidebar's Speakers section
+4. Click "Copy to Clipboard" to get the full speaker-separated transcript
+</Step>
+</Steps>
+---
+## AI Processing and Analysis
+### Option A: External AI Services
 - Use OpenAI, Claude, or your preferred AI provider
 - Request your desired analysis on the transcript
 
-**Option B: Superwhisper Custom Mode**
-1. Create a new Custom Mode for AI assistant type of tasks:
-   - Enable Application Context
-   - Set your propmt with processing instructions
-
+### Option B: Superwhisper Custom Mode
+<Steps>
+<Step title="Create a new Custom Mode">
+- Write an assistant-focused prompt
+- Enable Application Context
 <Tip>For tips and ideas on how to get the best results with your custom instructions, check these [prompting tips](custom#prompting-tips).</Tip>
+</Step>
 
-2. Process your transcript:
+<Step title="Process Your Transcript">
    - Open any text editor
    - Paste your speaker-separated transcript
-   - Activate the custom mode you have just created
+   - Activate the mode you have just created
    - Dictate your analysis request
+</Step>
+</Steps>
 
-Example Requests:
+### Sample Procesing Requests
 ```
 "Summarize this meeting's key points by speaker"
 "Extract action items and assign them to each speaker"
@@ -90,5 +94,3 @@ Example Requests:
 "Create a participation report showing who discussed which topics in this meeting"
 "Break down topic ownership and insights by participant from this meeting's transcript"
 ```
-</Accordion>
-</AccordionGroup>
