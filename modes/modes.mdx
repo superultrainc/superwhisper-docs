@@ -8,67 +8,71 @@ style={{ borderRadius: '0.5rem' }}
 src="/images/modes/modes-001.png"
 />
 
+<Tip>For greater workflow flexibility, create different versions of each mode by customizing voice models, AI models, and other settings. **Click any mode's name to rename it.**</Tip>
+
 ## Per-Mode Settings
 
-<AccordionGroup>
-<Accordion title="Voice Processing">
-**After dictating, your audio first goes through voice processing for transcription.**
-   
-   <img
-   style={{ borderRadius: '0.5rem' }}
-   src="/images/modes/modes-002.png"
-   />
-   
-   1. **Pick your Model (Cloud or Local)**
-      - Manage all your models in the AI Models tab where you can:
-        - Use cloud-based models
-        - Download voice models for local use
-        - Connect your own API tokens for supported services
-   2. **Set your Language**
-      - Supported languages vary by voice model
-      - Based on your chosen language and voice model, you may see an option to translate your dictation to English. For best results, use Pro, Standard, or Ultra models
-      - Your preferred voice model does not support translation to English, or you need translation to another language? Set this up with AI processing by creating a [Custom mode](custom)
-   3. **Control Audio**
-      - Mute & pause recording automatically when dictating with the current mode
-   4. **Real-time Processing**
-      - Real-time transcription is available when using the Nova (Cloud) model
-      - Toggle this option to see your words appear in the recording window instantly as you speak
+### Voice Processing
+After dictating, your audio first goes through voice processing for transcription.
 
-</Accordion>
-<Accordion title="AI Processing">
-**After transcription, AI processing shapes your text based on the mode's purpose.**
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-002.png"
+/>
 
-   <img
-   style={{ borderRadius: '0.5rem' }}
-   src="/images/modes/modes-003.png"
-   />
+<Steps>
+<Step title="Pick your Model (Cloud or Local)">
+Manage all your models in the AI Models tab where you can:
+- Use cloud-based models
+- Download voice models for local use
+- Connect your own API tokens for supported services
+</Step>
 
-   1. **Access and manage AI models through the dedicated tab**
-   2. **Built-in modes support multiple languages automatically**
-      - Make sure to select your correct language in the Voice Processing settings
-      - AI will process your dictation and respond in your chosen language
-   3. **AI processing varies by mode**
-         - Voice Mode does not include AI processing
-         - Message, Email, Note, Super, and Meeting modes use optimized AI processing instructions to deliver the best results for their specific purposes
-         - Custom Mode lets you take full control by writing your own AI processing instructions
+<Step title="Set your Language">
+- Supported languages vary by voice model
+- Based on your chosen language and voice model, you may see an option to translate your dictation to English. For best results, use Pro, Standard, or Ultra models
+<Note>Your preferred voice model does not support translation to English, or you need translation to another language? Set this up with AI processing by creating a [Custom mode](custom)</Note>
+</Step>
 
-</Accordion>
-<Accordion title="Auto-Activation Rules">
-**Set up rules to automatically switch modes based on your active apps and websites.**
+<Step title="Control Audio">
+Mute & pause recording automatically when dictating with the current mode
+</Step>
 
-   <img
-   style={{ borderRadius: '0.5rem' }}
-   src="/images/modes/modes-004.png"
-   />
+<Step title="Real-time Processing">
+- Real-time transcription is available when using the Nova (Cloud) model
+- Toggle this option to see your words appear in the recording window instantly as you speak
+</Step>
+</Steps>
 
-   **A couple of things to consider:**
-      - Once a mode activates for an app/site, you can't override it
-      - The system won't automatically switch back to your previous mode
-      
-</Accordion>
-</AccordionGroup>
-<br/>
-<Tip>For greater workflow flexibility, create different versions of each mode by customizing voice models, AI models, and other settings. **Click any mode's name to rename it.**</Tip>
+---
+### AI Processing
+After transcription, AI processing shapes your text based on the mode's purpose.
+
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-003.png"
+/>
+
+- Access and manage AI models through the dedicated tab
+- Built-in modes AI processing support multiple languages automatically
+   - Make sure to select your correct language in the [Voice Processing](#voice-processing) settings
+   - AI will process your dictation and respond in your chosen language
+- AI processing varies by mode
+   - [Voice Mode](voice) does not include AI processing
+   - [Message](message), [Email](email), [Note](note), [Super](super), and [Meeting](meeting) modes use optimized AI processing instructions to deliver the best results for their specific purposes
+   - [Custom Mode](custom) lets you take full control by writing your own AI processing instructions
+   - Both [Super](super) and [Custom](custom) modes enhance AI processing capabilities with context awareness, providing additional possibilities
+
+---
+### Auto-Activation Rules
+Set up rules to automatically switch modes based on your active apps and websites.
+
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/modes/modes-004.png"
+/>
+
+<Note>Keep in mind: Once a mode activates for an app or site, you won't be able to override it, and the system doesn't automatically switch back to your previous mode.</Note>
 
 ---
 ## Learn More

@@ -17,45 +17,40 @@ src="/images/modes/modes-custom-001.png"
 
 ---
 ## Additional Settings
-Unlock advanced customization options beyond standard modes for ultimate control and flexibility
-<AccordionGroup>
-<Accordion title="AI Instructions">
+### AI Instructions
+Beyond selecting your preferred AI model, with Custom Mode you have the option to personalize your own AI processing instructions.
+
 <img
 style={{ borderRadius: '0.5rem' }}
 src="/images/modes/modes-custom-002.png"
 />
-- Beyond selecting your preferred AI model, with Custom Mode you have the option to personalize your own AI processing instructions
 
-<Note>Instructions are empty by default. Select "Change Prompt" to modify them. If left blank, the system will only perform basic transcription. </Note>
-</Accordion>
+<Note>Instructions are empty by default. Select "Change Prompt" to modify them. If left blank, AI will not know what task to perform and may give unexpected results. </Note>
 
-<Accordion title="Audio Options">
+### Audio Options
 <img
 style={{ borderRadius: '0.5rem' }}
 src="/images/modes/modes-custom-003.png"
 />
 - **Record from System Audio:** 
   - Perfect for meetings, video content, interviews, or live audio coming your speakers
-  - Check History tab to verify system audio capture
+  - When recording system audio, the waves on the recording window do not move. You can always check Superwhisper's history to verify capture
 - **Identify Speakers**
   - Useful for meeting transcriptions
   - Speaker separation results appear in the Segments tab of History
 
 <Note>Speaker-separated transcripts won't process through AI automatically within the same mode. See [this guide](speaker-separated-meetings) on handling multi-speaker transcripts with AI processing.</Note>
-</Accordion>
 
-<Accordion title="Context Awareness">
+### Context Awareness
 <img
 style={{ borderRadius: '0.5rem' }}
 src="/images/modes/modes-custom-004.png"
 />
 Inside the Change Prompt section, you'll discover two powerful features:
-- Application Context toggle
-- Copied Context toggle
+- Use application context toggle
+- Use copied text toggle
 
 <Note>These toggles work identically to [Super Mode context awareness features](super#context-awareness).</Note>
-</Accordion>
-</AccordionGroup>
 
 ---
 ## Prompting Tips
@@ -199,7 +194,7 @@ Open the JSON file and change "context_from_selection" from `false` to `true`
 Save your changes and restart Superwhisper to activate the selection context feature
 </Card>
 </CardGroup>
-<Icon icon="check" iconType="solid" /> *Awesome! You can now reference `<text_selection_context>` in your custom instructions, as covered in the Prompting Tips section above.*
+<Icon icon="check" iconType="solid" /> *Awesome! You can now reference `<text_selection_context>` in your custom instructions, as covered in [Prompting Tips](#prompting-tips).*
 
 ---
 <Tip>Unlike other modes, Custom Mode isn't limited to text formatting. **Combine context-awareness with your instructions to create powerful, specialized workflows tailored to your needs.**</Tip>
