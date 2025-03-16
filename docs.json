@@ -1,0 +1,114 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Superwhisper",
+  "colors": {
+    "primary": "#0d0d0d",
+    "light": "#fdfdfd",
+    "dark": "#0d0d0d"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "anchors": [
+      {
+        "anchor": "Documentation",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "get-started/introduction",
+              {
+                "group": "Fine-Tune Your Setup",
+                "pages": [
+                  "get-started/settings-overview",
+                  "get-started/settings-sound",
+                  "get-started/settings-shortcuts",
+                  "get-started/settings-advanced"
+                ]
+              },
+              "get-started/activate-ios",
+              "get-started/report"
+            ]
+          },
+          {
+            "group": "Modes",
+            "pages": [
+              "modes/modes",
+              "modes/voice",
+              "modes/message",
+              "modes/email",
+              "modes/note",
+              "modes/super",
+              "modes/meeting",
+              {
+                "group": "Custom",
+                "pages": [
+                  "modes/custom",
+                  "modes/customizing-modes",
+                  "modes/speaker-separated-meetings"
+                ]
+              },
+              "modes/switching-modes"
+            ]
+          },
+          {
+            "group": "Common Issues",
+            "pages": [
+              "common-issues/realtime",
+              "common-issues/unable-to-create-mode",
+              "common-issues/hallucinations"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Community",
+          "href": "https://discord.gg/tF98XvJNvB",
+          "icon": "discord"
+        },
+        {
+          "anchor": "Twitter",
+          "href": "https://x.com/superwhisperapp",
+          "icon": "twitter"
+        },
+        {
+          "anchor": "Youtube",
+          "href": "https://www.youtube.com/channel/UCBQpNBU5mrPKge6UETN8i8g",
+          "icon": "youtube"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": true
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@superwhisper.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Superwhisper",
+      "href": "https://superwhisper.com/"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/superwhisperapp",
+      "discord": "https://discord.gg/tF98XvJNvB",
+      "youtube": "https://www.youtube.com/channel/UCBQpNBU5mrPKge6UETN8i8g"
+    }
+  }
+}
