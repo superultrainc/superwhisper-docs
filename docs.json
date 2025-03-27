@@ -27,8 +27,14 @@
                   "get-started/settings-advanced"
                 ]
               },
+              {
+                "group": "Active Pro",
+                "pages": [
+                  "get-started/activate-ios",
+                  "get-started/activate-mac"
+                ]
+              },
               "get-started/transcribe-history",
-              "get-started/activate-ios",
               "get-started/report"
             ]
           },
