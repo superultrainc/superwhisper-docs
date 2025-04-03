@@ -63,6 +63,7 @@
           {
             "group": "Common Issues",
             "pages": [
+              "common-issues/appstore",
               "common-issues/realtime",
               "common-issues/unable-to-create-mode",
               "common-issues/hallucinations"
