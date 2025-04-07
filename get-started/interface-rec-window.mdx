@@ -1,0 +1,128 @@
+---
+title: "Recording Window"
+description: "Learn how to identify and utilize the key features of the Superwhisper recording window, the central hub for your AI-powered dictation."
+---
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/interface-rec-window-001.png"
+  alt="Superwhisper Recording Window"
+/>
+
+## Overview
+Superwhisper's recording window is carefully designed to provide intuitive control and real-time feedback during your dictation. 
+
+**Let's explore the seven essential components of this powerful interface:**
+
+---
+## 1. Resize Toggle
+
+<img
+style={{ borderRadius: '0.5rem'}}
+src="/images/get-started/interface-rec-window-002.png"
+alt="Superwhisper Resize Toggle"
+/>
+When you hover over the recording window, you can click here to switch between a large and mini view.
+
+<Accordion title="Mini View" icon="microphone-lines" defaultOpen="true">
+The mini view simplifies your recording experience by displaying only essential features like the waveform and status indicator. This compact interface lets you focus on dictation without distractions.
+
+<img
+style={{ borderRadius: '0.5rem'}} noZoom
+src="/images/get-started/interface-rec-window-003.png"
+alt="Superwhisper Mini Recording Window"
+/>
+
+</Accordion>
+
+---
+## 2. Audio Waveform
+
+<img
+style={{ borderRadius: '0.5rem'}}
+src="/images/get-started/interface-rec-window-004.png"
+alt="Superwhisper Audio Waveform"
+/>
+
+The waveform visually represents the audio captured by your microphone, giving you real-time feedback during dictation sessions. A moving waveform indicates your microphone captures audio correctly.
+
+If the waveform stays static, check these elements:
+- Verify your selected audio input device in [Superwhisper's Sound tab](settings-sound)
+- Confirm microphone permissions in System Settings > Privacy & Security > Microphone
+
+<Note>Exception: When using [system audio capture in a Custom mode](../modes/custom#audio-options), the waveform remains static. Your audio still records properly - you can verify this in the [History tab](interface-history), which displays detailed information about each dictation session.</Note>
+
+---
+## 3. Status Indicator
+
+<img
+style={{ borderRadius: '0.5rem'}}
+src="/images/get-started/interface-rec-window-005.png"
+alt="Superwhisper Status Indicator"
+/>
+
+The color-coded dot reflects the current recording status, similar to the one in [the menu bar](interface-menu-bar#status-indicator-dot):
+- Yellow: Model loading in progress
+- Blue: Dictation processing
+- Green: Processing completed
+
+---
+## 4. Mode Display 
+
+<img
+style={{ borderRadius: '0.5rem'}}
+src="/images/get-started/interface-rec-window-006.png"
+alt="Superwhisper Mode Display"
+/>
+
+This area of the recording window shows your currently active mode in Superwhisper and displays the keyboard shortcut for quick mode switching. You can click here to switch modes manually.
+
+<Info>
+In Super Mode, this area displays your current application or website context.
+</Info>
+
+
+---
+## 5. Context Capture
+
+<img
+style={{ borderRadius: '0.5rem'}}
+src="/images/get-started/interface-rec-window-007.png"
+alt="Superwhisper Context Capture Indicator"
+/>
+
+This indicator can appear in Super Mode or Custom modes with context awareness features enabled. It lights up to confirm Superwhisper has captured clipboard context - either when you copy text within 3 seconds before dictation starts or during an active dictation session.
+
+---
+## 6. Stop Recording
+
+<img
+style={{ borderRadius: '0.5rem'}}
+src="/images/get-started/interface-rec-window-008.png"
+alt="Stop Superwhisper's dictation"
+/>
+
+If you're ready to wrap up your dictation, click here to stop recording - or use the same keyboard shortcut you used to start.
+
+---
+## 7. Cancel Dictation
+
+<img
+style={{ borderRadius: '0.5rem'}}
+src="/images/get-started/interface-rec-window-009.png"
+alt="Cancel Superwhisper's dictation"
+/>
+
+Click here to cancel your current dictation session or use your assigned keyboard shortcut. For recordings longer than 30 seconds, Superwhisper displays a confirmation message to prevent accidental cancellations. Recordings under 30 seconds cancel immediately.
+
+---
+## Related Documentation
+
+<CardGroup cols={2}>
+  <Card title="Advanced Settings" icon="sliders" href="settings-advanced">
+    Superwhisper can operate using menu bar indicators alone, without the recording window. Learn how to customize these and more settings.
+  </Card>
+  <Card title="Context Awareness" icon="brain-circuit" href="../modes/super#context-awareness">
+    Discover how Superwhisper's context awareness features superpower your dictation. These features help AI understand your needs and deliver smarter, more accurate results.
+  </Card>
+</CardGroup>

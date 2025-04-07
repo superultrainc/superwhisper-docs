@@ -19,20 +19,28 @@
             "pages": [
               "get-started/introduction",
               {
+                "group": "Pro Activation",
+                "pages": [
+                  "get-started/activate-ios",
+                  "get-started/activate-mac"
+                ]
+              },
+              {
                 "group": "Fine-Tune Your Setup",
                 "pages": [
                   "get-started/settings-overview",
+                  "get-started/settings",
                   "get-started/settings-sound",
                   "get-started/settings-shortcuts",
-                  "get-started/settings",
                   "get-started/settings-advanced"
                 ]
               },
               {
-                "group": "Active Pro",
+                "group": "The Interface",
                 "pages": [
-                  "get-started/activate-ios",
-                  "get-started/activate-mac"
+                  "get-started/interface-menu-bar",
+                  "get-started/interface-rec-window",
+                  "get-started/interface-history"
                 ]
               },
               "get-started/transcribe-history",
