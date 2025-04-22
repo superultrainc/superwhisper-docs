@@ -1,0 +1,55 @@
+---
+title: "Replacements"
+description: "Learn how to use Replacements in Superwhisper to fix spelling, expand snippets, or inject links. This feature ensures that your most frequent corrections and expansions are handled efficiently and consistently."
+---
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/interface-replacements-001.png"
+  alt="Superwhisper Replacements"
+/>
+
+## Overview
+
+Superwhisper's replacements operate at the post-transcription stage of processing. Once your voice input is transcribed into text, any replacements you’ve configured will be automatically applied. This step is performed programmatically and does not rely on AI interpretation, ensuring that replacements happen exactly as you define them.
+
+<Info>
+Replacements match words regardless of capitalization. The matching system is case-insensitive, so "todo" will match "ToDo", "TODO", or "Todo". The replaced output will appear in the exact case you have specified for the replacement.
+</Info>
+
+---
+## When to Use
+
+Replacements are the recommended solution for correcting persistent errors or expanding frequently used phrases. Because this feature operates independently of AI, the results are consistent and immediate, regardless of how the transcription model performs.
+
+---
+## Creating Replacements
+
+<Steps>
+  <Step title="Create">
+    Select the "Create" button.
+    <img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/interface-replacements-002.png"
+  alt="Create Replacements"
+/>
+  </Step>
+  <Step title="Define the Original Text">
+    Enter the word or phrase you want the system to look for. Remember, matching is case-insensitive.
+  </Step>
+  <Step title="Set the Replacement">
+    Specify the corrected spelling, expanded text, link, or snippet you wish to insert.
+  </Step>
+  <Step title="Save">
+    Select the "Create & draft new" option. Your replacement will take effect immediately in all future transcriptions.
+        <img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/interface-replacements-003.png"
+  alt="Superwhisper Replacements Interface"
+/>
+  </Step>
+</Steps>
+
+<Check>
+If you notice that certain words are consistently mis-transcribed, you can add multiple replacements to address every variation and point them all to the correct result.
+</Check>
