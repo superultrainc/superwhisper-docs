@@ -1,0 +1,68 @@
+---
+title: "File Transcription"
+description: "Learn how to transcribe external audio and video files using Superwhisper."
+---
+
+## Overview
+Superwhisper can process external audio and video files. Use it for meeting recordings, lectures, interviews, voice memos, and more scenarios. The app uses the AI and voice settings of your currently active mode, ensuring results match your preferred formatting. It's convenient and straightforward, whether you're recording on another app or device.
+
+<Info>
+**For optimal transcription results, use:**
+- MP3 audio files
+- MP4 video files
+- Mono WAV files with 16 kHz sample rate
+</Info>
+
+---
+## 1. Transcribing via the Menu Bar
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/transcribe-files-001.png"
+  alt="Transcribe with Superwhisper Menu Bar"
+/>
+
+<Steps>
+  <Step title="Verify Active Mode">
+    Ensure your preferred Supwerhisper mode is active
+  </Step>
+  <Step title="Open Superwhisper">
+    Click on Superwhisper's menu bar icon
+  </Step>
+  <Step title="Select Transcribe File">
+    Choose the "Transcribe File" option from the menu
+  </Step>
+  <Step title="Choose File">
+    Browse and select the audio file you want to transcribe
+  </Step>
+</Steps>
+
+---
+## 2. Transcribing via Finder
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/transcribe-files-002.png"
+  alt="Transcribe Finder Files using Superwhisper"
+/>
+
+<Steps>
+  <Step title="Locate File">
+    Find the audio file in Finder
+  </Step>
+  <Step title="Right-Click">
+    Right-click on the file to open context menu
+  </Step>
+  <Step title="Open With Superwhisper">
+    Select "Open With" > Superwhisper
+    - If Superwhisper isn't listed, choose "Other" to select the application
+  </Step>
+</Steps>
+
+---
+## 3. Transcription via Command Line
+
+If you are a technical user, you can also transcribe files directly using Bash:
+```bash
+open /path/to/your/audiofile.mp3 -a superwhisper
+```
