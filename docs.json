@@ -19,23 +19,35 @@
             "pages": [
               "get-started/introduction",
               {
-                "group": "Fine-Tune Your Setup",
-                "pages": [
-                  "get-started/settings-overview",
-                  "get-started/settings-sound",
-                  "get-started/settings-shortcuts",
-                  "get-started/settings",
-                  "get-started/settings-advanced"
-                ]
-              },
-              {
-                "group": "Active Pro",
+                "group": "Pro Activation",
                 "pages": [
                   "get-started/activate-ios",
                   "get-started/activate-mac"
                 ]
               },
+              {
+                "group": "Fine-Tune Your Setup",
+                "pages": [
+                  "get-started/settings-overview",
+                  "get-started/settings",
+                  "get-started/settings-sound",
+                  "get-started/settings-shortcuts",
+                  "get-started/settings-advanced"
+                ]
+              },
+              {
+                "group": "The Interface",
+                "pages": [
+                  "get-started/interface-menu-bar",
+                  "get-started/interface-rec-window",
+                  "get-started/interface-ai-models",
+                  "get-started/interface-replacements",
+                  "get-started/interface-vocabulary",
+                  "get-started/interface-history"
+                ]
+              },
               "get-started/transcribe-history",
+              "get-started/transcribe-files",
               "get-started/report"
             ]
           },

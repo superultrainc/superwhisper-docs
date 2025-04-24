@@ -1,0 +1,107 @@
+---
+title: "AI Models"
+description: "Learn how to manage and configure voice and language models in Superwhisper."
+---
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/interface-ai-models-001.png"
+  alt="Superwhisper AI Models"
+/>
+
+## Overview
+
+This tab serves as Superwhisper's central hub for managing AI Models. This interface allows you to explore, compare, and configure voice-to-text and language processing tools tailored to your specific workflow.
+
+---
+
+## Navigation
+
+Upon opening the AI Models tab, you will find two main sub-tabs:
+
+- **Voice Models:** Used for transcribing your recorded speech into text.
+- **Language Models:** Used for formatting the transcribed text or handling custom AI requests.
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/interface-ai-models-002.png"
+  alt="Superwhisper Voice and Language Models"
+/>
+
+---
+
+## Speed & Accuracy
+Each model—voice or language—appears with ratings for speed (how quickly the model processes input) and accuracy (the quality of the transcription or text output). The top-listed models generally provide the best balance of performance and reliability.
+
+Cloud models, available for both voice and language tasks, are typically high performance and well suited for users who want optimal speed and accuracy.
+
+No external API keys or additional configuration is required for the built-in models; all processing is included in your Superwhisper purchase.
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/interface-ai-models-003.png"
+  alt="Superwhisper AI Models Ratings"
+/>
+
+<Note>For those who require complete privacy or offline accessibility, local models are available in both voice and language categories. Running tasks locally means transcription and AI processing can be completed without an internet connection.</Note>
+
+---
+
+## Specific Features
+
+Model selection can impact advanced features for voice models:
+
+- Not all voice models can translate non-English dictation to English. If you intend to utilize translation, choosing Standard, Pro, or Ultra models is suggested.
+- Only Nova (cloud) provides real-time transcription, and it's the best available for automatic speaker identification, making it ideal for meetings and interviews.
+
+<Note>For more information about voice models, check the ["Intro to Modes"](../modes/modes#voice-processing) page.</Note>
+
+---
+## Adding Models
+### Local Models
+To download a local model simply click to the right in the list. Once downloaded, the icon changes to a minus (“-”) button. Click the minus button to remove the model from your device if you no longer need it.
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/interface-ai-models-004.png"
+  alt="Add or Remove AI Models"
+/>
+
+---
+
+### External Providers
+
+The **Add Model** button enables you to connect custom voice and language models. By using personal API keys from various providers, you gain more flexibility in your transcription and processing capabilities.
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/interface-ai-models-005.png"
+  alt="Adding Custom AI Models in Superwhisper"
+/>
+
+<Steps>
+  <Step title="Open the Add Model Dialog">
+    Click the <b>Add Model</b> button.
+  </Step>
+  <Step title="Select Provider">
+    Choose your provider (e.g., OpenAI, Anthropic, Grok, etc.).
+  </Step>
+  <Step title="Configure Model">
+    Select your desired model from the provider’s list.
+  </Step>
+  <Step title="Enter API Details">
+    Provide the required API key or details.
+  </Step>
+  <Step title="Save and Use">
+    After adding, your custom model will appear in the respective Voice or Language Models list and will be available for selection in your Superwhisper modes.
+  </Step>
+</Steps>
+
+---
+## Related Documentation
+
+  <Card 
+    title="All About Modes" 
+    icon="wand-magic-sparkles" 
+    href="../modes/modes"
+  >
+    Learn how to set and use different AI models to format your dictation and transform voice input for various use cases.
+  </Card>
