@@ -1,0 +1,63 @@
+---
+title: "Deactivating AI"
+description: "Learn how to disable AI processing in Custom Modes while retaining advanced features like system audio capture and speaker separation."
+---
+
+## Overview
+
+Custom Modes in Superwhisper provide flexibility and advanced options not available in other built-in modes. These include the ability to record from system audio and speaker separation when using Nova Cloud models.
+
+**There are several scenarios where you might want to use Custom Mode features without AI processing:**
+
+- You need to record and transcribe audio from applications or websites
+- You want clean speaker-labeled transcripts without AI post-processing
+
+---
+## Step-by-Step Process
+
+<Steps>
+  <Step title="Create a Custom Mode">
+    First, create a Custom Mode with the specific features you need:
+    - Enable system audio capture if needed
+    - Activate speaker separation if required
+    - Give your mode a descriptive name
+  </Step>
+  
+  <Step title="Locate the Mode Configuration File">
+    Navigate to the Superwhisper configuration folder:
+    1. Open your Documents folder (or the custom location if you've modified [the setting](../get-started/settings-advanced#folder-location))
+    2. Find the "Superwhisper" folder
+    3. Go to the "modes" subfolder
+    4. Locate the JSON file for the Custom Mode you just created
+  </Step>
+  
+  <Step title="Edit the Configuration File">
+    1. Open the JSON file in any text editor
+    2. Find the field labeled `languageModelEnabled`
+    3. Change the value from `true` to `false`
+    4. Save the file
+  </Step>
+  
+  <Step title="Restart Superwhisper">
+    Close and restart the Superwhisper application for the changes to take effect.
+  </Step>
+  
+  <Step title="Verify the Changes">
+    After restarting, open your Custom Mode. You'll notice that the AI processing sections of the interface are no longer visible, confirming that AI has been deactivated for this mode.
+  </Step>
+</Steps>
+
+<Tip>
+When AI is deactivated, you don't need to add any custom system prompts or AI instructions. The mode will function similar to a voice mode but with the advanced capabilities you've enabled.
+</Tip>
+
+## Related Resources
+
+<CardGroup cols={2}>
+  <Card title="Voice Modes" icon="microphone" href="voice">
+    Learn more about voice modes and how to select the right model for your needs.
+  </Card>
+  <Card title="Speaker Separation for Meetings" icon="users" href="speaker-separated-meetings">
+    Discover how to set up speaker separation for meeting transcription and processing.
+  </Card>
+</CardGroup>

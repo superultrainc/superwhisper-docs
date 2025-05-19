@@ -1,0 +1,84 @@
+---
+title: "Troubleshooting Overview"
+description: "Solutions for common Superwhisper issues including audio capture, recording, and transcription problems"
+---
+
+## Introduction
+Superwhisper is designed to be reliable, but various factors can occasionally affect its performance. This documentation section is designed to help you diagnose and resolve common issues you might encounter.
+
+For your peace of mind, the application automatically saves your dictations every few seconds. You can access your original recordings through [the History tab](../get-started/interface-history) or directly in the [Superwhisper folder](..//get-started/settings-advanced#folder-location).
+
+<Tip>
+It is suggested you activate error logging in the Configuration tab. This helps diagnose issues through the application's built-in error tracking system.
+</Tip>
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/common-issues/troubleshooting-001.png"
+alt="Superwhisper's Error Logging"
+/>
+
+---
+## General Troubleshooting
+<Card title="Recording Window Issues" href="../get-started/settings-shortcuts">
+   If the recording window doesn't appear after pressing the keyboard shortcut, there might be a conflict in your shortcut settings. Check or modify your keyboard shortcuts configuration to fix this issue.
+</Card>
+
+<Card title="Audio Capture Issues" href="../get-started/settings-sound">
+    If the wave visualization in the interface isn't moving, this typically indicates an audio capture problem. Learn more about these settings.
+</Card>
+
+<Card title="Transcription & AI Processing Issues" href="hallucinations">
+    If you're experiencing issues with your transcription results or AI processing, check this detailed guide to identify the origin of the issue and possible solutions.
+</Card>
+
+---
+## Common Issues and Solutions
+<CardGroup cols={2}>
+  <Card title="Automatic Language Detection" href="language-detection">
+    If your language isn't being correctly detected or if automatic detection defaults to English, check this guide for solutions.
+  </Card>
+  
+  <Card title="How to Downgrade" href="https://superwhisper.com/appcast.xml">
+    If you need to downgrade due to issues with the current version, here you can find links to previous Superwhisper versions.
+  </Card>
+
+  <Card title="Performance Issues" href="performance-tips">
+    If Superwhisper feels slow or unresponsive, check this guide for optimization tips to improve application speed and efficiency.
+  </Card>
+  
+  <Card title="Realtime Transcription" href="realtime">
+    Real-time transcription is currently available only with Ultra Cloud Models. Learn how to enable and configure this feature.
+  </Card>
+  
+  <Card title="Custom Modes Not Saving" href="unable-to-create-mode">
+    If your custom modes aren't saving or disappear unexpectedly, it may be related to iCloud sync issues. This guide offers solutions.
+  </Card>
+  
+  <Card title="AI Answers Instead of Transcribing" href="../modes/custom#prompting-tips">
+    If you're getting AI responses when you only want formatted transcription, check these prompting tips.
+  </Card>
+  
+  <Card title="Long Files Not Transcribing" href="../get-started/interface-ai-models">
+    If you're using Ultra Cloud for longer files and experiencing issues, Nova is the recommended voice model for longer content. Learn more about the available AI models.
+  </Card>
+
+  <Card title="Activation Problems" href="appstore">
+    Having trouble activating your App Store purchase? This guide walks you through how to recover your license.
+  </Card>
+  
+  <Card title="Context Issues" href="context">
+    If context awareness isn't working correctly or you want to learn more about it, check this guide.
+  </Card>
+  
+  <Card title="Recording System Audio" href="../modes/custom#audio-options">
+    This custom mode-specific feature allows you to record audio as you listen. Learn more about it.
+  </Card>
+  
+  <Card title="Deactivating AI in Custom Modes" href="../modes/deactivate-ai">
+    Custom modes offer flexibility not available in other modes. Learn how to deactivate AI processing by editing JSON files directly.
+  </Card>
+  
+  <Card title="Report Issues" href="../get-started/report">
+    If you encounter reproducible bugs or issues, please submit them through our reporting system for faster resolution.
+  </Card>
+</CardGroup>
