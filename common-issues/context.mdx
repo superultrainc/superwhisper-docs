@@ -1,0 +1,80 @@
+---
+title: "Context Awareness"
+description: "Learn how Superwhisper captures context, troubleshoot related issues, and optimize your dictation experience with different context types."
+---
+
+## Overview
+
+Superwhisper's context awareness is one of its most powerful features, allowing the application to process your dictation with relevant information. This creates more accurate results.
+
+---
+### Types of Context
+
+Superwhisper can capture three different types of context:
+
+<CardGroup cols={3}>
+  <Card title="Selected Text Context" icon="text-size">
+    Text that is highlighted/selected in your active window when you begin recording.
+  </Card>
+  <Card title="Application Context" icon="window">
+    Text from active input fields, names, and title from your active window.
+  </Card>
+  <Card title="Clipboard Context" icon="clipboard">
+    Content that has been copied to your clipboard before or during dictation.
+  </Card>
+</CardGroup>
+
+---
+### Context Availability
+
+Not all modes in Superwhisper capture context by default. Understanding which modes use context is essential for getting the results you expect.
+
+- **Built-in Modes**: Most do not have context awareness enabled
+- **Super Mode**: The only built-in mode with all three context types enabled by default
+- **Custom Modes**: Can be configured to use any combination of context types
+
+<Tip>
+Be selective about which context types you enable for custom modes. Enabling unnecessary context can send excessive information to the AI, potentially affecting result quality.
+</Tip>
+  
+---
+### Context Capture Timing
+
+Each type of context is captured at a different point in the dictation process, which is important to understand for optimal results:
+
+<Steps>
+  <Step title="Selected Text Context">
+    Captured exactly when you start recording (when you toggle on dictation). The focus must remain on the application containing the selected text at this moment.
+  </Step>
+  <Step title="Clipboard Context">
+    Captured either within three seconds before recording starts OR during dictation. The last item copied during this period will be used.
+  </Step>
+  <Step title="Application Context">
+    Captured after voice processing is complete, between the transcription and AI processing steps. This means your active window at this point determines what context is captured.
+  </Step>
+</Steps>
+
+---
+## Context Issues and Solutions
+
+### Selected Text Context Not Working
+- **Focus Issue**: Make sure your focus is on the application with the selected text when you start recording
+- **Mode Configuration**: Verify you're using Super Mode or a custom mode with [selected text context enabled](../modes/custom#advanced-tip)
+- **Deep Link Usage**: When triggering recording via deep links using shell commands, use the `-g` flag to open in the background so focus remains on your target application
+
+---
+### Application Context Not Working
+- **Switching Windows**: If you switch to a different window after dictation but before processing completes, you may capture the wrong context or none at all
+- **Accessibility Permissions**: Ensure Superwhisper has accessibility permissions enabled in System Preferences/Settings
+- **Mode Configuration**: Verify the mode you're using has application context enabled
+
+---
+### Clipboard Context Not Working
+- **Timing Issues**: Make sure you're copying content either shortly (three seconds) before starting recording or during dictation
+- **Mode Configuration**: Verify the mode you're using has clipboard context enabled
+
+---
+## Explore More
+<CardGroup cols={2}> <Card title="Super Mode" icon="wand-magic-sparkles" href="/modes/super"> Learn how to use Super Mode's context awareness features, discover powerful commands for text manipulation, and troubleshoot issues specific to this mode. </Card> <Card title="History" icon="clock-rotate-left" href="/get-started/interface-history"> The History tab is essential for troubleshooting context features, as it displays all information sent to AI. </Card> </CardGroup>
+
+---

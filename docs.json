@@ -48,6 +48,7 @@
               },
               "get-started/transcribe-history",
               "get-started/transcribe-files",
+              "get-started/backing-up-settings",
               "get-started/report"
             ]
           },
@@ -66,6 +67,7 @@
                 "pages": [
                   "modes/custom",
                   "modes/customizing-modes",
+                  "modes/deactivate-ai",
                   "modes/speaker-separated-meetings"
                 ]
               },
@@ -75,9 +77,13 @@
           {
             "group": "Common Issues",
             "pages": [
+              "common-issues/troubleshooting",
+              "common-issues/performance-tips",
               "common-issues/appstore",
               "common-issues/realtime",
               "common-issues/unable-to-create-mode",
+              "common-issues/language-detection",
+              "common-issues/context",
               "common-issues/hallucinations"
             ]
           }

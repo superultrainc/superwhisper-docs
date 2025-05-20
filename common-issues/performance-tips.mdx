@@ -1,0 +1,110 @@
+---
+title: "Performance Tips"
+description: "Learn how to optimize Superwhisper's performance and responsiveness on your system."
+---
+
+## Overview
+
+**By default, Superwhisper delivers fast performance.** However, if you're experiencing slowness or want to improve the app's responsiveness, the tips below point out the areas that tend to have the biggest impact on how fast the app runs. Several factors can affect Superwhisper's performance:
+
+<CardGroup cols={2}>
+  <Card title="System Resources" icon="computer">
+    Your computer's processing power, RAM, and available memory directly impact performance, especially when using local models.
+  </Card>
+  <Card title="Internet Connection" icon="wifi">
+    Cloud-based processing depends on your internet speed and stability for optimal performance.
+  </Card>
+  <Card title="Model Selection" icon="microchip">
+    Different AI models will vary in performance based on your specific use case.
+  </Card>
+  <Card title="Processing Type" icon="gears">
+    Voice transcription and AI processing are separate operations with different performance implications.
+  </Card>
+</CardGroup>
+
+---
+## Local vs Cloud Models
+
+The choice between local and cloud models can significantly affects performance:
+
+### Local Models
+
+Local models run offline, directly on your computer, which means that your system specifications directly influence processing speed.
+
+<Steps>
+  <Step title="Optimize Voice Model Active Duration">
+    <img
+    style={{ borderRadius: '0.5rem' }}
+    src="/images/common-issues/performance-tips-001.png"
+    alt="Superwhisper Voice Model Active Duration"
+    />
+    In Superwhisper's Advanced Settings, you can adjust how long voice models remain loaded:
+    - Settings range from 10 seconds to 1 hour
+    - Shorter durations free up system resources but require reloading for new dictations
+    - Longer durations keep models ready but consume more system resources
+  </Step>
+  <Step title="Consider Your Hardware">
+    For optimal local model performance:
+    
+    - Ensure adequate RAM
+    - More powerful CPUs will process dictations faster
+    - If your Mac struggles with local models because of its specifications, consider closing resource-intensive applications when using Superwhisper
+  </Step>
+</Steps>
+
+### Cloud Models
+
+Cloud models process your dictations on remote servers:
+
+<Steps>
+  <Step title="Select the Appropriate Cloud Model">
+        Superwhisper uses different models for voice transcription and AI processing. Some are better for certain tasks or types of content. To see what’s available and get tips on picking the best option for your needs, check out [the AI Models tab](../get-started/interface-ai-models).
+  </Step>
+  <Step title="Monitor Your Internet Connection">
+    Cloud models generally offer faster processing and higher quality than local options, but require a stable internet connection.
+  </Step>
+</Steps>
+
+---
+## Optimizing Processing Speed
+
+<Steps>
+  <Step title="Disable AI Processing When Not Needed">
+    Transcription and AI processing are separate operations:
+    
+    - Using voice mode only (without AI processing) provides the fastest results
+    - Consider this option when you don't need special formatting
+  </Step>
+  <Step title="Choose the Right Model for Your Task">
+    Match the model to your specific needs:
+    
+    - Short dictations: Ultra Cloud model
+    - Longer dictations: Nova Cloud models
+    - Offline reliability & privacy: Local models
+  </Step>
+  <Step title="Monitor Processing Times">
+    Use the History menu to identify performance bottlenecks:
+    
+    - Check processing time for voice transcription
+    - Check processing time for AI processing
+    - Identify which part of the process is causing delays and switch model if necessary
+  </Step>
+</Steps>
+
+---
+## Related Documentation
+
+<CardGroup cols={2}>
+  <Card title="AI Models" icon="brain" href="../get-started/interface-ai-models">
+    Learn more about the different AI models available in Superwhisper
+  </Card>
+  <Card title="History" icon="clock-rotate-left" href="../get-started/interface-history">
+    Discover how to use the History panel for troubleshooting
+  </Card>
+  <Card title="Advanced Settings" icon="sliders" href="../get-started/settings-overview">
+    Explore all available configuration options
+  </Card>
+  <Card title="Reporting Issues" icon="bug" href="../get-started/report">
+    Learn how to effectively report problems to the Superwhisper team
+  </Card>
+</CardGroup>

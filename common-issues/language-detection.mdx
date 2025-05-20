@@ -1,0 +1,83 @@
+---
+title: "Language Detection"
+description: "Learn how to fix issues with Superwhisper automatically translating non-English dictation to English when using the Automatic language setting."
+---
+
+## Overview
+
+Superwhisper processes your dictation in two distinct stages:
+
+1. **Voice-to-Text Transcription**: Converting your spoken words into written text
+2. **AI Text Processing**: Applying formatting and handling specific requests based on the selected mode
+
+When using the "Automatic" language setting, you may experience your non-English dictation being incorrectly transcribed as English text. This mostly happens at the transcription stage, before any AI processing occurs.
+
+<Info>
+You can verify this by checking [the History tab](../get-started/interface-history), which shows the raw transcription before processing.
+</Info>
+
+---
+## Why This Happens
+
+The transcription AI models use a prompt to guide their behavior. This prompt:
+
+- Improves word recognition accuracy
+- Enhances punctuation
+- Can unintentionally affect language detection
+
+With the "Automatic" setting, Superwhisper cannot predict which languages you'll use, making it challenging to provide appropriate language guidance to the transcription model.
+
+<Note>
+This issue primarily affects the Mac version because [the Vocabulary feature](../get-started/interface-vocabulary) is the one on charge of passing the prompt to the transcription model. The iOS app doesn't yet have this feature.
+</Note>
+
+---
+## Solution: The Vocabulary Hint
+
+You can significantly improve automatic language detection by adding a simple phrase to your Vocabulary list:
+
+<Steps>
+  <Step title="Open Vocabulary Settings">
+    Navigate to the Vocabulary tab in SuperWhisper settings.
+  </Step>
+  <Step title="Add Phrase in Your Language">
+    Add the phrase "and it can also include words in [LANGUAGE]" written in your target language. For example, if you speak Spanish, add: "y también puede incluir palabras en español".
+    <img
+    style={{ borderRadius: '0.5rem' }}
+    src="/images/common-issues/language-detection-001.png"
+    alt="Superwhisper Vocabulary Hint for Language Detection"
+    />
+  </Step>
+  <Step title="Additional Considerations">
+    For best results, add a few more individual words to your vocabulary and keep the list short for optimal performance.
+  </Step>
+</Steps>
+
+---
+## Model Compatibility
+
+**The vocabulary hint works effectively with all voice models except Nova.** While Nova models excel at speaker separation in meetings, they handle language detection differently and don't support multiple languages within the same dictation session. You can still add the vocabulary phrase without negative effects, but you won't get the multi-language benefits. 
+
+<Tip>
+Non-Nova models offer a key advantage: they not only recognize your language more accurately but also support seamless switching between multiple languages within the same session without changing settings.
+</Tip>
+
+---
+## Alternative Approach
+
+If the vocabulary hack doesn't fully address your needs:
+
+1. **Create Language-Specific Modes**: Set up different modes for each language you use regularly
+2. **Custom Mode Prompts**: For custom modes, add instructions to preserve the input language
+
+---
+## Related Documentation
+
+<CardGroup cols={2}>
+  <Card title="Using Vocabulary" icon="book-open" href="../get-started/interface-vocabulary">
+    Learn how to use the Vocabulary feature to guide and enhance your transcription accuracy.
+  </Card>
+  <Card title="Speaker Separated Meetings" icon="users" href="../modes/speaker-separated-meetings">
+    Discover how to use Nova models to transcribe audio with automatic speaker identification.
+  </Card>
+</CardGroup>
