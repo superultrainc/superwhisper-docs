@@ -1,6 +1,6 @@
 ---
 title: "Vocabulary"
-description: "Learn how the Vocabulary feature in Superwhisper improves AI voice transcription accuracy by allowing users to add custom words, acronyms, or company names."
+description: "Learn how the Vocabulary feature in Superwhisper improves AI voice transcription accuracy by allowing users to add custom words, acronyms, or company names, and create replacements for consistent text corrections."
 ---
 
 <img
@@ -11,22 +11,27 @@ description: "Learn how the Vocabulary feature in Superwhisper improves AI voice
 
 ## Overview
 
-Vocabulary is a specialized AI feature in Superwhisper that helps improve transcription accuracy by providing custom word recognition during the AI transcription process.
+The Vocabulary feature in Superwhisper provides two powerful tools to improve your dictation experience: vocabulary words for better AI transcription recognition, and replacements for consistent post-transcription corrections.
 
 ---
-## How it Works
-When you add words to the Vocabulary tab, you're essentially providing the AI transcription model with:
+
+## Vocabulary Words
+
+### How Vocabulary Words Work
+
+When you add words to the vocabulary section, you're providing the AI transcription model with custom recognition hints during the transcription process. These words are sent alongside your audio to help the AI recognize and accurately transcribe:
+
 - Custom words
-- Acronyms
+- Acronyms  
 - Company names
+- People's names
 - Specialized terminology
+- Words from other languages
 
-These words are sent alongside the audio to help the AI recognize and accurately transcribe specific terms.
+### Important Considerations for Vocabulary
 
----
-## Important Considerations
+While the vocabulary feature can be helpful, it should be used sparingly to avoid potential transcription complications:
 
-While the Vocabulary feature can be helpful, it should be used sparingly to avoid potential transcription complications.
 - Adding too many words can confuse the AI transcription model
 - Words in different languages might impact transcription accuracy
 - The feature influences not just spelling, but potentially:
@@ -35,15 +40,35 @@ While the Vocabulary feature can be helpful, it should be used sparingly to avoi
   - Overall formatting
 
 <Tip>
-**Recommended approach:** Use Vocabulary minimally and complement it with the [Replacements](interface-replacements) feature for more consistent results.
+**Recommended approach:** Use vocabulary words minimally and complement them with replacements for more consistent results.
 </Tip>
 
 ---
-## Using the Vocabulary Tab
-<img
-  style={{ borderRadius: '0.5rem' }}
-  src="/images/get-started/interface-vocabulary-002.png"
-  alt="How to Use Superwhisper Vocabulary"
-/>
-1. To add a new vocabulary word, simply type your word in the field and select "Create".
-2. To remove a vocabulary word, select the bin/trash icon next to the word to remove it.
+
+## Replacements
+
+### How Replacements Work
+
+Replacements operate at the post-transcription stage of processing. Once your voice input is transcribed into text, any replacements you've configured will be automatically applied. This step is performed programmatically and does not rely on AI interpretation, ensuring that replacements happen exactly as you define them.
+
+<Info>
+Replacements match words regardless of capitalization. The matching system is case-insensitive, so "todo" will match "ToDo", "TODO", or "Todo". The replaced output will appear in the exact case you have specified for the replacement.
+</Info>
+
+### When to Use Replacements
+
+Replacements are the recommended solution for correcting persistent errors or expanding frequently used phrases. Because this feature operates independently of AI, the results are consistent and immediate, regardless of how the transcription model performs.
+
+<Check>
+If you notice that certain words are consistently mis-transcribed, you can add multiple replacements to address every variation and point them all to the correct result.
+</Check>
+
+---
+
+## Vocabulary Management
+
+Both vocabulary words and replacements can be managed from the same interface:
+
+- To remove any item, select the bin/trash icon next to it
+- All changes take effect immediately
+- You can mix vocabulary words and replacements based on your specific needs
