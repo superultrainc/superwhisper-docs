@@ -11,8 +11,27 @@ description: "Superwhisper's advanced configuration options let you modify appli
 
 Superwhisper's advanced configuration options let you modify application behavior, adjust performance settings, and manage system-level preferences for a personalized dictation experience.
 
+## Recording Window
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/get-started/settings-advanced-006.png"
+  alt="Superwhisper Recording Window Options"
+/>
+
+### Recording Window Enabled
+If you prefer to stay focused on your work without visual distractions, you can disable the recording window. Audio cues will still notify you when recording starts and when processing completes.
+
+### Auto-Close Window
+By default, with recording window and paste result enabled, the window closes only after successful paste detection. Enable this setting to automatically close the Recording Window after every dictation, regardless of paste status. Your dictated text remains in the clipboard for manual pasting if needed.
+
+### Mini Recording Window
+Use the mini recording window by default. You can switch between the mini and regular recording window anytime [through the interface](interface-rec-window).
+
+### Always show Mini Recording Window
+If enabled, you will always have a minimal visual indicator that allows you to hover over it to start recording, switch modes, or open the larger recording window.
+
 ---
-## Interface Customization
+## Application
 <img
   style={{ borderRadius: '0.5rem' }}
   src="/images/get-started/settings-advanced-002.png"
@@ -24,12 +43,6 @@ Control whether Superwhisper appears in your dock for quick access
 ### Start Recording on Menubar Click
 Enabling this toggle will allow you to start or stop your recording by clicking on the menu icon. If you want to access the regular options from the menu bar icon, you will just simply right click on it.
 
-### Recording Window Enabled
-If you prefer to stay focused on your work without visual distractions, you can disable the recording window. Audio cues will still notify you when recording starts and when processing completes.
-
-### Auto-Close Window
-By default, with recording window and paste result enabled, the window closes only after successful paste detection. Enable this setting to automatically close the Recording Window after every dictation, regardless of paste status. Your dictated text remains in the clipboard for manual pasting if needed.
-
 ---
 ## Voice Processing Options
 <img
@@ -37,11 +50,15 @@ By default, with recording window and paste result enabled, the window closes on
   src="/images/get-started/settings-advanced-003.png"
   alt="Superwhisper Voice Processing Options"
 />
+
 ### Voice Model Active Duration
 Adjust the active duration of voice processing to balance between speed and resource usage. Higher durations keep the AI model loaded in system memory, enabling faster initial processing but reducing available resources for other applications. Lower durations free up system memory but may require additional time when starting new dictation sessions.
 
 ### Silence Removal
 Silence removal helps you get better transcripts and faster results by skipping quiet parts in your audio. Additionally, this feature is helpful in the prevention of AI hallucinations during silent moments. If you see text you never said in your transcripts, turning on silence removal may fix this by stopping the AI from trying to make sense of silence.
+
+### Dynamic Normalization
+When enabled, recordings are automatically normalized and filtered to maintain consistent loudness levels. This feature helps ensure your voice is clearly recognized across all recordings, regardless of variations in microphone distance or ambient conditions.
 
 ---
 ## Folder Location
@@ -54,8 +71,11 @@ Silence removal helps you get better transcripts and faster results by skipping 
 Superwhisper keeps configuration files in your Documents folder by default. This folder stores your history files, your custom modes settings, vocabulary, and text replacements. **Creating a backup of this folder is recommended if you want to preserve your personalized configurations or transfer them to a new machine.**
 
 <Note>
-Since Superwhisper actively uses this folder during dictation, ensure it remains locally accessible on your device. If using iCloud sync for your Documents folder, verify that this specific folder remains local to prevent operational issues.
+Since Superwhisper actively uses this folder during dictation, it is suggested for this folder to remains locally accessible on your device.
 </Note>
+
+### Filesync
+When you enable this option, your Superwhisper configuration files will automatically sync across all installations registered under the same license.
 
 ---
 ## Text Processing Controls
