@@ -40,13 +40,13 @@
                 "pages": [
                   "get-started/interface-menu-bar",
                   "get-started/interface-rec-window",
-                  "get-started/interface-ai-models",
                   "get-started/interface-vocabulary",
                   "get-started/interface-history"
                 ]
               },
               "get-started/transcribe-history",
               "get-started/transcribe-files",
+              "get-started/history-management",
               "get-started/backing-up-settings",
               "get-started/report"
             ]
@@ -55,18 +55,17 @@
             "group": "Modes",
             "pages": [
               "modes/modes",
+              "modes/super",
               "modes/voice",
               "modes/message",
               "modes/email",
               "modes/note",
-              "modes/super",
               "modes/meeting",
               {
                 "group": "Custom",
                 "pages": [
                   "modes/custom",
                   "modes/customizing-modes",
-                  "modes/deactivate-ai",
                   "modes/speaker-separated-meetings"
                 ]
               },
