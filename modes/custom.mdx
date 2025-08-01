@@ -13,7 +13,6 @@ alt="Superwhisper Custom Mode"
 **Custom Mode empowers you with:**
 - Complete control over AI processing instructions
 - Context-awareness capabilities
-- Advanced audio capture options
 - Flexible processing for any workflow
 
 ---
@@ -27,32 +26,17 @@ src="/images/modes/modes-custom-002.png"
 alt="Superwhisper Custom Mode change prompt button"
 />
 
-<Note>Instructions are empty by default. Select "Change Prompt" to modify them. If left blank, AI will not know what task to perform and may give unexpected results. </Note>
-
-### Audio Options
-<img
-style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-custom-003.png"
-alt="Superwhisper Custom Mode audio options"
-/>
-- **Record from System Audio:** 
-  - Perfect for meetings, video content, interviews, or live audio coming your speakers
-  - When recording system audio, the waves on the recording window do not move. You can always check Superwhisper's history to verify capture
-- **Identify Speakers**
-  - Useful for meeting transcriptions
-  - Speaker separation results appear in the Segments tab of History
-
-<Note>Speaker-separated transcripts won't process through AI automatically within the same mode. See [this guide](speaker-separated-meetings) on handling multi-speaker transcripts with AI processing.</Note>
+<Note>Instructions are empty by default. If left blank, AI will not know what task to perform and may give unexpected results. </Note>
 
 ### Context Awareness
 <img
 style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-custom-004.png"
+src="/images/modes/modes-custom-003.png"
 alt="Superwhisper Custom Mode Context Awareness Options"
 />
-Inside the Change Prompt section, you'll discover two powerful features:
-- Use application context toggle
-- Use copied text toggle
+When you have selected a Custom Mode, in your Advanced Settings sidebar you'll discover two powerful features:
+- Application context toggle
+- Copied text toggle
 
 <Note>These toggles work identically to [Super Mode context awareness features](super#context-awareness).</Note>
 
@@ -60,31 +44,31 @@ Inside the Change Prompt section, you'll discover two powerful features:
 ## Prompting Tips
 <AccordionGroup>
 <Accordion title="Referencing Content">
-**When writing AI instructions for use in Superwhisper, you can direct AI's attention to specific content using these XML-style tags:**
+**When writing AI instructions for use in Superwhisper, you can direct AI's attention to specific content using these naming conventions:**
 
-- `<user_message>`
+- `User Message`
   - Contains your dictated text
-- `<application_context>`
+- `Application Context`
   - Includes the data from your active application window
-- `<clipboard_context>`
+- `Clipboard Context`
   - Contains the text you've copied
 
 ---
 
-T**hese tags let you create targeted instructions for AI**. For example:
-- "Translate `<user_message>` to Spanish"
-- "Based on `<application_context>`, suggest relevant code comments"
-- "Format `<user_message>` accordingly based on the content found in `<clipboard_context>`"
+**These titles let you create targeted instructions for AI**. For example:
+- "Translate the User Message to Spanish"
+- "Based on the Application Context, suggest relevant code comments"
+- "Format the User Message accordingly based on the content found in Clipboard Context"
 
-<Tip>If you want AI to know your input is dictated speech, include it explicitly. For example: *"The `<user_message>` contains dictated text. Please format it into proper paragraphs."*</Tip>
+<Tip>If you want AI to know your input is dictated speech, include it explicitly. For example: *"The User Message contains dictated text. Please format it into proper paragraphs."*</Tip>
 
 ---
 
 **Instruct AI exactly which content to focus on and what to do with it.** You can combine them in your instructions to create powerful workflows:
 ```
-If <application_context> shows a code editor:
-- Format <user_message> as code comments
-- Use coding style from <clipboard_context> as reference
+If Application Conext shows a code editor:
+- Format the User Message as code comments
+- Use coding style from Clipboard Context as reference
 ```
 </Accordion>
 
@@ -110,13 +94,15 @@ Write direct, straightforward instructions without unnecessary complexity. Clear
 
 </Accordion>
 <Accordion title="Using XML Tags">
-**It is suggested to structure your instructions with XML tags to communicate clearly with AI:**
+For complex, multi-step instructions, structuring your prompt with XML tags can help communicate clearly with the AI:
+
+<Info>XML tags are optional in Superwhisper prompts. In many cases, using XML tags improves clarity and output quality, especially with advanced models. However, some less capable or local AI models may misinterpret or be confused by XML tags. Use them thoughtfully and test your results for best compatibility.</Info>
 
 **Basic Tag Structure**
-- Set a role and Instructions:
+- Set a role and instructions:
 ```xml
 <role>You are a text editor</role>
-<instructions>Format the content of `<user_message>` into clear paragraphs</instructions>
+<instructions>Format the content of User Message into clear paragraphs</instructions>
 ```
 
 - Define specific requirements:
@@ -152,15 +138,15 @@ Write direct, straightforward instructions without unnecessary complexity. Clear
 </output-format>
 ```
 
-<Note>Adjust and expand your XML tags based on your specific needs. The more detailed your instructions, the better the results.</Note>
+<Note>Adjust and expand your XML tags based on your specific needs. Generally speaking, the more detailed your instructions, the better the results.</Note>
 </Accordion>
 
 <Accordion title="Add Examples">
-**Examples help you teach AI exactly how to process your input and what kind of output you expect.** Located at the bottom of the Change Prompt section, below the context toggles, you'll find the Add Examples interface.
+**Examples help you teach AI exactly how to process your input and what kind of output you expect.** You can add these directly in the Advanced Settings sidebar of your selected mode.
 
 <img
 style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-custom-005.png"
+src="/images/modes/modes-custom-004.png"
 alt="Superwhisper interface for adding prompt examples"
 />
 
@@ -172,7 +158,6 @@ alt="Superwhisper interface for adding prompt examples"
 - Click "Add Example" to create your first example pair
 - Fill in both the input and output fields
 - Add more examples by clicking "Add Example" again
-- Right-click any example to duplicate or delete it
 
 <Note>Adding 2-3 examples significantly improves AI's understanding of your needs and leads to more accurate responses.</Note>
 </Accordion>
@@ -199,7 +184,7 @@ Open the JSON file and change "context_from_selection" from `false` to `true`
 Save your changes and restart Superwhisper to activate the selection context feature
 </Card>
 </CardGroup>
-<Icon icon="check" iconType="solid" /> *Awesome! You can now reference `<text_selection_context>` in your custom instructions, as covered in [Prompting Tips](#prompting-tips).*
+<Icon icon="check" iconType="solid" /> *Awesome! You can now reference `Text Selection Context` in your custom instructions, as covered in [Prompting Tips](#prompting-tips).*
 
 ---
 <Tip>Unlike other modes, Custom Mode isn't limited to text formatting. **Combine context-awareness with your instructions to create powerful, specialized workflows tailored to your needs.**</Tip>

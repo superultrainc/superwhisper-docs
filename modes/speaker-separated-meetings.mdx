@@ -4,7 +4,7 @@ description: "Learn how to transcribe meetings with speaker separation and proce
 ---
 
 <Note>
-This is an advanced workflow requiring configuration file edits and multiple steps. If you need basic meeting summaries, consider using the standard Meeting Mode.  Or, if you want speaker-separated transcripts with basic AI processing, simply enable speaker separation in a Custom Mode with Nova (Cloud) for voice.
+This is an advanced workflow requiring configuration file edits and multiple steps. If you need basic meeting summaries, consider using the standard Meeting Mode. Or, if you want speaker-separated transcripts with basic AI processing, simply enable "Identify Speakers" in any mode.
 </Note>
 
 ## Overview
@@ -13,20 +13,11 @@ This guide shows you how to combine speaker-separated transcription with AI anal
 ## Transcription Setup and Recording
 <Steps>
 <Step title="Create a Speaker Separation Mode">
-Create a new Custom Mode with these settings:
+Create a new Voice Mode with these settings:
 - Enable "Identify Speakers" toggle
 - Enable "Record from System Audio" if recording live meetings
-- Select your preferred voice model
 
-<Tip>While all voice models support speaker separation, Nova (Cloud) delivers the most accurate and reliable results for this feature.</Tip>
-</Step>
-
-<Step title="Disable AI Processing">
-Disable AI processing initially to speed up transcription. This approach is suggested since Superwhisper currently can't process speaker-separated transcripts with AI in the same mode. Remember to back up your mode's config file before making changes:
-- Navigate to: ~/Documents/superwhisper/modes/
-- Open your mode's JSON file in your preferred text editor
-- Change "languageModelEnabled" from `true` to `false`
-- Save and restart Superwhisper for changes to take effect
+<Tip>While all voice models support speaker separation, Nova voice models deliver the most accurate and reliable results for this feature.</Tip>
 </Step>
 
 <Step title="Capture & Transcribe Your Meeting">
@@ -34,15 +25,15 @@ Choose your preferred recording method:
 
 <AccordionGroup>
 <Accordion title="Live Recording">
-- Select your speaker separation mode
+- Select your newly created mode
 - Start recording
 <Note>Be aware that pressing Escape will stop recording</Note>
 </Accordion>
 
 <Accordion title="Process Existing Audio">
 - Record meeting with your preferred app
+- Select your newly created mode
 - Click the Superwhisper menu bar icon
-- Select your speaker separation mode
 - Select "Transcribe File"
 - Choose your audio file
 </Accordion>
@@ -65,8 +56,10 @@ alt="Speaker separation interface showing transcribed meeting with different spe
 4. Click "Copy to Clipboard" to get the full speaker-separated transcript
 </Step>
 </Steps>
+
 ---
 ## AI Processing and Analysis
+
 ### Option A: External AI Services
 - Use OpenAI, Claude, or your preferred AI provider
 - Request your desired analysis on the transcript
