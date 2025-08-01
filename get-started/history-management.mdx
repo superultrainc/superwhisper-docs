@@ -3,6 +3,10 @@ title: "History Management"
 description: "Learn how to schedule automatic deletion of Superwhisper history files using cron jobs."
 ---
 
+<Warning>
+Deleting files with cron is powerful. A mistake in the folder path or pattern can remove important files. Always double-check the folder path in your cron job, especially if you have moved your Superwhisper recordings folder!
+</Warning>
+
 ## Overview
 
 Superwhisper gives you full control over your history files, including audio recordings and their associated transcription data. Over time, these files can accumulate and take up storage space. Currently, Superwhisper does not offer a built-in feature to bulk-delete or schedule cleanup of multiple history items. Instead, you can manage your files manually or automate the process using a **cron job.**
@@ -113,6 +117,3 @@ To see which folders would be deleted without actually removing them, run:
 This lists folders older than 1 day. Adjust the path and time as needed.
 
 ---
-<Warning>
-Deleting files with cron is powerful. A mistake in the folder path or pattern can remove important files. Always double-check the folder path in your cron job, especially if you have moved your Superwhisper recordings folder!
-</Warning>
