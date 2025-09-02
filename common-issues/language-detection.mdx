@@ -27,10 +27,6 @@ The transcription AI models use a prompt to guide their behavior. This prompt:
 
 With the "Automatic" setting, Superwhisper cannot predict which languages you'll use, making it challenging to provide appropriate language guidance to the transcription model.
 
-<Note>
-This issue primarily affects the Mac version because [the Vocabulary feature](../get-started/interface-vocabulary) is the one on charge of passing the prompt to the transcription model. The iOS app doesn't yet have this feature.
-</Note>
-
 ---
 ## Solution: The Vocabulary Hint
 
@@ -56,10 +52,10 @@ You can significantly improve automatic language detection by adding a simple ph
 ---
 ## Model Compatibility
 
-**The vocabulary hint works effectively with all voice models except Nova.** While Nova models excel at speaker separation in meetings, they handle language detection differently and don't support multiple languages within the same dictation session. You can still add the vocabulary phrase without negative effects, but you won't get the multi-language benefits. 
+**The vocabulary hint works effectively with all voice models except Nova or Parakeet.** Nova and Parakeet models don't support multiple languages within the same dictation session. You can still add the vocabulary phrase without negative effects, but you won't get the multi-language benefits. 
 
 <Tip>
-Non-Nova models offer a key advantage: they not only recognize your language more accurately but also support seamless switching between multiple languages within the same session without changing settings.
+With models that support the vocabulary hint, you'll get much better language recognition. You can also switch between multiple languages in a single session without having to adjust any settings.
 </Tip>
 
 ---
