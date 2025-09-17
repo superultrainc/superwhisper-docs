@@ -74,6 +74,10 @@
             ]
           },
           {
+            "group": "Models",
+            "pages": ["models/voice"]
+          },
+          {
             "group": "Common Issues",
             "pages": [
               "common-issues/troubleshooting",
