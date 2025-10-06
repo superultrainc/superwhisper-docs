@@ -1,0 +1,48 @@
+Voice models take your recorded voice and transcribe them into text. There are two types of voice models: local and cloud-based. Local (or Offline) models run on your machine. Cloud models are hosted either by Superwhisper or another provider.
+
+## Superwhisper (Cloud)
+
+These are the models that are hosted in the Cloud by Superwhisper. They are optimized for low latency and accuracy, and are available for use in 100+ languages.
+
+| Name             | Lang  | Translate | Speed | Accuracy | Size  | License |
+| ---------------- | ----- | --------- | ----- | -------- | ----- | ------- |
+| S1-Voice (Cloud) | multi | ✔        | 10    | 9        | Cloud | Pro     |
+| Ultra (Cloud)    | multi | ✔        | 9     | 9        | Cloud | Pro     |
+
+## Whisper Models (Local)
+
+These models run on your machine, allowing you to transcribe audio without relying on external services.
+They are based on the [Whisper](https://github.com/openai/whisper) model series from OpenAI. They run locally using [whisper.cpp](https://github.com/ggerganov/whisper.cpp).
+
+| Name                     | Lang | Translate | Speed | Accuracy | Size   | License |
+| ------------------------ | ---- | --------- | ----- | -------- | ------ | ------- |
+| Ultra V3 Turbo           | all  | ✔        | 8     | 8        | 1.6 GB | Pro     |
+| Ultra                    | all  | ✔        | 6     | 10       | 3 GB   | Pro     |
+| Ultra V3 Turbo (Chinese) | zh   | ✖        | 8     | 8        | 1.6 GB | Pro     |
+| Pro                      | all  | ✔        | 7     | 8        | 1.5 GB | Pro     |
+| Pro (English)            | en   | ✖        | 7     | 8        | 1.5 GB | Pro     |
+| Standard                 | all  | ✔        | 8     | 5        | 500 MB | Free    |
+| Standard (English)       | en   | ✖        | 8     | 5        | 500 MB | Free    |
+| Nano                     | all  | ✔        | 9     | 3        | 150 MB | Free    |
+| Nano (English)           | en   | ✖        | 9     | 3        | 150 MB | Free    |
+| Fast                     | all  | ✔        | 10    | 1        | 75 MB  | Free    |
+| Fast (English)           | en   | ✖        | 10    | 1        | 75 MB  | Free    |
+
+## Nvidia Parakeet (Local)
+
+They are based on the [Parakeet](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) model. They run locally (on your laptop) using Argmax's [WhisperKit SDK](https://github.com/argmaxinc/whisperkit). They are extremely fast and run in parallel over long recordings. Drawbacks here are they do tend to struggle with punctuation and have minor hallucination issues with single word recordings.
+
+| Name                   | Lang  | Translate | Speed | Accuracy | Size   | License |
+| ---------------------- | ----- | --------- | ----- | -------- | ------ | ------- |
+| Parakeet               | en    | ✖        | 10    | 8        | 476 MB | Pro     |
+| Parakeet Multilanguage | multi | ✖        | 10    | 8        | 494 MB | Pro     |
+
+## Deepgram (Cloud)
+
+The Nova series of models are a Cloud model hosted by Deepgram.
+
+| Name         | Lang  | Trans. | Speed | Accuracy | Size  | License |
+| ------------ | ----- | ------ | ----- | -------- | ----- | ------- |
+| Nova 3       | multi | –      | 7     | 8        | Cloud | Pro     |
+| Nova 2       | multi | –      | 7     | 7        | Cloud | Pro     |
+| Nova Medical | en    | –      | 10    | 7        | Cloud | Pro     |
