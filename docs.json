@@ -89,6 +89,15 @@
               "common-issues/context",
               "common-issues/hallucinations"
             ]
+          },
+          {
+            "group": "Enterprise",
+            "hidden": true,
+            "pages": [
+              "enterprise/saml_sso",
+              "enterprise/billing",
+              "enterprise/member_management"
+            ]
           }
         ]
       }
