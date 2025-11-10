@@ -1,12 +1,15 @@
-# SAML SSO Setup Guide
-
-This guide will walk you through setting up Single Sign-On (SSO) using SAML 2.0 for your Superwhisper Enterprise account.
+---
+title: "SAML SSO"
+description: "This guide will walk you through setting up Single Sign-On (SSO) using SAML 2.0 for your Superwhisper Enterprise account."
+---
 
 ## Getting Started with SAML SSO
 
 If you'd like to use SAML SSO over Google OAuth, you can head to the [Enterprise Dashboard](https://superwhisper.com/enterprise/login) and enter your work email address in the email input (e.g. admin@superwhisper.com) and company name in the input fields. 
 
 This will send you an email to claim the companies domain on Superwhisper, and push you to the dashboard where SAML setup takes place.
+
+![Signing Up For SAML](/images/enterprise/saml_signup.png)
 
 ## Configuring SAML Authentication
 
@@ -19,8 +22,7 @@ If you need assistance with SAML setup, you can invite IT or Security team membe
 To invite technical team members:
 
 1. Go to the **Members** tab in your dashboard
-2. Use either the join link or email invite option (see [Member Management](member_management) for detailed instructions)
-3. Consider assigning them an administrative role if they need access to authentication settings
+2. Invite via email as admin (see [Member Management](member_management) for detailed instructions)
 
 This allows your technical team to:
 - Access the Authentication page for SAML configuration
@@ -29,9 +31,9 @@ This allows your technical team to:
 
 ### Setting Up SAML
 
-Once on the dashboard, navigate to the Authentication page (see screenshot below). You will find all the information you need to get SAML going, including your organization's unique Assertion Consumer Service URL.
+Once on the dashboard, navigate to the Authentication page to find all the information you need to get SAML going, including your organization's unique Assertion Consumer Service URL.
 
-![SAML Configuration Interface](/images/enterprise/saml_configure.png)
+![SAML Configuration Interface](/images/enterprise/saml_setup.png)
 
 ### Authentication Methods
 
@@ -78,42 +80,7 @@ Select your identity provider and upload your SAML metadata XML file provided by
 
 Use the "Test" button in the Single Sign-On section to verify your SAML configuration is working correctly. Note depending on identity provider it may take a couple of minutes to have records propogated on their end.
 
-## Managing Your Enterprise Account
-
-### 1. Create the Enterprise Account
-
-Start by heading over to the [Enterprise Dashboard](https://superwhisper.com/enterprise/login) login.
-
-Enter your work email address - this will initiate the flow for setting up SSO via SAML with your organization.
-
-### 2. Billing Information
-
-From your dashboard, select the Billing tab and set up your billing information to create your subscription. You will not be charged at this step - billing will occur at the end of the month based on the number of users in the organization account.
-
-You can see this amount calculated in real time in the Billing tab throughout the month.
-
-### 3. Add Employees to the Account
-
-You have two options for adding employees to the enterprise account:
-- **Join Link** - Share a link that employees can use to join
-- **Email Invite** - Send direct email invitations to specific users
-
-Both options can be found under the Members tab by clicking the Invite button at the top right of the Members list.
-
-Users can have their role elevated or be removed by clicking the three-dot menu in the members list.
-
-## What Users Will See
-
-Once a user from your company logs in or accepts an invite, they will see the dashboard with download and activation instructions - exactly as you will see it as an admin in the Overview tab.
-
-Users should:
-1. Download the app first
-2. Click the "Activate my License" link
-
-This will activate their installation and apply your organization's configuration. From that point forward, every time they start the app it will pull configuration updates for the account.
-
 ## Support
-
 We're happy to have you onboard. Let us know if you have any questions about SAML setup or if you need assistance with configuration.
 
 You can email us directly at support@superwhisper.com anytime, or we can set up a shared Slack channel for faster communication. We're also available to hop on a call if needed.

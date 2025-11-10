@@ -93,7 +93,11 @@
           {
             "group": "Enterprise",
             "hidden": true,
-            "pages": "enterprise/saml_sso"
+            "pages": [
+              "enterprise/saml_sso",
+              "enterprise/billing",
+              "enterprise/member_management"
+            ]
           }
         ]
       }
