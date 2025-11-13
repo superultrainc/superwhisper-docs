@@ -1,0 +1,75 @@
+---
+title: "Model Management"
+description: "This guide covers managing AI models for your members, including cloud model access control and custom model configuration."
+---
+## Cloud AI Models
+
+### Allow Cloud AI Models Toggle
+
+From the **Models** tab in your dashboard, you can control whether your members are allowed to use Superwhisper's hosted cloud models.
+
+**When enabled:**
+- Members can use Superwhisper's online AI models for transcription
+- No additional configuration required
+- Models are hosted and maintained by Superwhisper
+
+**When disabled:**
+- Members can only use custom models that you configure
+- Useful for organizations requiring all AI processing through approved vendors
+- Ensures data only flows through your organization's configured providers
+
+![Model Management Interface](/images/enterprise/model_management.png)
+
+## Custom Models
+
+### Overview
+
+Custom models allow you to configure specific AI models from various providers that your organization members can use.
+
+### Adding a Custom Model
+
+To add a custom model:
+
+1. Navigate to the **Models** tab in your dashboard
+2. Click the **+ Custom Model** button at the top right
+3. Select your provider from the dropdown list, or Custom if your provider is not listed
+4. Input your API Key for your provider, if applicable we will attempt to fetch models you have access to in your instance
+
+<Info>Your API Key is encrypted at rest for security</Info>
+
+5. Input other model details, and save
+   - **Name** - A friendly name for the model (e.g., "GPT-5 Pro", "Anthropic Testing")
+   - **Model ID** - The provider's model identifier (e.g., `gpt-5-mini`, `claude-sonnet-4-5-20250929`)
+   - **API URL** - The endpoint URL for the model API
+
+Each selected provider will have reference documentation linked at the bottom of custom model create
+![Provider Select](/images/enterprise/model_management_select.png)
+![Complete Model](/images/enterprise/model_management_complete.png)
+
+Once configured, your custom models will appear in the Custom Models table and can be modified / deleted
+
+### Custom Model Distribution
+
+When these settings are configured, your members will be given access to any models you've set up every time they start the app. These models can be selected by your members when they configure their modes, giving them the flexibility to choose the right AI model for their specific use case. 
+![Custom Model Selection](/images/enterprise/model_management_in_app.png)
+
+## Use Cases
+
+### Cloud Models Only
+Enable "Allow Cloud AI Models" and don't configure any custom models. This is the default setup - members use Superwhisper's hosted models with no additional configuration.
+
+### Custom Models Only
+Disable "Allow Cloud AI Models" and configure one or more custom models. This ensures all AI processing goes through your organization's approved providers with your own API credentials.
+
+### Hybrid Approach
+Enable "Allow Cloud AI Models" and configure custom models. Members can choose between Superwhisper's hosted models and your organization's custom models based on their needs.
+
+## Support
+
+If you have questions about model management or need help with custom model configuration:
+
+- Email us at enterprise@superwhisper.com
+- Request a shared Slack channel for faster communication
+- Schedule a call for personalized assistance
+
+We're here to help ensure your organization has the right AI models configured for your needs.
