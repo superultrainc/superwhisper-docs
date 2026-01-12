@@ -1,0 +1,62 @@
+---
+title: "Windows Feature Support"
+description: "Learn about current limitations in Superwhisper for Windows 10 and 11."
+---
+
+<Note>
+While many core capabilities are already available on the Windows platform, some features are still in active development.
+</Note>
+
+## Features Not Yet Supported
+
+We're currently working on bringing the following features to parity with our macOS application:
+
+### FileSync
+[FileSync](settings-advanced#filesync) allows your Superwhisper configuration files to automatically sync across all installations registered under the same license. This feature is in active development for Windows.
+
+### Speaker Separation
+Speaker separation (also known as diarization) is currently a work in progress on Windows. While some models may support limited diarization capabilities, full support with all voice models is not yet available.
+
+### Record from System Audio
+The ability to [record from system audio](../modes/modes#advanced-settings) is available on Windows, but it's currently behind an experimental feature toggle for our enhanced audio engine.
+
+<Info>
+Experimental features may be unstable or have limited functionality. By trying them out, you can help us improve Superwhisper for Windows and move toward a stable feature release.
+</Info>
+
+### Parakeet Local Voice Model
+The [Parakeet Multilanguage](../models/voice#nvidia-parakeet-local) model is available on Windows and is currently behind the "experimental models" feature toggle.
+
+### Local Language Models
+Local language models that run entirely on your device are not yet supported on Windows. You can still use cloud-based language models for AI processing.
+
+### Mouse Button Shortcuts
+[Mouse button shortcuts](settings-shortcuts#mouse-shortcut) that allow you to control recording with mouse buttons are not yet available on Windows. Keyboard shortcuts remain fully functional.
+
+### Automatically Increase Microphone Volume
+Automatic microphone volume adjustment is not yet implemented on Windows. You may need to manually adjust your microphone settings through Windows system preferences.
+
+### Restore Clipboard After Paste
+The [Restore Clipboard](settings-advanced#restore-clipboard) setting that automatically restores your previous clipboard content after pasting dictation results is not yet supported on Windows.
+
+### Single Modifier Key Activation
+We're actively working on implementing this feature, but at the moment [Single modifier key activation](settings-shortcuts#toggle-recording) is not yet available on Windows. You'll need to use modifier key combinations instead.
+
+---
+
+## Related Documentation
+
+<CardGroup cols={2}>
+  <Card title="Settings Overview" icon="sliders" href="settings-overview">
+    Learn about all available settings and configuration options
+  </Card>
+  <Card title="Keyboard Shortcuts" icon="keyboard" href="settings-shortcuts">
+    Configure keyboard shortcuts for Windows
+  </Card>
+  <Card title="Troubleshooting" icon="wrench" href="../common-issues/troubleshooting">
+    Find solutions to common issues
+  </Card>
+  <Card title="Report an Issue" icon="bug" href="report">
+    Help us improve Windows support by reporting issues
+  </Card>
+</CardGroup>
