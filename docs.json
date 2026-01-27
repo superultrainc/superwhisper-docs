@@ -94,7 +94,6 @@
           },
           {
             "group": "Enterprise",
-            "hidden": true,
             "pages": [
               "enterprise/saml_sso",
               "enterprise/billing",
