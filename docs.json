@@ -95,9 +95,11 @@
           {
             "group": "Enterprise",
             "pages": [
+              "enterprise/getting-started",
               "enterprise/saml_sso",
               "enterprise/billing",
-              "enterprise/member_management"
+              "enterprise/member_management",
+              "enterprise/models"
             ]
           }
         ]
