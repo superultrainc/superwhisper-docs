@@ -1,0 +1,56 @@
+---
+title: "SCIM Provisioning"
+description: "Automate user provisioning and deprovisioning for your Superwhisper Enterprise account using SCIM."
+---
+
+> **Note:** SCIM configuration is only available after [SAML SSO](/enterprise/saml_sso) has been set up.
+
+## How SCIM Works in Superwhisper
+
+Superwhisper uses **just-in-time (JIT) provisioning**. When you assign users in your identity provider, SCIM grants them permission to sign in via SSO — but their account and seat are **not created until they first log in**. This prevents users who never log in from claiming seats in your organization.
+
+The provisioning flow works as follows:
+
+1. Admin assigns users to Superwhisper in the identity provider
+2. The identity provider sends SCIM requests to Superwhisper, granting SSO login permission
+3. When a user initiates their first SSO login, their account is created and a seat is allocated
+4. Deprovisioning a user in your identity provider removes them from your organization, deactivates their license, and frees up their seat
+
+## Email as Username Requirement
+
+Your identity provider **must use email as the unique identifier (userName)** for all SCIM API calls. This is required for Superwhisper to correctly match and manage user identities across your organization.
+
+## Setting Up SCIM
+
+![SCIM Configuration Interface](/images/enterprise/scim_setup.png)
+
+Navigate to the **SCIM** tab on the Authentication page in your dashboard.
+
+### 1. Generate a SCIM Bearer Token
+
+Click **Generate Token** to create a bearer token for authenticating SCIM requests. Copy this token — you'll need it when configuring your identity provider. You can regenerate the token at any time, which will invalidate the previous token.
+
+### 2. Copy the SCIM Base URL
+
+Your SCIM base URL will be displayed on the configuration page in the following format:
+
+```
+https://api.superwhisper.com/scim/v2
+```
+
+### 3. Configure Your Identity Provider
+
+Enter the SCIM base URL and bearer token into your identity provider's provisioning settings. Refer to your provider's SCIM guide for detailed instructions:
+
+- [Okta SCIM provisioning guide](https://help.okta.com/en-us/content/topics/apps/apps_app_integration_wizard_scim.htm)
+- [Google Workspace automated provisioning guide](https://support.google.com/a/answer/7681608)
+- [Microsoft Entra SCIM provisioning guide](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/use-scim-to-provision-users-and-groups)
+
+### 4. Assign Users and Groups
+
+Once SCIM is configured, assign users or groups in your identity provider. Remember that accounts are created on first login — assigning a user only grants them permission to sign in.
+
+## Support
+We're happy to have you onboard. Let us know if you have any questions about SCIM provisioning or if you need assistance with configuration.
+
+You can email us directly at enterprise@superwhisper.com anytime, or we can set up a shared Slack channel for faster communication. We're also available to hop on a call if needed.
