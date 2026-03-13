@@ -1,0 +1,21 @@
+---
+title: "API Overview"
+description: "Programmatic access to your organization's data"
+---
+
+The SuperWhisper API provides programmatic access to your organization's data. Use it to build custom dashboards, export data to your analytics platform, or integrate with your internal tools.
+
+## Authentication
+
+All API requests require a bearer token. Generate one from your organization dashboard under **Settings > API Tokens**.
+
+```bash
+curl -H "Authorization: Bearer sw_tk_your_token_here" \
+  https://api.superwhisper.com/api/v1/stats/summary
+```
+
+## Base URL
+
+```
+https://api.superwhisper.com/api/v1
+```
