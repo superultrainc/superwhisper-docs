@@ -109,6 +109,23 @@
             ]
           }
         ]
+      },
+      {
+        "anchor": "API Reference",
+        "icon": "code",
+        "hidden": true,
+        "groups": [
+          {
+            "group": "API",
+            "openapi": {
+              "source": "https://api.superwhisper.com/api/v1/openapi.json",
+              "directory": "enterprise/api"
+            },
+            "pages": [
+              "enterprise/api/overview"
+            ]
+          }
+        ]
       }
     ],
     "global": {
