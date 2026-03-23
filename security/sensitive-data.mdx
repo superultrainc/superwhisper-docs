@@ -1,6 +1,6 @@
 ---
 title: "Sensitive Data Best Practices"
-description: "How to configure Superwhisper to protect healthcare, financial, and other regulated data — with guidance on local models, cloud commitments, and enterprise controls."
+description: "How to configure Superwhisper to protect healthcare, financial, and other regulated data, with guidance on local models, cloud commitments, and enterprise controls."
 ---
 
 Whether you're a clinician documenting patient encounters, a financial advisor discussing account details, or a legal professional drafting confidential correspondence, Superwhisper is built with the flexibility to meet your privacy requirements. This guide walks you through how your data flows, what controls you have, and how to configure Superwhisper for maximum protection.
@@ -15,26 +15,26 @@ Whether you're a clinician documenting patient encounters, a financial advisor d
 
 ## How Your Data Flows
 
-Every dictation in Superwhisper passes through two independent stages. Understanding this is the key to knowing exactly where your data goes — and where it doesn't.
+Every dictation in Superwhisper passes through two independent stages. Understanding this is the key to knowing exactly where your data goes, and where it doesn't.
 
 <Steps>
-<Step title="Stage 1 — Voice to Text (Voice Model)">
+<Step title="Stage 1: Voice to Text (Voice Model)">
 Your recorded audio is transcribed into raw text. This can happen **entirely on your device** using a local voice model, or via a cloud voice service if you choose one.
 </Step>
-<Step title="Stage 2 — Text Post-Processing (Language Model)">
-The raw transcript is refined, formatted, or transformed by a language model based on your mode's instructions. This stage is **optional** — modes without AI post-processing skip it entirely. When enabled, this can also run locally or via a cloud provider.
+<Step title="Stage 2: Text Post-Processing (Language Model)">
+The raw transcript is refined, formatted, or transformed by a language model based on your mode's instructions. This stage is **optional**; modes without AI post-processing skip it entirely. When enabled, this can also run locally or via a cloud provider.
 </Step>
 </Steps>
 
 <Note>
-Each stage is independently configurable. You can mix and match — for example, using a local voice model with a cloud language model, or keeping both fully local. You are in control at every step.
+Each stage is independently configurable. You can mix and match, for example using a local voice model with a cloud language model, or keeping both fully local. You are in control at every step.
 </Note>
 
 ---
 
 ## Maximum Privacy: Fully Local Configuration
 
-For the highest level of data protection — such as handling PHI (Protected Health Information) under HIPAA or confidential financial records — configure Superwhisper to run entirely on your device. In this setup, **no audio or text ever leaves your machine**.
+For the highest level of data protection, such as handling PHI (Protected Health Information) under HIPAA or confidential financial records, configure Superwhisper to run entirely on your device. In this setup, **no audio or text ever leaves your machine**.
 
 ### Local Voice Models
 
@@ -49,7 +49,7 @@ Select a local voice model to ensure audio is transcribed on-device. The followi
 To change your voice model, open your mode settings and select from the local models listed under **Voice Model**.
 
 <Tip>
-For sensitive environments, **Ultra V3 Turbo** is the recommended starting point — it offers high accuracy while being fast enough for clinical or professional workflows.
+For sensitive environments, **Ultra V3 Turbo** is the recommended starting point. It offers high accuracy while being fast enough for clinical or professional workflows.
 </Tip>
 
 ### Local Language Models
@@ -62,7 +62,7 @@ Local language models are currently supported on **macOS only**. Windows users c
 
 ### Transcription Only (No AI Post-Processing)
 
-If your workflow only requires accurate transcription — with no AI formatting or transformation — you can use **Voice Mode**, which outputs raw transcribed text with no language model involved. This is the simplest fully-local configuration.
+If your workflow only requires accurate transcription, with no AI formatting or transformation, you can use **Voice Mode**, which outputs raw transcribed text with no language model involved. This is the simplest fully-local configuration.
 
 <CardGroup cols={2}>
 <Card title="Voice Models" icon="microphone" href="../models/voice">
@@ -77,7 +77,7 @@ Use transcription-only mode with no language model
 
 ## Cloud Models: Privacy Commitments
 
-When you use Superwhisper's cloud models — or cloud models from providers like Anthropic, OpenAI, Deepgram, or Groq — your data is processed via API calls. Here is what that means for your privacy:
+When you use Superwhisper's cloud models, or cloud models from providers like Anthropic, OpenAI, Deepgram, or Groq, your data is processed via API calls. Here is what that means for your privacy:
 
 ### Superwhisper Does Not Train on Your Data
 
@@ -85,10 +85,10 @@ Superwhisper accesses all third-party AI providers exclusively through API agree
 
 - Your audio and transcribed text are **not used to train any AI models**
 - Data is processed to return your result and is not retained by providers under these agreements
-- This applies to all models available through your Superwhisper license — including S1-Voice, S1-Language, Claude, GPT, Groq, and Deepgram
+- This applies to all models available through your Superwhisper license, including S1-Voice, S1-Language, Claude, GPT, Groq, and Deepgram
 
 <Warning>
-**Zero Data Retention applies to API usage only.** These commitments apply when data flows through Superwhisper's API-based integrations — not when you use a provider's consumer product directly. For example, if you use Superwhisper to dictate text into the ChatGPT website or app, that content is governed by OpenAI's consumer terms, not their API data usage policy.
+**Zero Data Retention applies to API usage only.** These commitments apply when data flows through Superwhisper's API-based integrations, not when you use a provider's consumer product directly. For example, if you use Superwhisper to dictate text into the ChatGPT website or app, that content is governed by OpenAI's consumer terms, not their API data usage policy.
 </Warning>
 
 You can review each provider's data usage policy directly:
@@ -105,8 +105,8 @@ You can review each provider's data usage policy directly:
 If your organization has its own agreements, data processing addendums (DPAs), or BAAs (Business Associate Agreements) with AI providers, you can bring your own API keys. This routes your data through **your own account** with that provider, under your terms.
 
 Bring Your Own Key (BYOK) is available to:
-- **Individual Pro users** — configure custom API keys in your mode settings
-- **Enterprise teams** — admins can configure organization-wide custom models with shared API credentials
+- **Individual Pro users:** configure custom API keys in your mode settings
+- **Enterprise teams:** admins can configure organization-wide custom models with shared API credentials
 
 <Info>
 When using your own API keys, Superwhisper acts as a client to your provider account. Data handling is governed by your agreement with that provider, not Superwhisper's. This is the recommended path for organizations with existing HIPAA BAAs or financial data compliance agreements.
@@ -143,7 +143,7 @@ From the **Models** tab in your enterprise dashboard, you can disable Superwhisp
 
 ### Configure Approved Custom Models
 
-Set up specific models from your approved vendors — including private cloud deployments (e.g., Azure OpenAI, AWS Bedrock, or your own self-hosted endpoint) — and make them available to all members automatically.
+Set up specific models from your approved vendors, including private cloud deployments (e.g., Azure OpenAI, AWS Bedrock, or your own self-hosted endpoint), and make them available to all members automatically.
 
 This is the recommended configuration for healthcare organizations, financial institutions, and any team operating under strict data residency or vendor approval requirements.
 
@@ -173,7 +173,7 @@ Overview of all enterprise features
 | Use Case | Voice Model | Language Model | Notes |
 | --- | --- | --- | --- |
 | Device only (air-gapped) | Parakeet Multilanguage (Local) | Local on-device model (e.g., Llama 3 or Mistral) | No data leaves the device |
-| Healthcare / Finance | Nova Medical (Cloud) — sign Superwhisper [BAA](https://trust.mycroft.io/superwhisper) | Anthropic (Cloud) — sign Superwhisper [BAA](https://trust.mycroft.io/superwhisper) or Bring Your Own Keys | Covered by Superwhisper's zero-data-retention API terms or external provider agreement |
+| Healthcare / Finance | Nova Medical (Cloud), sign Superwhisper [BAA](https://trust.mycroft.io/superwhisper) | Claude 4.5 Sonnet (Anthropic, Cloud), sign Superwhisper [BAA](https://trust.mycroft.io/superwhisper) or Bring Your Own Keys | Covered by Superwhisper's zero-data-retention API terms or external provider agreement |
 | Enterprise-managed environment | Local or enterprise-approved | Enterprise-configured custom model | Admin controls which providers are permitted |
 | Standard professional use | Local or cloud | Any cloud model | Covered by Superwhisper's zero-data-retention API terms |
 
@@ -185,11 +185,11 @@ Overview of all enterprise features
 
 All transcription history is stored **locally on your device**.
 
-When FileSync is enabled, Superwhisper syncs your **configuration data** (such as modes and settings) across your devices via Superwhisper's infrastructure — but this does not include any transcription content or audio.
+When FileSync is enabled, Superwhisper syncs your **configuration data** (such as modes and settings) across your devices via Superwhisper's infrastructure, but this does not include any transcription content or audio.
 
 For sensitive environments, review your history retention practices and use **History Management** to delete recordings you no longer need.
 
-[History Management →](../get-started/history-management)
+[History Management](../get-started/history-management)
 
 ### Custom Vocabulary
 
