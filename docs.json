@@ -80,6 +80,10 @@
             "pages": ["models/voice", "models/language"]
           },
           {
+            "group": "Security & Privacy",
+            "pages": ["security/sensitive-data"]
+          },
+          {
             "group": "Common Issues",
             "pages": [
               "common-issues/troubleshooting",
