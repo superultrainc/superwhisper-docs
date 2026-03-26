@@ -109,7 +109,13 @@
               },
               "enterprise/billing",
               "enterprise/member_management",
-              "enterprise/models"
+              {
+                "group": "Model Management",
+                "pages": [
+                  "enterprise/models",
+                  "enterprise/amazon-bedrock"
+                ]
+              }
             ]
           }
         ]

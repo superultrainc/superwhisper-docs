@@ -1,0 +1,65 @@
+---
+title: "Amazon Bedrock"
+description: "Configure Amazon Bedrock as a custom model provider for your Superwhisper Enterprise account."
+---
+
+Amazon Bedrock provides access to a range of foundation models through an OpenAI-compatible API. This makes it straightforward to connect Superwhisper to your existing AWS infrastructure, keeping data within your AWS environment and leveraging your existing cloud spend.
+
+## Prerequisites
+
+Before configuring Bedrock in Superwhisper, you'll need:
+
+- An AWS account with Amazon Bedrock access enabled
+- Model access granted for at least one foundation model in your chosen region (managed in the [AWS Bedrock console](https://console.aws.amazon.com/bedrock/home))
+- An Amazon Bedrock API key
+
+## Creating a Bedrock API Key
+
+Bedrock Mantle uses dedicated Amazon Bedrock API keys — these are separate from IAM credentials and AWS access keys.
+
+1. Follow the [Generate an Amazon Bedrock API key](https://docs.aws.amazon.com/bedrock/latest/userguide/api-keys-generate.html) guide in the AWS documentation
+2. Copy the key — you won't be able to view it again
+
+## Configuring in Superwhisper
+
+1. Open the [Superwhisper Enterprise dashboard](https://superwhisper.com/dashboard/configuration?tab=models) and go to the **Models** tab
+2. Click **+ Custom Model**
+3. Select **Custom** from the provider dropdown
+4. Fill in the following fields:
+
+| Field | Value |
+|-------|-------|
+| **API Key** | Your Amazon Bedrock API key |
+| **API URL** | `https://bedrock-mantle.<region>.api.aws/v1` |
+| **Model ID** | The model identifier from your Bedrock console |
+| **Name** | A friendly display name for your members |
+
+5. Click **Save**
+
+<Note>
+Replace `<region>` in the API URL with your AWS region (e.g., `us-east-1`, `eu-west-1`). Model availability varies by region — check the [Amazon Bedrock documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html) to confirm your chosen model is available in your region.
+</Note>
+
+## Regional Endpoints
+
+Use the endpoint that corresponds to the AWS region where you have Bedrock enabled.
+
+| Region | Endpoint |
+|--------|----------|
+| US East (N. Virginia) | `https://bedrock-mantle.us-east-1.api.aws/v1` |
+| US East (Ohio) | `https://bedrock-mantle.us-east-2.api.aws/v1` |
+| US West (Oregon) | `https://bedrock-mantle.us-west-2.api.aws/v1` |
+| Europe (Frankfurt) | `https://bedrock-mantle.eu-central-1.api.aws/v1` |
+| Europe (Ireland) | `https://bedrock-mantle.eu-west-1.api.aws/v1` |
+| Europe (London) | `https://bedrock-mantle.eu-west-2.api.aws/v1` |
+| Asia Pacific (Tokyo) | `https://bedrock-mantle.ap-northeast-1.api.aws/v1` |
+| Asia Pacific (Mumbai) | `https://bedrock-mantle.ap-south-1.api.aws/v1` |
+
+For the full list of supported regions, refer to the [Amazon Bedrock endpoints documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html).
+
+## Support
+
+If you run into issues configuring Bedrock or have questions about which models to enable:
+
+- Email us at enterprise@superwhisper.com
+- Request a shared Slack channel for faster communication
