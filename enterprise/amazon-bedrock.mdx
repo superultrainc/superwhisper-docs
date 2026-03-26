@@ -10,17 +10,15 @@ Amazon Bedrock provides access to a range of foundation models through an OpenAI
 Before configuring Bedrock in Superwhisper, you'll need:
 
 - An AWS account with Amazon Bedrock access enabled
-- Model access granted for at least one foundation model in your chosen region (managed in the [AWS Bedrock console](https://console.aws.amazon.com/bedrock/home#/modelaccess))
+- Model access granted for at least one foundation model in your chosen region (managed in the [AWS Bedrock console](https://console.aws.amazon.com/bedrock/home))
 - An Amazon Bedrock API key
 
 ## Creating a Bedrock API Key
 
 Bedrock Mantle uses dedicated Amazon Bedrock API keys — these are separate from IAM credentials and AWS access keys.
 
-1. Open the [Amazon Bedrock console](https://console.aws.amazon.com/bedrock/home)
-2. Navigate to **API keys** in the left sidebar
-3. Click **Create API key** and follow the prompts
-4. Copy the key — you won't be able to view it again
+1. Follow the [Generate an Amazon Bedrock API key](https://docs.aws.amazon.com/bedrock/latest/userguide/api-keys-generate.html) guide in the AWS documentation
+2. Copy the key — you won't be able to view it again
 
 ## Configuring in Superwhisper
 
