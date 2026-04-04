@@ -103,12 +103,12 @@
               {
                 "group": "SSO",
                 "pages": [
-                  "enterprise/saml_sso",
+                  "enterprise/saml-sso",
                   "enterprise/scim"
                 ]
               },
               "enterprise/billing",
-              "enterprise/member_management",
+              "enterprise/member-management",
               {
                 "group": "Model Management",
                 "pages": [
@@ -179,6 +179,16 @@
       "href": "https://superwhisper.com/"
     }
   },
+  "redirects": [
+    {
+      "source": "/enterprise/saml_sso",
+      "destination": "/enterprise/saml-sso"
+    },
+    {
+      "source": "/enterprise/member_management",
+      "destination": "/enterprise/member-management"
+    }
+  ],
   "footer": {
     "socials": {
       "x": "https://x.com/superwhisperapp",
