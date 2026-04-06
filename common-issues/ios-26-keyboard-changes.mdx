@@ -19,37 +19,11 @@ Apple's iOS 26.4 update introduced changes to how third-party keyboards work. Tw
 
 ## How Superwhisper Adapts
 
-We've introduced two features to keep your workflow smooth despite these platform changes.
-
-### Default Mode
-
-You can now set a preferred default mode that applies everywhere, regardless of which app you're dictating into.
-
-<Steps>
-  <Step title="Open Settings">
-    Launch Superwhisper on your iPhone and tap the gear icon in the top-right corner.
-  </Step>
-  <Step title="Choose Your Default Mode">
-    Select the mode you want to use as your default. This mode will be active across all apps.
-  </Step>
-</Steps>
+Since per-app detection is no longer available, you'll need to manually switch between modes when moving between tasks. Superwhisper's existing [modes](/modes/modes) — like **Message**, **Email**, **Note**, and any custom modes you've created — all continue to work as before. The only difference is that switching is now always manual.
 
 <Tip>
-If you mostly write messages and emails, try setting your default to **Message** or **Email** mode. You can always switch on the fly when you need something different.
+If you haven't already, explore the different [built-in modes](/modes/modes) to find the ones that fit your most common tasks. You can also [create custom modes](/modes/custom) tailored to specific workflows.
 </Tip>
-
-### Quick Mode Switcher
-
-A mode pill on the keyboard lets you temporarily switch to a different mode for individual conversations or tasks. The override resets automatically after 15 minutes of inactivity, returning you to your default mode.
-
-<Steps>
-  <Step title="Tap the Mode Pill">
-    While the Superwhisper keyboard is active, tap the mode indicator to see your available modes.
-  </Step>
-  <Step title="Select a Temporary Mode">
-    Choose the mode you need. It will stay active until 15 minutes after your last dictation, then revert to your default.
-  </Step>
-</Steps>
 
 ---
 
@@ -57,7 +31,7 @@ A mode pill on the keyboard lets you temporarily switch to a different mode for 
 
 <AccordionGroup>
   <Accordion title="Why can't Superwhisper switch modes per app anymore?">
-    Apple removed the ability for third-party keyboards to detect which app is in the foreground. This was an iOS platform change, not something we can work around. The new default mode and quick switcher features are designed to give you equivalent flexibility.
+    Apple removed the ability for third-party keyboards to detect which app is in the foreground. This was an iOS platform change, not something we can work around. You'll need to manually switch between modes when changing tasks.
   </Accordion>
 
   <Accordion title="Why do I have to swipe back to my app after starting dictation?">
@@ -66,10 +40,6 @@ A mode pill on the keyboard lets you temporarily switch to a different mode for 
 
   <Accordion title="Do these changes affect macOS or Windows?">
     No. These are iOS-specific platform changes. The macOS and Windows versions of Superwhisper are unaffected, and features like auto-activation rules continue to work as expected.
-  </Accordion>
-
-  <Accordion title="What languages are supported for the new features?">
-    The default mode and quick mode switcher require English or British English language settings. Support for additional languages is being rolled out gradually.
   </Accordion>
 
   <Accordion title="I'm seeing unexpected behavior beyond what's described here">
