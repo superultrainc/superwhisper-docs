@@ -9,17 +9,15 @@ This page applies only to Superwhisper on iOS. macOS and Windows are not affecte
 
 ## What Changed
 
-Apple's iOS 26.4 update introduced changes to how third-party keyboards work. Two behaviors that Superwhisper previously relied on are no longer available:
+Apple's iOS 26.4 update introduced changes to how third-party keyboards work. A behavior that Superwhisper previously relied on is no longer available:
 
-1. **No automatic app return** — After tapping the Superwhisper keyboard button to start dictation, iOS no longer returns you to your previous app automatically. You now need to swipe back manually.
-
-2. **No per-app detection** — iOS no longer allows third-party keyboards to detect which app is active. This means Superwhisper can no longer automatically switch modes based on the app you're using.
+- **No automatic app return** — After tapping the Superwhisper keyboard button to start dictation, iOS no longer returns you to your previous app automatically. You now need to swipe back manually.
 
 ---
 
 ## How Superwhisper Adapts
 
-Since per-app detection is no longer available, you'll need to manually switch between modes when moving between tasks. Superwhisper's existing [modes](/modes/modes) — like **Message**, **Email**, **Note**, and any custom modes you've created — all continue to work as before. The only difference is that switching is now always manual.
+All of Superwhisper's existing [modes](/modes/modes) — like **Message**, **Email**, **Note**, and any custom modes you've created — continue to work as before. The only change is the extra swipe back after starting dictation.
 
 <Tip>
 If you haven't already, explore the different [built-in modes](/modes/modes) to find the ones that fit your most common tasks. You can also [create custom modes](/modes/custom) tailored to specific workflows.
@@ -30,10 +28,6 @@ If you haven't already, explore the different [built-in modes](/modes/modes) to 
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Why can't Superwhisper switch modes per app anymore?">
-    Apple removed the ability for third-party keyboards to detect which app is in the foreground. This was an iOS platform change, not something we can work around. You'll need to manually switch between modes when changing tasks.
-  </Accordion>
-
   <Accordion title="Why do I have to swipe back to my app after starting dictation?">
     iOS 26.4 no longer allows third-party keyboards to programmatically return you to the previous app. You'll need to swipe back manually after tapping the Superwhisper button.
   </Accordion>
@@ -43,6 +37,10 @@ If you haven't already, explore the different [built-in modes](/modes/modes) to 
   </Accordion>
 
   <Accordion title="I'm seeing unexpected behavior beyond what's described here">
-    If you're experiencing issues not covered above, please contact <a href="mailto:support@superwhisper.com">support@superwhisper.com</a> with your iPhone model and iOS version.
+    If you're experiencing issues not covered above, please contact <a href="mailto:support@superwhisper.com">support@superwhisper.com</a> with your iPhone model, iOS version, and Superwhisper version. A short screen recording of the problem is a huge help too, if you can include one.
+  </Accordion>
+
+  <Accordion title="Can I report this to Apple?">
+    Yes, and we'd encourage it. The more people report the issue, the more likely Apple is to address it. You can file feedback using Apple's [Feedback Assistant](https://feedbackassistant.apple.com/). If you do, consider mentioning the impact on third-party keyboard dictation workflows.
   </Accordion>
 </AccordionGroup>
