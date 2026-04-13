@@ -1,0 +1,46 @@
+---
+title: "Adapting to iOS 26.4"
+description: "How iOS 26.4 changes affect third-party keyboards like Superwhisper, and what we've done to keep your experience smooth."
+---
+
+<Note>
+This page applies only to Superwhisper on iOS. macOS and Windows are not affected by these changes.
+</Note>
+
+## What Changed
+
+Apple's iOS 26.4 update introduced changes to how third-party keyboards work. A behavior that Superwhisper previously relied on is no longer available:
+
+- **No automatic app return** — After tapping the Superwhisper keyboard button to start dictation, iOS no longer returns you to your previous app automatically. You now need to swipe back manually.
+
+---
+
+## How Superwhisper Adapts
+
+All of Superwhisper's existing [modes](/modes/modes) — like **Message**, **Email**, **Note**, and any custom modes you've created — continue to work as before. The only change is the extra swipe back after starting dictation.
+
+<Tip>
+If you haven't already, explore the different [built-in modes](/modes/modes) to find the ones that fit your most common tasks. You can also [create custom modes](/modes/custom) tailored to specific workflows.
+</Tip>
+
+---
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Why do I have to swipe back to my app after starting dictation?">
+    iOS 26.4 no longer allows third-party keyboards to programmatically return you to the previous app. You'll need to swipe back manually after tapping the Superwhisper button.
+  </Accordion>
+
+  <Accordion title="Do these changes affect macOS or Windows?">
+    No. These are iOS-specific platform changes. The macOS and Windows versions of Superwhisper are unaffected, and features like auto-activation rules continue to work as expected.
+  </Accordion>
+
+  <Accordion title="I'm seeing unexpected behavior beyond what's described here">
+    If you're experiencing issues not covered above, please contact <a href="mailto:support@superwhisper.com">support@superwhisper.com</a> with your iPhone model, iOS version, and Superwhisper version. A short screen recording of the problem is a huge help too, if you can include one.
+  </Accordion>
+
+  <Accordion title="Can I report this to Apple?">
+    Yes, and we'd encourage it. The more people report the issue, the more likely Apple is to address it. You can file feedback using Apple's [Feedback Assistant](https://feedbackassistant.apple.com/). If you do, consider referencing feedback ID **FB22247647**, which tracks the underlying `hostApplicationBundleID` bug affecting third-party keyboards.
+  </Accordion>
+</AccordionGroup>

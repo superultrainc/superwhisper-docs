@@ -87,6 +87,7 @@
             "group": "Common Issues",
             "pages": [
               "common-issues/troubleshooting",
+              "common-issues/ios-26-keyboard-changes",
               "common-issues/performance-tips",
               "common-issues/appstore",
               "common-issues/realtime",
