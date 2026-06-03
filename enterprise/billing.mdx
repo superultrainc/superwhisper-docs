@@ -1,6 +1,6 @@
 ---
 title: "Billing & Subscription Management"
-description: "This guide covers billing setup, seat-based pricing, and subscription management for your Superwhisper Enterprise organization."
+description: "Set up billing, manage seats, and control subscription costs for your Superwhisper Enterprise organization."
 ---
 ## Setting Up Billing
 
@@ -14,12 +14,12 @@ From your dashboard, select the **Billing** tab to set up your billing informati
 
 ### Seat-Based Pricing
 
-Superwhisper functions on a seat-based pricing model:
+Superwhisper Enterprise is seat-based:
 
-- You can select either **monthly** or **yearly** billing when creating your subscription
-- You will be charged for the number of seats purchased
-- You can always purchase more seats to invite additional members
-- You can remove seats if they are not being used
+- Choose **monthly** or **yearly** billing when creating your subscription
+- You're charged for the number of seats purchased
+- Purchase more seats to invite additional members
+- Remove seats you aren't using
 
 ## Managing Your Subscription
 
@@ -31,30 +31,28 @@ Superwhisper functions on a seat-based pricing model:
 
 ## Seat Auto-Provisioning
 
-Once your subscription is created, you can toggle **seat auto-provisioning** in the Billing tab. When enabled:
+Once your subscription is created, toggle **seat auto-provisioning** in the Billing tab. When enabled:
 
-- Automatically adds seats for new members that join your organization when at capacity
-- Ensures new team members can join without manual intervention
-- Prevents onboarding delays when all seats are in use
+- New seats are added automatically when members try to join at capacity
+- New team members can join without admin intervention
+- No onboarding delays when seats run out
 
-This feature is particularly useful for growing teams where manual seat management might slow down employee onboarding.
+Useful for growing teams where manual seat management slows onboarding.
 
-**Without seat auto-provisioning, owners are notified by email when members try to login without available seats, prompting them to purchase seats and re-invite the member.**
+Without seat auto-provisioning, owners get an email when members try to log in without available seats, prompting them to purchase seats and re-invite the member.
 
-## Best Practices for Managing Costs
+## Keeping Costs Under Control
 
-1. Regularly review your active member count in the Billing tab
-2. Remove departed employees promptly to avoid unnecessary charges
-3. Use the real-time billing calculator to forecast monthly costs
-4. Review billing history to track usage trends
-5. Consider enabling seat auto-provisioning for growing teams to streamline onboarding
+- **Wire up [SCIM deprovisioning](/enterprise/scim)** so departing employees are removed automatically and their seats freed
+- **Quarterly seat audit**: review the Members tab and remove anyone who hasn't activated or hasn't used the app in 60+ days
+- **Forecast before you add**: use the in-dashboard billing calculator before bulk-inviting a new team
+- **Enable seat auto-provisioning** if you're scaling fast and don't want to gate hires on a manual seat purchase
+
+## Related
+
+- [Member Management](/enterprise/member-management), seat roles and the offboarding flow
+- [SCIM Provisioning](/enterprise/scim), automate deprovisioning to free seats
 
 ## Support
 
-If you have questions about billing or subscription management:
-
-- Email us at enterprise@superwhisper.com
-- Request a shared Slack channel for faster communication
-- Schedule a call for personalized assistance
-
-We're here to help ensure smooth administration of your Superwhisper Enterprise organization.
+Questions about billing or subscription management? Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com), request a shared Slack channel, or schedule a call.

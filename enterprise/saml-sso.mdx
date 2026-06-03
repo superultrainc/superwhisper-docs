@@ -1,6 +1,6 @@
 ---
 title: "SAML 2.0"
-description: "This guide will walk you through setting up Single Sign-On (SSO) using SAML 2.0 for your Superwhisper Enterprise account."
+description: "Set up Single Sign-On with SAML 2.0 for your Superwhisper Enterprise account, with Okta, Microsoft Entra, Google, or any SAML provider."
 ---
 
 > **Note:** If you haven't created your enterprise account yet, head to [Getting Started](/enterprise/getting-started) first.
@@ -9,7 +9,7 @@ description: "This guide will walk you through setting up Single Sign-On (SSO) u
 
 ### Inviting Technical Team Members
 
-If you need assistance with SAML setup, you can invite IT or Security team members to help with configuration. Until SAML is fully configured, technical members can only access the dashboard via a magic invitation link.
+Invite IT or Security team members to help with SAML setup. Until SAML is fully configured, technical members can only access the dashboard via a magic invitation link.
 
 ![Inviting Members for SAML Setup](/images/enterprise/saml_invite.png)
 
@@ -25,16 +25,17 @@ This allows your technical team to:
 
 ### Setting Up SAML
 
-Once on the dashboard, navigate to the Authentication page to find all the information you need to get SAML going, including your organization's unique Assertion Consumer Service URL.
+Navigate to the Authentication page on your dashboard to find everything you need for SAML setup, including your organization's unique Assertion Consumer Service URL.
 
 ![SAML Configuration Interface](/images/enterprise/saml_setup.png)
 
 ### Authentication Methods
 
-Superwhisper offers two authentication methods:
+Superwhisper offers three authentication methods:
 
 1. **Single Sign-On (SSO)** - Use SAML 2.0 for enterprise SSO integration
 2. **Google OAuth** - Allow organization members to sign in with Google accounts
+3. **Magic Link** - Members sign in via a one-time email link. No SSO required
 
 Only one authentication method can be active at a time.
 
@@ -64,7 +65,7 @@ https://superwhisper.com
 https://api.superwhisper.com/_external/v1/auth/sso/saml5/callback/{customToYourInstance}
 ```
 
-> **Note:** Your Assertion Consumer Service URL will be unique to your organization and should be coped from the authentication screen
+> **Note:** Your Assertion Consumer Service URL is unique to your organization. Copy it from the authentication screen.
 
 #### 3. Upload SAML Metadata
 
@@ -72,13 +73,13 @@ Select your identity provider and upload your SAML metadata XML file provided by
 
 #### 4. Test Your Configuration
 
-Use the "Test" button in the Single Sign-On section to verify your SAML configuration is working correctly. Note depending on identity provider it may take a couple of minutes to have records propogated on their end.
+Use the **Test** button in the Single Sign-On section to verify your SAML configuration. Depending on the identity provider, records can take a couple of minutes to propagate on their end.
 
 ## Next Steps
 
-Once SAML is configured, set up [SCIM Provisioning](/enterprise/scim) to automate user provisioning and deprovisioning from your identity provider.
+- [SCIM Provisioning](/enterprise/scim) to automate user provisioning and deprovisioning
+- [MDM & Silent Deployment](/enterprise/mdm-deployment) to roll the app out across your fleet with auto-activation through SSO
 
 ## Support
-We're happy to have you onboard. Let us know if you have any questions about SAML setup or if you need assistance with configuration.
 
-You can email us directly at enterprise@superwhisper.com anytime, or we can set up a shared Slack channel for faster communication. We're also available to hop on a call if needed.
+Questions about SAML setup? Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com), request a shared Slack channel, or schedule a call.

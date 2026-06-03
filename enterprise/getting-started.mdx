@@ -1,60 +1,58 @@
 ---
 title: "Getting Started"
-description: "Set up Superwhisper Enterprise for your organization."
+description: "Stand up a Superwhisper Enterprise org for your team: authentication, billing, members, and models."
 ---
 
-## Get Started
+Superwhisper Enterprise centralizes billing, authentication, model access, and configuration for your team. One org, one dashboard, one bill.
 
-Head to [superwhisper.com/enterprise/signup](https://superwhisper.com/enterprise/signup) to set up your organization. You'll choose between **Google OAuth** or **SAML SSO** for authentication.
+## Set Up Your Organization
 
-Once your account is created, you can:
+Head to [superwhisper.com/enterprise/signup](https://superwhisper.com/enterprise/signup) and create your org. You'll pick one of three authentication methods at signup: **SAML SSO**, **Google OAuth**, or **Magic Link**.
 
-1. [Configure authentication](/enterprise/saml-sso) (if using SAML SSO)
+Then work through the setup in order:
+
+1. [Configure authentication](/enterprise/saml-sso) if you're using SAML SSO
 2. [Set up billing](/enterprise/billing) and purchase seats
 3. [Invite members](/enterprise/member-management) to your organization
-4. [Configure models](/enterprise/models) for your team
+4. [Configure models and org-wide policies](/enterprise/configuration) for your team
 
-Want to learn more about what's included? Read on below.
+## What's Included
 
-## Why Superwhisper Enterprise?
+<CardGroup cols={2}>
+<Card title="Centralized Billing" icon="credit-card" href="/enterprise/billing">
+One dashboard, one bill. Purchase seats for your team and skip the individual expense reports.
+</Card>
+<Card title="Centralized Authentication" icon="lock" href="/enterprise/saml-sso">
+SAML SSO, Google OAuth, or Magic Link. Employees sign in with existing credentials and receive a license automatically.
+</Card>
+<Card title="Model Management" icon="brain" href="/enterprise/models">
+Allow Superwhisper cloud models, configure your own custom providers, or restrict to approved vendors only.
+</Card>
+<Card title="In-App Configuration" icon="sliders" href="/enterprise/configuration">
+Push consistent settings across your org. Members receive your config on every app launch.
+</Card>
+<Card title="Silent Deployment" icon="rocket" href="/enterprise/mdm-deployment">
+Roll out via Jamf, Intune, or any MDM. Pre-grant microphone permission and auto-activate through SSO.
+</Card>
+<Card title="Usage Analytics" icon="chart-bar" href="/enterprise/usage-analytics">
+Optional, metadata-only visibility into adoption and usage. Off by default.
+</Card>
+</CardGroup>
 
-Superwhisper Enterprise is designed to help organizations deploy and manage Superwhisper across their workforce. Here's what you get:
+## Upgrading from an Individual Plan
 
-### Centralized Billing
+Already have an individual Superwhisper Pro license and want to start an Enterprise organization for your team? You don't need to cancel your individual plan first. The two are separate.
 
-Manage all your organization's Superwhisper licenses from a single billing dashboard. No more individual subscriptions or expense reports—purchase seats for your team and manage everything in one place.
+1. Head to [superwhisper.com/enterprise/signup](https://superwhisper.com/enterprise/signup) and create the organization using your **work email**. Use a different email from the one on your individual plan to keep the accounts separate.
+2. [Set up billing](/enterprise/billing) and purchase seats for your team, including one for yourself.
+3. [Invite your team](/enterprise/member-management). Sign in to the app with your work email and your Enterprise seat takes over.
 
-### Centralized Authentication
+<Note>
+Seeing "no seats available" when you try to invite teammates? Either seats haven't been purchased yet, or you're signed in with the email tied to your individual plan rather than the Enterprise org. Check the Billing tab and confirm you're in the Enterprise dashboard under your work email.
+</Note>
 
-Choose the authentication method that works best for your organization:
-
-- **Google OAuth** - Allow members to sign in with their Google Workspace accounts
-- **SAML SSO** - Integrate with your existing identity provider (Okta, Microsoft, Google, or any SAML 2.0 compatible provider)
-
-This lets your employees sign in with their existing credentials and automatically receive a Superwhisper license—no extra setup required.
-
-### Centralized Model Distribution
-
-Configure which AI models your employees can use:
-
-- Allow access to Superwhisper's cloud models
-- Configure custom models with your own API credentials
-- Restrict usage to only your organization's approved AI providers
-
-Models are automatically distributed to members every time they start the app.
-
-### In-App Configuration
-
-Deploy consistent settings across your organization. When members activate their license, they receive your organization's configuration automatically—and it stays up to date with every app launch.
-
-### Usage Analytics (Optional)
-
-Optionally collect usage-based statistics to gauge employee adoption and understand how your team is using Superwhisper. This helps you make informed decisions about training and deployment.
+Want to cancel the individual plan once your Enterprise seat is active? Follow [Cancel & Refund](/get-started/cancel-refund). Or keep both. Your individual license still works on personal devices outside the Enterprise org.
 
 ## Support
 
-Have questions about enterprise setup? We're here to help:
-
-- Email us at enterprise@superwhisper.com
-- Request a shared Slack channel for faster communication
-- Schedule a call for personalized assistance
+Questions about enterprise setup? Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com), request a shared Slack channel, or schedule a call.

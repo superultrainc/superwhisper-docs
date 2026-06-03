@@ -3,7 +3,7 @@ title: "Amazon Bedrock"
 description: "Configure Amazon Bedrock as a custom model provider for your Superwhisper Enterprise account."
 ---
 
-Amazon Bedrock provides access to a range of foundation models through an OpenAI-compatible API. This makes it straightforward to connect Superwhisper to your existing AWS infrastructure, keeping data within your AWS environment and leveraging your existing cloud spend.
+Amazon Bedrock provides access to a range of foundation models through an OpenAI-compatible API. Connect Superwhisper to your existing AWS infrastructure to keep data within your AWS environment and use your existing cloud spend.
 
 ## Prerequisites
 
@@ -15,10 +15,10 @@ Before configuring Bedrock in Superwhisper, you'll need:
 
 ## Creating a Bedrock API Key
 
-Bedrock Mantle uses dedicated Amazon Bedrock API keys — these are separate from IAM credentials and AWS access keys.
+Bedrock Mantle uses dedicated Amazon Bedrock API keys. These are separate from IAM credentials and AWS access keys.
 
 1. Follow the [Generate an Amazon Bedrock API key](https://docs.aws.amazon.com/bedrock/latest/userguide/api-keys-generate.html) guide in the AWS documentation
-2. Copy the key — you won't be able to view it again
+2. Copy the key. You won't be able to view it again
 
 ## Configuring in Superwhisper
 
@@ -37,7 +37,7 @@ Bedrock Mantle uses dedicated Amazon Bedrock API keys — these are separate fro
 5. Click **Save**
 
 <Note>
-Replace `<region>` in the API URL with your AWS region (e.g., `us-east-1`, `eu-west-1`). Model availability varies by region — check the [Amazon Bedrock documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html) to confirm your chosen model is available in your region.
+Replace `<region>` in the API URL with your AWS region (e.g., `us-east-1`, `eu-west-1`). Model availability varies by region. Check the [Amazon Bedrock documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html) to confirm your chosen model is available in your region.
 </Note>
 
 ## Regional Endpoints
