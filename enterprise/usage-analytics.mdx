@@ -1,0 +1,51 @@
+---
+title: "Usage Analytics"
+description: "Optional dashboard showing how your team is using Superwhisper, with full transparency on what we collect and what we never collect."
+---
+
+Usage analytics is an **optional** feature that gives Enterprise admins visibility into how their team is using Superwhisper. It's off by default. An Owner can turn it on from the dashboard.
+
+![Usage Analytics Dashboard](/images/enterprise/usage_analytics_dashboard.png)
+
+## What We Collect
+
+When enabled, Superwhisper records aggregate, non-content usage events tied to a member's email:
+
+- Number of dictations per day
+- Mode used (Voice, Email, Super, etc.)
+- Voice model and language model selected
+- Duration of recordings (in seconds)
+- App version and platform (macOS or Windows)
+
+This data powers the **Usage** tab in your dashboard and helps you gauge adoption, identify power users, and plan seat purchases.
+
+## What We Never Collect
+
+Usage analytics is metadata only. It does not include:
+
+- **Audio recordings** of dictations
+- **Transcribed text** or any content from a member's dictation
+- **Custom vocabulary, modes, or replacements** configured by the member
+- **Keystrokes, screen content, or activity outside the Superwhisper app**
+
+Audio and transcripts are processed according to the rules described in [Sensitive Data Best Practices](/security/sensitive-data). Usage analytics is a separate, metadata-only telemetry stream and is not affected by your model choices.
+
+## Disabling Analytics
+
+Owners can disable usage analytics at any time from the dashboard. When disabled, the analytics endpoint stops receiving events from member devices on their next app launch.
+
+## Privacy & Compliance
+
+Superwhisper processes usage analytics metadata under the terms of our [DPA](/security/compliance#sign-a-dpa-or-baa). The data isn't used to train AI models, and isn't shared with third parties beyond the sub-processors listed in the DPA.
+
+For organizations under HIPAA, usage analytics metadata is not PHI. The optional toggle exists for organizations that prefer to minimize all telemetry.
+
+## Related
+
+- [Configuration](/enterprise/configuration), other org-wide policies you can set
+- [Sensitive Data Best Practices](/security/sensitive-data), how audio and transcripts are handled separately from analytics
+- [Compliance & Trust](/security/compliance), DPA, BAA, and the sub-processor list
+
+## Support
+
+Questions about what's collected, where it's stored, or how to disable it? Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) or your account manager.

@@ -1,0 +1,91 @@
+---
+title: "MDM & Silent Deployment"
+description: "Deploy Superwhisper silently to Mac and Windows fleets using Jamf, Microsoft Intune, or any MDM that supports PKG and MSI installers."
+---
+
+Roll Superwhisper out across your fleet without asking each user to download, install, or grant permissions manually. Superwhisper ships signed installers and supports the standard managed-app workflows in [Jamf](https://www.jamf.com/), [Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/), and other MDM tools.
+
+<Info>
+Reach out to [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) to request the latest signed PKG (macOS) and MSI (Windows) installers, plus a config profile template for managed settings. We'll send the artifacts and version metadata for your MDM catalog.
+</Info>
+
+## What MDM Deployment Gets You
+
+- **Silent install** across Mac and Windows without user interaction
+- **Pre-granted microphone permission** on macOS via a PPPC profile so users skip the system prompt
+- **Auto-activation** when paired with [SAML SSO](/enterprise/saml-sso) and [SCIM](/enterprise/scim). Users sign in with their work email and their Enterprise seat activates automatically, no license keys to distribute
+- **Centralized updates** through your MDM update channel
+
+## macOS (Jamf)
+
+### Install
+
+1. Upload the signed Superwhisper PKG to Jamf Admin or your distribution point
+2. Create a policy scoped to the target computer group
+3. Set the trigger (recurring check-in, login, or self-service) and frequency
+4. Run the policy
+
+### Microphone Permission (PPPC)
+
+Without a PPPC (Privacy Preferences Policy Control) profile, users see a macOS prompt the first time they try to record. To pre-grant the permission:
+
+1. Create a new **Configuration Profile** in Jamf
+2. Add a **Privacy Preferences Policy Control** payload
+3. Add Superwhisper as an app with the **Microphone** service set to **Allow**
+4. Scope the profile to the same computer group as the install policy
+
+The bundle ID and team ID for Superwhisper are included with the installer package we send.
+
+### Verification
+
+Confirm a successful deployment with:
+
+```bash
+mdmclient QueryInstalledApplications | grep -i superwhisper
+```
+
+## macOS (Intune)
+
+Intune supports PKG installers for macOS. Upload the signed Superwhisper PKG as a **Line-of-business app** or **macOS app (PKG)** in the Intune admin center, then assign to the target group.
+
+For the microphone PPPC profile, create a **Device configuration profile** of type **Templates > Privacy preferences policy control** and add Superwhisper with **Microphone: Allow**.
+
+## Windows (Intune)
+
+### Install
+
+1. In the [Intune admin center](https://intune.microsoft.com/), go to **Apps > Windows > Add**
+2. Choose **Line-of-business app** and upload the Superwhisper MSI
+3. Assign to your target group as **Required**
+
+### Silent Install Flags
+
+The MSI installs silently by default with no extra flags needed. If your MDM requires explicit silent parameters, use:
+
+```
+msiexec /i Superwhisper.msi /qn
+```
+
+### Verification
+
+Check the Intune admin center under **Apps > Monitor > App install status** for per-device install results.
+
+## Activation After Install
+
+If your organization is on Superwhisper Enterprise with [SAML SSO](/enterprise/saml-sso) configured, users open the app, sign in with their work email, and their license activates automatically. No license keys to push.
+
+For setups without SSO, contact [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) to discuss license distribution options.
+
+## Updates
+
+Superwhisper checks for updates on launch by default. To manage updates through your MDM instead, deploy the new PKG or MSI as a replacement package on your usual schedule.
+
+## Related
+
+- [SAML SSO](/enterprise/saml-sso), prerequisite for auto-activation after silent install
+- [SCIM Provisioning](/enterprise/scim), automate user lifecycle alongside the deployment
+- [Member Management](/enterprise/member-management), roles, seats, and post-deployment offboarding
+
+## Support
+
+Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) for installer packages, PPPC bundle and team IDs, version metadata, or help with a specific MDM platform. We also offer a shared Slack channel for Enterprise customers running large deployments.

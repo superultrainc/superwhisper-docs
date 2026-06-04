@@ -1,6 +1,6 @@
 ---
 title: "Model Management"
-description: "This guide covers managing AI models for your members, including cloud model access control and custom model configuration."
+description: "Control which AI models your team can use, configure custom providers, and troubleshoot connection issues."
 ---
 ## Cloud AI Models
 
@@ -24,7 +24,7 @@ From the **Models** tab in your dashboard, you can control whether your members 
 
 ### Overview
 
-Custom models allow you to configure specific AI models from various providers that your organization members can use.
+Custom models let your members use specific AI models from any provider you configure.
 
 ### Adding a Custom Model
 
@@ -50,26 +50,58 @@ Once configured, your custom models will appear in the Custom Models table and c
 
 ### Custom Model Distribution
 
-When these settings are configured, your members will be given access to any models you've set up every time they start the app. These models can be selected by your members when they configure their modes, giving them the flexibility to choose the right AI model for their specific use case. 
+Members receive access to your configured models every time they start the app. They can pick which model to use when setting up each mode. 
 ![Custom Model Selection](/images/enterprise/model_management_in_app.png)
 
 ## Use Cases
 
 ### Cloud Models Only
-Enable "Allow Cloud AI Models" and don't configure any custom models. This is the default setup - members use Superwhisper's hosted models with no additional configuration.
+Enable "Allow Cloud AI Models" and don't configure any custom models. The default setup. Members use Superwhisper's hosted models with no extra configuration.
 
 ### Custom Models Only
-Disable "Allow Cloud AI Models" and configure one or more custom models. This ensures all AI processing goes through your organization's approved providers with your own API credentials.
+Disable "Allow Cloud AI Models" and configure one or more custom models. All AI processing goes through your approved providers with your own API credentials.
 
 ### Hybrid Approach
-Enable "Allow Cloud AI Models" and configure custom models. Members can choose between Superwhisper's hosted models and your organization's custom models based on their needs.
+Enable "Allow Cloud AI Models" and configure custom models. Members choose between Superwhisper's hosted models and your custom ones based on their needs.
+
+## Troubleshooting Custom Models
+
+Most custom model issues come from a mismatch between the API URL, the model ID, or the API key. Use the table below to map the error you're seeing to a likely cause.
+
+| Error | Likely cause | What to check |
+| --- | --- | --- |
+| `401 Unauthorized` / `Invalid API key` | API key wrong, expired, or scoped to a different project | Regenerate the key in your provider's dashboard, paste it fresh, check key scope |
+| `403 Forbidden` / `Provider rejected the request` | Key is valid but doesn't have access to that specific model or deployment | Confirm the model is enabled on your provider account; for Azure, confirm the deployment exists and the key has access to it |
+| `404 Not Found` on the API URL | Endpoint URL is wrong or missing a path segment | See provider-specific notes below |
+| `404` on the model | Model ID doesn't match what the provider expects | For Azure, use your **deployment name**, not the model name. For OpenAI-compatible endpoints, copy the exact ID from the provider docs |
+| `429 Too Many Requests` | Rate limit or quota on the provider account | Check usage limits on the provider dashboard |
+| `Timeout` / no response | Endpoint unreachable from the user's network | Confirm the endpoint is publicly reachable, or that your VPN allows it |
+
+### Azure OpenAI
+
+- **API URL format:** `https://{resource-name}.openai.azure.com/openai/deployments/{deployment-name}/chat/completions?api-version=2024-02-15-preview`
+- **Model ID:** use the **deployment name** you created in Azure AI Studio, not the underlying model name (e.g., `gpt-4o-mycompany`, not `gpt-4o`)
+- The deployment must be created and in `Succeeded` state before adding it in Superwhisper
+
+### OpenAI-Compatible Endpoints
+
+- **API URL format:** the base URL up to and including `/v1` (e.g., `https://api.together.xyz/v1`)
+- **Model ID:** the exact model slug from the provider's docs
+- The endpoint must implement `/chat/completions` to work with Superwhisper
+
+### Self-Hosted Endpoints
+
+- The endpoint must be publicly reachable from the user's machine. Endpoints behind a corporate VPN will only work for users on that VPN
+- TLS is required. HTTP-only endpoints won't connect
+
+If the error persists, email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) with the provider, model ID, and the exact error message.
+
+## Related
+
+- [Configuration](/enterprise/configuration), the org-wide toggle for cloud models lives here
+- [Amazon Bedrock](/enterprise/amazon-bedrock), configure Bedrock as a custom model provider
+- [Sensitive Data Best Practices](/security/sensitive-data), data flow implications of each model setup
 
 ## Support
 
-If you have questions about model management or need help with custom model configuration:
-
-- Email us at enterprise@superwhisper.com
-- Request a shared Slack channel for faster communication
-- Schedule a call for personalized assistance
-
-We're here to help ensure your organization has the right AI models configured for your needs.
+Questions about model management or custom model configuration? Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com), request a shared Slack channel, or schedule a call.

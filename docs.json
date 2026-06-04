@@ -27,6 +27,13 @@
                 ]
               },
               {
+                "group": "Billing & Plans",
+                "pages": [
+                  "get-started/plan-changes",
+                  "get-started/cancel-refund"
+                ]
+              },
+              {
                 "group": "Fine-Tune Your Setup",
                 "pages": [
                   "get-started/settings-overview",
@@ -81,7 +88,11 @@
           },
           {
             "group": "Security & Privacy",
-            "pages": ["security/sensitive-data"]
+            "pages": [
+              "security/sensitive-data",
+              "security/compliance",
+              "security/account-deletion"
+            ]
           },
           {
             "group": "Common Issues",
@@ -102,21 +113,24 @@
             "pages": [
               "enterprise/getting-started",
               {
-                "group": "SSO",
+                "group": "Authentication & Deployment",
                 "pages": [
                   "enterprise/saml-sso",
-                  "enterprise/scim"
+                  "enterprise/scim",
+                  "enterprise/mdm-deployment",
+                  "enterprise/member-management"
                 ]
               },
-              "enterprise/billing",
-              "enterprise/member-management",
               {
-                "group": "Model Management",
+                "group": "Enterprise Configuration",
                 "pages": [
+                  "enterprise/configuration",
                   "enterprise/models",
                   "enterprise/amazon-bedrock"
                 ]
-              }
+              },
+              "enterprise/billing",
+              "enterprise/usage-analytics"
             ]
           }
         ]
