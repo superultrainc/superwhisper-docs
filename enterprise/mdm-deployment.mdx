@@ -1,12 +1,12 @@
 ---
 title: "MDM & Silent Deployment"
-description: "Deploy Superwhisper silently to Mac and Windows fleets using Jamf, Microsoft Intune, or any MDM that supports PKG and MSI installers."
+description: "Deploy Superwhisper silently to Mac and Windows fleets using Jamf, Microsoft Intune, or any MDM that supports PKG and NSIS installers."
 ---
 
 Roll Superwhisper out across your fleet without asking each user to download, install, or grant permissions manually. Superwhisper ships signed installers and supports the standard managed-app workflows in [Jamf](https://www.jamf.com/), [Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/), and other MDM tools.
 
 <Info>
-Reach out to [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) to request the latest signed PKG (macOS) and MSI (Windows) installers, plus a config profile template for managed settings. We'll send the artifacts and version metadata for your MDM catalog.
+Reach out to [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) to request the latest signed PKG (macOS) and NSIS EXE (Windows) installers, plus a config profile template for managed settings. We'll send the artifacts and version metadata for your MDM catalog.
 </Info>
 
 ## What MDM Deployment Gets You
@@ -54,16 +54,24 @@ For the microphone PPPC profile, create a **Device configuration profile** of ty
 
 ### Install
 
+Superwhisper for Windows uses an NSIS-based EXE installer. Intune treats EXE installers as Win32 apps:
+
 1. In the [Intune admin center](https://intune.microsoft.com/), go to **Apps > Windows > Add**
-2. Choose **Line-of-business app** and upload the Superwhisper MSI
-3. Assign to your target group as **Required**
+2. Choose **Windows app (Win32)** and upload the Superwhisper EXE wrapped as an `.intunewin` package using the [Microsoft Win32 Content Prep Tool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool)
+3. Set the install command (see below) and assign to your target group as **Required**
 
-### Silent Install Flags
+### Silent Install Command
 
-The MSI installs silently by default with no extra flags needed. If your MDM requires explicit silent parameters, use:
+NSIS installers accept the `/S` flag for fully silent installation:
 
 ```
-msiexec /i Superwhisper.msi /qn
+SuperwhisperSetup.exe /S
+```
+
+For uninstall, use:
+
+```
+SuperwhisperSetup.exe /S /uninstall
 ```
 
 ### Verification
@@ -78,7 +86,7 @@ For setups without SSO, contact [enterprise@superwhisper.com](mailto:enterprise@
 
 ## Updates
 
-Superwhisper checks for updates on launch by default. To manage updates through your MDM instead, deploy the new PKG or MSI as a replacement package on your usual schedule.
+Superwhisper checks for updates on launch by default. To manage updates through your MDM instead, deploy the new PKG or EXE as a replacement package on your usual schedule.
 
 ## Related
 
