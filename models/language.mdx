@@ -45,3 +45,24 @@ Ultra-fast inference using Groq's LPU technology. Usage is covered by your licen
 | Name       | Speed | Benchmark (0-100) | Size  | License |
 | ---------- | ----- | ----------------- | ----- | ------- |
 | Llama 3 8b | 10    | 67                | Cloud | Pro     |
+
+## Fair Use & Rate Limits
+
+To keep cloud models fast and available for everyone, Superwhisper applies fair-use rate limits to its hosted cloud models. These are abuse-prevention limits, so normal interactive dictation will not reach them.
+
+Limits apply across all hosted cloud models combined (both language and voice), not per provider:
+
+| Limit     | Threshold              |
+| --------- | ---------------------- |
+| Burst     | 30 requests per minute |
+| Sustained | 300 requests per hour  |
+
+<Note>
+These limits are subject to change as we tune them. If you have a legitimate high-volume use case, [reach out to support](mailto:support@superwhisper.com) or [bring your own API keys](../security/sensitive-data#use-your-own-api-keys-byok) to use your own provider account.
+</Note>
+
+If you exceed a limit, the API returns an `HTTP 429 (Too Many Requests)` response. A `Retry-After` header tells you how many seconds to wait before retrying. Apps built on the Superwhisper API should handle `429` responses gracefully and back off, respecting `Retry-After`.
+
+<Info>
+Bring Your Own Key (BYOK) and local models are not subject to these limits, since requests go through your own account or run on your device.
+</Info>
