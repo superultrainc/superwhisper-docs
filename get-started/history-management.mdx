@@ -25,10 +25,11 @@ A **cron job** is a scheduled task that runs automatically at specified times. Y
 By default, Superwhisper saves recordings and their metadata in:
 
 ```
-~/Documents/superwhisper/recordings
+~/superwhisper/recordings
 ```
 
 - `~` refers to your user’s home folder.
+- Installs from before the default changed may still use `~/Documents/superwhisper/recordings`.
 - This location [can be changed in Superwhisper’s settings](settings-advanced#folder-location). If you have moved your recordings folder, make sure to update the folder path in the instructions below.
 
 ---
@@ -57,10 +58,10 @@ Follow these steps to automatically delete old history files from your Superwhis
   <Step title="Add a Cleanup Rule">
     Copy and paste the following line into your crontab. This example deletes any recording folder older than 24 hours (1 day) at midnight every day:
     ```
-    0 0 * * * /usr/bin/find "$HOME/Documents/superwhisper/recordings" -mindepth 1 -maxdepth 1 -type d -name "[0-9]*" -mmin +1440 -exec /bin/rm -rf {} \;
+    0 0 * * * /usr/bin/find "$HOME/superwhisper/recordings" -mindepth 1 -maxdepth 1 -type d -name "[0-9]*" -mmin +1440 -exec /bin/rm -rf {} \;
     ```
     <Info>
-    - If your recordings folder is in a different location, replace `$HOME/Documents/superwhisper/recordings` with the correct path.
+    - If your recordings folder is in a different location (e.g. `$HOME/Documents/superwhisper/recordings` on older installs), replace `$HOME/superwhisper/recordings` with the correct path.
     - The example above deletes folders (and their contents) older than 1 day. You can adjust the schedule and age as needed (see below).
     </Info>
   </Step>
@@ -111,7 +112,7 @@ You can modify how often and what files your cron job deletes:
 To see which folders would be deleted without actually removing them, run:
 
 ```
-/usr/bin/find "$HOME/Documents/superwhisper/recordings" -mindepth 1 -maxdepth 1 -type d -name "[0-9]*" -mmin +1440 -print
+/usr/bin/find "$HOME/superwhisper/recordings" -mindepth 1 -maxdepth 1 -type d -name "[0-9]*" -mmin +1440 -print
 ```
 
 This lists folders older than 1 day. Adjust the path and time as needed.

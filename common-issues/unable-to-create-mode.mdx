@@ -6,6 +6,10 @@ description: "Resolve issues with creating or saving modes in Superwhisper."
 ## Overview
 When you enable iCloud Documents syncing on your Mac, the Superwhisper folder may automatically move to iCloud. However, the application might still reference its original location. This mismatch prevents Superwhisper from creating new modes and can cause other functionality issues.
 
+<Note>
+This mainly affects older installs where the Superwhisper folder lived in ~/Documents. The current default is ~/superwhisper in your home directory, which iCloud Documents syncing doesn't touch.
+</Note>
+
 ---
 ## Step-by-Step Process
 Follow these steps to redirect Superwhisper to the correct folder location:
@@ -21,9 +25,9 @@ Follow these steps to redirect Superwhisper to the correct folder location:
       <img style={{ borderRadius: '0.5rem' }} src="/images/common-issues/unable-to-create-mode-002.png" alt="Superwhisper Folder Location" />
   </Step>
   
-  <Step title="Select Documents Folder">
-    In the file browser that appears, navigate to your Documents folder and click "Open".
-      <img style={{ borderRadius: '0.5rem' }} src="/images/common-issues/unable-to-create-mode-003.png" alt="Navigating to Documents Folder" />
+  <Step title="Select a New Folder Location">
+    In the file browser that appears, navigate to your home folder (or another location outside iCloud) and click "Open".
+      <img style={{ borderRadius: '0.5rem' }} src="/images/common-issues/unable-to-create-mode-003.png" alt="Selecting a new folder location" />
   </Step>
   
   <Step title="Confirm the Change">
@@ -32,4 +36,4 @@ Follow these steps to redirect Superwhisper to the correct folder location:
   </Step>
 </Steps>
 
-After completing these steps, Superwhisper will correctly reference your Documents folder, allowing you to create new modes and use all features as expected.
+After completing these steps, Superwhisper will correctly reference the new folder location, allowing you to create new modes and use all features as expected.
