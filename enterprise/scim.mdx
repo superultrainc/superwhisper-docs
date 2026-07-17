@@ -3,7 +3,7 @@ title: "SCIM Provisioning"
 description: "Automate user provisioning and deprovisioning for your Superwhisper Enterprise account using SCIM."
 ---
 
-> **Note:** SCIM configuration is only available after [SAML SSO](/enterprise/saml_sso) has been set up.
+> **Note:** SCIM configuration is only available after [SAML SSO](/enterprise/saml-sso) has been set up.
 
 ## How SCIM Works in Superwhisper
 
@@ -45,6 +45,8 @@ Enter the SCIM base URL and bearer token into your identity provider's provision
 - [Okta SCIM provisioning guide](https://help.okta.com/en-us/content/topics/apps/apps_app_integration_wizard_scim.htm)
 - [Google Workspace automated provisioning guide](https://support.google.com/a/answer/7681608)
 - [Microsoft Entra SCIM provisioning guide](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/use-scim-to-provision-users-and-groups)
+
+> **Note:** These provider guides will ask you to enable separate provisioning actions, typically **Create Users**, **Update User Attributes**, and **Deactivate Users**. You can leave **Create Users** enabled — it's safe to turn on, but Superwhisper ignores it and never creates an account or seat from it. Account creation always happens via JIT provisioning on first SSO login, as described above. The action that actually matters here is **Deactivate Users**, which drives automatic deprovisioning when you unassign someone in your identity provider.
 
 ### 4. Assign Users and Groups
 
