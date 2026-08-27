@@ -1,0 +1,57 @@
+---
+title: "Choose Your Model"
+description: "Cloud vs local transcription models in Superwhisper — how to pick the right voice model for your hardware, privacy needs, and languages."
+---
+
+Superwhisper transcribes with either **cloud models** (fast, no download, audio processed on our servers) or **local models** (everything stays on your device, works offline). You can switch anytime, and every mode can use a different model.
+
+## Cloud or local?
+
+| | Cloud | Local |
+|:--|:--|:--|
+| Setup | None — works immediately | One-time download (75 MB – 3 GB) |
+| Privacy | Audio processed on secure servers | Audio never leaves your device |
+| Offline use | Requires internet | Works fully offline |
+| Speed | Very fast on any hardware | Depends on your hardware |
+| Best for | Most users, older machines | Privacy-sensitive work, travel |
+
+**Start with the cloud model suggested during onboarding.** Switch to a local model when privacy or offline use matters more than convenience.
+
+## Browse and download models
+
+Open **Settings → Models library** to see every available model, download local ones, and remove models you no longer use.
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/screens/mac/models-library-voice.png"
+  alt="Superwhisper Models library listing voice and language models with download options"
+/>
+
+For full comparison tables — languages, speed, accuracy, and size for every model — see [Voice models](/models/voice) and [Language models](/models/language).
+
+## Picking a local model
+
+- **Ultra V3 Turbo** (1.6 GB) is the best balance of speed and accuracy for most machines.
+- **Parakeet** (~480 MB) is extremely fast, especially on long recordings, but can struggle with punctuation and very short recordings.
+- **Standard / Nano / Fast** are free, smaller, and less accurate — fine for quick notes.
+- Local models run best on Apple Silicon Macs. On Windows, local models use your GPU through Vulkan — see [Windows requirements](/get-started/windows#requirements).
+
+## Set the model per mode
+
+Each mode picks its own voice model (and, for AI modes, a language model). Open **Modes**, select a mode, and change **Voice Model**.
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/screens/mac/modes-editor.png"
+  alt="Superwhisper mode editor showing the Voice Model and Language Model selectors"
+/>
+
+<Info>
+You can also connect your own API keys (OpenAI, Anthropic, and OpenAI-compatible providers) under **Settings → Configuration → Advanced settings → AI Models**. Pro plans include unlimited use of the built-in cloud models, so most users never need this.
+</Info>
+
+## Next step
+
+<Card title="Understand modes" icon="wand-magic-sparkles" href="/modes/modes">
+  Modes decide what happens to your transcription — plain text, a formatted message, an email, or a custom transformation.
+</Card>
