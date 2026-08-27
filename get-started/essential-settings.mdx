@@ -1,0 +1,68 @@
+---
+title: "Essential Settings"
+description: "Open Superwhisper's settings and configure keyboard shortcuts, push-to-talk, microphone input, and sound feedback."
+---
+
+Everything you need on day one lives in two settings panes: **Configuration** (shortcuts and app behavior) and **Sound** (microphone and audio feedback).
+
+## Open the settings
+
+Four ways, pick your favorite:
+
+1. Click the **Superwhisper icon in the menu bar** (near the Wi-Fi icon) and choose **Settings**
+2. Right-click the **mini recording window** and choose **Open Settings**
+3. With the app active, press **⌘ ,** (requires "Show in Dock" in [advanced settings](/get-started/settings-advanced#interface-customization))
+4. Open the deep link `superwhisper://settings` from any launcher or automation
+
+<Note>On Windows, click the Superwhisper icon in the system tray.</Note>
+
+## Keyboard shortcuts
+
+Open **Settings → Configuration**. Every shortcut can be changed to avoid conflicts with other apps.
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/screens/mac/configuration-1.png"
+  alt="Superwhisper Configuration pane showing keyboard shortcut settings"
+/>
+
+- **Toggle Recording** — start/stop recording. Single modifier keys (Left ⌘, Right ⌘, Fn) work on their own.
+- **Push-to-Talk** — hold to record, release to stop. Can share a key with Toggle Recording: press-and-hold acts as push-to-talk, a quick tap acts as toggle.
+- **Cancel Recording** — cancels immediately under 30 seconds; longer recordings ask for confirmation. During processing, this shortcut only hides the recording window.
+- **Change Mode** — hold the modifier and tap the key to cycle through modes, before or during a dictation.
+- **Mouse Shortcut** — assign a mouse button: quick click toggles, press-and-hold acts as push-to-talk. Some mice can't detect sustained holds.
+
+<Warning>
+**Two different kinds of shortcut.** The shortcuts above are global — they record using whatever mode is currently active. Separately, each mode has its own **Keyboard shortcut** field in the mode editor that starts a recording *in that specific mode*. If a shortcut seems to trigger "the wrong thing," check whether it's assigned in both places.
+</Warning>
+
+## Application behavior
+
+Scroll down in **Configuration** for update settings, launch on login, and error logging (useful when working with support).
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/screens/mac/configuration-2.png"
+  alt="Superwhisper Application settings showing updates, launch on login, and error logging"
+/>
+
+## Sound and microphone
+
+Open **Settings → Sound**.
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/screens/mac/sound.png"
+  alt="Superwhisper Sound settings showing input device and sound effect options"
+/>
+
+- **Input Device** — pick a microphone or leave it on automatic to follow the system default. You can also switch input from the [menu bar icon](/get-started/interface-menu-bar).
+- **Automatic volume adjustment** — recommended; sets your microphone level for clear recordings.
+- **Silence Removal** — skips quiet parts for faster results. Also helps prevent hallucinated text: if your transcripts contain words you never said, turn this on.
+- **Sound Effects** — audio cues for recording start and processing completion. Adjust their volume independently or turn them off.
+
+## Everything else
+
+<Card title="Advanced settings" icon="gears" href="/get-started/settings-advanced">
+  App folder location, FileSync, interface customization, clipboard behavior, and other power-user options.
+</Card>
