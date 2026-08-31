@@ -3,7 +3,7 @@ title: "Choose Your Model"
 description: "Cloud vs local transcription models in Superwhisper — how to pick the right voice model for your hardware, privacy needs, and languages."
 ---
 
-Superwhisper transcribes with either **cloud models** (fast, no download, audio processed on our servers) or **local models** (everything stays on your device, works offline). You can switch anytime, and every mode can use a different model.
+Superwhisper transcribes with **cloud models** (top accuracy the moment you install — nothing to download) or **local models** (everything stays on your device and works offline). Both are fast and accurate. Switch anytime, and every mode can use its own model.
 
 ## Cloud or local?
 
@@ -11,15 +11,15 @@ Superwhisper transcribes with either **cloud models** (fast, no download, audio 
 |:--|:--|:--|
 | Setup | None — works immediately | One-time download (75 MB – 3 GB) |
 | Privacy | Audio processed on secure servers | Audio never leaves your device |
-| Offline use | Requires internet | Works fully offline |
-| Speed | Very fast on any hardware | Depends on your hardware |
+| Offline use | Requires internet | Works offline |
+| Speed | Fast on any hardware | Fast on modern hardware |
 | Best for | Most users, older machines | Privacy-sensitive work, travel |
 
-**Start with the cloud model suggested during onboarding.** Switch to a local model when privacy or offline use matters more than convenience.
+**Start with the cloud model from onboarding — it gives great results on any machine.** Switch to a local model when you want audio to stay on your device or need to work offline.
 
 ## Browse and download models
 
-Open **Settings → Models library** to see every available model, download local ones, and remove models you no longer use.
+Open **Settings → Models library** to browse every model, download local ones, and remove ones you no longer use.
 
 <img
   style={{ borderRadius: '0.5rem' }}
@@ -27,21 +27,21 @@ Open **Settings → Models library** to see every available model, download loca
   alt="Superwhisper Models library listing voice and language models with download options"
 />
 
-For full comparison tables — languages, speed, accuracy, and size for every model — see [Voice models](/models/voice) and [Language models](/models/language).
+Full comparison tables — languages, speed, accuracy, and size for every model — live in [Voice models](/models/voice) and [Language models](/models/language).
 
 ## Picking a local model
 
-In order of recommendation:
+All three are excellent — pick by what you value:
 
-1. **Cohere Transcribe** (1.3 GB) — the best local accuracy; our first pick if your machine handles the download size.
-2. **Parakeet Multilanguage** (494 MB) — extremely fast, especially on long recordings; can struggle with punctuation and very short recordings.
-3. **Ultra V3 Turbo** (1.6 GB) — solid all-round speed and accuracy, based on Whisper large-v3 turbo.
+1. **Cohere Transcribe** (1.3 GB) — the most accurate local model. Our first pick.
+2. **Parakeet Multilanguage** (494 MB) — built for speed; it flies through long recordings. Punctuation is lighter than the others.
+3. **Ultra V3 Turbo** (1.6 GB) — fast and accurate, based on Whisper large-v3 turbo.
 
-**Standard / Nano / Fast** are free, smaller, and less accurate — fine for quick notes. Local models run best on Apple Silicon Macs. On Windows, local models use your GPU through Vulkan — see [Windows requirements](/get-started/windows#requirements).
+**Standard, Nano, and Fast** are free and small — great for quick notes. Local models shine on Apple Silicon Macs. On Windows they run on your GPU through Vulkan — see [Windows requirements](/get-started/windows#requirements).
 
 ## Set the model per mode
 
-Each mode picks its own voice model (and, for AI modes, a language model). Open **Modes**, select a mode, and change **Voice Model**.
+Each mode picks its own voice model (AI modes add a language model). Open **Modes**, select a mode, and change **Voice Model**.
 
 <img
   style={{ borderRadius: '0.5rem' }}
@@ -50,7 +50,7 @@ Each mode picks its own voice model (and, for AI modes, a language model). Open 
 />
 
 <Info>
-You can also connect your own API keys (OpenAI, Anthropic, and OpenAI-compatible providers) under **Settings → Configuration → Advanced settings → AI Models**. Pro plans include unlimited use of the built-in cloud models, so most users never need this.
+Want to bring your own API keys (OpenAI, Anthropic, or any OpenAI-compatible provider)? Add them under **Settings → Configuration → Advanced settings → AI Models**. Pro already includes unlimited built-in cloud models, so this is optional.
 </Info>
 
 ## Next step
