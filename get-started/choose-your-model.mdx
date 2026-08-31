@@ -34,10 +34,12 @@ Full comparison tables — languages, speed, accuracy, and size for every model 
 All three are excellent — pick by what you value:
 
 1. **Cohere Transcribe** (1.3 GB) — the most accurate local model. Our first pick.
-2. **Parakeet Multilanguage** (494 MB) — built for speed; it flies through long recordings. Punctuation is lighter than the others.
-3. **Ultra V3 Turbo** (1.6 GB) — fast and accurate, based on Whisper large-v3 turbo.
+2. **Large V3 Turbo** (1.6 GB) — the fastest on most machines, based on Whisper large-v3 turbo.
+3. **Parakeet Multilanguage** (494 MB) — the smallest download and the compatibility pick: it runs on every machine, including Windows ARM devices. Punctuation is lighter than the others.
 
-**Standard, Nano, and Fast** are free and small — great for quick notes. Local models shine on Apple Silicon Macs. On Windows they run on your GPU through Vulkan — see [Windows requirements](/get-started/windows#requirements).
+**Standard, Nano, and Fast** are free and small — great for quick notes.
+
+**On Windows:** Cohere Transcribe and Large V3 Turbo run on your GPU through Vulkan and aren't yet supported on Windows ARM (Snapdragon) devices — there, use Parakeet Multilanguage or a cloud model. Details in [Windows requirements](/get-started/windows#requirements).
 
 ## Set the model per mode
 
