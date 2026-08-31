@@ -20,7 +20,11 @@ Bought the Mac version by mistake, or switching machines? Your license key works
 ## Requirements
 
 - Windows 10 or Windows 11 (64-bit)
-- **Local voice models** run on your GPU through Vulkan. They need a Vulkan-capable GPU with current drivers. On machines without one (old integrated GPUs, many virtual machines), use **cloud models** instead — they run on any hardware.
+- **Local voice models** run on your GPU, and support depends on your hardware:
+  - **Cohere Transcribe** and **Large V3 Turbo** run through Vulkan — they need a Vulkan-capable GPU with current drivers, and are the fastest options on machines that have one.
+  - **Parakeet Multilanguage** runs through ONNX Runtime and works on any Windows machine, including **ARM (Snapdragon) devices** — it trades some speed for that compatibility.
+  - On Windows ARM, Cohere Transcribe and Large V3 Turbo aren't supported yet — use Parakeet Multilanguage or a cloud model.
+- On machines without a capable GPU (old integrated graphics, many virtual machines), **cloud models** run on any hardware.
 
 ## Installation problems
 
