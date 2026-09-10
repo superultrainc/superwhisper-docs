@@ -3,11 +3,13 @@ title: "Getting Started"
 description: "Stand up a Superwhisper Enterprise org for your team: authentication, billing, members, and models."
 ---
 
+import EnterpriseSupport from '/snippets/enterprise-support.mdx';
+
 Superwhisper Enterprise centralizes billing, authentication, model access, and configuration for your team. One org, one dashboard, one bill.
 
-## Set Up Your Organization
+## Set up your organization
 
-Head to [superwhisper.com/enterprise/signup](https://superwhisper.com/enterprise/signup) and create your org. You'll pick one of three authentication methods at signup: **SAML SSO**, **Google OAuth**, or **Magic Link**.
+Go to [superwhisper.com/enterprise/signup](https://superwhisper.com/enterprise/signup) and create your org. You'll pick one of three authentication methods at signup: **SAML SSO**, **Google OAuth**, or **Magic Link**.
 
 Then work through the setup in order:
 
@@ -16,7 +18,11 @@ Then work through the setup in order:
 3. [Invite members](/enterprise/member-management) to your organization
 4. [Configure models and org-wide policies](/enterprise/configuration) for your team
 
-## What's Included
+<Note>
+Invoices download from the Billing tab. To add a VAT ID or company details to them, see [Invoices and VAT](/enterprise/billing#invoices-and-vat).
+</Note>
+
+## What's included
 
 <CardGroup cols={2}>
 <Card title="Centralized Billing" icon="credit-card" href="/enterprise/billing">
@@ -25,7 +31,7 @@ One dashboard, one bill. Purchase seats for your team and skip the individual ex
 <Card title="Centralized Authentication" icon="lock" href="/enterprise/saml-sso">
 SAML SSO, Google OAuth, or Magic Link. Employees sign in with existing credentials and receive a license automatically.
 </Card>
-<Card title="Model Management" icon="brain" href="/enterprise/models">
+<Card title="Model Management" icon="brain" href="/enterprise/configuration">
 Allow Superwhisper cloud models, configure your own custom providers, or restrict to approved vendors only.
 </Card>
 <Card title="In-App Configuration" icon="sliders" href="/enterprise/configuration">
@@ -39,20 +45,18 @@ Optional, metadata-only visibility into adoption and usage. Off by default.
 </Card>
 </CardGroup>
 
-## Upgrading from an Individual Plan
+## Upgrading from an individual plan
 
-Already have an individual Superwhisper Pro license and want to start an Enterprise organization for your team? You don't need to cancel your individual plan first. The two are separate.
+If you already have an individual Superwhisper Pro license, you don't need to cancel it to start an Enterprise organization. The two are separate.
 
-1. Head to [superwhisper.com/enterprise/signup](https://superwhisper.com/enterprise/signup) and create the organization using your **work email**. Use a different email from the one on your individual plan to keep the accounts separate.
+1. Go to [superwhisper.com/enterprise/signup](https://superwhisper.com/enterprise/signup) and create the organization using your **work email**. Use a different email from the one on your individual plan to keep the accounts separate.
 2. [Set up billing](/enterprise/billing) and purchase seats for your team, including one for yourself.
 3. [Invite your team](/enterprise/member-management). Sign in to the app with your work email and your Enterprise seat takes over.
 
 <Note>
-Seeing "no seats available" when you try to invite teammates? Either seats haven't been purchased yet, or you're signed in with the email tied to your individual plan rather than the Enterprise org. Check the Billing tab and confirm you're in the Enterprise dashboard under your work email.
+If you see "no seats available" when inviting teammates, either seats haven't been purchased yet, or you're signed in with the email tied to your individual plan rather than the Enterprise org. Check the Billing tab and confirm you're in the Enterprise dashboard under your work email.
 </Note>
 
-Want to cancel the individual plan once your Enterprise seat is active? Follow [Manage Your Subscription](/billing/manage-subscription). Or keep both. Your individual license still works on personal devices outside the Enterprise org.
+To cancel the individual plan once your Enterprise seat is active, follow [Manage Your Subscription](/billing/manage-subscription). You can also keep both: your individual license still works on personal devices outside the Enterprise org.
 
-## Support
-
-Questions about enterprise setup? Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com), request a shared Slack channel, or schedule a call.
+<EnterpriseSupport />

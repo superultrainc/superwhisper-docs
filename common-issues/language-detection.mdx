@@ -1,6 +1,6 @@
 ---
-title: "Language Detection"
-description: "Learn how to fix issues with Superwhisper automatically translating non-English dictation to English when using the Automatic language setting."
+title: "Transcribed in English Instead of My Language"
+description: "Fix Superwhisper transcribing your dictation in English when your language is set to Automatic. The vocabulary hint solves it."
 ---
 
 ## Overview
@@ -13,7 +13,7 @@ Superwhisper processes your dictation in two distinct stages:
 When using the "Automatic" language setting, you may experience your non-English dictation being incorrectly transcribed as English text. This mostly happens at the transcription stage, before any AI processing occurs.
 
 <Info>
-You can verify this by checking [the History tab](../get-started/interface-history), which shows the raw transcription before processing.
+You can verify this by checking [the History tab](../get-started/history), which shows the raw transcription before processing.
 </Info>
 
 ---
@@ -66,14 +66,4 @@ If the vocabulary hack doesn't fully address your needs:
 1. **Create Language-Specific Modes**: Set up different modes for each language you use regularly
 2. **Custom Mode Prompts**: For custom modes, add instructions to preserve the input language
 
----
-## Related Documentation
-
-<CardGroup cols={2}>
-  <Card title="Using Vocabulary" icon="book-open" href="../get-started/interface-vocabulary">
-    Learn how to use the Vocabulary feature to guide and enhance your transcription accuracy.
-  </Card>
-  <Card title="Speaker Separated Meetings" icon="users" href="../modes/speaker-separated-meetings">
-    Discover how to use Nova models to transcribe audio with automatic speaker identification.
-  </Card>
-</CardGroup>
+Another reliable fix: set the mode's **Language** to your language instead of Automatic. A fixed language removes the guesswork. Use Automatic only when you mix languages in one dictation.

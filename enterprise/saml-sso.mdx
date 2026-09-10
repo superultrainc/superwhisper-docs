@@ -3,11 +3,13 @@ title: "SAML 2.0"
 description: "Set up Single Sign-On with SAML 2.0 for your Superwhisper Enterprise account, with Okta, Microsoft Entra, Google, or any SAML provider."
 ---
 
+import EnterpriseSupport from '/snippets/enterprise-support.mdx';
+
 > **Note:** If you haven't created your enterprise account yet, head to [Getting Started](/enterprise/getting-started) first.
 
-## Configuring SAML Authentication
+## Configuring SAML authentication
 
-### Inviting Technical Team Members
+### Inviting technical team members
 
 Invite IT or Security team members to help with SAML setup. Until SAML is fully configured, technical members can only access the dashboard via a magic invitation link.
 
@@ -23,13 +25,13 @@ This allows your technical team to:
 - View organization settings and your unique Assertion Consumer Service URL
 - Help with technical setup and troubleshooting
 
-### Setting Up SAML
+### Setting up SAML
 
 Navigate to the Authentication page on your dashboard to find everything you need for SAML setup, including your organization's unique Assertion Consumer Service URL.
 
 ![SAML Configuration Interface](/images/enterprise/saml_setup.png)
 
-### Authentication Methods
+### Authentication methods
 
 Superwhisper offers three authentication methods:
 
@@ -39,7 +41,7 @@ Superwhisper offers three authentication methods:
 
 Only one authentication method can be active at a time.
 
-### Setting Up Single Sign-On
+### Setting up single sign-on
 
 Superwhisper supports SAML 2.0 for Single Sign-On. Follow these steps to configure your authentication provider:
 
@@ -75,11 +77,9 @@ Select your identity provider and upload your SAML metadata XML file provided by
 
 Use the **Test** button in the Single Sign-On section to verify your SAML configuration. Depending on the identity provider, records can take a couple of minutes to propagate on their end.
 
-## Next Steps
+## Next steps
 
 - [SCIM Provisioning](/enterprise/scim) to automate user provisioning and deprovisioning
 - [MDM & Silent Deployment](/enterprise/mdm-deployment) to roll the app out across your fleet with auto-activation through SSO
 
-## Support
-
-Questions about SAML setup? Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com), request a shared Slack channel, or schedule a call.
+<EnterpriseSupport />
