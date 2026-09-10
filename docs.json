@@ -18,31 +18,11 @@
             "group": "Get Started",
             "pages": [
               "get-started/introduction",
-              {
-                "group": "Pro Activation",
-                "pages": [
-                  "get-started/sw-pro",
-                  "get-started/activate-ios",
-                  "get-started/activate-mac"
-                ]
-              },
-              {
-                "group": "Billing & Plans",
-                "pages": [
-                  "get-started/plan-changes",
-                  "get-started/cancel-refund"
-                ]
-              },
-              {
-                "group": "Fine-Tune Your Setup",
-                "pages": [
-                  "get-started/settings-overview",
-                  "get-started/settings",
-                  "get-started/settings-sound",
-                  "get-started/settings-shortcuts",
-                  "get-started/settings-advanced"
-                ]
-              },
+              "get-started/quickstart",
+              "get-started/choose-your-model",
+              "get-started/essential-settings",
+              "get-started/windows",
+              "get-started/ios",
               {
                 "group": "The Interface",
                 "pages": [
@@ -52,13 +32,13 @@
                   "get-started/interface-history"
                 ]
               },
+              "get-started/settings-advanced",
               "get-started/transcribe-history",
               "get-started/transcribe-files",
               "get-started/history-management",
               "get-started/backing-up-settings",
               "get-started/report",
-              "get-started/community",
-              "get-started/windows"
+              "get-started/community"
             ]
           },
           {
@@ -87,11 +67,19 @@
             "pages": ["models/voice", "models/language"]
           },
           {
+            "group": "Account & Billing",
+            "pages": [
+              "billing/plans",
+              "billing/activate",
+              "billing/manage-subscription",
+              "security/account-deletion"
+            ]
+          },
+          {
             "group": "Security & Privacy",
             "pages": [
               "security/sensitive-data",
-              "security/compliance",
-              "security/account-deletion"
+              "security/compliance"
             ]
           },
           {
@@ -100,7 +88,6 @@
               "common-issues/troubleshooting",
               "common-issues/ios-26-keyboard-changes",
               "common-issues/performance-tips",
-              "common-issues/appstore",
               "common-issues/realtime",
               "common-issues/unable-to-create-mode",
               "common-issues/language-detection",
@@ -202,6 +189,50 @@
     {
       "source": "/enterprise/member_management",
       "destination": "/enterprise/member-management"
+    },
+    {
+      "source": "/quickstart",
+      "destination": "/get-started/quickstart"
+    },
+    {
+      "source": "/get-started/sw-pro",
+      "destination": "/billing/plans"
+    },
+    {
+      "source": "/get-started/activate-mac",
+      "destination": "/billing/activate"
+    },
+    {
+      "source": "/get-started/activate-ios",
+      "destination": "/billing/activate"
+    },
+    {
+      "source": "/common-issues/appstore",
+      "destination": "/billing/activate"
+    },
+    {
+      "source": "/get-started/plan-changes",
+      "destination": "/billing/manage-subscription"
+    },
+    {
+      "source": "/get-started/cancel-refund",
+      "destination": "/billing/manage-subscription"
+    },
+    {
+      "source": "/get-started/settings-overview",
+      "destination": "/get-started/essential-settings"
+    },
+    {
+      "source": "/get-started/settings",
+      "destination": "/get-started/essential-settings"
+    },
+    {
+      "source": "/get-started/settings-sound",
+      "destination": "/get-started/essential-settings"
+    },
+    {
+      "source": "/get-started/settings-shortcuts",
+      "destination": "/get-started/essential-settings"
     }
   ],
   "footer": {

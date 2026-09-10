@@ -1,50 +1,69 @@
 ---
-title: "Windows Feature Support"
-description: "Learn about current limitations in Superwhisper for Windows 10 and 11."
+title: "Superwhisper on Windows"
+description: "Install and set up Superwhisper on Windows 10 and 11. Covers requirements, fixes for DLL and Vulkan errors, file locations, and differences from macOS."
 ---
 
-<Note>
-While many core capabilities are already available on the Windows platform, some features are still in active development.
-</Note>
+Superwhisper runs natively on Windows 10 and 11. It's the same app and the same license as macOS — one purchase covers both platforms.
 
-## Features Not Yet Supported
+## Install
 
-We're currently working on bringing the following features to parity with our macOS application:
-
-### FileSync
-[FileSync](settings-advanced#filesync) allows your Superwhisper configuration files to automatically sync across all installations registered under the same license. This feature is in active development for Windows.
+1. Download the installer from [superwhisper.com/windows](https://superwhisper.com/windows)
+2. Run the installer and follow the prompts
+3. Superwhisper starts and adds an icon to your **system tray** — click it to open settings
+4. Allow **microphone access** when Windows asks
+5. Follow the setup wizard, then try your first dictation ([Quickstart](/get-started/quickstart))
 
 <Info>
-Experimental features may be unstable or have limited functionality. By trying them out, you can help us improve Superwhisper for Windows and move toward a stable feature release.
+Bought the Mac version by mistake, or switching machines? Download the Windows installer and [enter the same key](/billing/activate).
 </Info>
 
-### Custom App Folder Location
-Changing the [app folder location](/get-started/backing-up-settings#configuration-location) is not yet supported on Windows and is currently a work in progress. The default location (`%LOCALAPPDATA%\com.superwhisper.app`) is used for all configuration, recordings, and modes.
+## Requirements
 
-### Hold Shift to Auto-Send
-[Hold Shift to Auto-Send](settings-advanced#hold-shift-to-auto-send) is not yet supported on Windows.
+- Windows 10 or Windows 11 (64-bit)
+- **Local voice models** run on your GPU, and support depends on your hardware:
+  - **Cohere Transcribe** and **Whisper Large V3 Turbo** run through Vulkan — they need a Vulkan-capable GPU with current drivers, and are the fastest options on machines that have one.
+  - **Parakeet Multilanguage** runs through ONNX Runtime and works on any Windows machine, including **ARM (Snapdragon) devices** — it trades some speed for that compatibility.
+  - On Windows ARM, Cohere Transcribe and Whisper Large V3 Turbo aren't supported yet — use Parakeet Multilanguage or a cloud model.
+- **Cloud models** run on any machine — use them when your GPU can't run local models, such as old integrated graphics or a virtual machine.
 
-### Simulate Keypresses
-[Simulate Keypresses](settings-advanced#simulate-keypresses) is not yet supported on Windows.
+## Installation problems
 
-### Agentic Coding Integration
-Agentic coding integration with Claude Code, OpenCode, Pi, and Codex is currently in development and not yet available on Windows.
+**The app won't launch, or you see an error like `vkGetPhysicalDeviceFeatures2 could not be located` or a missing DLL.**
 
----
+1. Update your graphics drivers from your GPU vendor (Intel, NVIDIA, or AMD)
+2. Restart and launch Superwhisper again
+3. If the error persists, your GPU may not support Vulkan. Select a cloud model during setup — cloud models work without a GPU
+4. Still stuck? Email [support@superwhisper.com](mailto:support@superwhisper.com) with your Windows version and GPU model
 
-## Related Documentation
+## Where your files live
+
+Superwhisper stores all configuration, recordings, and modes in:
+
+```
+%LOCALAPPDATA%\com.superwhisper.app
+```
+
+Paste that path into the File Explorer address bar to open it. You can't change this location on Windows yet.
+
+## Differences from macOS
+
+Most features work the same. These are still in development for Windows:
+
+- **FileSync** — syncing configuration across installations
+- **Custom app folder location** — the default path above is always used
+- **Hold Shift to Auto-Send**
+- **Simulate Keypresses**
+- **Agentic coding integrations** (Claude Code, OpenCode, Pi, Codex)
+
+Everything else — modes, custom modes, vocabulary, local and cloud models, file transcription — works the same as on macOS, so the rest of these docs apply to both platforms.
+
+## Next steps
 
 <CardGroup cols={2}>
-  <Card title="Settings Overview" icon="sliders" href="settings-overview">
-    Learn about all available settings and configuration options
+  <Card title="Quickstart" icon="rocket" href="/get-started/quickstart">
+    First dictation in less than a minute
   </Card>
-  <Card title="Keyboard Shortcuts" icon="keyboard" href="settings-shortcuts">
-    Configure keyboard shortcuts for Windows
-  </Card>
-  <Card title="Troubleshooting" icon="wrench" href="../common-issues/troubleshooting">
-    Find solutions to common issues
-  </Card>
-  <Card title="Report an Issue" icon="bug" href="report">
-    Help us improve Windows support by reporting issues
+  <Card title="Create your first mode" icon="wand-magic-sparkles" href="/get-started/choose-your-model">
+    Set up a Message mode and pick a model your hardware supports
   </Card>
 </CardGroup>
