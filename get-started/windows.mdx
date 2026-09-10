@@ -1,6 +1,6 @@
 ---
 title: "Superwhisper on Windows"
-description: "Install and set up Superwhisper on Windows 10 and 11 — requirements, install fixes for DLL and Vulkan errors, file locations, and differences from macOS."
+description: "Install and set up Superwhisper on Windows 10 and 11. Covers requirements, fixes for DLL and Vulkan errors, file locations, and differences from macOS."
 ---
 
 Superwhisper runs natively on Windows 10 and 11. It's the same app and the same license as macOS — one purchase covers both platforms.
@@ -14,17 +14,17 @@ Superwhisper runs natively on Windows 10 and 11. It's the same app and the same 
 5. Follow the setup wizard, then try your first dictation ([Quickstart](/get-started/quickstart))
 
 <Info>
-Bought the Mac version by mistake, or switching machines? Your license key works on both platforms. Just download the Windows installer and [enter the same key](/billing/activate).
+Bought the Mac version by mistake, or switching machines? Download the Windows installer and [enter the same key](/billing/activate).
 </Info>
 
 ## Requirements
 
 - Windows 10 or Windows 11 (64-bit)
 - **Local voice models** run on your GPU, and support depends on your hardware:
-  - **Cohere Transcribe** and **Large V3 Turbo** run through Vulkan — they need a Vulkan-capable GPU with current drivers, and are the fastest options on machines that have one.
+  - **Cohere Transcribe** and **Whisper Large V3 Turbo** run through Vulkan — they need a Vulkan-capable GPU with current drivers, and are the fastest options on machines that have one.
   - **Parakeet Multilanguage** runs through ONNX Runtime and works on any Windows machine, including **ARM (Snapdragon) devices** — it trades some speed for that compatibility.
-  - On Windows ARM, Cohere Transcribe and Large V3 Turbo aren't supported yet — use Parakeet Multilanguage or a cloud model.
-- On machines without a capable GPU (old integrated graphics, many virtual machines), **cloud models** run on any hardware.
+  - On Windows ARM, Cohere Transcribe and Whisper Large V3 Turbo aren't supported yet — use Parakeet Multilanguage or a cloud model.
+- **Cloud models** run on any machine — use them when your GPU can't run local models, such as old integrated graphics or a virtual machine.
 
 ## Installation problems
 
@@ -32,22 +32,22 @@ Bought the Mac version by mistake, or switching machines? Your license key works
 
 1. Update your graphics drivers from your GPU vendor (Intel, NVIDIA, or AMD)
 2. Restart and launch Superwhisper again
-3. If the error persists, your GPU may not support Vulkan — Superwhisper's cloud models still work; select a cloud model during setup
+3. If the error persists, your GPU may not support Vulkan. Select a cloud model during setup — cloud models work without a GPU
 4. Still stuck? Email [support@superwhisper.com](mailto:support@superwhisper.com) with your Windows version and GPU model
 
 ## Where your files live
 
-All configuration, recordings, and modes are stored in:
+Superwhisper stores all configuration, recordings, and modes in:
 
 ```
 %LOCALAPPDATA%\com.superwhisper.app
 ```
 
-Paste that path into the File Explorer address bar to open it. Changing this location is not yet supported on Windows.
+Paste that path into the File Explorer address bar to open it. You can't change this location on Windows yet.
 
 ## Differences from macOS
 
-Most features work identically. These are still in development for Windows:
+Most features work the same. These are still in development for Windows:
 
 - **FileSync** — syncing configuration across installations
 - **Custom app folder location** — the default path above is always used
@@ -61,9 +61,9 @@ Everything else — modes, custom modes, vocabulary, local and cloud models, fil
 
 <CardGroup cols={2}>
   <Card title="Quickstart" icon="rocket" href="/get-started/quickstart">
-    First dictation in three minutes
+    First dictation in less than a minute
   </Card>
-  <Card title="Choose your model" icon="microchip" href="/get-started/choose-your-model">
-    Cloud vs local, and what your hardware supports
+  <Card title="Create your first mode" icon="wand-magic-sparkles" href="/get-started/choose-your-model">
+    Set up a Message mode and pick a model your hardware supports
   </Card>
 </CardGroup>
