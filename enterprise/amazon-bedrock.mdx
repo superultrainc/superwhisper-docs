@@ -3,6 +3,8 @@ title: "Amazon Bedrock"
 description: "Configure Amazon Bedrock as a custom model provider for your Superwhisper Enterprise account."
 ---
 
+import EnterpriseSupport from '/snippets/enterprise-support.mdx';
+
 Amazon Bedrock provides access to a range of foundation models through an OpenAI-compatible API. Connect Superwhisper to your existing AWS infrastructure to keep data within your AWS environment and use your existing cloud spend.
 
 ## Prerequisites
@@ -13,7 +15,7 @@ Before configuring Bedrock in Superwhisper, you'll need:
 - Model access granted for at least one foundation model in your chosen region (managed in the [AWS Bedrock console](https://console.aws.amazon.com/bedrock/home))
 - An Amazon Bedrock API key
 
-## Creating a Bedrock API Key
+## Creating a Bedrock API key
 
 Bedrock Mantle uses dedicated Amazon Bedrock API keys. These are separate from IAM credentials and AWS access keys.
 
@@ -40,7 +42,7 @@ Bedrock Mantle uses dedicated Amazon Bedrock API keys. These are separate from I
 Replace `<region>` in the API URL with your AWS region (e.g., `us-east-1`, `eu-west-1`). Model availability varies by region. Check the [Amazon Bedrock documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html) to confirm your chosen model is available in your region.
 </Note>
 
-## Regional Endpoints
+## Regional endpoints
 
 Use the endpoint that corresponds to the AWS region where you have Bedrock enabled.
 
@@ -57,9 +59,4 @@ Use the endpoint that corresponds to the AWS region where you have Bedrock enabl
 
 For the full list of supported regions, refer to the [Amazon Bedrock endpoints documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html).
 
-## Support
-
-If you run into issues configuring Bedrock or have questions about which models to enable:
-
-- Email us at enterprise@superwhisper.com
-- Request a shared Slack channel for faster communication
+<EnterpriseSupport />

@@ -1,0 +1,31 @@
+---
+title: "App Won't Launch or Install"
+description: "Fix Superwhisper launch failures on Windows and macOS, including missing DLL and vkGetPhysicalDeviceFeatures2 Vulkan errors."
+---
+
+## Windows: missing DLL or Vulkan error
+
+**The app won't launch, or you see an error like `vkGetPhysicalDeviceFeatures2 could not be located` or a missing DLL.** Superwhisper's local models run on your GPU through Vulkan, and this error means your graphics drivers don't provide it.
+
+1. Update your graphics drivers from your GPU vendor (Intel, NVIDIA, or AMD)
+2. Restart and launch Superwhisper again
+3. If the error persists, your GPU may not support Vulkan. Select a **cloud model** during setup; cloud models work without a GPU
+4. On **Windows ARM (Snapdragon)** devices, use **Parakeet Multilanguage** or a cloud model. See [Windows requirements](/get-started/windows#requirements)
+
+## Windows: installer problems
+
+- Re-download the installer from [superwhisper.com/windows](https://superwhisper.com/windows). A partial download corrupts the install
+- Install from a local drive, not a network share
+- If SmartScreen blocks it, choose **More info → Run anyway** (the installer is signed)
+
+## macOS: app won't open
+
+1. Re-download from [superwhisper.com](https://superwhisper.com) and drag the app into **Applications** again. Replacing the old copy is safe: your settings live in the [Superwhisper folder](/get-started/settings-advanced#folder-location), not the app bundle
+2. Restart your Mac and try again
+3. If the app crashes immediately at launch, email [support@superwhisper.com](mailto:support@superwhisper.com) with your macOS version. Include the crash report macOS offers to show you
+
+## Rule out the machine
+
+Superwhisper's **cloud models run on any hardware**. If local models are the problem (old integrated graphics, a virtual machine, low memory), the app itself still works. Pick a cloud model during setup and revisit local models later.
+
+To install an older version, use the releases listed at [superwhisper.com/appcast.xml](https://superwhisper.com/appcast.xml).

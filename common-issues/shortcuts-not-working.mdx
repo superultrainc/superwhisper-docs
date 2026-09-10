@@ -1,0 +1,29 @@
+---
+title: "Shortcuts Not Working or Misfiring"
+description: "Fix Superwhisper keyboard shortcuts that don't trigger, trigger the wrong mode, or stay bound after you reassign them."
+---
+
+## The shortcut triggers the wrong mode
+
+Superwhisper has two kinds of shortcuts, and mixing them up is the most common cause:
+
+- **Global shortcuts** (Settings → Configuration): Toggle Recording, Push-to-Talk, Cancel. They record with whatever mode is active.
+- **Per-mode shortcuts**: each mode has its own **Keyboard shortcut** field in the mode editor that starts a recording in that specific mode.
+
+If a key starts the wrong mode, check whether it's assigned in both places. The per-mode assignment takes priority.
+
+## Nothing happens when I press the shortcut
+
+1. **Another app owns the key**: global shortcuts lose to system and app shortcuts. Test an uncommon combination to confirm, then pick a key no other app uses.
+2. **Check the recording window setting**: if the recording window is set to **None**, recording still works but shows nothing on screen. Dictate a line and check [History](/get-started/history).
+3. **Single modifier keys**: Left Command, Right Command, and Fn work on their own for Toggle Recording, but some keyboards send Fn to the system instead of apps. Test with a regular combination.
+4. **Restart Superwhisper**: if the shortcut works after a restart, [update the app](/get-started/essential-settings#application-behavior). Stuck registrations are fixed in updates.
+
+## The old shortcut still fires after I changed it
+
+Reassign the shortcut in **Settings → Configuration**, then restart Superwhisper. If the old binding still fires after a restart, email [support@superwhisper.com](mailto:support@superwhisper.com) with your app version and the stuck key.
+
+## Push-to-talk behavior
+
+- **Shared key**: Push-to-Talk can share a key with Toggle Recording. Press and hold to record push-to-talk style; tap to toggle.
+- **Mouse buttons**: a quick click toggles, and press-and-hold acts as push-to-talk. Some mice can't detect sustained holds; if hold-to-record releases at random, use a keyboard key instead.

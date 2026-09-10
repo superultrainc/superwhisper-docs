@@ -1,0 +1,59 @@
+# Superwhisper
+
+> Superwhisper is a privacy-first AI dictation and meeting recorder for macOS, Windows, iOS, and Android (coming soon). Speak naturally and get formatted text in any app. Transcription runs on cloud models or fully on-device local models; every "mode" pairs a voice model with optional AI formatting. One Pro license covers all platforms.
+
+## Getting started
+
+- [Quickstart](https://docs.superwhisper.com/get-started/quickstart): Install on macOS or Windows and dictate in less than a minute
+- [Create Your First Mode](https://docs.superwhisper.com/get-started/choose-your-model): Set up a Message mode and pick a cloud or local model
+- [Essential Settings](https://docs.superwhisper.com/get-started/essential-settings): Keyboard shortcuts, push-to-talk, microphone input, sound feedback
+- [Superwhisper on Windows](https://docs.superwhisper.com/get-started/windows): Requirements, Vulkan/DLL fixes, file locations, differences from macOS
+- [Superwhisper on iOS](https://docs.superwhisper.com/get-started/ios): Keyboard setup, dictating in any app, iOS limits
+- [History](https://docs.superwhisper.com/get-started/history): Review, search, reprocess, and report dictations; storage locations per platform
+
+## Billing and licenses
+
+- [Plans & Pricing](https://docs.superwhisper.com/billing/plans): Free vs Pro, Monthly/Annual/Lifetime pricing, where to buy
+- [Activate Your License](https://docs.superwhisper.com/billing/activate): Enter your key on macOS, Windows, or iOS; recover a lost key
+- [Manage Your Subscription](https://docs.superwhisper.com/billing/manage-subscription): Cancel, 30-day refunds, invoices and VAT, plan switches
+
+## Troubleshooting
+
+- ["No Voice Found" or Stuck Processing](https://docs.superwhisper.com/common-issues/no-voice-found): Microphone, input level, and connection fixes
+- ["LLM Processing Error"](https://docs.superwhisper.com/common-issues/llm-processing-error): AI formatting failed; transcription is safe in History
+- [App Won't Launch or Install](https://docs.superwhisper.com/common-issues/app-wont-launch): Windows vkGetPhysicalDeviceFeatures2 / missing DLL, macOS launch failures
+- [Transcribed in English Instead of My Language](https://docs.superwhisper.com/common-issues/language-detection): The vocabulary hint for automatic language detection
+- [Gibberish, Repeated, or Made-Up Text](https://docs.superwhisper.com/common-issues/hallucinations): Silence removal and vocabulary fixes for hallucinations
+- [Text Not Pasting, Pasting Twice, or Pasting Old Text](https://docs.superwhisper.com/common-issues/pasting-issues): Accessibility permission, clipboard restore, simulate keypresses
+- [Shortcuts Not Working or Misfiring](https://docs.superwhisper.com/common-issues/shortcuts-not-working): Conflicts and global vs per-mode shortcuts
+- [Wrong Microphone or System Audio Not Captured](https://docs.superwhisper.com/common-issues/microphone-and-system-audio): Input switching, AirPods, meeting capture
+- [Crashes During or After Transcription](https://docs.superwhisper.com/common-issues/crashes): Isolate model, mode, or machine
+- [Modes Not Saving or Disappearing](https://docs.superwhisper.com/common-issues/unable-to-create-mode): iCloud folder move fix; modes don't sync between devices yet
+- [Logs, Clean Uninstall, and Reporting Bugs](https://docs.superwhisper.com/common-issues/diagnostics): Error logging, file locations, uninstall steps
+
+## Modes and models
+
+- [Intro to Modes](https://docs.superwhisper.com/modes/modes): What modes are and how they shape dictation
+- [Custom Modes](https://docs.superwhisper.com/modes/custom): Your own AI instructions, context, and system-audio options
+- [Voice Models](https://docs.superwhisper.com/models/voice): Every transcription model with languages, speed, and size
+- [Language Models](https://docs.superwhisper.com/models/language): AI models that format and transform transcriptions
+
+## Security and privacy
+
+- [Sensitive Data Best Practices](https://docs.superwhisper.com/security/sensitive-data): Local-only setups, data flow per model choice
+- [Compliance & Trust](https://docs.superwhisper.com/security/compliance): DPA, BAA, sub-processors
+- [Account & Data Deletion](https://docs.superwhisper.com/security/account-deletion): Delete your account and data
+
+## Enterprise
+
+- [Enterprise Getting Started](https://docs.superwhisper.com/enterprise/getting-started): Org setup, authentication, billing, members
+- [Activate Your Enterprise License](https://docs.superwhisper.com/enterprise/activate): Employee setup with a company license
+- [Member Management](https://docs.superwhisper.com/enterprise/member-management): Invites, roles, seat reassignment, offboarding
+- [Configuration & Models](https://docs.superwhisper.com/enterprise/configuration): Org-wide policies, custom model providers
+- [SAML SSO](https://docs.superwhisper.com/enterprise/saml-sso), [SCIM Provisioning](https://docs.superwhisper.com/enterprise/scim), [MDM Deployment](https://docs.superwhisper.com/enterprise/mdm-deployment)
+- [Enterprise Billing](https://docs.superwhisper.com/enterprise/billing): Seats, auto-provisioning, invoices and VAT
+
+## Optional
+
+- [Benchmarks](https://superwhisper.com/benchmarks): Public accuracy and speed benchmarks for every model
+- [Changelog](https://superwhisper.com/changelog)

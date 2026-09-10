@@ -1,0 +1,34 @@
+---
+title: "Wrong Microphone or System Audio Not Captured"
+description: "Fix Superwhisper using the wrong microphone, AirPods audio problems, and system-audio recordings that come out empty."
+---
+
+## Superwhisper uses the wrong microphone
+
+The active input device shows in the **top-right of every settings pane**. Click it to switch:
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/screens/mac/input-device-dropdown.png"
+  alt="Superwhisper input device selector open from the top-right of the settings window"
+/>
+
+- **Use system default** follows whatever macOS or Windows has selected, which changes when a Bluetooth headset connects. If Superwhisper switches microphones on its own, the system default changed underneath it.
+- **Pin a specific microphone** to stop the switching. The star marks your preferred device.
+
+## AirPods and Bluetooth headsets sound worse
+
+When a Bluetooth headset's microphone is active, the audio quality drops. This is a Bluetooth limitation, not a Superwhisper setting, and it reduces transcription accuracy. For best results, pin your **built-in microphone** as the input and keep listening through the headset.
+
+## System audio recordings come out empty or silent
+
+System audio (recording what your computer plays, for meetings) is a per-mode feature:
+
+1. **Enable it in the mode**: edit the mode and turn on **Record from System Audio**. See [audio options](/modes/custom#audio-options)
+2. **A still waveform is normal**: the waveform doesn't move during system-audio capture. Check [History](/get-started/history) to confirm the audio recorded
+3. **Check your org policy**: on an Enterprise license, your organization can disable system audio recording org-wide. If the option is missing, ask your admin
+4. **Bluetooth output can complicate capture**: if a meeting recorded silent while using Bluetooth audio, retry with built-in speakers or wired headphones and email [support@superwhisper.com](mailto:support@superwhisper.com) with the device model
+
+## Notifications and other apps in the recording
+
+System-audio capture records everything the computer plays, including notification sounds. Mute notifications during meetings you record, or record microphone-only modes when you don't need the other side.

@@ -3,13 +3,15 @@ title: "MDM & Silent Deployment"
 description: "Deploy Superwhisper silently to Mac and Windows fleets using Jamf, Microsoft Intune, or any MDM that supports PKG and NSIS installers."
 ---
 
+import EnterpriseSupport from '/snippets/enterprise-support.mdx';
+
 Roll Superwhisper out across your fleet without asking each user to download, install, or grant permissions manually. Superwhisper ships signed installers and supports the standard managed-app workflows in [Jamf](https://www.jamf.com/), [Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/), and other MDM tools.
 
 <Info>
 Reach out to [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) to request the latest signed PKG (macOS) and NSIS EXE (Windows) installers, plus a config profile template for managed settings. We'll send the artifacts and version metadata for your MDM catalog.
 </Info>
 
-## What MDM Deployment Gets You
+## What MDM deployment gets you
 
 - **Silent install** across Mac and Windows without user interaction
 - **Pre-granted microphone permission** on macOS via a PPPC profile so users skip the system prompt
@@ -25,7 +27,7 @@ Reach out to [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) t
 3. Set the trigger (recurring check-in, login, or self-service) and frequency
 4. Run the policy
 
-### Microphone Permission (PPPC)
+### Microphone permission (PPPC)
 
 Without a PPPC (Privacy Preferences Policy Control) profile, users see a macOS prompt the first time they try to record. To pre-grant the permission:
 
@@ -60,7 +62,7 @@ Superwhisper for Windows uses an NSIS-based EXE installer. Intune treats EXE ins
 2. Choose **Windows app (Win32)** and upload the Superwhisper EXE wrapped as an `.intunewin` package using the [Microsoft Win32 Content Prep Tool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool)
 3. Set the install command (see below) and assign to your target group as **Required**
 
-### Silent Install Command
+### Silent install command
 
 NSIS installers accept the `/S` flag for fully silent installation:
 
@@ -78,7 +80,7 @@ SuperwhisperSetup.exe /S /uninstall
 
 Check the Intune admin center under **Apps > Monitor > App install status** for per-device install results.
 
-## Activation After Install
+## Activation after install
 
 If your organization is on Superwhisper Enterprise with [SAML SSO](/enterprise/saml-sso) configured, users open the app, sign in with their work email, and their license activates automatically. No license keys to push.
 
@@ -94,6 +96,6 @@ Superwhisper checks for updates on launch by default. To manage updates through 
 - [SCIM Provisioning](/enterprise/scim), automate user lifecycle alongside the deployment
 - [Member Management](/enterprise/member-management), roles, seats, and post-deployment offboarding
 
-## Support
+<Note>Need installer packages, PPPC bundle and team IDs, or version metadata for your MDM? Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com).</Note>
 
-Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) for installer packages, PPPC bundle and team IDs, version metadata, or help with a specific MDM platform. We also offer a shared Slack channel for Enterprise customers running large deployments.
+<EnterpriseSupport />

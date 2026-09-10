@@ -28,16 +28,13 @@
                 "pages": [
                   "get-started/interface-menu-bar",
                   "get-started/interface-rec-window",
-                  "get-started/interface-vocabulary",
-                  "get-started/interface-history"
+                  "get-started/interface-vocabulary"
                 ]
               },
+              "get-started/history",
               "get-started/settings-advanced",
-              "get-started/transcribe-history",
               "get-started/transcribe-files",
-              "get-started/history-management",
               "get-started/backing-up-settings",
-              "get-started/report",
               "get-started/community"
             ]
           },
@@ -83,22 +80,51 @@
             ]
           },
           {
-            "group": "Common Issues",
+            "group": "Troubleshooting",
             "pages": [
               "common-issues/troubleshooting",
-              "common-issues/ios-26-keyboard-changes",
-              "common-issues/performance-tips",
-              "common-issues/realtime",
-              "common-issues/unable-to-create-mode",
-              "common-issues/language-detection",
-              "common-issues/context",
-              "common-issues/hallucinations"
+              {
+                "group": "Error Messages",
+                "pages": [
+                  "common-issues/no-voice-found",
+                  "common-issues/llm-processing-error",
+                  "common-issues/app-wont-launch",
+                  "common-issues/crashes"
+                ]
+              },
+              {
+                "group": "Wrong Output",
+                "pages": [
+                  "common-issues/language-detection",
+                  "common-issues/hallucinations",
+                  "common-issues/pasting-issues"
+                ]
+              },
+              {
+                "group": "Input & Controls",
+                "pages": [
+                  "common-issues/shortcuts-not-working",
+                  "common-issues/microphone-and-system-audio",
+                  "common-issues/unable-to-create-mode",
+                  "common-issues/performance-tips"
+                ]
+              },
+              {
+                "group": "Other Guides",
+                "pages": [
+                  "common-issues/realtime",
+                  "common-issues/context",
+                  "common-issues/ios-26-keyboard-changes",
+                  "common-issues/diagnostics"
+                ]
+              }
             ]
           },
           {
             "group": "Enterprise",
             "pages": [
               "enterprise/getting-started",
+              "enterprise/activate",
               {
                 "group": "Authentication & Deployment",
                 "pages": [
@@ -112,7 +138,6 @@
                 "group": "Enterprise Configuration",
                 "pages": [
                   "enterprise/configuration",
-                  "enterprise/models",
                   "enterprise/amazon-bedrock"
                 ]
               },
@@ -233,6 +258,26 @@
     {
       "source": "/get-started/settings-shortcuts",
       "destination": "/get-started/essential-settings"
+    },
+    {
+      "source": "/enterprise/models",
+      "destination": "/enterprise/configuration"
+    },
+    {
+      "source": "/get-started/interface-history",
+      "destination": "/get-started/history"
+    },
+    {
+      "source": "/get-started/transcribe-history",
+      "destination": "/get-started/history"
+    },
+    {
+      "source": "/get-started/history-management",
+      "destination": "/get-started/history"
+    },
+    {
+      "source": "/get-started/report",
+      "destination": "/get-started/history"
     }
   ],
   "footer": {
