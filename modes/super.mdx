@@ -1,6 +1,6 @@
 ---
 title: "Super"
-description: "Supercharge your dictation with advanced context-aware processing. Super Mode intelligently adapts to your active applications, selected text, and clipboard content to deliver more accurate and relevant results."
+description: "Super Mode reads your active app, selected text, and clipboard to adapt your dictation. Learn what context it uses and how to direct it."
 ---
 
 <img
@@ -9,16 +9,19 @@ src="/images/modes/modes-super-001.png"
 alt="Superwhisper's interface for Super Mode"
 />
 
-## Key Features
-**Super Mode enhances your dictation by:**
-- Adapting messages to match application context
-- Correcting spelling based on app-specific terms, names, and vocabulary
-- Converting spoken URLs and emails into proper format
-- Preserving message tone and intent while improving clarity
+## Key features
+
+Super Mode adapts your dictation to what's on screen. It:
+
+- Adapts messages to match the active application
+- Corrects spelling based on app-specific terms, names, and vocabulary
+- Converts spoken URLs and email addresses into proper format
+- Preserves your tone and intent while improving clarity
 
 ---
-## Context Awareness
-**Super Mode uses accessibility APIs to gather three types of context:**
+## Context awareness
+
+Super Mode uses accessibility APIs to gather three types of context:
 <AccordionGroup>
 <Accordion title="1. Application Context">
      - Identifies your active application
@@ -34,31 +37,32 @@ alt="Superwhisper's interface for Super Mode"
 </AccordionGroup>
 
 <Note>
-When Application Context is active, Superwhisper also includes system information, like the current date and time, your full name, and your computer name. This can help the AI handle things like inserting in the date, signing off an email with your name, etc. Sending these details makes dictation results more accurate and lets the AI handle context-specific requests more smoothly.
+When Application Context is active, Superwhisper also includes system information: the current date and time, your full name, and your computer name. This lets the AI insert the date, sign off an email with your name, and handle similar context-specific requests.
 </Note>
 
 ---
 ## Commands
-**Super Mode lets you dictate commands on selected text.** While it understands context, for best result use commands focused on text transformation or formatting rather than content analysis or generation.
+
+Super Mode lets you dictate commands on selected text. Use commands for text transformation and formatting, not content analysis or generation.
 
 <CardGroup>
-   <Card title="Correct" icon="circle-check">
+   <Card title="Works well" icon="circle-check">
    "Make this text title case"
    "Convert selection to uppercase"
    "Format my selected text as bullet points"
    </Card>
-   <Card title="Incorrect" icon="circle-xmark">
+   <Card title="Doesn't work well" icon="circle-xmark">
    "Summarize this paragraph"
    "Expand on these ideas"
    "Rewrite this section"
    </Card>
 </CardGroup>
 
-<Tip>**While you can use commands for formatting, they're completely optional.** Just dictate naturally and Super Mode will intelligently adapt to your active app - no text selection or copying needed. It's that simple.</Tip>
+<Tip>Commands are optional. Dictate naturally and Super Mode adapts to your active app, with no text selection or copying needed.</Tip>
 
 ---
 ## Troubleshooting
-If you're not getting expected results with Super Mode, check these common issues:
+If Super Mode gives unexpected results, check these common causes:
 
 <AccordionGroup>
 <Accordion title="Command Type Mismatch">
@@ -70,11 +74,11 @@ If you're not getting expected results with Super Mode, check these common issue
 Since Super Mode handles multiple types of context and more complex instructions, it may require advanced language understanding, such as that provided by Claude or GPT models. Using less capable or local models can lead to unexpected results, especially for tasks involving nuanced formatting or contextual adaptation.
 </Accordion>
 
-<Accordion title="System Settings & User Error">
+<Accordion title="Permissions and Timing">
 - Check system settings for the correct permissions
 - For application context, make sure the correct app window is active
-- For selected text context, verify that the text is selected when triggering the dictation
-- Text copied to your clipboard will only be processed if done within 3 seconds of starting your dictation or while you're speaking
+- For selected text context, verify the text is selected when you trigger the dictation
+- Clipboard text is only processed if copied within 3 seconds of starting your dictation, or while you speak
 </Accordion>
 
 <Accordion title="Verify Processing">
@@ -83,4 +87,4 @@ Check the History tab to see if context was properly sent to AI. You can view al
 </AccordionGroup>
 
 ---
-<Tip>**Super Mode focuses on context-aware dictation and formatting.** If you need a different type of command with similar smart features, check out [Custom Mode](custom).</Tip>
+<Tip>Super Mode focuses on context-aware dictation and formatting. For other kinds of commands with the same context features, use a [Custom Mode](custom).</Tip>
