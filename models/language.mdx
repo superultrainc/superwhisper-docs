@@ -1,21 +1,29 @@
 ---
 title: "Language"
-description: "Compare Superwhisper's language models — cloud AI models from Anthropic, OpenAI, and Groq that enhance and format your transcriptions."
+description: "Compare Superwhisper's language models. Cloud and local AI models that format and transform your transcriptions."
 ---
 
-Language models take your transcribed text and enhance, format, or transform it using AI. There are two types of language models: local and cloud-based. Local (or Offline) models run on your machine. Cloud models are hosted either by Superwhisper or another provider.
+Language models take your transcribed text and format or transform it according to your mode's instructions. There are two types: cloud models run on hosted servers, and local models run entirely on your device. Usage of every model below is covered by your license, with no API keys needed.
 
 ## Superwhisper (Cloud)
 
-These are the language models that are hosted in the Cloud by Superwhisper. They are optimized for low latency and high quality text processing.
+Hosted by Superwhisper and optimized for low latency and high-quality text processing.
 
-| Name                | Speed | Benchmark (0-100) | Size  | License |
-| ------------------- | ----- | ----------------- | ----- | ------- |
-| S1-Language (Cloud) | 10    | ~80               | Cloud | Pro     |
+| Name        | Speed | Benchmark (0-100) | Size  | License |
+| ----------- | ----- | ----------------- | ----- | ------- |
+| S1-Language | 10    | ~80               | Cloud | Pro     |
+
+## Superwhisper (Local)
+
+S1-mini runs entirely on your device. Pair it with a local voice model and nothing you dictate leaves your machine. It also works offline.
+
+| Name    | Speed | Benchmark (0-100) | Size  | License |
+| ------- | ----- | ----------------- | ----- | ------- |
+| S1-mini | 9     | –                 | Local | Pro     |
 
 ## Anthropic (Cloud)
 
-Anthropic's Claude models available through Superwhisper. Usage is covered by your license.
+Anthropic's Claude models, available through Superwhisper.
 
 | Name              | Speed | Benchmark (0-100) | Size  | License |
 | ----------------- | ----- | ----------------- | ----- | ------- |
@@ -27,7 +35,7 @@ Anthropic's Claude models available through Superwhisper. Usage is covered by yo
 
 ## OpenAI (Cloud)
 
-OpenAI's latest GPT models available through Superwhisper. Usage is covered by your license.
+OpenAI's GPT models, available through Superwhisper.
 
 | Name         | Speed | Benchmark (0-100) | Size  | License |
 | ------------ | ----- | ----------------- | ----- | ------- |
@@ -40,8 +48,14 @@ OpenAI's latest GPT models available through Superwhisper. Usage is covered by y
 
 ## Groq (Cloud)
 
-Ultra-fast inference using Groq's LPU technology. Usage is covered by your license.
+Fast inference hosted on Groq's LPU hardware.
 
 | Name       | Speed | Benchmark (0-100) | Size  | License |
 | ---------- | ----- | ----------------- | ----- | ------- |
 | Llama 3 8b | 10    | 67                | Cloud | Pro     |
+
+## Choosing a model
+
+S1-Language is the default and the right choice for most modes. Pick S1-mini when your mode uses a local voice model and you want the whole pipeline on-device. Reach for a larger model (GPT-5, Claude 4.5 Sonnet) only when a mode does heavy rewriting and quality matters more than speed.
+
+You can also add models from your own providers with your own API keys under **Settings → Configuration → Advanced settings → AI Models**.
