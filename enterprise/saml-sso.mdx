@@ -5,7 +5,9 @@ description: "Set up Single Sign-On with SAML 2.0 for your Superwhisper Enterpri
 
 import EnterpriseSupport from '/snippets/enterprise-support.mdx';
 
-> **Note:** If you haven't created your enterprise account yet, head to [Getting Started](/enterprise/getting-started) first.
+<Note>
+If you haven't created your enterprise account yet, start with [Getting Started](/enterprise/getting-started).
+</Note>
 
 ## Configuring SAML authentication
 
@@ -35,9 +37,9 @@ Navigate to the Authentication page on your dashboard to find everything you nee
 
 Superwhisper offers three authentication methods:
 
-1. **Single Sign-On (SSO)** - Use SAML 2.0 for enterprise SSO integration
-2. **Google OAuth** - Allow organization members to sign in with Google accounts
-3. **Magic Link** - Members sign in via a one-time email link. No SSO required
+1. **Single Sign-On (SSO)**: SAML 2.0 for enterprise SSO integration
+2. **Google OAuth**: members sign in with their Google accounts
+3. **Magic Link**: members sign in via a one-time email link, with no SSO required
 
 Only one authentication method can be active at a time.
 
@@ -45,15 +47,15 @@ Only one authentication method can be active at a time.
 
 Superwhisper supports SAML 2.0 for Single Sign-On. Follow these steps to configure your authentication provider:
 
-#### 1. Select Your Identity Provider
+#### 1. Select your identity provider
 
 Choose from the supported identity providers:
-- **Google** - For Google Workspace organizations
-- **Okta** - For Okta identity management
-- **Microsoft** - For Azure AD/Microsoft Entra ID
-- **Custom** - For other SAML 2.0 compatible providers
+- **Google**: for Google Workspace organizations
+- **Okta**: for Okta identity management
+- **Microsoft**: for Azure AD / Microsoft Entra ID
+- **Custom**: for other SAML 2.0 compatible providers
 
-#### 2. Configure SP Metadata
+#### 2. Configure SP metadata
 
 Copy the following attributes into your SAML configuration:
 
@@ -67,13 +69,15 @@ https://superwhisper.com
 https://api.superwhisper.com/_external/v1/auth/sso/saml5/callback/{customToYourInstance}
 ```
 
-> **Note:** Your Assertion Consumer Service URL is unique to your organization. Copy it from the authentication screen.
+<Note>
+Your Assertion Consumer Service URL is unique to your organization. Copy it from the authentication screen.
+</Note>
 
-#### 3. Upload SAML Metadata
+#### 3. Upload SAML metadata
 
-Select your identity provider and upload your SAML metadata XML file provided by your authentication provider.
+Select your identity provider and upload the SAML metadata XML file from your authentication provider.
 
-#### 4. Test Your Configuration
+#### 4. Test your configuration
 
 Use the **Test** button in the Single Sign-On section to verify your SAML configuration. Depending on the identity provider, records can take a couple of minutes to propagate on their end.
 

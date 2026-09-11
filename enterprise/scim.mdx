@@ -5,7 +5,9 @@ description: "Automate user provisioning and deprovisioning for your Superwhispe
 
 import EnterpriseSupport from '/snippets/enterprise-support.mdx';
 
-> **Note:** SCIM configuration is only available after [SAML SSO](/enterprise/saml-sso) has been set up.
+<Note>
+SCIM configuration is only available after [SAML SSO](/enterprise/saml-sso) has been set up.
+</Note>
 
 ## How SCIM works in Superwhisper
 
@@ -28,19 +30,19 @@ Your identity provider **must use email as the unique identifier (userName)** fo
 
 Navigate to the **SCIM** tab on the Authentication page in your dashboard.
 
-### 1. generate a SCIM Bearer token
+### 1. Generate a SCIM bearer token
 
-Click **Generate Token** to create a bearer token for authenticating SCIM requests. Copy it now, you'll need it when configuring your identity provider. Regenerating the token invalidates the previous one.
+Click **Generate Token** to create a bearer token for authenticating SCIM requests. Copy it now; you'll need it when configuring your identity provider. Regenerating the token invalidates the previous one.
 
-### 2. copy the SCIM base URL
+### 2. Copy the SCIM base URL
 
-Your SCIM base URL will be displayed on the configuration page in the following format:
+Your SCIM base URL is displayed on the configuration page in this format:
 
 ```
 https://api.superwhisper.com/scim/v2
 ```
 
-### 3. configure your identity provider
+### 3. Configure your identity provider
 
 Enter the SCIM base URL and bearer token into your identity provider's provisioning settings. Refer to your provider's SCIM guide for detailed instructions:
 
@@ -48,9 +50,11 @@ Enter the SCIM base URL and bearer token into your identity provider's provision
 - [Google Workspace automated provisioning guide](https://support.google.com/a/answer/7681608)
 - [Microsoft Entra SCIM provisioning guide](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/use-scim-to-provision-users-and-groups)
 
-> **Note:** These provider guides will ask you to enable separate provisioning actions, typically **Create Users**, **Update User Attributes**, and **Deactivate Users**. You can leave **Create Users** enabled — it's safe to turn on, but Superwhisper ignores it and never creates an account or seat from it. Account creation always happens via JIT provisioning on first SSO login, as described above. The action that actually matters here is **Deactivate Users**, which drives automatic deprovisioning when you unassign someone in your identity provider.
+<Note>
+Provider guides ask you to enable separate provisioning actions, typically **Create Users**, **Update User Attributes**, and **Deactivate Users**. You can leave **Create Users** enabled: it's safe, but Superwhisper ignores it and never creates an account or seat from it. Account creation always happens via JIT provisioning on first SSO login. The action that matters is **Deactivate Users**, which drives automatic deprovisioning when you unassign someone in your identity provider.
+</Note>
 
-### 4. assign users and groups
+### 4. Assign users and groups
 
 Once SCIM is configured, assign users or groups in your identity provider. Accounts are created on first login. Assigning a user only grants them permission to sign in.
 
