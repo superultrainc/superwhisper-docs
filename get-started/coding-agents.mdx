@@ -1,0 +1,40 @@
+---
+title: "Coding Agents"
+description: "Connect Superwhisper to Claude Code, OpenCode, Codex, and Pi. Answer agent questions by voice and get notified when the agent finishes."
+---
+
+Superwhisper integrates with coding agents: **Claude Code**, **OpenCode**, **Codex**, and **Pi**. Once connected, Superwhisper pops up when your agent needs your input or finishes working, and you answer by voice instead of typing.
+
+<Note>
+Coding agent integrations are currently available on macOS only. See [differences from macOS](/get-started/windows#differences-from-macos) for Windows status.
+</Note>
+
+## What the integration does
+
+- **Voice answers**: when the agent asks a question, Superwhisper pops up and you dictate the reply directly into the agent
+- **Done notifications**: Superwhisper surfaces when the agent finishes working, so you don't have to watch the terminal
+
+## Set up
+
+Superwhisper detects the supported agents installed on your Mac and installs a small plugin into each agent's own configuration. Approve the install when Superwhisper offers it, and the connection is live the next time you start the agent.
+
+What gets installed, per agent:
+
+- **Claude Code**: the `superwhisper` plugin (from the `superwhisper` plugin marketplace) and a `superwhisper` MCP server
+- **OpenCode**: the `@superwhisper/opencode` plugin in `~/.config/opencode`
+- **Codex**: an agent hook
+
+## Manage or remove the plugin
+
+The plugin lives in each agent's own settings, so you manage it from the agent's side:
+
+- **Claude Code**: run `/plugins` inside Claude Code to enable, disable, or uninstall the plugin. It's listed as `superwhisper@superwhisper`.
+- **OpenCode**: remove `@superwhisper/opencode` from `~/.config/opencode/opencode.json`.
+
+Disabling or removing the plugin only turns off the integration. The Superwhisper app itself is unaffected, and re-connecting reinstalls the plugin.
+
+## Troubleshooting
+
+- **The agent doesn't trigger Superwhisper**: restart the agent after installing the plugin. Plugins load when the agent starts.
+- **Claude Code doesn't show the plugin**: run `/plugins` in Claude Code and check whether `superwhisper@superwhisper` is installed and enabled.
+- **Still stuck**: email [support@superwhisper.com](mailto:support@superwhisper.com) with the agent name and its version.
