@@ -1,6 +1,6 @@
 ---
 title: "Speaker-Separated Meetings"
-description: "Learn how to transcribe meetings with speaker separation and process them with AI for enhanced insights. This method combines Superwhisper's speaker identification capabilities with powerful AI processing."
+description: "Transcribe meetings with speaker labels, then process the transcript with AI. Combine a Voice mode with a Custom mode for the full workflow."
 ---
 
 <Note>
@@ -8,16 +8,16 @@ This is an advanced workflow requiring configuration file edits and multiple ste
 </Note>
 
 ## Overview
-This guide shows you how to combine speaker-separated transcription with AI analysis to understand each participant's contributions in your meetings. You'll learn how to capture detailed transcripts that track who said what, then use AI to extract meaningful insights from individual speakers' input.
+This guide combines speaker-separated transcription with AI analysis. You capture a transcript that tracks who said what, then use AI to analyze each speaker's input.
 
-## Transcription Setup and Recording
+## Transcription setup and recording
 <Steps>
 <Step title="Create a Speaker Separation Mode">
 Create a new Voice Mode with these settings:
 - Enable "Identify Speakers" toggle
 - Enable "Record from System Audio" if recording live meetings
 
-<Tip>While all voice models support speaker separation, Nova voice models deliver the most accurate and reliable results for this feature.</Tip>
+<Tip>All voice models support speaker separation, but Nova models give the most accurate and reliable results for this feature.</Tip>
 </Step>
 
 <Step title="Capture & Transcribe Your Meeting">
@@ -27,7 +27,7 @@ Choose your preferred recording method:
 <Accordion title="Live Recording">
 - Select your newly created mode
 - Start recording
-<Note>Be aware that pressing Escape will stop recording</Note>
+<Note>Pressing Escape stops the recording.</Note>
 </Accordion>
 
 <Accordion title="Process Existing Audio">
@@ -58,13 +58,13 @@ alt="Speaker separation interface showing transcribed meeting with different spe
 </Steps>
 
 ---
-## AI Processing and Analysis
+## AI processing and analysis
 
-### Option A: External AI Services
-- Use OpenAI, Claude, or your preferred AI provider
-- Request your desired analysis on the transcript
+### Option A: external AI services
+- Paste the transcript into OpenAI, Claude, or your preferred AI provider
+- Request the analysis you need
 
-### Option B: Superwhisper Custom Mode
+### Option B: a Superwhisper Custom Mode
 <Steps>
 <Step title="Create a new Custom Mode">
 - Write an assistant-focused prompt
@@ -80,7 +80,7 @@ alt="Speaker separation interface showing transcribed meeting with different spe
 </Step>
 </Steps>
 
-### Sample Procesing Requests
+### Sample processing requests
 ```
 "Summarize this meeting's key points by speaker"
 "Extract action items and assign them to each speaker"
