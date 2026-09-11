@@ -4,15 +4,15 @@ description: "Fix Superwhisper modes that won't save, vanish after restart, or f
 ---
 
 ## Overview
-When you enable iCloud Documents syncing on your Mac, the Superwhisper folder may automatically move to iCloud. However, the application might still reference its original location. This mismatch prevents Superwhisper from creating new modes and can cause other functionality issues.
+When iCloud Documents syncing is enabled on your Mac, the Superwhisper folder may move to iCloud while the app still references the original location. This mismatch prevents Superwhisper from saving new modes and can cause other problems.
 
 <Note>
 This mainly affects older installs where the Superwhisper folder lived in ~/Documents. The current default is ~/superwhisper in your home directory, which iCloud Documents syncing doesn't touch.
 </Note>
 
 ---
-## Step-by-Step Process
-Follow these steps to redirect Superwhisper to the correct folder location:
+## Fix the folder location
+Redirect Superwhisper to a folder outside iCloud:
 
 <Steps>
   <Step title="Open the Configuration Tab">
@@ -36,7 +36,7 @@ Follow these steps to redirect Superwhisper to the correct folder location:
   </Step>
 </Steps>
 
-After completing these steps, Superwhisper will correctly reference the new folder location, allowing you to create new modes and use all features as expected.
+Superwhisper now references the new location, and modes save normally again.
 
 ## Modes missing on iPhone or another Mac
 
