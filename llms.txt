@@ -10,6 +10,7 @@
 - [Superwhisper on Windows](https://docs.superwhisper.com/get-started/windows): Requirements, Vulkan/DLL fixes, file locations, differences from macOS
 - [Superwhisper on iOS](https://docs.superwhisper.com/get-started/ios): Keyboard setup, dictating in any app, iOS limits
 - [History](https://docs.superwhisper.com/get-started/history): Review, search, reprocess, and report dictations; storage locations per platform
+- [Coding Agents](https://docs.superwhisper.com/get-started/coding-agents): Connect Claude Code, OpenCode, Codex, or Pi and answer agent questions by voice
 
 ## Billing and licenses
 

@@ -1,6 +1,6 @@
 ---
 title: "Realtime Transcription"
-description: "Enable realtime transcription in Superwhisper to see words appear as you speak. The feature requires a Nova cloud voice model."
+description: "Enable realtime transcription in Superwhisper to see words appear as you speak. It requires a Nova cloud model or the local Parakeet Realtime model."
 ---
 
 <img
@@ -10,7 +10,12 @@ description: "Enable realtime transcription in Superwhisper to see words appear 
 />
 
 ## Overview
-Realtime transcription shows your words on screen as you speak, so you get immediate feedback on accuracy. The feature is **only supported by the Nova (Cloud) voice models**. If the toggle is missing or grayed out, your mode uses a different voice model.
+Realtime transcription shows your words on screen as you speak, so you get immediate feedback on accuracy. It works only with voice models that support streaming:
+
+- **Nova (Cloud)**: requires an internet connection
+- **Parakeet Realtime (Local)**: runs on your device and works offline
+
+If the Realtime toggle is missing or grayed out, your mode uses a voice model that doesn't support streaming. Switch to one of the models above.
 
 ---
 ## Enable realtime transcription
@@ -20,8 +25,8 @@ Realtime transcription shows your words on screen as you speak, so you get immed
     Open Superwhisper and go to the mode you want to edit
   </Step>
   
-  <Step title="Select a Nova voice model">
-    In the Advanced Settings sidebar, open the **Voice model** section and select a **Nova** model from the dropdown
+  <Step title="Select a realtime-capable voice model">
+    In the Advanced Settings sidebar, open the **Voice model** section and select a **Nova** model (cloud) or **Parakeet Realtime** (local) from the dropdown
     
     <img
       style={{ borderRadius: '0.5rem' }}
@@ -32,7 +37,7 @@ Realtime transcription shows your words on screen as you speak, so you get immed
   </Step>
 
   <Step title="Enable Realtime">
-    With a Nova model selected, the Realtime toggle becomes available. Turn it on
+    With a realtime-capable model selected, the Realtime toggle becomes available. Turn it on
     
     <img
       style={{ borderRadius: '0.5rem' }}
