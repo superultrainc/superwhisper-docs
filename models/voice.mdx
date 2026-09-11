@@ -1,53 +1,74 @@
 ---
 title: "Voice"
-description: "Compare Superwhisper's voice-to-text models — cloud and local options for fast, accurate transcription in 100+ languages."
+description: "Compare Superwhisper's voice models. Cloud and local options for fast, accurate transcription in 100+ languages."
 ---
 
-Voice models take your recorded voice and transcribe them into text. There are two types of voice models: local and cloud-based. Local (or Offline) models run on your machine. Cloud models are hosted either by Superwhisper or another provider.
+Voice models turn your recorded audio into text. There are two types: cloud models run on hosted servers with no download, and local models run entirely on your device. Every mode pairs one voice model with an optional [language model](/models/language).
+
+<Note>
+Speed and accuracy columns are relative ratings from 1 to 10. Measured word error rates and latency for the headline models are published at [superwhisper.com/benchmarks](https://superwhisper.com/benchmarks).
+</Note>
 
 ## Superwhisper (Cloud)
 
-These are the models that are hosted in the Cloud by Superwhisper. They are optimized for low latency and accuracy, and are available for use in 100+ languages.
+Hosted by Superwhisper and optimized for low latency and accuracy. Works in 100+ languages with nothing to download.
 
-| Name             | Lang  | Translate | Speed | Accuracy | Size  | License |
-| ---------------- | ----- | --------- | ----- | -------- | ----- | ------- |
-| S1-Voice (Cloud) | multi | ✔        | 10    | 9        | Cloud | Pro     |
-| Ultra (Cloud)    | multi | ✔        | 9     | 9        | Cloud | Pro     |
+| Name     | Lang  | Translate | Speed | Accuracy | Size  | License |
+| -------- | ----- | --------- | ----- | -------- | ----- | ------- |
+| S1-Voice | multi | ✔        | 10    | 9        | Cloud | Pro     |
 
-## Whisper Models (Local)
+S1-Voice is the most accurate model we ship, with a 6.8% word error rate on [our benchmarks](https://superwhisper.com/benchmarks).
 
-These models run on your machine, allowing you to transcribe audio without relying on external services.
-They are based on the [Whisper](https://github.com/openai/whisper) model series from OpenAI. They run locally using [whisper.cpp](https://github.com/ggerganov/whisper.cpp).
+## Cohere Transcribe (Local)
 
-| Name                     | Lang | Translate | Speed | Accuracy | Size   | License |
-| ------------------------ | ---- | --------- | ----- | -------- | ------ | ------- |
-| Whisper Large V3 Turbo           | all  | ✔        | 8     | 8        | 1.6 GB | Pro     |
-| Ultra                    | all  | ✔        | 6     | 10       | 3 GB   | Pro     |
-| Whisper Large V3 Turbo (Chinese) | zh   | ✖        | 8     | 8        | 1.6 GB | Pro     |
-| Pro                      | all  | ✔        | 7     | 8        | 1.5 GB | Pro     |
-| Pro (English)            | en   | ✖        | 7     | 8        | 1.5 GB | Pro     |
-| Standard                 | all  | ✔        | 8     | 5        | 500 MB | Free    |
-| Standard (English)       | en   | ✖        | 8     | 5        | 500 MB | Free    |
-| Nano                     | all  | ✔        | 9     | 3        | 150 MB | Free    |
-| Nano (English)           | en   | ✖        | 9     | 3        | 150 MB | Free    |
-| Fast                     | all  | ✔        | 10    | 1        | 75 MB  | Free    |
-| Fast (English)           | en   | ✖        | 10    | 1        | 75 MB  | Free    |
+The most accurate local model, with an 8.4% word error rate. It runs on your device's GPU: Apple silicon on macOS, Vulkan on Windows. It isn't available on Windows ARM.
+
+| Name              | Lang  | Translate | Speed | Accuracy | Size   | License |
+| ----------------- | ----- | --------- | ----- | -------- | ------ | ------- |
+| Cohere Transcribe | multi | ✖        | 9     | 9        | 1.3 GB | Pro     |
 
 ## Nvidia Parakeet (Local)
 
-They are based on the [Parakeet](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) model. They run locally (on your laptop) using Argmax's [WhisperKit SDK](https://github.com/argmaxinc/whisperkit). They are extremely fast and run in parallel over long recordings. Drawbacks here are they do tend to struggle with punctuation and have minor hallucination issues with single word recordings.
+Based on Nvidia's [Parakeet](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) models, running locally through Argmax's [WhisperKit SDK](https://github.com/argmaxinc/whisperkit). They are the fastest local models on Apple silicon and process long recordings in parallel. They can struggle with punctuation and occasionally hallucinate on single-word recordings.
 
 | Name                   | Lang  | Translate | Speed | Accuracy | Size   | License |
 | ---------------------- | ----- | --------- | ----- | -------- | ------ | ------- |
 | Parakeet               | en    | ✖        | 10    | 8        | 476 MB | Pro     |
 | Parakeet Multilanguage | multi | ✖        | 10    | 8        | 494 MB | Pro     |
 
+<Info>
+Parakeet Multilanguage is the only local option on Windows ARM (Snapdragon) devices, which don't support Vulkan. See [Windows requirements](/get-started/windows#requirements).
+</Info>
+
+## Whisper Models (Local)
+
+Based on the [Whisper](https://github.com/openai/whisper) model series from OpenAI, running locally through [whisper.cpp](https://github.com/ggerganov/whisper.cpp).
+
+| Name                             | Lang | Translate | Speed | Accuracy | Size   | License |
+| -------------------------------- | ---- | --------- | ----- | -------- | ------ | ------- |
+| Whisper Large V3 Turbo           | all  | ✔        | 8     | 8        | 1.6 GB | Pro     |
+| Whisper Large V3 Turbo (Chinese) | zh   | ✖        | 8     | 8        | 1.6 GB | Pro     |
+| Pro                              | all  | ✔        | 7     | 8        | 1.5 GB | Pro     |
+| Pro (English)                    | en   | ✖        | 7     | 8        | 1.5 GB | Pro     |
+| Standard                         | all  | ✔        | 8     | 5        | 500 MB | Free    |
+| Standard (English)               | en   | ✖        | 8     | 5        | 500 MB | Free    |
+| Nano                             | all  | ✔        | 9     | 3        | 150 MB | Free    |
+| Nano (English)                   | en   | ✖        | 9     | 3        | 150 MB | Free    |
+| Fast                             | all  | ✔        | 10    | 1        | 75 MB  | Free    |
+| Fast (English)                   | en   | ✖        | 10    | 1        | 75 MB  | Free    |
+
+**Standard, Nano, and Fast are free.** They are small and quick to download, and a good fit for short notes on the free plan.
+
 ## Deepgram (Cloud)
 
-The Nova series of models are a Cloud model hosted by Deepgram.
+The Nova series of cloud models, hosted by Deepgram. [Realtime transcription](/common-issues/realtime) and [Speaker-Separated Meetings](/modes/speaker-separated-meetings) require a Nova model.
 
-| Name         | Lang  | Trans. | Speed | Accuracy | Size  | License |
-| ------------ | ----- | ------ | ----- | -------- | ----- | ------- |
-| Nova 3       | multi | –      | 7     | 8        | Cloud | Pro     |
-| Nova 2       | multi | –      | 7     | 7        | Cloud | Pro     |
-| Nova Medical | en    | –      | 10    | 7        | Cloud | Pro     |
+| Name         | Lang  | Translate | Speed | Accuracy | Size  | License |
+| ------------ | ----- | --------- | ----- | -------- | ----- | ------- |
+| Nova 3       | multi | ✖        | 7     | 8        | Cloud | Pro     |
+| Nova 2       | multi | ✖        | 7     | 7        | Cloud | Pro     |
+| Nova Medical | en    | ✖        | 10    | 7        | Cloud | Pro     |
+
+## Choosing a model
+
+Not sure where to start? [Create Your First Mode](/get-started/choose-your-model#our-picks) has our short list: S1-Voice for cloud, Cohere Transcribe or Parakeet Multilanguage for local.
