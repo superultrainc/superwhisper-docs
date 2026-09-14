@@ -1,161 +1,76 @@
 ---
 title: "Recording Window"
-description: "A tour of the Superwhisper recording window: waveform, status dot, mode display, and the mini window. Learn what each control does."
+description: "A tour of the Superwhisper recording window: waveform, mode display, stop and cancel controls, and the mini window."
 ---
+
+The recording window gives you control and real-time feedback during dictation.
 
 <img
   style={{ borderRadius: '0.5rem' }}
   src="/images/screens/mac/recording-window-main.png"
-  alt="Superwhisper Recording Window"
+  alt="Superwhisper recording window with numbered callouts for each control"
 />
 
-## Overview
-The recording window gives you control and real-time feedback during dictation. This page walks through each component.
+1. **Resize toggle**: switch between the main and mini view
+2. **Waveform**: shows the audio your microphone captures in real time
+3. **Mode display**: your active mode. Click it to switch modes, or hold **⌥ ⇧ K** (Option + Shift + K). In Super Mode, this area shows your current application or website context
+4. **Stop**: ends the recording and starts processing. Click it or press the same keyboard shortcut you used to start
+5. **Cancel**: discards the dictation. Click it or press **esc**. Recordings under 30 seconds cancel immediately; longer ones ask for confirmation
 
----
-## Main recording window
-### 1. Resize toggle
+## While recording
+
+A moving waveform means your microphone is working:
 
 <img
-style={{ borderRadius: '0.5rem'}}
-src="/images/get-started/interface-rec-window-002.png"
-alt="Superwhisper Resize Toggle"
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/screens/mac/recording-window-recording.png"
+  alt="Superwhisper recording window showing an active waveform while dictating"
 />
-When you hover over the recording window, you can click here to switch between the main and mini view.
-
-### 2. Audio waveform
-
-<img
-style={{ borderRadius: '0.5rem'}}
-src="/images/get-started/interface-rec-window-004.png"
-alt="Superwhisper Audio Waveform"
-/>
-
-The waveform shows the audio your microphone captures in real time. A moving waveform means your microphone is working.
 
 If the waveform stays still:
+
 - Verify your selected input device in [Superwhisper's Sound tab](essential-settings#sound-and-microphone)
 - Confirm microphone permission in **System Settings → Privacy & Security → Microphone**
 
 <Note>Exception: with [system audio capture](../modes/custom#audio-options), the waveform stays still by design. Your audio still records. Verify it in [History](history).</Note>
 
-### 3. Status indicator
+In Super Mode and Custom modes with [context awareness](../common-issues/context) enabled, an indicator lights up when Superwhisper captures clipboard context (text copied within 3 seconds before dictation or during it) or selected text at the moment recording begins.
+
+## Realtime transcription
+
+With a [realtime-capable voice model](../common-issues/realtime), the window shows your words as you speak:
 
 <img
-style={{ borderRadius: '0.5rem'}}
-src="/images/get-started/interface-rec-window-005.png"
-alt="Superwhisper Status Indicator"
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/screens/mac/recording-window-realtime.png"
+  alt="Superwhisper recording window showing live realtime transcription"
 />
 
-The color-coded dot reflects the current recording status, similar to the one in [the menu bar](interface-menu-bar#status-indicator-dot):
-- Yellow: Model loading in progress
-- Blue: Dictation processing
-- Green: Processing completed
+## Switch modes from the window
 
-### 4. Mode display
+Hold your **Change Mode** shortcut to open the mode list, then tap the key to cycle through modes:
 
 <img
-style={{ borderRadius: '0.5rem'}}
-src="/images/get-started/interface-rec-window-006.png"
-alt="Superwhisper Mode Display"
+  style={{ borderRadius: '0.5rem', display: 'block', margin: '0 auto' }} width="70%"
+  src="/images/screens/mac/mode-switcher.png"
+  alt="Recording window mode switcher listing available modes"
 />
 
-This area shows your active mode and the keyboard shortcut for switching. Click it to switch modes manually.
+See [Switching Modes](../modes/switching-modes) for every switching method.
 
-<Info>
-In Super Mode, this area displays your current application or website context.
-</Info>
-
-### 5. Context capture
-
-<img
-style={{ borderRadius: '0.5rem'}}
-src="/images/get-started/interface-rec-window-007.png"
-alt="Superwhisper Context Capture Indicator"
-/>
-
-This indicator appears in Super Mode and in Custom modes with [context awareness](../common-issues/context) enabled. It lights up when Superwhisper captures clipboard context (text copied within 3 seconds before dictation or during it) and when selected text is captured at the moment recording begins.
-
-### 6. Stop recording
-
-<img
-style={{ borderRadius: '0.5rem'}}
-src="/images/get-started/interface-rec-window-008.png"
-alt="Stop Superwhisper's dictation"
-/>
-
-Click here to stop recording, or press the same keyboard shortcut you used to start.
-
-### 7. Cancel dictation
-
-<img
-style={{ borderRadius: '0.5rem'}}
-src="/images/get-started/interface-rec-window-009.png"
-alt="Cancel Superwhisper's dictation"
-/>
-
-Click here to cancel the current dictation, or use your assigned keyboard shortcut. Recordings under 30 seconds cancel immediately; longer ones show a confirmation to prevent accidental cancellation.
-
----
 ## Mini recording window
 
-The mini recording window is a compact version with the same core controls.
+The mini window is a compact version with the same core controls. Click the resize toggle to switch to it, or make it the default in [advanced settings](settings-advanced#recording-window).
 
-### Always-active mini window
-
-In [advanced settings](settings-advanced#recording-window), you can keep the mini window visible even when idle, as a small always-accessible indicator.
-
-<Steps>
-  <Step title="Hover over the indicator">
-    Hover over the mini window to show a control panel with three options:
-  1.  Change Mode
-  2.  Start Recording
-  3.  Expand to Regular Window
-  
-    <img
-style={{ borderRadius: '0.5rem'}}
-src="/images/get-started/interface-rec-window-010.png"
-alt="Superwhisper Mini Window on Hover"
-/>
-
-  </Step>
-  <Step title="Post-request controls">
-    The same controls appear after a dictation completes, particularly when results aren't automatically pasted into the front application.
-
-        <img
-style={{ borderRadius: '0.5rem'}}
-src="/images/get-started/interface-rec-window-011.png"
-alt="Superwhisper Mini Window with Resuls"
-/>
-
-  </Step>
-</Steps>
-
-### Recording with the mini window
-Start recording either way:
-- Click the recording button in the mini window
-- Use your standard keyboard shortcut
-
-During recording, the mini window shows the audio waveform like the main window does (1). Hover over it while recording (2) to show a stop button that ends the recording and starts processing.
-
-<img
-style={{ borderRadius: '0.5rem'}}
-src="/images/get-started/interface-rec-window-012.png"
-alt="Superwhisper Mini Window During Recording"
-/>
-
-
-### More mini window options
-
-<Tip>
-Right-click the mini window for a context menu with Expand Window, Open Settings, and Open History. These options also work during an active recording.
-</Tip>
+- **Always show it**: enable **Always show Mini Recording Window** in advanced settings to keep a small indicator on screen. Hover over it to change mode, start recording, or expand to the regular window
+- **While recording**: the mini window shows the waveform; hover to reveal a stop button
+- **Right-click** the mini window for a context menu with Expand Window, Open Settings, and Open History
 
 ## Related
 
 <CardGroup cols={2}>
   <Card title="Advanced Settings" icon="sliders" href="settings-advanced">
-    Customize the mini window behavior and other Superwhisper settings.
+    Customize the recording window and mini window behavior.
   </Card>
   <Card title="Context Awareness" icon="brain-circuit" href="../common-issues/context">
     How Superwhisper uses your app, selection, and clipboard as context.
