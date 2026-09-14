@@ -25,23 +25,20 @@ After you dictate, your audio first goes through voice processing for transcript
 
 <img
 style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-002.png"
-alt="Superwhisper's Interface for Language Selection"
+src="/images/screens/mac/modes-editor-language.png"
+alt="Superwhisper mode editor with the language dropdown open"
 />
 
 <Note>If your voice model doesn't support translation, or you need a language other than English, set up translation with AI processing in a [Custom mode](custom).</Note>
 </Step>
 
 <Step title="Pick your voice model">
-Manage all your models in the Advanced Settings sidebar, where you can:
-- Download voice models for local use
-- Connect your own API tokens for supported services
-- Select from the available cloud-based models
+Every mode has a **Voice Model** dropdown in its editor. Pick a cloud or local model per mode. Browse, download, and remove models in **Settings → Models library**.
 
 <img
 style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-003.png"
-alt="Superwhisper's Interface for LLM Selection"
+src="/images/screens/mac/modes-editor-full.png"
+alt="Superwhisper mode editor showing the Voice Model and Language Model selectors"
 />
 
 </Step>
@@ -49,13 +46,7 @@ alt="Superwhisper's Interface for LLM Selection"
 
 ---
 ### Auto-activation rules
-In the Advanced Settings sidebar, set up rules to switch modes automatically based on your active apps and websites.
-
-<img
-style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-004.png"
-alt="Auto-Activation Rules interface for setting up automatic mode switching based on apps and websites"
-/>
+Use **Activate for apps** in the mode editor (**Add apps and sites**) to switch to this mode automatically when you dictate in chosen apps and websites.
 
 <Note>Once a mode activates for an app or site, you can't override it, and the system doesn't switch back to your previous mode automatically.</Note>
 
@@ -78,13 +69,7 @@ Below the auto-activation rules, you can select how your audio is handled during
 ### AI processing
 After transcription, AI processing shapes your text based on the mode's purpose.
 
-<img
-style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-005.png"
-alt="AI Processing settings panel displaying model selection and language processing options"
-/>
-
-- Manage AI models in the same Advanced Settings sidebar, above the selected voice model
+- Pick the AI model in the mode editor's **Language Model** dropdown
 <Note>Select a mode with AI processing to see this option.</Note>
 - Built-in modes support multiple languages automatically
    - Select the correct language in the [voice processing](#voice-processing) settings
