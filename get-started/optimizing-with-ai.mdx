@@ -68,17 +68,23 @@ Two ways to run it: paste the prompt once, or install the reusable skill.
        the new modes load.
     ````
   </Tab>
-  <Tab title="Install the skill (Claude Code / Codex)">
-    The [superwhisper-optimize skill](https://github.com/superultrainc/superwhisper-docs/tree/main/skills/superwhisper-optimize) is the same optimization as a reusable command, with structured setup questions, safety guardrails, and an undo path. Install it into your agent's skills folder:
+  <Tab title="Claude Code skill">
+    Install the [superwhisper-optimize skill](https://github.com/superultrainc/superwhisper-docs/tree/main/skills/superwhisper-optimize) with one command:
 
     ```bash
-    SKILLS=~/.claude/skills   # Claude Code; use ~/.codex/skills for Codex
-    mkdir -p $SKILLS/superwhisper-optimize/references
-    curl -fsSL -o $SKILLS/superwhisper-optimize/SKILL.md https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/SKILL.md
-    curl -fsSL -o $SKILLS/superwhisper-optimize/references/mode-schema.md https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/references/mode-schema.md
+    curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/install.sh | sh
     ```
 
-    Then start a new agent session and type `/superwhisper-optimize`, or just say "optimize my Superwhisper setup". The skill asks what you want (which modes, tone, vocabulary), then works through the CLI.
+    Start a new Claude Code session and type `/superwhisper-optimize`, or just say "optimize my Superwhisper setup". The skill asks what you want (which modes, tone, vocabulary), then works through the CLI with structured setup questions, safety guardrails, and an undo path.
+  </Tab>
+  <Tab title="Codex skill">
+    Same skill, installed into Codex's skills folder:
+
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/install.sh | sh -s -- --codex
+    ```
+
+    Start a new Codex session and invoke `superwhisper-optimize`, or ask it to optimize your Superwhisper setup.
   </Tab>
 </Tabs>
 
@@ -91,6 +97,47 @@ You can get most of the benefit with a chat assistant:
 1. Ask it to write AI instructions for the modes above, describing what you dictate and the tone you want
 2. In Superwhisper, click **+ Create mode**, pick the **Custom** preset, and paste the instructions into **Custom instructions**
 3. For the selected-text mode, enable **Selected text** in the mode's **Context** row
+
+## Run it weekly
+
+Your history keeps growing, so the optimization pays off on a schedule: new recognition mistakes become replacements, and your modes stay tuned to how you actually dictate. This launchd agent runs the skill through Claude Code every Monday at 9:00:
+
+```bash
+cat > ~/Library/LaunchAgents/com.superwhisper.optimize-weekly.plist <<'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.superwhisper.optimize-weekly</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>claude -p "Run the superwhisper-optimize skill non-interactively: fresh pass over my latest history, sensible defaults, additive changes only." --allowedTools "Skill,Bash,Read,Write,Edit" >> ~/Library/Logs/superwhisper-optimize.log 2>&amp;1</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>1</integer>
+    <key>Hour</key><integer>9</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+</dict>
+</plist>
+EOF
+launchctl load ~/Library/LaunchAgents/com.superwhisper.optimize-weekly.plist
+```
+
+Each run appends its summary to `~/Library/Logs/superwhisper-optimize.log`, so you can review what changed. The skill only makes additive changes, and every run backs up `settings.json` first.
+
+To stop the schedule:
+
+```bash
+launchctl unload ~/Library/LaunchAgents/com.superwhisper.optimize-weekly.plist
+```
+
+<Note>
+The headless run pre-approves the listed tools for Claude Code. Skip the schedule if you'd rather review every change: running `/superwhisper-optimize` manually gives you the interactive questions and a summary each time.
+</Note>
 
 ## Keep iterating
 
