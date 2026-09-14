@@ -13,13 +13,15 @@ Tune the user's Superwhisper setup from their real dictation history. The goal: 
    ```bash
    curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-cli-release/main/install.sh | bash
    ```
-2. **Find the Superwhisper folder**: it's `~/superwhisper` or, on older installs, `~/Documents/superwhisper`. Use whichever exists and contains a `modes/` directory. If neither exists, ask the user where their Superwhisper folder lives (they may have moved it in Settings → Configuration → Advanced).
+2. **Find the active Superwhisper folder on every run**: read `defaults read com.superduper.superwhisper appFolderDirectory`. When set, this is the parent directory; append `superwhisper` to it. Otherwise, check `~/superwhisper` and `~/Documents/superwhisper`. Confirm the active folder contains `modes/` and `settings/settings.json`; an old copy's existence alone does not establish that it is active. If the location is missing or ambiguous, ask for the location shown in Settings → Configuration → Advanced. In a non-interactive run, stop without changes and report the unresolved location. Use the confirmed path as `<superwhisper-folder>` for all file operations. Pass `--settings "<superwhisper-folder>/settings/settings.json"` before every `vocab` or `snippets` subcommand, including the examples below, so CLI reads and writes target the same settings even when a default path or environment override points elsewhere.
 3. **Ask what the user wants.** If the AskUserQuestion tool is available, use it with roughly these questions (adapt wording freely):
    - *Which modes should I build?* (multi-select: "Write for me", "Message", "Format selected text")
    - *What tone should modes aim for?* ("Match my history" recommended / "Casual" / "Professional")
    - *Tune recognition too?* ("Yes — fix vocabulary and replacements" / "No — modes only"). Users can add domain hints (company names, field jargon) via the Other option.
 
    If AskUserQuestion isn't available, ask the same things in chat. If the user already specified what they want, or the run is non-interactive, don't ask — default to all three modes, tone matched from history, and recognition tuning on.
+
+4. **Back up before any changes**: copy `<superwhisper-folder>/settings/settings.json` to a new `settings.json.backup-<YYYYMMDD-HHMMSS>` beside it before running any vocabulary or replacement writes or editing mode files. Confirm the copy succeeds and the original settings parse as JSON. If either check fails, stop without changes and report the error. Keep this original backup for undo; do not replace it with a copy made after recognition tuning. Back up any existing mode file before adding activation apps or sites to it, too.
 
 ## Step 1: learn how the user dictates
 
@@ -55,7 +57,7 @@ Wire up auto-activation. Modes are far more useful when they switch on automatic
 
 Rules that keep this safe and working:
 
-- **Back up before writing**: copy `settings.json` to `settings.json.backup-<YYYYMMDD-HHMMSS>` before your first edit — it holds the user's vocabulary and replacements, and a bad write would lose them. After each JSON write, re-parse the file; if anything is malformed, restore the backup and report instead of pressing on.
+- After each JSON write, re-parse the file; if anything is malformed, restore its original backup and report instead of pressing on.
 - Modes are one JSON file each in `<superwhisper-folder>/modes/`. Create new files for new modes.
 - **Register every new mode**: append its `key` to the `modeKeys` array in `<superwhisper-folder>/settings/settings.json`. Without this the app never loads the mode.
 - Existing modes: additive tweaks only. Adding `activationApps`/`activationSites` to an existing mode is fine and often valuable; never change an existing mode's `prompt`, models, name, or key — those are the user's, and silently rewriting them breaks trust.
@@ -71,7 +73,7 @@ This skill runs on someone's clock. Habits that keep it cheap without hurting qu
 
 - Batch shell work: one command for all the reads, one `vocab add`/`snippets set` chain for all the writes.
 - Write each mode file once, complete. Don't create-then-edit.
-- Validate once at the end (parse each new JSON, confirm keys are in `modeKeys`) instead of re-running `superwhisper modes` or `doctor` after every change.
+- At the end, confirm every new key is in `modeKeys`. Use the JSON parse checks above instead of re-running `superwhisper modes` or `doctor` after every change.
 - Don't re-read files you just wrote.
 
 ## Step 4: report and hand off
@@ -81,6 +83,7 @@ End with a short summary the user can skim:
 - Vocabulary terms added, replacements added (as `wrong → right` pairs)
 - Modes created, with one line each on what they do
 - Anything skipped and why (name collision, empty history)
+- Active Superwhisper folder and original backup paths
 
 Then remind the user: **restart Superwhisper** so the new modes load, check them under **Settings → Modes**, and dictate one test message per mode. Offer to adjust any prompt that doesn't sound like them.
 
@@ -91,4 +94,4 @@ Then remind the user: **restart Superwhisper** so the new modes load, check them
 - Everything runs locally. Never send dictation content to a web service, search engine, or URL — not even a snippet to "check a spelling". If history contains credentials, addresses, or other sensitive data, don't repeat it in your output and never store it in vocabulary, replacements, or mode prompts.
 - Install only from the official installer shown above (`superultrainc/superwhisper-cli-release`), only with the user's OK. If the install fails, stop and tell the user — don't hunt for alternative downloads.
 - Recordings and history are personal data — read what you need to do the job, don't quote long history excerpts back unnecessarily.
-- End the summary with how to undo everything: the mode files to delete and the `settings.json` backup to restore.
+- End the summary with how to undo everything: the new mode files to delete, any existing mode backups to restore, and the original `settings.json` backup to restore.
