@@ -12,6 +12,7 @@
 - [History](https://docs.superwhisper.com/get-started/history): Review, search, reprocess, and report dictations; storage locations per platform
 - [Coding Agents](https://docs.superwhisper.com/get-started/coding-agents): Connect Claude Code, OpenCode, Codex, Cursor, Pi, or Grok and answer agent questions by voice
 - [CLI & MCP Server](https://docs.superwhisper.com/get-started/cli): Search and export history from the terminal; MCP server for AI assistants
+- [Optimizing Superwhisper with AI](https://docs.superwhisper.com/get-started/optimizing-with-ai): Let a coding agent tune vocabulary and build custom modes from your history
 
 ## Billing and licenses
 

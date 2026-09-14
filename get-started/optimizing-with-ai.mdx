@@ -1,0 +1,87 @@
+---
+title: "Optimizing Superwhisper with AI"
+description: "Let a coding agent tune your Superwhisper setup. It reads your dictation history through the CLI, fixes your vocabulary, and builds custom modes for you."
+---
+
+Your dictation history knows how you write. A coding agent like Claude Code or Codex can read it through the [Superwhisper CLI](/get-started/cli), fix the words it keeps getting wrong, and build modes tailored to what you actually dictate — in a few minutes, without you touching a settings pane.
+
+<Note>
+The CLI and coding agent integrations are macOS-only for now.
+</Note>
+
+## What you'll end up with
+
+- **Vocabulary and replacements that match your world**: names, jargon, and recurring fixes pulled from your real history
+- **A "Write for me" mode**: dictate a rough outline, get finished text in your voice
+- **A "Message" mode**: tuned to how you actually write messages
+- **A "Format selected text" mode**: select any text, dictate an instruction ("make this shorter", "fix the grammar"), and get the rewritten text back
+
+## Step 1: install the Superwhisper CLI
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-cli-release/main/install.sh | bash
+```
+
+The CLI gives your agent read access to your history and control over vocabulary and replacements. See [CLI & MCP Server](/get-started/cli) for everything it can do.
+
+## Step 2: connect your agent
+
+Use any coding agent that can run terminal commands and edit files:
+
+- **Claude Code, Codex, and others**: connect through [Agent Plugins](/get-started/coding-agents) (**Settings → Configuration → Agent Plugins**), which also sets up the MCP server so the agent can query your history directly
+- **Anything else**: as long as it can run `superwhisper` commands and write files, the prompt below works
+
+## Step 3: run the optimization prompt
+
+Paste this into your agent and adjust the mode list to your needs:
+
+````text
+Superwhisper is installed on this Mac and its CLI is on my PATH as `superwhisper`.
+Optimize my setup:
+
+1. Learn how I dictate. Run `superwhisper stats`, `superwhisper modes`, and
+   `superwhisper history --limit 25`, and skim what I write most.
+
+2. Fix recognition. Review `superwhisper vocab list` and
+   `superwhisper snippets list`. Add up to 10 vocabulary terms for names and
+   jargon that show up mangled in my history (`superwhisper vocab add "<term>"`),
+   and add replacements for consistent fixes
+   (`superwhisper snippets set "<wrong>" "<right>"`).
+
+3. Build my modes. Modes are JSON files in `~/superwhisper/modes/`
+   (older installs: `~/Documents/superwhisper/modes/`). Read the existing mode
+   files first and use one as a template. Create:
+
+   - "Write for me": turns a rough dictated outline into finished text.
+     Write the AI instructions to match my tone, based on the history you read.
+   - "Message": cleans up dictated chat messages. Fix grammar and filler words,
+     keep my casual tone, never add content I didn't say.
+   - "Format selected text": a Custom mode with Selected text context enabled.
+     I select text, dictate an instruction, and it outputs only the rewritten
+     text — no commentary, no quotes.
+
+4. Summarize every change you made, then remind me to restart Superwhisper so
+   the new modes load.
+````
+
+Restart Superwhisper when the agent finishes. The new modes appear in **Settings → Modes**; review their instructions and tweak anything that doesn't sound like you.
+
+## No coding agent? Use any AI assistant
+
+You can get most of the benefit with a chat assistant:
+
+1. Ask it to write AI instructions for the modes above, describing what you dictate and the tone you want
+2. In Superwhisper, click **+ Create mode**, pick the **Custom** preset, and paste the instructions into **Custom instructions**
+3. For the selected-text mode, enable **Selected text** in the mode's **Context** row
+
+## Keep iterating
+
+Your agent can keep tuning the setup over time. Useful follow-ups:
+
+- "Search my history for words that keep getting transcribed wrong and add replacements for them"
+- "Look at my last 50 dictations and tighten the Message mode instructions to match my tone"
+- "Create a mode for [your workflow] based on how I've been dictating"
+
+<Card title="CLI & MCP Server" icon="terminal" href="/get-started/cli">
+  Everything the agent can read and change: history, search, stats, vocabulary, and replacements.
+</Card>
