@@ -1,9 +1,9 @@
 ---
 title: "Optimizing Superwhisper with AI"
-description: "Let a coding agent tune your Superwhisper setup. It reads your dictation history through the CLI, fixes your vocabulary, and builds custom modes for you."
+description: "Use a coding agent and the Superwhisper CLI to tune your setup: fix vocabulary and build custom modes from your dictation history."
 ---
 
-Your dictation history knows how you write. A coding agent like Claude Code or Codex can read it through the [Superwhisper CLI](/get-started/cli), fix the words it keeps getting wrong, and build modes tailored to what you actually dictate — in a few minutes, without you touching a settings pane.
+A coding agent can tune Superwhisper for you. Using the [Superwhisper CLI](/get-started/cli), it reads your dictation history, fixes the words that come out wrong, and builds modes that match what you dictate.
 
 <Note>
 The CLI and coding agent integrations are macOS-only for now.
@@ -24,12 +24,9 @@ curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-cli-rele
 
 The CLI gives your agent read access to your history and control over vocabulary and replacements. See [CLI & MCP Server](/get-started/cli) for everything it can do.
 
-## Step 2: connect your agent
+## Step 2: open your coding agent
 
-Use any coding agent that can run terminal commands and edit files:
-
-- **Claude Code, Codex, and others**: connect through [Agent Plugins](/get-started/coding-agents) (**Settings → Configuration → Agent Plugins**), which also sets up the MCP server so the agent can query your history directly
-- **Anything else**: as long as it can run `superwhisper` commands and write files, the prompt below works
+Use Claude Code, Codex, or any other coding agent that can run terminal commands and edit files. The agent works through the CLI, so no other setup is needed.
 
 ## Step 3: run the optimization prompt
 
