@@ -100,43 +100,29 @@ You can get most of the benefit with a chat assistant:
 
 ## Run it weekly
 
-Your history keeps growing, so the optimization pays off on a schedule: new recognition mistakes become replacements, and your modes stay tuned to how you actually dictate. This launchd agent runs the skill through Claude Code every Monday at 9:00:
+Your history keeps growing, so the optimization pays off on a schedule: new recognition mistakes become replacements, and your modes stay tuned to how you actually dictate. One command schedules a weekly run (Mondays at 9:00) through launchd:
+
+<Tabs>
+  <Tab title="Claude Code">
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/schedule.sh | sh
+    ```
+  </Tab>
+  <Tab title="Codex">
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/schedule.sh | sh -s -- --codex
+    ```
+  </Tab>
+</Tabs>
+
+Each run appends its summary to `~/Library/Logs/superwhisper-optimize.log`, makes additive changes only, and backs up `settings.json` first. To stop the schedule:
 
 ```bash
-cat > ~/Library/LaunchAgents/com.superwhisper.optimize-weekly.plist <<'EOF'
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-  <key>Label</key><string>com.superwhisper.optimize-weekly</string>
-  <key>ProgramArguments</key>
-  <array>
-    <string>/bin/zsh</string>
-    <string>-lc</string>
-    <string>claude -p "Run the superwhisper-optimize skill non-interactively: fresh pass over my latest history, sensible defaults, additive changes only." --allowedTools "Skill,Bash,Read,Write,Edit" >> ~/Library/Logs/superwhisper-optimize.log 2>&amp;1</string>
-  </array>
-  <key>StartCalendarInterval</key>
-  <dict>
-    <key>Weekday</key><integer>1</integer>
-    <key>Hour</key><integer>9</integer>
-    <key>Minute</key><integer>0</integer>
-  </dict>
-</dict>
-</plist>
-EOF
-launchctl load ~/Library/LaunchAgents/com.superwhisper.optimize-weekly.plist
-```
-
-Each run appends its summary to `~/Library/Logs/superwhisper-optimize.log`, so you can review what changed. The skill only makes additive changes, and every run backs up `settings.json` first.
-
-To stop the schedule:
-
-```bash
-launchctl unload ~/Library/LaunchAgents/com.superwhisper.optimize-weekly.plist
+curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/schedule.sh | sh -s -- --remove
 ```
 
 <Note>
-The headless run pre-approves the listed tools for Claude Code. Skip the schedule if you'd rather review every change: running `/superwhisper-optimize` manually gives you the interactive questions and a summary each time.
+The scheduled run pre-approves the agent's tools so it can work unattended. Skip the schedule if you'd rather review every change: running the skill manually gives you the interactive questions and a summary each time.
 </Note>
 
 ## Keep iterating
