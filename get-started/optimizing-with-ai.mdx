@@ -40,20 +40,37 @@ Two ways to run it: paste the prompt once, or install the reusable skill.
     Superwhisper is installed on this Mac and its CLI is on my PATH as `superwhisper`.
     Optimize my setup:
 
-    1. Learn how I dictate. Run `superwhisper stats`, `superwhisper modes`, and
+    1. Find my active Superwhisper folder. Read
+       `defaults read com.superduper.superwhisper appFolderDirectory`.
+       When set, this is the parent folder: append `superwhisper` to it.
+       Otherwise, check `~/superwhisper` and `~/Documents/superwhisper`.
+       Confirm the active folder contains `modes/` and `settings/settings.json`.
+       If the location is missing or ambiguous, ask me for the location shown in
+       Settings → Configuration → Advanced before making changes. Do not choose
+       an old copy just because it exists. Use this confirmed path as
+       `<superwhisper-folder>` throughout. Pass
+       `--settings "<superwhisper-folder>/settings/settings.json"` before every
+       `vocab` or `snippets` subcommand so CLI changes use the same settings.
+
+    2. Back up `<superwhisper-folder>/settings/settings.json` to a new timestamped
+       file beside it before any vocabulary, replacement, or mode changes.
+       Confirm the backup succeeds and the original settings parse as JSON;
+       stop without changes if either check fails. Keep this backup for undo.
+
+    3. Learn how I dictate. Run `superwhisper stats`, `superwhisper modes`, and
        `superwhisper history --limit 100`, and skim what I write most.
 
-    2. Fix recognition. Review `superwhisper vocab list` and
+    4. Fix recognition. Review `superwhisper vocab list` and
        `superwhisper snippets list`. Add up to 10 vocabulary terms for names and
        jargon that show up mangled in my history (`superwhisper vocab add "<term>"`),
        and add replacements for consistent fixes
        (`superwhisper snippets set "<wrong>" "<right>"`).
 
-    3. Build my modes. Modes are JSON files in `~/superwhisper/modes/`
-       (older installs: `~/Documents/superwhisper/modes/`). Read the existing mode
-       files first and use one as a template. Each file's `key` must match its
+    5. Build my modes. Modes are JSON files in `<superwhisper-folder>/modes/`.
+       Read the existing mode files first and use one as a template.
+       Each file's `key` must match its
        filename, and you must append the key to the `modeKeys` array in
-       `~/superwhisper/settings/settings.json` or the app won't load the mode.
+       `<superwhisper-folder>/settings/settings.json` or the app won't load the mode.
        Never edit my existing modes. Create:
 
        - "Write for me": turns a rough dictated outline into finished text.
@@ -64,7 +81,9 @@ Two ways to run it: paste the prompt once, or install the reusable skill.
          I select text, dictate an instruction, and it outputs only the rewritten
          text — no commentary, no quotes.
 
-    4. Summarize every change you made, then remind me to restart Superwhisper so
+    6. Validate the changed JSON and confirm every new mode key is registered.
+       Summarize every change, report the active folder and backup path, and
+       explain how to undo the changes. Remind me to restart Superwhisper so
        the new modes load.
     ````
   </Tab>
