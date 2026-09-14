@@ -9,7 +9,7 @@ description: "Fix the \"LLM processing error\" in Superwhisper. Your transcripti
 
 <Steps>
   <Step title="Check your connection">
-    Most language models run in the cloud, even in modes with a local voice model. If you're offline, switch the mode's **Language Model** to a local one (like **S1-mini**) or reconnect.
+    Most language models run in the cloud, even in modes with a local voice model. If you're offline, switch the mode's **Language Model** to a local one like **S1-mini** (macOS only) or reconnect.
   </Step>
   <Step title="Retry from History">
     Open the dictation in **History** and reprocess it. Transient provider errors clear on retry.
@@ -24,7 +24,7 @@ description: "Fix the \"LLM processing error\" in Superwhisper. Your transcripti
 
 ## Errors with your own API keys
 
-If the failing model is one you added under **Settings → Configuration → Advanced settings → AI Models**:
+If the failing model is one you added under **Settings → Models library → Bring your own keys**:
 
 - **Re-check the key**: paste it fresh from the provider's dashboard. Expired or project-scoped keys fail with connection errors.
 - **Google Gemini keys that start with `AQ.`**: update to the latest Superwhisper version, then re-add the key.

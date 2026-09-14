@@ -5,7 +5,7 @@ description: "Deploy Superwhisper silently to Mac and Windows fleets using Jamf,
 
 import EnterpriseSupport from '/snippets/enterprise-support.mdx';
 
-Roll Superwhisper out across your fleet without asking each user to download, install, or grant permissions manually. Superwhisper ships signed installers and supports the standard managed-app workflows in [Jamf](https://www.jamf.com/), [Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/), and other MDM tools.
+Roll Superwhisper out across your fleet without asking each user to download or install it manually. Superwhisper ships signed installers and supports the standard managed-app workflows in [Jamf](https://www.jamf.com/), [Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/), and other MDM tools. On macOS, each user must still grant microphone access.
 
 <Info>
 Reach out to [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) to request the latest signed PKG (macOS) and NSIS EXE (Windows) installers, plus a config profile template for managed settings. We'll send the artifacts and version metadata for your MDM catalog.
@@ -14,7 +14,7 @@ Reach out to [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) t
 ## What MDM deployment gets you
 
 - **Silent install** across Mac and Windows without user interaction
-- **Pre-granted microphone permission** on macOS via a PPPC profile so users skip the system prompt
+- **Managed Accessibility permission** on macOS via a PPPC profile, allowing Superwhisper to paste into other apps
 - **Auto-activation** when paired with [SAML SSO](/enterprise/saml-sso) and [SCIM](/enterprise/scim). Users sign in with their work email and their Enterprise seat activates automatically, no license keys to distribute
 - **Centralized updates** through your MDM update channel
 
@@ -27,30 +27,31 @@ Reach out to [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) t
 3. Set the trigger (recurring check-in, login, or self-service) and frequency
 4. Run the policy
 
-### Microphone permission (PPPC)
+### Permissions
 
-Without a PPPC (Privacy Preferences Policy Control) profile, users see a macOS prompt the first time they try to record. To pre-grant the permission:
+Superwhisper needs **Accessibility** permission to paste text into other apps and **Microphone** permission to record audio. You can grant Accessibility access with a PPPC (Privacy Preferences Policy Control) profile:
 
 1. Create a new **Configuration Profile** in Jamf
 2. Add a **Privacy Preferences Policy Control** payload
-3. Add Superwhisper as an app with the **Microphone** service set to **Allow**
+3. Add Superwhisper with the **Accessibility** service set to **Allow**, using the app identifier and code signing requirement from the profile template we provide
 4. Scope the profile to the same computer group as the install policy
 
-The bundle ID and team ID for Superwhisper are included with the installer package we send.
+macOS does not allow MDM to pre-grant microphone access. Each user must click **Allow** when Superwhisper requests it. If they previously denied access, they can enable Superwhisper in **System Settings → Privacy & Security → Microphone**.
+
+See [Apple's PPPC reference](https://support.apple.com/guide/deployment/dep38df53c2a/web) for the permissions a profile can manage.
 
 ### Verification
 
-Confirm a successful deployment with:
-
-```bash
-mdmclient QueryInstalledApplications | grep -i superwhisper
-```
+1. Confirm Superwhisper appears in **Applications** on a target Mac
+2. Open it as the intended user and complete license activation
+3. Grant microphone access when prompted
+4. Follow the [Quickstart](/get-started/quickstart) to record a short dictation and confirm the text pastes into another app
 
 ## macOS (Intune)
 
 Intune supports PKG installers for macOS. Upload the signed Superwhisper PKG as a **Line-of-business app** or **macOS app (PKG)** in the Intune admin center, then assign to the target group.
 
-For the microphone PPPC profile, create a **Device configuration profile** of type **Templates > Privacy preferences policy control** and add Superwhisper with **Microphone: Allow**.
+Deploy the supplied PPPC profile template through Intune to grant **Accessibility** access. Each user must grant **Microphone** access themselves, as described in [Permissions](#permissions). Use the same [verification steps](#verification) on a target Mac.
 
 ## Windows (Intune)
 
@@ -70,10 +71,10 @@ NSIS installers accept the `/S` flag for fully silent installation:
 SuperwhisperSetup.exe /S
 ```
 
-For uninstall, use:
+For uninstall, run the app's uninstaller silently from Superwhisper's install directory (the exact path ships with the package metadata we send):
 
 ```
-SuperwhisperSetup.exe /S /uninstall
+Uninstall.exe /S
 ```
 
 ### Verification
