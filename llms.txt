@@ -36,6 +36,7 @@
 ## Modes and models
 
 - [Intro to Modes](https://docs.superwhisper.com/modes/modes): What modes are and how they shape dictation
+- [Built-in Modes](https://docs.superwhisper.com/modes/built-in): Message, Email, Note, Meeting, and Voice to Text presets
 - [Custom Modes](https://docs.superwhisper.com/modes/custom): Your own AI instructions, context, and system-audio options
 - [Voice Models](https://docs.superwhisper.com/models/voice): Every transcription model with languages, speed, and size
 - [Language Models](https://docs.superwhisper.com/models/language): AI models that format and transform transcriptions

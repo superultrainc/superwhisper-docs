@@ -22,34 +22,15 @@
               "get-started/choose-your-model",
               "get-started/essential-settings",
               "get-started/windows",
-              "get-started/ios",
-              {
-                "group": "The Interface",
-                "pages": [
-                  "get-started/interface-menu-bar",
-                  "get-started/interface-rec-window",
-                  "get-started/interface-vocabulary"
-                ]
-              },
-              "get-started/history",
-              "get-started/settings-advanced",
-              "get-started/transcribe-files",
-              "get-started/coding-agents",
-              "get-started/cli",
-              "get-started/backing-up-settings",
-              "get-started/community"
+              "get-started/ios"
             ]
           },
           {
             "group": "Modes",
             "pages": [
               "modes/modes",
+              "modes/built-in",
               "modes/super",
-              "modes/voice",
-              "modes/message",
-              "modes/email",
-              "modes/note",
-              "modes/meeting",
               {
                 "group": "Custom",
                 "pages": [
@@ -59,6 +40,26 @@
                 ]
               },
               "modes/switching-modes"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              {
+                "group": "The Interface",
+                "pages": [
+                  "get-started/interface-menu-bar",
+                  "get-started/interface-rec-window",
+                  "get-started/interface-vocabulary"
+                ]
+              },
+              "get-started/history",
+              "get-started/transcribe-files",
+              "get-started/coding-agents",
+              "get-started/cli",
+              "get-started/settings-advanced",
+              "get-started/backing-up-settings",
+              "get-started/community"
             ]
           },
           {
@@ -280,6 +281,26 @@
     {
       "source": "/get-started/report",
       "destination": "/get-started/history"
+    },
+    {
+      "source": "/modes/message",
+      "destination": "/modes/built-in"
+    },
+    {
+      "source": "/modes/email",
+      "destination": "/modes/built-in"
+    },
+    {
+      "source": "/modes/note",
+      "destination": "/modes/built-in"
+    },
+    {
+      "source": "/modes/meeting",
+      "destination": "/modes/built-in"
+    },
+    {
+      "source": "/modes/voice",
+      "destination": "/modes/built-in"
     }
   ],
   "footer": {
