@@ -47,7 +47,10 @@ Optimize my setup:
 
 3. Build my modes. Modes are JSON files in `~/superwhisper/modes/`
    (older installs: `~/Documents/superwhisper/modes/`). Read the existing mode
-   files first and use one as a template. Create:
+   files first and use one as a template. Each file's `key` must match its
+   filename, and you must append the key to the `modeKeys` array in
+   `~/superwhisper/settings/settings.json` or the app won't load the mode.
+   Never edit my existing modes. Create:
 
    - "Write for me": turns a rough dictated outline into finished text.
      Write the AI instructions to match my tone, based on the history you read.
