@@ -65,10 +65,10 @@ Local language models are currently supported on **macOS only**. Windows users c
 If your workflow only requires accurate transcription, with no AI formatting or transformation, you can use **Voice Mode**, which outputs raw transcribed text with no language model involved. This is the simplest fully-local configuration.
 
 <CardGroup cols={2}>
-<Card title="Voice Models" icon="microphone" href="../models/voice">
+<Card title="Voice Models" icon="microphone" href="/models/voice">
 Browse all local and cloud voice model options
 </Card>
-<Card title="Voice to Text Mode" icon="waveform" href="../modes/built-in#voice-to-text">
+<Card title="Voice to Text Mode" icon="waveform" href="/modes/built-in#voice-to-text">
 Use transcription-only mode with no language model
 </Card>
 </CardGroup>
@@ -119,10 +119,10 @@ Sign a Data Processing Addendum (DPA) or Business Associate Agreement (BAA) with
 </Card>
 
 <CardGroup cols={2}>
-<Card title="Enterprise Model Management" icon="server" href="../enterprise/configuration">
+<Card title="Enterprise Model Management" icon="server" href="/enterprise/configuration">
 Configure custom models and API keys for your team
 </Card>
-<Card title="Language Models" icon="brain" href="../models/language">
+<Card title="Language Models" icon="brain" href="/models/language">
 View all available cloud language model options
 </Card>
 </CardGroup>
@@ -152,16 +152,16 @@ This is the recommended configuration for healthcare organizations, financial in
 Pair model controls with SSO and SCIM to ensure only authorized personnel access Superwhisper, with automatic provisioning and deprovisioning tied to your identity provider.
 
 <CardGroup cols={2}>
-<Card title="Model Management" icon="sliders" href="../enterprise/configuration">
+<Card title="Model Management" icon="sliders" href="/enterprise/configuration">
 Restrict cloud models and add approved custom models
 </Card>
-<Card title="SAML SSO" icon="lock" href="../enterprise/saml-sso">
+<Card title="SAML SSO" icon="lock" href="/enterprise/saml-sso">
 Set up single sign-on for your organization
 </Card>
-<Card title="SCIM Provisioning" icon="users" href="../enterprise/scim">
+<Card title="SCIM Provisioning" icon="users" href="/enterprise/scim">
 Automate user provisioning and deprovisioning
 </Card>
-<Card title="Enterprise Getting Started" icon="building" href="../enterprise/getting-started">
+<Card title="Enterprise Getting Started" icon="building" href="/enterprise/getting-started">
 Overview of all enterprise features
 </Card>
 </CardGroup>
@@ -187,11 +187,11 @@ All transcription history is stored **locally on your device**.
 
 When FileSync is enabled, Superwhisper syncs your **configuration data** (such as modes and settings) across your devices via Superwhisper's infrastructure, but this does not include any transcription content or audio.
 
-For sensitive environments, review your retention practices and [delete recordings](../get-started/history#delete-recordings) you no longer need.
+For sensitive environments, review your retention practices and [delete recordings](/get-started/history#delete-recordings) you no longer need.
 
 ### Custom vocabulary
 
-Any custom vocabulary or text replacements you configure are stored locally and processed on-device. They are not sent to cloud providers.
+Text replacements are stored locally and applied on your device after transcription. Vocabulary words work differently: they're sent alongside your audio as recognition hints, so with a cloud voice model they reach that provider under the same zero-data-retention API terms. With a local voice model, vocabulary never leaves your device.
 
 ### Regulatory compliance disclaimer
 
