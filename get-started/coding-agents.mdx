@@ -3,7 +3,7 @@ title: "Coding Agents"
 description: "Connect Superwhisper to Claude Code, OpenCode, Codex, and Pi. Answer agent questions by voice and get notified when the agent finishes."
 ---
 
-Superwhisper integrates with coding agents: **Claude Code**, **OpenCode**, **Codex**, and **Pi**. Once connected, Superwhisper pops up when your agent needs your input or finishes working, and you answer by voice instead of typing.
+Superwhisper integrates with coding agents: **Claude Code**, **OpenCode**, **Codex**, **Cursor**, **Pi**, and **Grok**. Once connected, Superwhisper pops up when your agent needs your input or finishes working, and you answer by voice instead of typing.
 
 <Note>
 Coding agent integrations are currently available on macOS only. See [differences from macOS](/get-started/windows#differences-from-macos) for Windows status.
@@ -12,7 +12,8 @@ Coding agent integrations are currently available on macOS only. See [difference
 ## What the integration does
 
 - **Voice answers**: when the agent asks a question, Superwhisper pops up and you dictate the reply directly into the agent
-- **Done notifications**: Superwhisper surfaces when the agent finishes working, so you don't have to watch the terminal
+- **Done notifications**: Superwhisper surfaces when the agent finishes a turn, with the final message, so you don't have to watch the terminal
+- **Voice approvals**: tool calls that need permission are gated the same way. Approve or deny by speaking
 
 ## Set up
 
@@ -23,6 +24,7 @@ What gets installed, per agent:
 - **Claude Code**: the `superwhisper` plugin (from the `superwhisper` plugin marketplace) and a `superwhisper` MCP server
 - **OpenCode**: the `@superwhisper/opencode` plugin in `~/.config/opencode`
 - **Codex**: an agent hook
+- **Grok**: run `curl -fsSL https://superwhisper.com/install-grok.sh | bash`, then restart Grok (requires Grok CLI 0.2.112 or newer; source at [superultrainc/superwhisper-grok](https://github.com/superultrainc/superwhisper-grok))
 
 ### Install the Claude Code plugin manually
 

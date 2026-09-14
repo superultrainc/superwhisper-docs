@@ -28,7 +28,7 @@ The script installs the latest release to `/usr/local/bin`, or to `~/.local/bin`
 | `modes` | List modes used in your recordings, with counts |
 | `export` | Export everything, oldest first, as `jsonl` or `markdown` |
 | `vocab` | List, add, or remove [vocabulary](/get-started/interface-vocabulary) terms |
-| `snippets` | List, set, or remove text snippets |
+| `snippets` | List, set, or remove [replacements](/get-started/interface-vocabulary#replacements): the same From → To pairs as **Settings → Vocabulary** in the app |
 | `completions` | Generate shell completions |
 | `doctor` | Diagnostic info about the database, for bug reports |
 | `mcp` | Run as an MCP server over stdio |
@@ -41,6 +41,7 @@ superwhisper history --since 2026-09-01 --mode Email
 superwhisper read --raw
 superwhisper export -f markdown > dictations.md
 superwhisper vocab add "Superwhisper"
+superwhisper snippets set "my work email" "you@yourcompany.com"
 ```
 
 Most commands accept `--json` for machine-readable output. Point the CLI at a non-default install with `--db <path>` (or `SUPERWHISPER_DB`) and `--settings <path>` (or `SUPERWHISPER_SETTINGS`).
