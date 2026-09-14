@@ -24,6 +24,23 @@ What gets installed, per agent:
 - **OpenCode**: the `@superwhisper/opencode` plugin in `~/.config/opencode`
 - **Codex**: an agent hook
 
+### Install the Claude Code plugin manually
+
+If you prefer to install from the terminal:
+
+```bash
+curl -fsSL https://superwhisper.com/install-claude-code.sh | bash
+```
+
+Or through Claude Code's plugin system:
+
+```bash
+claude plugin marketplace add superultrainc/superwhisper-claude-code
+claude plugin install superwhisper
+```
+
+Restart Claude Code to activate. The plugin source is public at [superultrainc/superwhisper-claude-code](https://github.com/superultrainc/superwhisper-claude-code).
+
 ## Manage or remove the plugin
 
 The plugin lives in each agent's own settings, so you manage it from the agent's side:
