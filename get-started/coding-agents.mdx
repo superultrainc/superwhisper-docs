@@ -3,7 +3,7 @@ title: "Coding Agents"
 description: "Connect Superwhisper to Claude Code, OpenCode, Codex, and Pi. Answer agent questions by voice and get notified when the agent finishes."
 ---
 
-Superwhisper integrates with coding agents: **Claude Code**, **OpenCode**, **Codex**, **Cursor**, **Pi**, and **Grok**. Once connected, Superwhisper pops up when your agent needs your input or finishes working, and you answer by voice instead of typing.
+Superwhisper integrates with coding agents: **Claude Code**, **OpenCode**, **Codex**, **Cursor**, **Pi**, **Grok**, and **DeepSeek**. Once connected, Superwhisper pops up when your agent needs your input or finishes working, and you answer by voice instead of typing.
 
 <Note>
 Coding agent integrations are currently available on macOS only. See [differences from macOS](/get-started/windows#differences-from-macos) for Windows status.
@@ -17,9 +17,15 @@ Coding agent integrations are currently available on macOS only. See [difference
 
 ## Set up
 
-Superwhisper detects the supported agents installed on your Mac and installs a small plugin into each agent's own configuration. Approve the install when Superwhisper offers it, and the connection is live the next time you start the agent.
+Open **Settings → Configuration** and scroll to **Agent Plugins**. Superwhisper detects the supported agents installed on your Mac; click **Install** next to an agent to connect it. The connection is live the next time you start that agent.
 
-What gets installed, per agent:
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/screens/mac/agent-plugins.png"
+  alt="Superwhisper Configuration settings showing the Agent Plugins section with install buttons per agent"
+/>
+
+Superwhisper installs a small plugin into each agent's own configuration:
 
 - **Claude Code**: the `superwhisper` plugin (from the `superwhisper` plugin marketplace) and a `superwhisper` MCP server
 - **OpenCode**: the `@superwhisper/opencode` plugin in `~/.config/opencode`
@@ -47,7 +53,14 @@ Restart Claude Code to activate. The plugin source is public at [superultrainc/s
 
 The plugin lives in each agent's own settings, so you manage it from the agent's side:
 
-- **Claude Code**: run `/plugins` inside Claude Code to enable, disable, or uninstall the plugin. It's listed as `superwhisper@superwhisper`.
+- **Claude Code**: run `/plugin` inside Claude Code to enable, disable, or uninstall the plugin. It's listed as `superwhisper@superwhisper`.
+
+  <img
+    style={{ borderRadius: '0.5rem' }}
+    src="/images/screens/mac/claude-code-plugin.png"
+    alt="Claude Code plugin manager showing the superwhisper plugin with enable, update, and uninstall options"
+  />
+
 - **OpenCode**: remove `@superwhisper/opencode` from `~/.config/opencode/opencode.json`.
 
 Disabling or removing the plugin only turns off the integration. The Superwhisper app itself is unaffected, and re-connecting reinstalls the plugin.
