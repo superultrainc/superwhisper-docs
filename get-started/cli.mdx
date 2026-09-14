@@ -1,0 +1,66 @@
+---
+title: "CLI & MCP Server"
+description: "Search, read, and export your Superwhisper history from the terminal. Run the CLI as an MCP server to give AI assistants access."
+---
+
+The `superwhisper` CLI gives you terminal access to your local transcription history, vocabulary, and snippets. It can also run as an MCP (Model Context Protocol) server, so AI assistants like Claude Code can search and read your dictations.
+
+<Note>
+The CLI is available on macOS. It reads the same local database as the app, so everything stays on your device.
+</Note>
+
+## Install
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-cli-release/main/install.sh | bash
+```
+
+The script installs the latest release to `/usr/local/bin`, or to `~/.local/bin` if that isn't writable. Binaries and checksums are published at [superultrainc/superwhisper-cli-release](https://github.com/superultrainc/superwhisper-cli-release).
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| `search <query>` | Full-text search across all transcriptions. Supports FTS5 syntax: `AND`, `OR`, `NOT`, `"phrase"`, `prefix*` |
+| `history` | List recent transcriptions. Filter with `--mode`, `--since`, `--before` |
+| `read [ID]` | Read one transcription (the latest if no ID). `--raw` shows the transcription before AI processing |
+| `stats` | Transcription statistics |
+| `modes` | List modes used in your recordings, with counts |
+| `export` | Export everything, oldest first, as `jsonl` or `markdown` |
+| `vocab` | List, add, or remove [vocabulary](/get-started/interface-vocabulary) terms |
+| `snippets` | List, set, or remove text snippets |
+| `completions` | Generate shell completions |
+| `doctor` | Diagnostic info about the database, for bug reports |
+| `mcp` | Run as an MCP server over stdio |
+
+Examples:
+
+```bash
+superwhisper search "quarterly report"
+superwhisper history --since 2026-09-01 --mode Email
+superwhisper read --raw
+superwhisper export -f markdown > dictations.md
+superwhisper vocab add "Superwhisper"
+```
+
+Most commands accept `--json` for machine-readable output. Point the CLI at a non-default install with `--db <path>` (or `SUPERWHISPER_DB`) and `--settings <path>` (or `SUPERWHISPER_SETTINGS`).
+
+## MCP server
+
+Run the CLI as an MCP server to give AI assistants read access to your history and control over vocabulary and snippets:
+
+```bash
+superwhisper mcp
+```
+
+The server speaks MCP over stdio and exposes tools for search, history, reading recordings, modes, stats, vocabulary, and snippets.
+
+To add it to Claude Code manually:
+
+```bash
+claude mcp add superwhisper -- superwhisper mcp
+```
+
+<Tip>
+If you connect Claude Code through the [coding agent integration](/get-started/coding-agents), the MCP server is set up for you.
+</Tip>
