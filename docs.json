@@ -2,6 +2,11 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Superwhisper",
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-MYXWDXVGEM"
+    }
+  },
   "colors": {
     "primary": "#0d0d0d",
     "light": "#fdfdfd",
