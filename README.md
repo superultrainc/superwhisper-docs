@@ -27,6 +27,6 @@ tracking code is needed.
 
 After deployment, check a direct page load and navigation between docs pages
 in GA4 Realtime or Google Tag Assistant. Confirm the page URLs use
-`docs.superwhisper.com` and the measurement ID above. Mintlify disables analytics
+`superwhisper.com/docs` and the measurement ID above. Mintlify disables analytics
 on preview links; verify collection on the published site. See
 [Mintlify's GA4 integration](https://www.mintlify.com/docs/integrations/analytics/google-analytics).
