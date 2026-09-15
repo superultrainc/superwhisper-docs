@@ -1,1 +1,13 @@
+# macOS
 .DS_Store
+
+# Mintlify CLI
+node_modules/
+.mintlify/
+.mint/
+
+# Local tooling and secrets
+.claude/
+.env
+.env.*
+*.log

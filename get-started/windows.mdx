@@ -3,13 +3,13 @@ title: "Superwhisper on Windows"
 description: "Install and set up Superwhisper on Windows 10 and 11. Covers requirements, fixes for DLL and Vulkan errors, file locations, and differences from macOS."
 ---
 
-Superwhisper runs natively on Windows 10 and 11. It's the same app and the same license as macOS — one purchase covers both platforms.
+Superwhisper runs natively on Windows 10 and 11. It's the same app and the same license as macOS; one purchase covers both platforms.
 
 ## Install
 
 1. Download the installer from [superwhisper.com/windows](https://superwhisper.com/windows)
 2. Run the installer and follow the prompts
-3. Superwhisper starts and adds an icon to your **system tray** — click it to open settings
+3. Superwhisper starts and adds an icon to your **system tray**. Click it to open settings
 4. Allow **microphone access** when Windows asks
 5. Follow the setup wizard, then try your first dictation ([Quickstart](/get-started/quickstart))
 
@@ -21,10 +21,10 @@ Bought the Mac version by mistake, or switching machines? Download the Windows i
 
 - Windows 10 or Windows 11 (64-bit)
 - **Local voice models** run on your GPU, and support depends on your hardware:
-  - **Cohere Transcribe** and **Whisper Large V3 Turbo** run through Vulkan — they need a Vulkan-capable GPU with current drivers, and are the fastest options on machines that have one.
-  - **Parakeet Multilanguage** runs through ONNX Runtime and works on any Windows machine, including **ARM (Snapdragon) devices** — it trades some speed for that compatibility.
-  - On Windows ARM, Cohere Transcribe and Whisper Large V3 Turbo aren't supported yet — use Parakeet Multilanguage or a cloud model.
-- **Cloud models** run on any machine — use them when your GPU can't run local models, such as old integrated graphics or a virtual machine.
+  - **Cohere Transcribe** and **Whisper Large v3 Turbo** run through Vulkan. They need a Vulkan-capable GPU with current drivers, and they're the fastest options on machines that have one.
+  - **Parakeet Multilanguage** runs through ONNX Runtime and works on any Windows machine, including **ARM (Snapdragon) devices**. It trades some speed for that compatibility.
+  - On Windows ARM, Cohere Transcribe and Whisper Large v3 Turbo aren't supported yet. Use Parakeet Multilanguage or a cloud model.
+- **Cloud models** run on any machine. Use them when your GPU can't run local models, such as old integrated graphics or a virtual machine.
 
 ## Installation problems
 
@@ -32,8 +32,8 @@ Bought the Mac version by mistake, or switching machines? Download the Windows i
 
 1. Update your graphics drivers from your GPU vendor (Intel, NVIDIA, or AMD)
 2. Restart and launch Superwhisper again
-3. If the error persists, your GPU may not support Vulkan. Select a cloud model during setup — cloud models work without a GPU
-4. Still stuck? Email [support@superwhisper.com](mailto:support@superwhisper.com) with your Windows version and GPU model
+3. If the app opens but local models fail with this error, your GPU may not support Vulkan. Pick a cloud model instead; cloud models work without a GPU
+4. If you're still stuck, email [support@superwhisper.com](mailto:support@superwhisper.com) with your Windows version and GPU model
 
 ## Where your files live
 
@@ -47,15 +47,15 @@ Paste that path into the File Explorer address bar to open it. You can't change 
 
 ## Differences from macOS
 
-Most features work the same. These are still in development for Windows:
+Most features work the same. These aren't available on Windows yet:
 
-- **FileSync** — syncing configuration across installations
-- **Custom app folder location** — the default path above is always used
+- **Filesync**: syncing configuration across installations (in development)
+- **Custom app folder location**: the default path above is always used
 - **Hold Shift to Auto-Send**
 - **Simulate Keypresses**
-- **Agentic coding integrations** (Claude Code, OpenCode, Pi, Codex)
+- **[Coding agent integrations](/get-started/coding-agents)** (Claude Code, OpenCode, Codex, Cursor, Pi, Grok, DeepSeek) and the [CLI](/get-started/cli)
 
-Everything else — modes, custom modes, vocabulary, local and cloud models, file transcription — works the same as on macOS, so the rest of these docs apply to both platforms.
+Everything else works the same as on macOS, so the rest of these docs apply to both platforms. That includes modes and custom modes, vocabulary and replacements, local and cloud models, file transcription, [realtime transcription](/common-issues/realtime), system audio recording, and [speaker separation](/modes/speaker-separated-meetings).
 
 ## Next steps
 

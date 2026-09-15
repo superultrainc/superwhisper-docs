@@ -1,0 +1,167 @@
+---
+title: "Built-in Modes"
+description: "What each built-in Superwhisper mode does: Message, Super, Mail, Note, Meeting, and Voice to Text. Pick the right preset for the task."
+---
+
+Superwhisper ships with ready-made modes, each tuned for one task. Create one from **+ Create mode** and pick its preset. This page covers the built-in presets; [Custom](/modes/custom) has its own pages.
+
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/screens/mac/modes-preset-picker.png"
+alt="The New Mode screen with the preset menu open, listing Super, Voice to Text, Message, Mail, Note, Meeting, and Custom"
+/>
+
+## Message
+
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/screens/mac/modes-editor-cloud.png"
+alt="Superwhisper's Interface for Message Mode"
+/>
+
+Message Mode applies AI processing to your dictation. It:
+
+- Removes speech artifacts and filler words
+- Fixes grammar and punctuation
+- Formats text for readability
+- Keeps your natural conversation flow
+
+<Check>Unlike the transcription-only [Voice to Text](#voice-to-text) mode, Message Mode refines your speech while preserving your tone and communication style.</Check>
+
+## Super
+
+Super Mode adapts your dictation to what's on screen. It:
+
+- Adapts messages to match the active application
+- Corrects spelling based on app-specific terms, names, and vocabulary
+- Converts spoken URLs and email addresses into proper format
+- Preserves your tone and intent while improving clarity
+
+### Context awareness
+
+Super Mode uses accessibility APIs to gather three types of context:
+
+<AccordionGroup>
+<Accordion title="1. Application Context">
+     - Identifies your active application
+     - Reads text from current input fields or text editor
+</Accordion>
+<Accordion title="2. Selected Text Context">
+     - Reads any text you've highlighted
+     - Uses selection to inform AI processing
+</Accordion>
+<Accordion title="3. Clipboard Context">
+     - Incorporates text copied within 3 seconds of dictation, or during dictation
+</Accordion>
+</AccordionGroup>
+
+<Note>
+When Application Context is active, Superwhisper also includes system information: the current date and time, your full name, and your computer name. This lets the AI insert the date, sign off an email with your name, and handle similar context-specific requests.
+</Note>
+
+### Commands
+
+Super Mode lets you dictate commands on selected text. Use commands for text transformation and formatting, not content analysis or generation.
+
+<CardGroup>
+   <Card title="Works well" icon="circle-check">
+   "Make this text title case"
+   "Convert selection to uppercase"
+   "Format my selected text as bullet points"
+   </Card>
+   <Card title="Doesn't work well" icon="circle-xmark">
+   "Summarize this paragraph"
+   "Expand on these ideas"
+   "Rewrite this section"
+   </Card>
+</CardGroup>
+
+<Tip>Commands are optional. Dictate naturally and Super Mode adapts to your active app, with no text selection or copying needed.</Tip>
+
+### Super Mode troubleshooting
+
+If Super Mode gives unexpected results, check these common causes:
+
+<AccordionGroup>
+<Accordion title="Command Type Mismatch">
+- If you are dictating a command, ensure it is related to formatting or text transformation only
+- Review the Commands section above for examples
+</Accordion>
+
+<Accordion title="AI Models">
+Since Super Mode handles multiple types of context and more complex instructions, it may require advanced language understanding, such as that provided by Claude or GPT models. Using less capable or local models can lead to unexpected results, especially for tasks involving nuanced formatting or contextual adaptation.
+</Accordion>
+
+<Accordion title="Permissions and Timing">
+- Check system settings for the correct permissions
+- For application context, make sure the correct app window is active
+- For selected text context, verify the text is selected when you trigger the dictation
+- Clipboard text is only processed if copied within 3 seconds of starting your dictation, or while you speak
+</Accordion>
+
+<Accordion title="Verify Processing">
+Open the dictation in History to review everything that was sent to the AI. This helps you pinpoint whether issues come from context capture, voice, or AI processing.
+</Accordion>
+</AccordionGroup>
+
+<Tip>Super Mode focuses on context-aware dictation and formatting. For other kinds of commands with the same context features, use a [Custom Mode](/modes/custom).</Tip>
+
+## Mail
+
+Mail Mode formats your dictation as an email. It:
+
+- Adds greetings and closings
+- Keeps your natural tone and style
+- Highlights key action items
+- Fixes grammar and punctuation
+
+## Note
+
+Note Mode structures your dictation as a note. It:
+
+- Improves clarity
+- Formats text for readability
+- Highlights key points and action items
+- Adapts the structure to the topic
+- Creates lists and bullet points from your dictation
+
+<Check>Note Mode works well for lectures, meetings, brainstorming, and quick thought capture.</Check>
+
+## Meeting
+
+Meeting Mode records and summarizes meetings. It:
+
+- Converts spoken discussions into structured summaries
+- Highlights key decisions and action items
+- Preserves important context while removing redundant content
+
+By default, Meeting Mode doesn't separate speakers in the transcript. Enable speaker separation in the [Advanced Settings sidebar](/modes/modes#advanced-settings). Speaker labels appear in History's Segments view only; they aren't included in AI-generated summaries or action items. See [Speaker-Separated Meetings](/modes/speaker-separated-meetings) for the full workflow.
+
+<Card title="Speaker-Separated Meetings" icon="users" href="/modes/speaker-separated-meetings">
+To have AI process a transcript with speaker labels, combine a Voice to Text mode with a Custom mode. This guide walks through the full workflow.
+</Card>
+
+## Voice to Text
+
+<img
+style={{ borderRadius: '0.5rem' }}
+src="/images/screens/mac/modes-editor-voice.png"
+alt="Superwhisper's interface for the Voice to Text mode"
+/>
+
+Voice to Text is transcription only, with no AI processing, so it gives the fastest results. The voice model does all the work; match it to your use case:
+
+  <Card title="Quick dictation" icon="bolt" horizontal>
+    - **S1-Voice (Cloud)**: fast and the most accurate model we ship, in 100+ languages.
+    - **Parakeet (Local)**: the fastest local option for short dictations (English only; Parakeet Multilanguage for other languages).
+    - **Cohere Transcribe (Local)**: the most accurate local model. Nothing you dictate leaves your device.
+  </Card>
+
+  <Card title="Longer recordings" icon="stars" horizontal>
+    - **Nova 3 (Cloud)**: recommended for long recordings and the best choice for speaker separation.
+    - **Other models**: all models can process long recordings, with varying speed and accuracy.
+  </Card>
+
+The [Voice models](/models/voice) page lists every model's languages, speed, accuracy, and size.
+
+<Tip>For grammar correction or content refinement, use [Message](#message), [Note](#note), or a [Custom mode](/modes/custom).</Tip>

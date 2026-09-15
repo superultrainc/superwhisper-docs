@@ -1,23 +1,21 @@
 ---
-title: "Hallucinations & Unexpected Results"
-description: "Learn how to identify and resolve hallucinations and unexpected results."
+title: "Gibberish, Repeated, or Made-Up Text"
+description: "Fix Superwhisper transcripts with words you never said, repeated phrases, or AI additions. Silence removal solves most cases."
 ---
 
-## Overview
+Words you never said, repeated phrases, or content the AI added on its own are called hallucinations. They come from one of two stages:
 
-Hallucinations in AI refer to instances where the system generates content that wasn't provided by the user or produces unexpected results. In Superwhisper, these issues can occur in two distinct processing stages:
-
-1. **Voice Transcription**: When your spoken words are converted to text
-2. **AI Processing**: When the transcribed text is processed according to the selected mode
+1. **Voice transcription**: your spoken words become text
+2. **AI processing**: the text is processed according to the mode
 
 <Tip>
-Check the [History tab](../get-started/interface-history) to identify exactly where hallucinations are occurring. You can analyze both the voice (transcription stage) and the AI-processed result to pinpoint the source of the issue.
+Open the dictation in [History](/get-started/history) and compare the raw transcription with the AI result to see which stage produced the problem.
 </Tip>
 
 ---
-## Transcription Hallucinations
+## Transcription hallucinations
 
-Hallucinations during the voice transcription stage typically stem from two main causes:
+Hallucinations at the transcription stage have two main causes:
 
 <CardGroup cols={2}>
   <Card title="Silence" icon="volume-xmark">
@@ -29,89 +27,70 @@ Hallucinations during the voice transcription stage typically stem from two main
 </CardGroup>
 
 ---
-### Silence Removal
+### Fix: silence removal
     <img
     style={{ borderRadius: '0.5rem' }}
-    src="/images/common-issues/hallucinations-001.png"
+    src="/images/screens/mac/sound.png"
     alt="Superwhisper's Silence Removal"
     />
 <Steps>
-  <Step title="Open Sound Tab">
-    Navigate to the Sound tab in Superwhisper's Settings.
+  <Step title="Open the Sound tab">
+    Go to the Sound tab in Superwhisper's settings.
   </Step>
-  <Step title="Enable 'Remove Silence'">
-    Toggle on the "Remove Silence" option. This will cut out silent periods from your audio before transcription, significantly reducing related hallucinations.
+  <Step title="Enable Remove Silence">
+    Toggle on **Remove Silence**. It cuts silent periods from your audio before transcription, which removes most silence-related hallucinations.
   </Step>
 </Steps>
 
 ---
-### Vocabulary
+### Fix: trim your vocabulary
 
-If you continue to experience hallucinations in the transcription stage after activating silence removal, check your vocabulary tab and make sure it only includes essential terms. The transcription model performs best with a focused vocabulary list.
+If hallucinations continue after enabling silence removal, check your Vocabulary tab and keep only essential terms. The transcription model performs best with a short, focused list.
 
 <CardGroup cols={2}>
-  <Card title="Vocabulary Best Practices" icon="book" href="../get-started/interface-vocabulary">
-    Learn about how Vocabulary can improve your transcription accuracy.
+  <Card title="Vocabulary Best Practices" icon="book" href="/get-started/interface-vocabulary">
+    How vocabulary and replacements improve transcription accuracy.
   </Card>
-  <Card title="Language Detection Issues" icon="language" href="language-detection">
-    If your dictation is being incorrectly transcribed in the wrong language, this may also be due to Vocabulary.
+  <Card title="Language Detection Issues" icon="language" href="/common-issues/language-detection">
+    Dictation transcribed in the wrong language can also come from vocabulary.
   </Card>
 </CardGroup>
 
 ---
-## LLM Hallucinations
+## AI processing hallucinations
 
-Hallucinations during the AI processing stage can manifest as:
-- AI answering questions you didn't ask
-- Incorrect formatting of your dictated text
-- Additional comments or content which was not part of your dictation
+At the AI processing stage, hallucinations look like:
+- The AI answers a question you didn't ask
+- Your dictated text is formatted incorrectly
+- Comments or content appear that weren't part of your dictation
 
-These issues typically arise from the following:
-
----
-### Custom Mode Prompts
-
-The built-in modes in Superwhisper are optimized for reliable results. When creating custom modes, proper prompting becomes essential.
-
-If you're using custom modes, hallucinations may occur due to:
-- Imprecise prompt instructions
-- Lack of clear examples
-- Conflicting directives in your prompt
-
-<Card title="Prompting Tips" icon="code" href="../modes/custom#prompting-tips"> Learn effective techniques for crafting custom mode prompts that produce reliable, consistent results. Discover how to structure instructions, provide examples, and avoid common pitfalls that lead to unexpected outputs. </Card>
+These have three usual causes:
 
 ---
-### Model Capability Limitations
+### Custom mode prompts
 
-Not all AI models have the same capabilities. They vary in performance and reliability. 
-<Steps>
-<Step title="Cloud Models"> 
-Cloud models generally provide the best performance and are less prone to hallucinations with complex requests.
-</Step>
-<Step title="Local Model"> 
-Local models may have more limited capabilities and require more specific prompting to avoid hallucinations. 
-</Step> 
-</Steps>
+Built-in modes ship with tuned instructions. In custom modes, the prompt is yours, and hallucinations usually come from:
+- Imprecise instructions
+- Missing examples
+- Conflicting directives
+
+<Card title="Prompting Tips" icon="code" href="/modes/custom#prompting-tips">How to structure instructions, provide examples, and avoid the common causes of unexpected output.</Card>
 
 ---
-### Context-Related Issues
+### Model capability
 
-Superwhisper can use different types of context to enhance AI processing, but these can sometimes lead to hallucinations:
+Models vary in capability. Larger cloud models handle complex requests with fewer hallucinations. Smaller local models need more specific prompting. If a mode hallucinates with one model, try a more capable one.
 
-<Steps>
-  <Step title="Application Context">
-    When enabled, Superwhisper captures text from your active input field. If there's too much text or irrelevant content, it may confuse the AI.
-  </Step>
-  <Step title="Clipboard Context">
-    If you accidentally copy text during dictation with clipboard context enabled, this unrelated content may confuse the AI model.
-  </Step>
-</Steps>
+---
+### Context problems
 
-**Best practices for context usage:**
-- Only enable context features in modes where they're specifically needed
-- Use application context selectively in text-heavy applications
-- Be mindful of clipboard operations during dictation
+Context features improve results, but they can also mislead the AI:
 
-<Card title="Context Awareness" icon="wand-magic-sparkles" href="context">
-Learn how context awareness features work in Superwhisper, when to use them, and how to avoid related issues.
+- **Application context**: if the active input field holds a lot of text or irrelevant content, it can confuse the AI
+- **Clipboard context**: text copied accidentally during dictation gets sent as context
+
+To limit this, enable context only in modes that need it, and avoid copying unrelated text while dictating.
+
+<Card title="Context Awareness" icon="wand-magic-sparkles" href="/common-issues/context">
+How each context type works, when it's captured, and how to fix related issues.
 </Card>

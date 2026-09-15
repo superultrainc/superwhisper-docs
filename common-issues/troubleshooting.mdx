@@ -1,76 +1,80 @@
 ---
 title: "Troubleshooting Overview"
-description: "Troubleshooting guides and solutions for common Superwhisper issues."
+description: "Find the fix for your Superwhisper problem: errors, crashes, pasting, shortcuts, language, microphone, and performance."
 ---
 
-## Introduction
-Superwhisper is designed to be reliable, but various factors can occasionally affect its performance. This documentation section is designed to help you diagnose and resolve common issues you might encounter.
-
-For your peace of mind, the application automatically saves your dictations every few seconds. You can access your original recordings through [the History tab](../get-started/interface-history) or directly in the [Superwhisper folder](..//get-started/settings-advanced#folder-location).
+Find your problem below by its symptom. Superwhisper saves every dictation as you speak, so your recording is safe in [History](/get-started/history) and can be reprocessed after the fix.
 
 <Tip>
-It is suggested you activate error logging in the Configuration tab. This helps diagnose issues through the application's built-in error tracking system.
+Turn on **Error logging** in **Settings → Configuration** before reproducing a problem. See [Logs & reporting](/common-issues/diagnostics).
 </Tip>
-<img
-style={{ borderRadius: '0.5rem' }}
-src="/images/common-issues/troubleshooting-001.png"
-alt="Superwhisper's Error Logging"
-/>
 
----
-## General Troubleshooting
-<Card title="Recording Window Issues" href="../get-started/essential-settings">
-   If the recording window doesn't appear after pressing the keyboard shortcut, there might be a conflict in your shortcut settings. Check or modify your keyboard shortcuts configuration to fix this issue.
-</Card>
+## Error messages
 
-<Card title="Audio Capture Issues" href="../get-started/essential-settings">
-    If the wave visualization in the interface isn't moving, this typically indicates an audio capture problem. Learn more about these settings.
-</Card>
-
-<Card title="Transcription & AI Processing Issues" href="hallucinations">
-    If you're experiencing issues with your transcription results or AI processing, check this detailed guide to identify the origin of the issue and possible solutions.
-</Card>
-
----
-## Common Issues and Solutions
 <CardGroup cols={2}>
-  <Card title="Automatic Language Detection" href="language-detection">
-    If your language isn't being correctly detected or if automatic detection defaults to English, check this guide for solutions.
+  <Card title="&quot;No voice found&quot; or stuck processing" href="/common-issues/no-voice-found">
+    The recording had no detectable speech, or processing never finishes.
   </Card>
-  
-  <Card title="How to Downgrade" href="https://superwhisper.com/appcast.xml">
-    If you need to downgrade due to issues with the current version, here you can find links to previous Superwhisper versions.
+  <Card title="&quot;LLM processing error&quot;" href="/common-issues/llm-processing-error">
+    Transcription worked; the AI formatting step failed. Includes API-key fixes.
   </Card>
-
-  <Card title="Performance Issues" href="performance-tips">
-    If Superwhisper feels slow or unresponsive, check this guide for optimization tips to improve application speed and efficiency.
+  <Card title="App won't launch or install" href="/common-issues/app-wont-launch">
+    Windows DLL and Vulkan errors, installer problems, macOS launch failures.
   </Card>
-  
-  <Card title="Realtime Transcription" href="realtime">
-    Real-time transcription is currently available only with Ultra Cloud Models. Learn how to enable and configure this feature.
-  </Card>
-  
-  <Card title="Custom Modes Not Saving" href="unable-to-create-mode">
-    If your custom modes aren't saving or disappear unexpectedly, it may be related to iCloud sync issues. This guide offers solutions.
-  </Card>
-  
-  <Card title="AI Answers Instead of Transcribing" href="../modes/custom#prompting-tips">
-    If you're getting AI responses when you only want formatted transcription, check these prompting tips.
-  </Card>
-
-  <Card title="Activation Problems" href="appstore">
-    Having trouble activating your App Store purchase? This guide walks you through how to recover your license.
-  </Card>
-  
-  <Card title="Context Issues" href="context">
-    If context awareness isn't working correctly or you want to learn more about it, check this guide.
-  </Card>
-  
-  <Card title="Recording System Audio" href="../modes/custom#audio-options">
-    This custom mode-specific feature allows you to record audio as you listen. Learn more about it.
-  </Card>
-  
-  <Card title="Report Issues" href="../get-started/report">
-    If you encounter reproducible bugs or issues, please submit them through our reporting system for faster resolution.
+  <Card title="Crashes during or after transcription" href="/common-issues/crashes">
+    Isolate whether it's the model, the mode, or the machine.
   </Card>
 </CardGroup>
+
+## Wrong output
+
+<CardGroup cols={2}>
+  <Card title="Transcribed in English instead of my language" href="/common-issues/language-detection">
+    The vocabulary hint that fixes automatic language detection.
+  </Card>
+  <Card title="Gibberish, repeated, or made-up text" href="/common-issues/hallucinations">
+    Where hallucinations come from and how to stop them.
+  </Card>
+  <Card title="AI answers instead of transcribing" href="/modes/custom#prompting-tips">
+    The mode's prompt causes this. These tips fix it.
+  </Card>
+  <Card title="Text not pasting, pasting twice, or pasting old text" href="/common-issues/pasting-issues">
+    Delivery problems: permissions, clipboard restore, simulate keypresses.
+  </Card>
+</CardGroup>
+
+## Input and controls
+
+<CardGroup cols={2}>
+  <Card title="Shortcuts not working or misfiring" href="/common-issues/shortcuts-not-working">
+    Key conflicts, global vs. per-mode shortcuts, and push-to-talk behavior.
+  </Card>
+  <Card title="Wrong microphone or system audio" href="/common-issues/microphone-and-system-audio">
+    Input switching, AirPods quality, empty meeting recordings.
+  </Card>
+  <Card title="Modes not saving or disappearing" href="/common-issues/unable-to-create-mode">
+    Usually caused by an iCloud folder move.
+  </Card>
+  <Card title="Slow or heavy on the machine" href="/common-issues/performance-tips">
+    Model choice, keep-loaded duration, and processing-time diagnosis.
+  </Card>
+</CardGroup>
+
+## Other guides
+
+<CardGroup cols={2}>
+  <Card title="Realtime transcription unavailable" href="/common-issues/realtime">
+    Realtime needs a Nova cloud model or Parakeet Realtime.
+  </Card>
+  <Card title="Context awareness issues" href="/common-issues/context">
+    How selected-text and clipboard context work, and when they backfire.
+  </Card>
+  <Card title="Adapting to iOS 26.4" href="/common-issues/ios-26-keyboard-changes">
+    The keyboard return-to-app change and what still works.
+  </Card>
+  <Card title="Logs, uninstall, and reporting" href="/common-issues/diagnostics">
+    Enable logging, find your files, uninstall cleanly, report bugs well.
+  </Card>
+</CardGroup>
+
+If your problem isn't listed, email [support@superwhisper.com](mailto:support@superwhisper.com) with your platform, app version, and what you expected to happen.

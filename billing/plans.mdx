@@ -3,24 +3,34 @@ title: "Plans & Pricing"
 description: "Superwhisper Free vs Pro comparison, pricing for Monthly, Annual, and Lifetime plans, and where to buy."
 ---
 
-One Superwhisper Pro license works on **all your devices** — unlimited Macs and Windows PCs, plus your iPhone and iPad.
+One Superwhisper Pro license works on **all your devices**: unlimited Macs and Windows PCs, plus your iPhone and Android phone.
 
 ## Free vs Pro
 
 | Feature | Free | Pro |
 |:--------|:----:|:---:|
 | Voice dictation | ✓ | ✓ |
-| Basic transcription | ✓ | ✓ |
-| Cloud voice models | Limited | Unlimited |
-| Local voice models | - | ✓ |
-| Custom modes | - | ✓ |
-| AI-powered modes (Super, Email, etc.) | - | ✓ |
-| Custom vocabulary | - | ✓ |
+| Local Whisper models | ✓ | ✓ |
+| Custom vocabulary | ✓ | ✓ |
+| Text replacements | ✓ | ✓ |
+| File transcription | ✓ | ✓ |
+| Modes | Up to 2 | Unlimited |
+| Cloud voice models | - | ✓ |
+| Cohere Transcribe and Parakeet | - | ✓ |
+| AI-powered modes (Super, Mail, etc.) | - | ✓ |
+| Context awareness | - | ✓ |
+| Realtime transcription | - | ✓ |
+| System audio recording | - | ✓ |
 | Speaker separation | - | ✓ |
+| Bring your own API keys | - | ✓ |
 | Priority support | - | ✓ |
 
+**On the Free plan** you get unlimited dictation with any [local Whisper model](/models/voice#whisper-models-local), custom vocabulary, text replacements, and up to two modes. Nothing you dictate leaves your device.
+
+**Pro adds** the cloud models, the faster and more accurate local models, and everything that runs your dictation through AI: [Super and the other AI modes](/modes/built-in), context awareness, realtime, and speaker separation.
+
 <Note>
-New users get 3000 words of free access to all Pro features.
+New users get 3000 words of free access to all Pro features. When that runs out, the app falls back to the Free plan; nothing is deleted.
 </Note>
 
 ## Pricing
@@ -33,13 +43,25 @@ New users get 3000 words of free access to all Pro features.
 
 Every plan includes the same features; only the billing differs.
 
+## Discounts
+
+- **Students and educators**: 40% off list price for verified students, faculty, and academic institutions
+- **Non-profits**: 40% off list price for verified non-profit and charitable organizations
+
+To request a discount, email [support@superwhisper.com](mailto:support@superwhisper.com) from your academic or organization email with proof of status. Verification happens first, so request the discount **before you purchase**.
+
+<Note>
+Discounts apply to purchases on superwhisper.com, including Monthly, Annual, and Lifetime plans and Enterprise list pricing. They can't be applied to App Store purchases, aren't stackable with other discounts, and aren't applied retroactively to charges already made.
+</Note>
+
 ## Where to buy
 
-1. **Superwhisper website (recommended)** — buy at [superwhisper.com](https://superwhisper.com). Lower price, your key arrives by email, and we can help with any purchase issue.
-2. **iOS App Store** — buy inside the iPhone/iPad app. Higher price due to Apple's fees. Your key is in the app under **Settings → Superwhisper Pro → Reveal License Key**; use it to [activate on Mac and Windows](/billing/activate).
+1. **Superwhisper website (recommended)**: buy at [superwhisper.com](https://superwhisper.com). Lower price, your key arrives by email, and we can help with any purchase issue.
+2. **iOS App Store**: buy inside the iPhone app. Higher price due to Apple's fees. Your key is in the app under **Settings → Superwhisper Pro → Reveal License Key**; use it to [activate on Mac and Windows](/billing/activate).
+3. **Google Play**: buy inside the Android app. Higher price due to Google's fees.
 
 <Warning>
-We can't manage App Store billing, refunds, or subscriptions on our end. For App Store billing issues, contact [Apple Support](https://support.apple.com/billing).
+We can't manage App Store or Google Play billing, refunds, or subscriptions on our end. Contact [Apple Support](https://support.apple.com/billing) or [Google Play Support](https://support.google.com/googleplay/answer/2479637) for those.
 </Warning>
 
 ## FAQ
@@ -50,8 +72,14 @@ No. One Pro license works on all platforms.
 ### Can I use my license on multiple computers?
 Yes. There's no device limit for Mac and Windows computers.
 
+### I lost my license key (including Lifetime). Can I recover it?
+Yes. Any license type can be recovered, and Lifetime keys never expire. See [find or recover a lost license key](/billing/activate#find-or-recover-a-lost-license-key).
+
 ### Do my custom modes sync between devices?
-Modes and vocabulary are stored on each device. Cloud sync is planned.
+By default they are stored per device. On macOS, [Filesync](/get-started/settings-advanced#filesync) syncs configuration between your Macs. Windows and iOS sync are planned.
+
+### Do you offer student discounts?
+Yes: 40% off for verified students, faculty, and academic institutions, and the same for non-profits. See [Discounts](#discounts) for how to request it.
 
 ### How do teams and companies buy?
 See [Enterprise](/enterprise/getting-started) for seat-based licensing, SSO, and centralized deployment.
@@ -60,7 +88,7 @@ See [Enterprise](/enterprise/getting-started) for seat-based licensing, SSO, and
 
 <CardGroup cols={2}>
   <Card title="Activate your license" icon="key" href="/billing/activate">
-    Enter your key on macOS, Windows, and iOS — and recover a lost key.
+    Enter your key on macOS, Windows, iOS, and Android, and recover a lost key.
   </Card>
   <Card title="Manage your subscription" icon="credit-card" href="/billing/manage-subscription">
     Change plans, cancel, get invoices, and request refunds.

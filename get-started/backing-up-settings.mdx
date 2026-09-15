@@ -1,22 +1,21 @@
 ---
 title: "Backing Up Settings"
-description: "Learn how to backup and restore your Superwhisper settings across different devices or for safekeeping."
+description: "Back up and restore your Superwhisper settings. Copy one folder to move your modes, vocabulary, and history to a new machine."
 ---
 
 ## Overview
 
-Backing up your Superwhisper settings provides several benefits:
+Back up your Superwhisper settings to:
 
-- **Device Migration**: Transfer your setup when upgrading to a new computer
-- **Multi-Device Usage**: Maintain consistent experience across multiple devices
-- **Data Protection**: Safeguard against accidental deletion or system failures
-- **Configuration Sharing**: Share specialized dictation setups with colleagues
-- **Version Control**: Keep snapshots of your configuration at different stages
+- **Move to a new computer**: transfer your whole setup
+- **Use several devices**: keep the same modes and vocabulary everywhere
+- **Protect your data**: guard against accidental deletion
+- **Share a setup**: give a colleague your dictation configuration
 
 ---
-## Configuration Location
+## Configuration location
 
-By default, Superwhisper saves all configuration files in the **~/superwhisper** folder in your home directory. If you prefer to store your Superwhisper files in a different location, you can do so from within the Advanced settings in the Configuration tab.
+By default, Superwhisper saves all configuration files in the `~/superwhisper` folder in your home directory. To use a different location, change it in [advanced settings](/get-started/settings-advanced#app-folder-location).
 
 <Note>
 Installs from before the default changed may still use **~/Documents/superwhisper**. You can check your current location in Settings → Configuration → Advanced.
@@ -24,36 +23,35 @@ Installs from before the default changed may still use **~/Documents/superwhispe
 
 <img
   style={{ borderRadius: '0.5rem' }}
-  src="/images/get-started/settings-advanced-004.png"
+  src="/images/screens/mac/settings-folder-location.png"
   alt="Superwhisper Configuration Files Location"
 />
 
-This folder contains several important subdirectories:
+The folder contains these subdirectories:
 
-- **Models**: Contains configuration files of custom models you've added
-- **Modes**: Stores all modes you've created or customized
-- **Settings**: Includes vocabulary lists and text replacements
-- **Recordings**: Contains your dictation history files
+- **Models**: configuration files of custom models you've added
+- **Modes**: all modes you've created or customized
+- **Settings**: vocabulary lists and text replacements
+- **Recordings**: your dictation history files
 
 ---
-## How to Backup Settings
+## Back up your settings
 
 <Steps>
-  <Step title="Locate Your Configuration Folder">
-    Navigate to the ~/superwhisper folder on your system, or to your custom location if you've changed the default.
+  <Step title="Locate the configuration folder">
+    Open `~/superwhisper`, or your custom location if you changed the default.
   </Step>
-  <Step title="Select What to Backup">
-    Choose which elements to backup based on your needs:
-    - Back up specific folders (Models, Modes, Settings) for targeted backups
+  <Step title="Select what to back up">
+    - Copy specific folders (Models, Modes, Settings) for a targeted backup
     - Skip the Recordings folder if you don't need dictation history
     - Copy the entire Superwhisper folder for a complete backup
   </Step>
-  <Step title="Verify Your Backup">
-    Check that you've included all folders needed for your specific backup purpose.
+  <Step title="Verify the backup">
+    Check that the copy includes every folder you need.
   </Step>
 </Steps>
 
 ---
-## Restoring Settings to Another Device
+## Restore settings on another device
 
-To restore settings to any device, simply copy your backup folders to the Superwhisper configuration location. Remember to restart the application afterward for changes to take effect.
+Copy your backup folders into the Superwhisper configuration location on the new device, then restart the application.

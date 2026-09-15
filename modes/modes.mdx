@@ -1,105 +1,98 @@
 ---
 title: "Intro to Modes"
-description: "Superwhisper modes tailor how your voice gets processed, helping you work faster and smarter. Choose the right mode to transform your dictation into exactly what you need."
+description: "Modes decide what happens to your dictation. Learn the per-mode settings: language, voice model, AI processing, and auto-activation."
 ---
+
+A mode pairs a voice model with optional AI processing to shape your dictation for a purpose: plain text, a message, an email, a note, or your own custom workflow. This page covers the settings every mode shares.
 
 <img
 style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-001.png"
+src="/images/screens/mac/modes-list.png"
 alt="Superwhisper's Interface for Modes"
 />
 
-<Tip>For greater workflow flexibility, create different versions of each mode by customizing voice models, AI models, and other settings. **Click any mode's name to rename it.**</Tip>
+<Tip>Create several versions of the same mode with different voice models, AI models, or settings. Click any mode's name to rename it.</Tip>
 
-## Per-Mode Settings
+## Per-mode settings
 
-### Voice Processing
-After dictating, your audio first goes through voice processing for transcription.
+### Voice processing
+After you dictate, your audio first goes through voice processing for transcription.
 <Steps>
 
-<Step title="Set your Language">
+<Step title="Set your language">
 - Supported languages vary by voice model
-- Based on your chosen language and voice model, you may see an option to translate your dictation to English. For best results with this option, use Pro, Standard, or Ultra models
+- Based on your chosen language and voice model, you may see an option to translate your dictation to English. For best results with this option, use a multilingual Whisper model like Whisper Medium or Whisper Large
 
 <img
 style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-002.png"
-alt="Superwhisper's Interface for Language Selection"
+src="/images/screens/mac/modes-editor-language.png"
+alt="Superwhisper mode editor with the language dropdown open"
 />
 
-<Note>Your preferred voice model does not support translation to English, or you need translation to another language? Set this up with AI processing by creating a [Custom mode](custom)</Note>
+<Note>If your voice model doesn't support translation, or you need a language other than English, set up translation with AI processing in a [Custom mode](/modes/custom).</Note>
 </Step>
 
-<Step title="Pick your Voice Model (Cloud or Local)">
-Manage all your models in the Advanced Settings sidebar where you can:
-- Download voice models for local use
-- Connect your own API tokens for supported services
-- Select from the available cloud-based models
+<Step title="Pick your voice model">
+Every mode has a **Voice Model** dropdown in its editor. Pick a cloud or local model per mode. Browse, download, and remove models in **Settings → Models library**.
 
 <img
 style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-003.png"
-alt="Superwhisper's Interface for LLM Selection"
+src="/images/screens/mac/modes-editor-voice-model.png"
+alt="Superwhisper mode editor with the Voice Model dropdown open"
 />
 
 </Step>
 </Steps>
 
 ---
-### Auto-Activation Rules
-While in the Advanced Settings sidebar, you can set up rules to automatically switch modes based on your active apps and websites.
+### Auto-activation rules
+Use **Activate for apps** in the mode editor (**Add apps and sites**) to switch to this mode automatically when you dictate in chosen apps and websites.
 
-<img
-style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-004.png"
-alt="Auto-Activation Rules interface for setting up automatic mode switching based on apps and websites"
-/>
-
-<Note>Keep in mind: Once a mode activates for an app or site, you won't be able to override it, and the system doesn't automatically switch back to your previous mode.</Note>
+<Note>Once a mode activates for an app or site, you can't override it, and the system doesn't switch back to your previous mode automatically.</Note>
 
 ---
-### Advanced Settings
-Belo the Auto-Activation Rules, you can select how your audio is handled during dictation.
+### Advanced settings
+Below the auto-activation rules, you can select how your audio is handled during dictation:
 
 * **Mute Audio While Recording**
 * **Pause Media While Recording**
 * **Record from System Audio**
-  - Perfect for meetings, video content, interviews, or live audio coming your speakers
-  - When recording system audio, the waves on the recording window do not move. You can always check Superwhisper's history to verify capture
+  - Useful for meetings, video content, interviews, or live audio coming through your speakers
+  - When recording system audio, the waveform on the recording window doesn't move. Check [History](/get-started/history) to verify capture
 * **Identify Speakers**
   - Useful for meeting transcriptions
   - Speaker separation results appear in the Segments tab of History
 
-<Note>Speaker-separated transcripts won't process through AI automatically within the same mode. See [this guide](speaker-separated-meetings) on handling multi-speaker transcripts with AI processing.</Note>
-  
+<Note>Speaker-separated transcripts won't process through AI automatically within the same mode. See [Speaker-Separated Meetings](/modes/speaker-separated-meetings) for handling multi-speaker transcripts with AI processing.</Note>
+
 ---
-### AI Processing
+### AI processing
 After transcription, AI processing shapes your text based on the mode's purpose.
 
 <img
 style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-005.png"
-alt="AI Processing settings panel displaying model selection and language processing options"
+src="/images/screens/mac/modes-editor-ai-processing.png"
+alt="Superwhisper mode editor with the Language Model dropdown open"
 />
 
-- Access and manage AI models in the same Advanced Settings sidebar, above the selected voice model
-<Note>Make sure you have selected a mode with AI processing to see this option</Note>
-- Built-in modes AI processing support multiple languages automatically
-   - Make sure to select your correct language in the [Voice Processing](#voice-processing) settings
-   - AI will process your dictation and respond in your chosen language
+- Pick the AI model in the mode editor's **Language Model** dropdown
+<Note>Select a mode with AI processing to see this option.</Note>
+- Built-in modes support multiple languages automatically
+   - Select the correct language in the [voice processing](#voice-processing) settings
+   - The AI processes your dictation and responds in your chosen language
 - AI processing varies by mode
-   - [Voice to Text](voice) does not include AI processing
-   - [Message](message), [Email](email), [Note](note), [Super](super), and [Meeting](meeting) modes use optimized AI processing instructions to deliver the best results for their specific purposes
-   - [Custom Mode](custom) lets you take full control by writing your own AI processing instructions
-   - Both [Super](super) and [Custom](custom) modes enhance AI processing capabilities with context awareness, providing additional possibilities
+   - [Voice to Text](/modes/built-in#voice-to-text) has no AI processing
+   - The [built-in modes](/modes/built-in) (Super, Message, Mail, Note, Meeting) use instructions tuned for their purpose
+   - [Custom Mode](/modes/custom) lets you write your own AI processing instructions
+   - [Super](/modes/built-in#super) and [Custom](/modes/custom) modes add context awareness
 
 ---
-## Learn More
+## Learn more
 <CardGroup>
-   <Card title="Switching Modes" icon="arrow-up-arrow-down" href="switching-modes">
-   Jump between modes easily with: **Keyboard Shortcuts, Auto-Activation Rules, & Deep Links.**
+   <Card title="Switching Modes" icon="arrow-up-arrow-down" href="/modes/switching-modes">
+   Jump between modes with keyboard shortcuts, auto-activation rules, and deep links.
    </Card>
-   <Card title="Customizing Modes" icon="wand-magic-sparkles" href="customizing-modes">
-   Want to tweak a built-in mode beyond its basic settings? **Create a Custom Mode to get the exact functionality you need.**
+   <Card title="Customizing Modes" icon="wand-magic-sparkles" href="/modes/customizing-modes">
+   Copy a built-in mode's instructions into a Custom Mode and adjust them.
    </Card>
 </CardGroup>

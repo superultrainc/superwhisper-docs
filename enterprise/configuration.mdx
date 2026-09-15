@@ -1,51 +1,44 @@
 ---
-title: "Configuration"
-description: "Org-wide policies for Superwhisper members: model access, recording controls, retention, and API tokens."
+title: "Configuration & Models"
+description: "Set org-wide policies for Superwhisper members: model access, custom model providers, recording controls, and retention."
 ---
+
+import EnterpriseSupport from '/snippets/enterprise-support.mdx';
 
 The **Configuration** tab in your dashboard is where you set org-wide policies that apply to every member. Settings push to members automatically the next time they launch the app.
 
-![Enterprise Configuration General Tab](/images/enterprise/configuration_general.png)
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/screens/dashboard/configuration-policies.png"
+  alt="Superwhisper Enterprise Configuration tab showing org-wide policy toggles"
+/>
 
-The tab has three sub-sections:
-
-- **General**, toggles for cloud models, system audio, speaker separation, and recording retention
-- **Custom Models**, see [Model Management](/enterprise/models)
-- **API Tokens**, see [API Overview](/enterprise/api/overview)
-
-## General Settings
+## General settings
 
 ### Allow Cloud AI Models
 
-Controls whether members can use Superwhisper's hosted cloud models. When off, members are restricted to local models or [Custom Models](/enterprise/models) you've configured.
+Controls whether members can use Superwhisper's hosted cloud models.
 
-Disable this when your organization requires all AI processing to flow through approved vendors with your own API agreements. See [Sensitive Data Best Practices](/security/sensitive-data) for the privacy implications.
+- **On** (default): members use Superwhisper's cloud models with no extra configuration.
+- **Off**: members are restricted to local models and any [custom models](#custom-models) you've configured, so all AI processing flows through vendors with your own API agreements.
+
+See [Sensitive Data Best Practices](/security/sensitive-data) for the privacy implications of each setup.
 
 ### Allow System Audio Recording
 
-Controls whether members can record system audio (the audio your computer is playing) in addition to microphone input. Useful for capturing meeting audio, but some organizations disable it for compliance or data-loss-prevention reasons.
+Controls whether members can record system audio (the audio their computer is playing) in addition to microphone input. Useful for capturing meeting audio; some organizations disable it for compliance or data-loss-prevention reasons.
 
 When off, members can only record from the microphone.
 
 ### Allow Speaker Separation
 
-Controls whether members can use [Speaker-Separated Meetings](/modes/speaker-separated-meetings) mode, which distinguishes between speakers in a recording.
-
-Disable this if your organization doesn't want speaker diarization performed on recordings.
+Controls whether members can use [Speaker-Separated Meetings](/modes/speaker-separated-meetings), which distinguishes between speakers in a recording. Disable this if your organization doesn't want speaker diarization performed on recordings.
 
 ### Recording Retention
 
 Set the maximum duration that members can keep recordings on disk. Recordings older than this are deleted automatically by the app on each member's machine.
 
-Available values:
-
-- **No restriction** (default)
-- **1 day**
-- **1 week**
-- **2 weeks**
-- **1 month**
-- **6 months**
-- **1 year**
+Available values: **No restriction** (default), **1 day**, **1 week**, **2 weeks**, **1 month**, **6 months**, **1 year**.
 
 Useful for organizations with data-minimization policies or retention requirements under GDPR, HIPAA, or internal data-governance standards.
 
@@ -53,16 +46,81 @@ Useful for organizations with data-minimization policies or retention requiremen
 Retention enforcement runs on each member's device. It applies to recordings stored locally by Superwhisper, not to anything members have exported or saved elsewhere.
 </Note>
 
-## How Settings Propagate
+## Custom models
 
-Configuration changes apply the next time a member launches Superwhisper. Members already in the app keep their current session until they restart. For most settings, no member action is required beyond restarting the app.
+Custom models let your members use specific AI models from any provider you configure, with your organization's own API credentials.
+
+### Adding a custom model
+
+1. Open the **Custom Models** sub-section of the Configuration tab
+2. Click **+ Custom Model**
+3. Select your provider from the dropdown, or **Custom** if it isn't listed
+4. Enter your provider API key. Where possible, Superwhisper fetches the models your key can access
+5. Fill in the remaining details and save:
+   - **Name**: a friendly label members will see (for example, "GPT-5 Pro" or "Anthropic Testing")
+   - **Model ID**: the provider's model identifier (for example, `gpt-5-mini` or `claude-sonnet-4-5-20250929`)
+   - **API URL**: the endpoint URL for the model API
+
+<Info>Your API key is encrypted at rest. Each provider's reference documentation is linked at the bottom of the create form.</Info>
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="/images/screens/dashboard/models-custom-provider.png"
+  alt="Superwhisper Enterprise custom model form with provider, API key, and endpoint fields"
+/>
+
+Saved models appear in the Custom Models table, where you can edit or delete them. Members receive your configured models every time they start the app and can pick one per mode.
+
+### Three ways to run models
+
+- **Cloud models only**: Allow Cloud AI Models on, no custom models. This is the default and needs no configuration.
+- **Custom models only**: Allow Cloud AI Models off, one or more custom models. All AI processing goes through your approved providers.
+- **Hybrid**: both on. Members choose between Superwhisper's hosted models and yours.
+
+## Troubleshooting custom models
+
+Most custom model issues come from a mismatch between the API URL, the model ID, or the API key. Map the error to a likely cause:
+
+| Error | Likely cause | What to check |
+| --- | --- | --- |
+| `401 Unauthorized` / `Invalid API key` | API key wrong, expired, or scoped to a different project | Regenerate the key in your provider's dashboard, paste it fresh, check key scope |
+| `403 Forbidden` / `Provider rejected the request` | Key is valid but doesn't have access to that specific model or deployment | Confirm the model is enabled on your provider account; for Azure, confirm the deployment exists and the key has access to it |
+| `404 Not Found` on the API URL | Endpoint URL is wrong or missing a path segment | See provider-specific notes below |
+| `404` on the model | Model ID doesn't match what the provider expects | For Azure, use your **deployment name**, not the model name. For OpenAI-compatible endpoints, copy the exact ID from the provider docs |
+| `429 Too Many Requests` | Rate limit or quota on the provider account | Check usage limits on the provider dashboard |
+| `Timeout` / no response | Endpoint unreachable from the user's network | Confirm the endpoint is publicly reachable, or that your VPN allows it |
+
+### Azure OpenAI
+
+- **API URL format:** `https://{resource-name}.openai.azure.com/openai/deployments/{deployment-name}/chat/completions?api-version=2024-02-15-preview`
+- **Model ID:** use the **deployment name** you created in Azure AI Studio, not the underlying model name (e.g., `gpt-4o-mycompany`, not `gpt-4o`)
+- The deployment must be created and in `Succeeded` state before adding it in Superwhisper
+
+### OpenAI-compatible endpoints
+
+- **API URL format:** the base URL up to and including `/v1` (e.g., `https://api.together.xyz/v1`)
+- **Model ID:** the exact model slug from the provider's docs
+- The endpoint must implement `/chat/completions` to work with Superwhisper
+
+### Self-hosted endpoints
+
+- The endpoint must be publicly reachable from the user's machine. Endpoints behind a corporate VPN will only work for users on that VPN
+- TLS is required. HTTP-only endpoints won't connect
+
+If the error persists, email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) with the provider, model ID, and the exact error message.
+
+## API tokens
+
+The **API Tokens** sub-section manages tokens for the Enterprise API. See the [API Overview](/enterprise/api/overview).
+
+## How settings propagate
+
+Configuration changes apply the next time a member launches Superwhisper. Members already in the app keep their current session until they restart. No member action is required beyond restarting the app.
 
 ## Related
 
-- [Model Management](/enterprise/models), configure custom models and BYO API keys
-- [Usage Analytics](/enterprise/usage-analytics), opt-in visibility into how your team uses Superwhisper
-- [Sensitive Data Best Practices](/security/sensitive-data), implications of cloud vs local model choices
+- [Amazon Bedrock](/enterprise/amazon-bedrock): configure Bedrock as a custom model provider
+- [Usage Analytics](/enterprise/usage-analytics): opt-in visibility into how your team uses Superwhisper
+- [Sensitive Data Best Practices](/security/sensitive-data): implications of cloud vs. local model choices
 
-## Support
-
-Questions about configuration options or how a setting affects your members? Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com).
+<EnterpriseSupport />

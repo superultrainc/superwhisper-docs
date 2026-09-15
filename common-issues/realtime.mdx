@@ -1,44 +1,41 @@
 ---
 title: "Realtime Transcription"
-description: "Learn why the Realtime feature might be unavailable and how to enable it in Superwhisper."
+description: "Enable realtime transcription in Superwhisper to see words appear as you speak. It requires a Nova cloud model or the local Parakeet Realtime model."
 ---
 
 <img
     style={{ borderRadius: '0.5rem' }}
-    src="/images/common-issues/realtime-001.png"
-    alt="Realtime Dictation in Superwhisper"
+    src="/images/screens/mac/recording-window-realtime.png"
+    alt="Superwhisper recording window showing live realtime transcription while dictating"
 />
 
 ## Overview
-The Realtime Transcription feature in Superwhisper lets you see your words appear on screen as you speak. This live dictation capability shows your words on screen as you speak, giving you immediate feedback on accuracy and letting you adjust your speech in real time. Currently, this feature is **only supported by the Nova (Cloud) Voice models**.
+Realtime transcription shows your words on screen as you speak, so you get immediate feedback on accuracy. It works only with voice models that support streaming:
+
+- **Nova (Cloud)**: requires an internet connection
+- **Parakeet Realtime (Local)**: runs on your device and works offline
+
+If the Realtime toggle is missing or grayed out, your mode uses a voice model that doesn't support streaming. Switch to one of the models above.
 
 ---
-## Step-by-Step Process
-Follow these steps to enable the Realtime Transcription feature:
+## Enable realtime transcription
 
 <Steps>
-  <Step title="Access Your Mode">
-    Open Superwhisper and navigate to the mode you wish to edit
+  <Step title="Open the mode">
+    Open Superwhisper and go to the mode you want to edit
   </Step>
   
-  <Step title="Select Nova (Cloud) Voice Model">
-    Navigate to the "Voice model/Model" section in the Advanced Settings sidebar and select a "Nova" model from the dropdown menu
-    
-    <img
-      style={{ borderRadius: '0.5rem' }}
-      src="/images/common-issues/realtime-002.png"
-      alt="Superwhisper Voice Models"
-    />
-
+  <Step title="Select a realtime-capable voice model">
+    In the mode editor, set **Voice Model** to a **Nova** model (cloud) or a **Parakeet** realtime-capable model (local)
   </Step>
 
   <Step title="Enable Realtime">
-    Once the Nova model is selected, the Realtime feature will become available. Toggle the slider to enable it
-    
+    With a realtime-capable model selected, the **Realtime** toggle becomes available. Turn it on
+
     <img
       style={{ borderRadius: '0.5rem' }}
-      src="/images/common-issues/realtime-003.png"
-      alt="Activating Realtime in Superwhisper"
+      src="/images/screens/mac/modes-editor-voice.png"
+      alt="Superwhisper mode editor with a Parakeet model selected and Realtime enabled"
     />
   </Step>
 </Steps>

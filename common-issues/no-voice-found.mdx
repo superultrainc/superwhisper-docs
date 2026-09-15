@@ -1,0 +1,44 @@
+---
+title: "\"No Voice Found\" or Stuck Processing"
+description: "Fix the \"No voice found\" error and dictations that never finish processing. Check your microphone, input levels, and connection."
+---
+
+**"No voice found"** means the recording reached the transcription model with no detectable speech in it. The problem is almost always the audio input, not the model.
+
+## Fix "No voice found"
+
+<Steps>
+  <Step title="Check which microphone is active">
+    The active input device shows in the **top-right of every settings pane**. If Superwhisper is listening to the wrong device, such as a disconnected headset or a muted external microphone, switch it there or set **Use system default**.
+
+    <img
+      style={{ borderRadius: '0.5rem' }}
+      src="/images/screens/mac/input-device-dropdown.png"
+      alt="Superwhisper input device selector open from the top-right of the settings window"
+    />
+  </Step>
+  <Step title="Confirm microphone permission">
+    On macOS, open **System Settings → Privacy & Security → Microphone** and make sure Superwhisper is enabled. On Windows, check **Settings → Privacy & security → Microphone**.
+  </Step>
+  <Step title="Watch the waveform while you speak">
+    Start a recording and talk. If the waveform doesn't move, audio isn't reaching the app. Try the built-in microphone to rule out a Bluetooth device problem.
+
+    One exception: when a mode records **system audio**, the waveform stays still by design. Check [History](/get-started/history) to confirm audio was captured.
+  </Step>
+  <Step title="Play back the recording">
+    Open the dictation in **History** and play the audio. If the recording is silent, the input device was wrong or muted. If you can hear yourself clearly but still got the error, email [support@superwhisper.com](mailto:support@superwhisper.com) with the recording's timestamp.
+  </Step>
+</Steps>
+
+<Note>
+Enable **Automatic volume adjustment** in **Settings → Sound**. It sets your microphone level so quiet input doesn't read as silence.
+</Note>
+
+## Stuck on processing
+
+If dictations hang at the processing stage instead:
+
+1. **Check your connection**: Cloud models need internet. Try a local model to confirm.
+2. **Check the model finished downloading**: A local model that's still downloading can't transcribe. Open **Settings → Models library**.
+3. **Restart Superwhisper**: retry the dictation from [History](/get-started/history). Your audio is already saved.
+4. **Report it**: turn on **Error logging** in **Settings → Configuration**, reproduce the problem once, and email [support@superwhisper.com](mailto:support@superwhisper.com).

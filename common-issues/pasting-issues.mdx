@@ -1,0 +1,29 @@
+---
+title: "Text Not Pasting, Pasting Twice, or Pasting Old Text"
+description: "Fix Superwhisper paste problems: results that only appear in History, doubled text, or previous clipboard content appearing instead."
+---
+
+Superwhisper delivers results by pasting at your cursor. When pasting goes wrong, the transcription itself is fine: it's in [History](/get-started/history) and on your clipboard. Each delivery problem below has a specific fix.
+
+## Nothing pastes and the text is only in History
+
+1. **Grant Accessibility permission** (macOS): open **System Settings → Privacy & Security → Accessibility** and enable Superwhisper. The app needs this permission to paste into other apps, and it's the most common cause.
+2. **Keep focus in the target field**: Superwhisper pastes at the active cursor. If you click elsewhere while it processes, the paste has no target. The text stays on your clipboard; paste it manually.
+3. **Some apps block synthetic pasting**: secure fields, some terminals, and VMs. Enable **Simulate Keypresses** in [advanced settings](/get-started/settings-advanced). It types the result key by key instead.
+
+## Old clipboard content pastes instead
+
+This comes from **Clipboard behaviour** being set to **Restore clipboard** in [advanced settings](/get-started/settings-advanced). It puts your pre-dictation clipboard back after pasting. If the paste is slow or the target app reads the clipboard late, the app picks up the restored content instead of your dictation. Increase the **Restore clipboard delay**, or switch **Clipboard behaviour** away from restoring.
+
+## Text pastes twice
+
+This usually means two delivery paths fired at once:
+
+- If **Simulate Keypresses** is on and the target app also accepts the paste, you can get both. Turn Simulate Keypresses off for apps that paste normally.
+- If you press the shortcut twice while processing, both dictations paste in sequence. Check History to confirm what happened.
+
+If neither applies, email [support@superwhisper.com](mailto:support@superwhisper.com) and name the app it happens in. Paste behavior is app-specific, and reports that name the app get fixed fastest.
+
+## Auto-send fires when you didn't want it
+
+**Hold Shift to Auto-Send** simulates Return after pasting when you finish a dictation holding Shift. If messages send themselves, you're holding Shift at the end of dictations. Turn the feature off in [advanced settings](/get-started/settings-advanced) if you don't want it.

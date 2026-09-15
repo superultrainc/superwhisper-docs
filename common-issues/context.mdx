@@ -1,16 +1,16 @@
 ---
 title: "Context Awareness"
-description: "Learn how Superwhisper captures context, troubleshoot related issues, and optimize your dictation experience with different context types."
+description: "How Superwhisper captures selected text, application, and clipboard context. Learn when each is captured and how to fix context issues."
 ---
 
 ## Overview
 
-Superwhisper's context awareness is one of its most powerful features, allowing the application to process your dictation with relevant information. This creates more accurate results.
+Context awareness lets Superwhisper process your dictation with relevant information from your screen, which produces more accurate results.
 
 ---
-### Types of Context
+### Types of context
 
-Superwhisper can capture three different types of context:
+Superwhisper can capture three types of context:
 
 <CardGroup cols={3}>
   <Card title="Selected Text Context" icon="text-size">
@@ -25,22 +25,20 @@ Superwhisper can capture three different types of context:
 </CardGroup>
 
 ---
-### Context Availability
+### Which modes capture context
 
-Not all modes in Superwhisper capture context by default. Understanding which modes use context is essential for getting the results you expect.
-
-- **Built-in Modes**: Most do not have context awareness enabled
-- **Super Mode**: The only built-in mode with all three context types enabled by default
-- **Custom Modes**: Can be configured to use any combination of context types
+- **Built-in modes**: most don't have context awareness enabled
+- **Super Mode**: the only built-in mode with all three context types on by default
+- **Custom modes**: can use any combination of context types
 
 <Tip>
-Be selective about which context types you enable for custom modes. Enabling unnecessary context can send excessive information to the AI, potentially affecting result quality.
+Enable only the context types a mode needs. Unnecessary context sends extra information to the AI and can hurt result quality.
 </Tip>
-  
----
-### Context Capture Timing
 
-Each type of context is captured at a different point in the dictation process, which is important to understand for optimal results:
+---
+### When each context is captured
+
+Each context type is captured at a different point in the dictation:
 
 <Steps>
   <Step title="Selected Text Context">
@@ -55,26 +53,24 @@ Each type of context is captured at a different point in the dictation process, 
 </Steps>
 
 ---
-## Context Issues and Solutions
+## Context issues and solutions
 
-### Selected Text Context Not Working
-- **Focus Issue**: Make sure your focus is on the application with the selected text when you start recording
-- **Mode Configuration**: Verify you're using Super Mode or a custom mode with [selected text context enabled](../modes/custom#advanced-tip)
-- **Deep Link Usage**: When triggering recording via deep links using shell commands, use the `-g` flag to open in the background so focus remains on your target application
-
----
-### Application Context Not Working
-- **Switching Windows**: If you switch to a different window after dictation but before processing completes, you may capture the wrong context or none at all
-- **Accessibility Permissions**: Ensure Superwhisper has accessibility permissions enabled in System Preferences/Settings
-- **Mode Configuration**: Verify the mode you're using has application context enabled
+### Selected text context not working
+- **Focus**: keep focus on the application with the selected text when you start recording
+- **Mode configuration**: verify you're using Super Mode or a custom mode with [selected text context enabled](/modes/custom#context-awareness)
+- **Deep links**: when triggering recording via deep links from shell commands, use the `-g` flag to open in the background so focus stays on your target application
 
 ---
-### Clipboard Context Not Working
-- **Timing Issues**: Make sure you're copying content either shortly (three seconds) before starting recording or during dictation
-- **Mode Configuration**: Verify the mode you're using has clipboard context enabled
+### Application context not working
+- **Switching windows**: if you switch windows after dictating but before processing completes, you may capture the wrong context or none
+- **Accessibility permission**: make sure Superwhisper is enabled in **System Settings → Privacy & Security → Accessibility**
+- **Mode configuration**: verify the mode has application context enabled
 
 ---
-## Explore More
-<CardGroup cols={2}> <Card title="Super Mode" icon="wand-magic-sparkles" href="/modes/super"> Learn how to use Super Mode's context awareness features, discover powerful commands for text manipulation, and troubleshoot issues specific to this mode. </Card> <Card title="History" icon="clock-rotate-left" href="/get-started/interface-history"> The History tab is essential for troubleshooting context features, as it displays all information sent to AI. </Card> </CardGroup>
+### Clipboard context not working
+- **Timing**: copy the content within three seconds before starting recording, or during dictation
+- **Mode configuration**: verify the mode has clipboard context enabled
 
 ---
+## Related
+<CardGroup cols={2}> <Card title="Super Mode" icon="wand-magic-sparkles" href="/modes/built-in#super"> Super Mode's context features, commands, and troubleshooting. </Card> <Card title="History" icon="clock-rotate-left" href="/get-started/history"> The Prompt field in History shows exactly what context was sent to the AI. </Card> </CardGroup>

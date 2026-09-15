@@ -1,79 +1,49 @@
 ---
-title: "Language Detection"
-description: "Learn how to fix issues with Superwhisper automatically translating non-English dictation to English when using the Automatic language setting."
+title: "Transcribed in English Instead of My Language"
+description: "Fix Superwhisper transcribing your dictation in English when your language is set to Automatic. Set a fixed language or add the vocabulary hint."
 ---
 
-## Overview
-
-Superwhisper processes your dictation in two distinct stages:
-
-1. **Voice-to-Text Transcription**: Converting your spoken words into written text
-2. **AI Text Processing**: Applying formatting and handling specific requests based on the selected mode
-
-When using the "Automatic" language setting, you may experience your non-English dictation being incorrectly transcribed as English text. This mostly happens at the transcription stage, before any AI processing occurs.
+With the language set to **Automatic**, non-English dictation sometimes comes out as English text. This happens at the transcription stage, before any AI processing.
 
 <Info>
-You can verify this by checking [the History tab](../get-started/interface-history), which shows the raw transcription before processing.
+Verify it in [History](/get-started/history), which shows the raw transcription before processing.
 </Info>
 
----
-## Why This Happens
+## Fix 1: set a fixed language
 
-The transcription AI models use a prompt to guide their behavior. This prompt:
+The most reliable fix: edit the mode and set its **Language** to your language instead of Automatic. A fixed language removes the guesswork. If you dictate in several languages, create one mode per language and [switch between them](/modes/switching-modes).
 
-- Improves word recognition accuracy
-- Enhances punctuation
-- Can unintentionally affect language detection
+Use Automatic only when you mix languages inside a single dictation. In that case, use the vocabulary hint below.
 
-With the "Automatic" setting, Superwhisper cannot predict which languages you'll use, making it challenging to provide appropriate language guidance to the transcription model.
+## Fix 2: the vocabulary hint
 
----
-## Solution: The Vocabulary Hint
-
-You can significantly improve automatic language detection by adding a simple phrase to your Vocabulary list:
+If you want to keep Automatic, improve its detection by adding one phrase to your Vocabulary list:
 
 <Steps>
-  <Step title="Open Vocabulary Settings">
-    Navigate to the Vocabulary tab in SuperWhisper settings.
+  <Step title="Open vocabulary settings">
+    Go to the Vocabulary tab in Superwhisper settings.
   </Step>
-  <Step title="Add Phrase in Your Language">
-    Add the phrase "and it can also include words in [LANGUAGE]" written in your target language. For example, if you speak Spanish, add: "y también puede incluir palabras en español".
+  <Step title="Add a phrase in your language">
+    Add the phrase "and it can also include words in [LANGUAGE]", written in your target language. For example, for Spanish add: "y también puede incluir palabras en español".
     <img
     style={{ borderRadius: '0.5rem' }}
-    src="/images/common-issues/language-detection-001.png"
+    src="/images/screens/mac/vocabulary.png"
     alt="Superwhisper Vocabulary Hint for Language Detection"
     />
   </Step>
-  <Step title="Additional Considerations">
-    For best results, add a few more individual words to your vocabulary and keep the list short for optimal performance.
+  <Step title="Keep the list short">
+    Add a few individual words in your language if needed, but keep the vocabulary list short. A long list can hurt transcription.
   </Step>
 </Steps>
 
----
-## Model Compatibility
+With the hint in place, you can switch between languages in a single session without changing settings.
 
-**The vocabulary hint works effectively with all voice models except Nova or Parakeet.** Nova and Parakeet models don't support multiple languages within the same dictation session. You can still add the vocabulary phrase without negative effects, but you won't get the multi-language benefits. 
+## Why this happens
 
-<Tip>
-With models that support the vocabulary hint, you'll get much better language recognition. You can also switch between multiple languages in a single session without having to adjust any settings.
-</Tip>
+The transcription model receives a guidance prompt with your audio. It improves word recognition and punctuation, but it can also nudge language detection. With Automatic, Superwhisper can't predict which language you'll speak, so the model sometimes defaults to English. The vocabulary hint tells it what else to expect.
 
----
-## Alternative Approach
+## Model compatibility
 
-If the vocabulary hack doesn't fully address your needs:
+The vocabulary hint works with all voice models except **Nova** and **Parakeet**, which don't support multiple languages in the same dictation. Adding the phrase does no harm with those models, but it won't help either. Use a fixed language instead.
 
-1. **Create Language-Specific Modes**: Set up different modes for each language you use regularly
-2. **Custom Mode Prompts**: For custom modes, add instructions to preserve the input language
-
----
-## Related Documentation
-
-<CardGroup cols={2}>
-  <Card title="Using Vocabulary" icon="book-open" href="../get-started/interface-vocabulary">
-    Learn how to use the Vocabulary feature to guide and enhance your transcription accuracy.
-  </Card>
-  <Card title="Speaker Separated Meetings" icon="users" href="../modes/speaker-separated-meetings">
-    Discover how to use Nova models to transcribe audio with automatic speaker identification.
-  </Card>
-</CardGroup>
+For custom modes, you can also add an instruction to preserve the input language in the mode's AI prompt.

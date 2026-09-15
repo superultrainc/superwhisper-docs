@@ -1,0 +1,176 @@
+---
+title: "Optimizing Superwhisper with AI"
+description: "Use a coding agent and the Superwhisper CLI to tune your setup: fix vocabulary and build custom modes from your dictation history."
+---
+
+A coding agent can tune Superwhisper for you. Using the [Superwhisper CLI](/get-started/cli), it reads your dictation history, fixes the words that come out wrong, and builds modes that match what you dictate.
+
+<Note>
+The CLI and coding agent integrations are macOS-only for now.
+</Note>
+
+## What you'll end up with
+
+- **Vocabulary and replacements that match your world**: names, jargon, and recurring fixes pulled from your real history
+- **A "Write for me" mode**: dictate a rough outline, get finished text in your voice
+- **A "Message" mode**: tuned to how you actually write messages
+- **A "Format selected text" mode**: select any text, dictate an instruction ("make this shorter", "fix the grammar"), and get the rewritten text back
+
+## Step 1: install the Superwhisper CLI
+
+```bash
+curl -fsSL https://superwhisper.com/install-cli.sh | bash
+```
+
+The CLI gives your agent read access to your history and control over vocabulary and replacements. See [CLI & MCP Server](/get-started/cli) for everything it can do.
+
+## Step 2: open your coding agent
+
+Use Claude Code, Codex, or any other coding agent that can run terminal commands and edit files. The agent works through the CLI, so no other setup is needed.
+
+## Step 3: run the optimization
+
+Two ways to run it: paste the prompt once, or install the reusable skill.
+
+<Tabs>
+  <Tab title="Copy-paste prompt">
+    Paste this into your agent and adjust the mode list to your needs:
+
+    ````text
+    Superwhisper is installed on this Mac and its CLI is on my PATH as `superwhisper`.
+    Optimize my setup:
+
+    1. Find my active Superwhisper folder. Read
+       `defaults read com.superduper.superwhisper appFolderDirectory`.
+       When set, this is the parent folder: append `superwhisper` to it.
+       Otherwise, check `~/superwhisper` and `~/Documents/superwhisper`.
+       Confirm the active folder contains `modes/` and `settings/settings.json`.
+       If the location is missing or ambiguous, ask me for the location shown in
+       Settings → Configuration → Advanced before making changes. Do not choose
+       an old copy just because it exists. Use this confirmed path as
+       `<superwhisper-folder>` throughout. Pass
+       `--settings "<superwhisper-folder>/settings/settings.json"` before every
+       `vocab` or `snippets` subcommand so CLI changes use the same settings.
+
+    2. Back up `<superwhisper-folder>/settings/settings.json` to a new timestamped
+       file beside it before any vocabulary, replacement, or mode changes.
+       Confirm the backup succeeds and the original settings parse as JSON;
+       stop without changes if either check fails. Keep this backup for undo.
+
+    3. Learn how I dictate. Run `superwhisper stats`, `superwhisper modes`, and
+       `superwhisper history --limit 100`, and skim what I write most.
+
+    4. Fix recognition. Review `superwhisper vocab list` and
+       `superwhisper snippets list`. Add up to 10 vocabulary terms for names and
+       jargon that show up mangled in my history (`superwhisper vocab add "<term>"`),
+       and add replacements for consistent fixes
+       (`superwhisper snippets set "<wrong>" "<right>"`).
+
+    5. Build my modes. Modes are JSON files in `<superwhisper-folder>/modes/`.
+       Read the existing mode files first and use one as a template.
+       Each file's `key` must match its
+       filename, and you must append the key to the `modeKeys` array in
+       `<superwhisper-folder>/settings/settings.json` or the app won't load the mode.
+       Never edit my existing modes. Create:
+
+       - "Write for me": turns a rough dictated outline into finished text.
+         Write the AI instructions to match my tone, based on the history you read.
+       - "Message": cleans up dictated chat messages. Fix grammar and filler words,
+         keep my casual tone, never add content I didn't say.
+       - "Format selected text": a Custom mode with Selected text context enabled.
+         I select text, dictate an instruction, and it outputs only the rewritten
+         text — no commentary, no quotes.
+
+    6. Validate the changed JSON and confirm every new mode key is registered.
+       Summarize every change, report the active folder and backup path, and
+       explain how to undo the changes. Remind me to restart Superwhisper so
+       the new modes load.
+    ````
+  </Tab>
+  <Tab title="Claude Code skill">
+    Install the [superwhisper-optimize skill](https://github.com/superultrainc/superwhisper-docs/tree/main/skills/superwhisper-optimize) with one command:
+
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/install.sh | sh
+    ```
+
+    Start a new Claude Code session and type `/superwhisper-optimize`, or just say "optimize my Superwhisper setup". The skill asks what you want (which modes, tone, vocabulary), then works through the CLI with structured setup questions, safety guardrails, and an undo path.
+  </Tab>
+  <Tab title="Codex skill">
+    Same skill, installed into Codex's skills folder:
+
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/install.sh | sh -s -- --codex
+    ```
+
+    Start a new Codex session and invoke `superwhisper-optimize`, or ask it to optimize your Superwhisper setup.
+  </Tab>
+</Tabs>
+
+Restart Superwhisper when the agent finishes. The new modes appear in **Settings → Modes**; review their instructions and tweak anything that doesn't sound like you.
+
+## No coding agent? Use any AI assistant
+
+You can get most of the benefit with a chat assistant:
+
+1. Ask it to write AI instructions for the modes above, describing what you dictate and the tone you want
+2. In Superwhisper, click **+ Create mode**, pick the **Custom** preset, and paste the instructions into **Custom instructions**
+3. For the selected-text mode, enable **Selected text** in the mode's **Context** row
+
+## Run it weekly
+
+Your history keeps growing, so the optimization pays off on a schedule: new recognition mistakes become replacements, and your modes stay tuned to how you actually dictate.
+
+Your agent can set this up for you. Paste this into Claude Code or Codex:
+
+````text
+Set up a weekly launchd job on this Mac that runs my Superwhisper
+optimization unattended, Mondays at 9:00.
+
+1. Work out the exact command first. Find the absolute path to my agent
+   binary with `command -v claude` (or `command -v codex`) and use that
+   full path, not the bare name. launchd jobs start with a minimal
+   environment and do not read my shell profile, so a bare command name
+   will not resolve.
+
+   - Claude Code: <path>/claude -p "<prompt below>" --allowedTools "Skill,Bash,Read,Write,Edit"
+   - Codex: <path>/codex exec -C "<my superwhisper folder>" -s workspace-write --skip-git-repo-check "<prompt below>"
+
+   The prompt: "Run the superwhisper-optimize skill non-interactively:
+   fresh pass over my latest history, sensible defaults, additive
+   changes only."
+
+2. Find my Superwhisper folder the same way the skill does: read
+   `defaults read com.superduper.superwhisper appFolderDirectory` and
+   append `superwhisper`, else try ~/Documents/superwhisper and
+   ~/superwhisper. Confirm it contains modes/ and settings/settings.json.
+
+3. Write the plist to ~/Library/LaunchAgents/com.superwhisper.optimize-weekly.plist
+   with StartCalendarInterval Weekday 1, Hour 9, Minute 0. Build it with
+   `plutil` rather than writing XML by hand, so paths containing spaces,
+   apostrophes, or ampersands are escaped correctly.
+
+4. Append output to ~/Library/Logs/superwhisper-optimize.log.
+
+5. Run the command once yourself to prove it works before loading the job,
+   then `launchctl load` the plist and show me the plist and the log path.
+   Tell me how to remove it later.
+````
+
+Each run makes additive changes only and backs up `settings.json` first. To stop it, ask your agent to unload and delete `com.superwhisper.optimize-weekly`.
+
+<Note>
+An unattended run pre-approves the agent's tools so it can work without you. Skip the schedule if you'd rather review every change: running the skill manually gives you the interactive questions and a summary each time.
+</Note>
+
+## Keep iterating
+
+Your agent can keep tuning the setup over time. Useful follow-ups:
+
+- "Search my history for words that keep getting transcribed wrong and add replacements for them"
+- "Look at my last 100 dictations and tighten the Message mode instructions to match my tone"
+- "Create a mode for [your workflow] based on how I've been dictating"
+
+<Card title="CLI & MCP Server" icon="terminal" href="/get-started/cli">
+  Everything the agent can read and change: history, search, stats, vocabulary, and replacements.
+</Card>

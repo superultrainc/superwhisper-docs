@@ -1,104 +1,84 @@
 ---
 title: "Advanced Settings"
-description: "Superwhisper's advanced configuration options let you modify application behavior, adjust performance settings, and manage system-level preferences for a personalized dictation experience"
+description: "Superwhisper's advanced settings cover application behavior, the voice model, folder location, and text delivery. Learn what each option does."
 ---
 
-<img
-  style={{ borderRadius: '0.5rem' }}
-  src="/images/get-started/settings-advanced-001.png"
-  alt="Superwhisper Advanced Settings"
-/>
+Advanced settings live in **Settings → Configuration → Advanced settings**. They control application behavior, performance, text delivery, and where Superwhisper stores its files.
 
-Superwhisper's advanced configuration options let you modify application behavior, adjust performance settings, and manage system-level preferences for a personalized dictation experience.
-
-## Recording Window
-<img
-  style={{ borderRadius: '0.5rem' }}
-  src="/images/get-started/settings-advanced-006.png"
-  alt="Superwhisper Recording Window Options"
-/>
-
-### Recording Window Enabled
-If you prefer to stay focused on your work without visual distractions, you can disable the recording window. Audio cues will still notify you when recording starts and when processing completes.
-
-### Auto-Close Window
-By default, with recording window and paste result enabled, the window closes only after successful paste detection. Enable this setting to automatically close the Recording Window after every dictation, regardless of paste status. Your dictated text remains in the clipboard for manual pasting if needed.
-
-### Mini Recording Window
-Use the mini recording window by default. You can switch between the mini and regular recording window anytime [through the interface](interface-rec-window).
-
-### Always show Mini Recording Window
-If enabled, you will always have a minimal visual indicator that allows you to hover over it to start recording, switch modes, or open the larger recording window.
-
----
 ## Application
+
 <img
   style={{ borderRadius: '0.5rem' }}
-  src="/images/get-started/settings-advanced-002.png"
-  alt="Superwhisper Interface Options"
+  src="/images/screens/mac/settings-application.png"
+  alt="Superwhisper Application settings: Show in Dock, Start Recording on Menubar Click, Always close"
 />
+
 ### Show in Dock
-Control whether Superwhisper appears in your dock for quick access
+Controls whether Superwhisper appears in your Dock.
 
 ### Start Recording on Menubar Click
-Enabling this toggle will allow you to start or stop your recording by clicking on the menu icon. If you want to access the regular options from the menu bar icon, you will just simply right click on it.
+Left-clicking the menu bar icon starts or stops recording. Right-click the icon to open the regular menu.
 
----
-## Voice Processing Options
+### Always close
+Closes the recording window after every dictation, whether or not the paste succeeded. Your text stays on the clipboard for manual pasting.
+
+## Voice model
+
 <img
   style={{ borderRadius: '0.5rem' }}
-  src="/images/get-started/settings-advanced-003.png"
-  alt="Superwhisper Voice Processing Options"
+  src="/images/screens/mac/settings-voice-model.png"
+  alt="Superwhisper Voice model active duration setting"
 />
 
-### Voice Model Active Duration
-Adjust the active duration of voice processing to balance between speed and resource usage. Higher durations keep the AI model loaded in system memory, enabling faster initial processing but reducing available resources for other applications. Lower durations free up system memory but may require additional time when starting new dictation sessions.
+**Voice model active duration** controls how long the voice model stays loaded in memory. Longer durations make the next dictation start faster but hold memory from other applications. Shorter durations free memory but add load time when a new dictation starts.
 
-### Dynamic Normalization
-When enabled, recordings are automatically normalized and filtered to maintain consistent loudness levels. This feature helps ensure your voice is clearly recognized across all recordings, regardless of variations in microphone distance or ambient conditions.
+## App folder location
 
----
-## Folder Location
 <img
   style={{ borderRadius: '0.5rem' }}
-  src="/images/get-started/settings-advanced-004.png"
-  alt="Superwhisper Folder Location"
+  src="/images/screens/mac/settings-folder-location.png"
+  alt="Superwhisper app folder location with Change folder button and Filesync toggle"
 />
 
-Superwhisper keeps configuration files in the ~/superwhisper folder in your home directory by default (older installs may still use ~/Documents/superwhisper). This folder stores your history files, your custom modes settings, vocabulary, and text replacements. **Creating a backup of this folder is recommended if you want to preserve your personalized configurations or transfer them to a new machine.**
+Superwhisper keeps its files in the `~/superwhisper` folder in your home directory by default (older installs may still use `~/Documents/superwhisper`). The folder stores your history, custom modes, vocabulary, and text replacements. [Back it up](/get-started/backing-up-settings) to preserve your setup or move it to a new machine. Use **Change folder** to store it somewhere else.
 
 <Note>
-Since Superwhisper actively uses this folder during dictation, it is suggested for this folder to remains locally accessible on your device.
+Superwhisper uses this folder actively during dictation, so keep it locally accessible on your device.
 </Note>
 
 ### Filesync
-When you enable this option, your Superwhisper configuration files will automatically sync across all installations registered under the same license.
+Syncs your Superwhisper configuration files across all installations registered under the same license.
 
----
-## Text Input Controls
+## Text input
+
 <img
   style={{ borderRadius: '0.5rem' }}
-  src="/images/get-started/settings-advanced-005.png"
-  alt="Superwhisper Text Processing Options"
+  src="/images/screens/mac/settings-text-input.png"
+  alt="Superwhisper Text input settings: paste result, auto-send, clipboard behaviour, simulate keypresses"
 />
 
-### Paste Result Text
-This toggle works in conjunction with the recording window settings to determine how Superwhisper delivers transcription results. Keep in mind that if you disable both the recording window and paste result options, Superwhisper will still save the results to your clipboard - you'll just need to paste it manually since you won't see the text on screen.
+### Paste result text
+Delivers your result by pasting at the cursor. If you turn it off, Superwhisper still saves results to your clipboard; paste them manually.
 
-### Hold Shift to Auto-Send
-With this option enabled, holding the shift key when you finish your dictation automatically simulates pressing the return/enter key. This feature is particularly useful for quick messages in chat applications or cases where immediate action is desired.
+### Hold shift to auto-send after paste
+Holding Shift when you finish a dictation simulates pressing Return. Useful for quick messages in chat applications.
 
-### Restore Clipboard
-By default, your results will replace whatever was on your clipboard before dictating. When you turn on this toggle, Superwhisper will put your previous clipboard content back exactly as it was.
+### Clipboard Behaviour
+By default, your result replaces whatever was on your clipboard. Set **Clipboard behaviour** to **Restore clipboard** to put your previous clipboard content back after pasting. **Restore clipboard delay** controls how long Superwhisper waits before restoring.
 
-### Simulate Keypresses
-This option provides an alternative input method for applications where direct paste operations aren't possible due to system privacy settings or application restrictions. When enabled, Superwhisper simulates individual keystrokes to input your results.
+### Simulate keypresses
+An alternative delivery method for applications that block direct pasting, such as secure fields. Superwhisper types the result as individual keystrokes instead.
 
----
-## Experimental Models
+## Agent Plugins
+
+Connect Superwhisper to coding agents like Claude Code, Codex, and DeepSeek. See [Coding Agents](/get-started/coding-agents).
+
+## AI Models
+
 <img
   style={{ borderRadius: '0.5rem' }}
-  src="/images/get-started/settings-advanced-007.png"
-  alt="Superwhisper Experimental Models"
+  src="/images/screens/mac/settings-experimental-models.png"
+  alt="Superwhisper Show experimental models toggle"
 />
-Turn this toggle on to include experimental models in your list of available options for Superwhisper modes.
+
+**Show experimental models** includes experimental models in the list of available options for your modes.

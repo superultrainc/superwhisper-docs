@@ -1,48 +1,46 @@
 ---
-title: "Custom"
-description: "Take full control of your dictation processing with Custom Mode. Create specialized workflows by combining context-awareness with your own AI instructions for unlimited possibilities."
+title: "Creating a Custom Mode"
+description: "Custom Mode runs your own AI instructions on your dictation. Combine them with context awareness to build specialized workflows."
 ---
 
 <img
 style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-custom-001.png"
+src="/images/screens/mac/modes-editor-custom.png"
 alt="Superwhisper Custom Mode"
 />
 
-## Key Features
-**Custom Mode empowers you with:**
-- Complete control over AI processing instructions
-- Context-awareness capabilities
+## Key features
+
+Custom Mode gives you:
+
+- Full control over the AI processing instructions
+- Context awareness
 - Flexible processing for any workflow
 
 ---
-## Additional Settings
-### AI Instructions
-Beyond selecting your preferred AI model, with Custom Mode you have the option to personalize your own AI processing instructions.
+## Additional settings
+### Custom instructions
+The mode editor has a **Custom instructions** field. Describe the transformation you want in natural language; the AI applies it to every dictation in this mode.
+
+<Note>Instructions are empty by default. If left blank, the AI doesn't know what task to perform and may give unexpected results.</Note>
+
+### Context awareness
+The **Context** row in the editor has three checkboxes:
 
 <img
 style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-custom-002.png"
-alt="Superwhisper Custom Mode change prompt button"
+src="/images/screens/mac/modes-editor-custom-context.png"
+alt="Superwhisper Custom Mode editor with the Selected text context enabled"
 />
 
-<Note>Instructions are empty by default. If left blank, AI will not know what task to perform and may give unexpected results. </Note>
+- Application
+- Copied text
+- Selected text
 
-### Context Awareness
-<img
-style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-custom-003.png"
-alt="Superwhisper Custom Mode Context Awareness Options"
-/>
-When you have selected a Custom Mode, in your Advanced Settings sidebar you'll discover two powerful features:
-- Application context toggle
-- Copied text toggle
-- Selected text toggle
-
-<Note>These toggles work identically to [Super Mode context awareness features](super#context-awareness).</Note>
+<Note>These toggles work identically to [Super Mode context awareness features](/modes/built-in#context-awareness).</Note>
 
 ---
-## Prompting Tips
+## Prompting tips
 <AccordionGroup>
 <Accordion title="Referencing Content">
 **When writing AI instructions for use in Superwhisper, you can direct AI's attention to specific content using these naming conventions:**
@@ -141,17 +139,12 @@ For complex, multi-step instructions, structuring your prompt with XML tags can 
 </output-format>
 ```
 
-<Note>Adjust and expand your XML tags based on your specific needs. Generally speaking, the more detailed your instructions, the better the results.</Note>
+<Note>Adjust and expand your XML tags to fit your needs. More detailed instructions usually give better results.</Note>
 </Accordion>
 
 <Accordion title="Add Examples">
 **Examples help you teach AI exactly how to process your input and what kind of output you expect.** You can add these directly in the Advanced Settings sidebar of your selected mode.
 
-<img
-style={{ borderRadius: '0.5rem' }}
-src="/images/modes/modes-custom-004.png"
-alt="Superwhisper interface for adding prompt examples"
-/>
 
 **Each example consists of two parts:**
 - Input field: Shows how you'll phrase your requests
@@ -167,4 +160,4 @@ alt="Superwhisper interface for adding prompt examples"
 </AccordionGroup>
 
 ---
-<Tip>Unlike other modes, Custom Mode isn't limited to text formatting. **Combine context-awareness with your instructions to create powerful, specialized workflows tailored to your needs.**</Tip>
+<Tip>Unlike other modes, Custom Mode isn't limited to text formatting. Combine context awareness with your instructions to build specialized workflows.</Tip>

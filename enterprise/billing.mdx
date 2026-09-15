@@ -2,17 +2,20 @@
 title: "Billing & Subscription Management"
 description: "Set up billing, manage seats, and control subscription costs for your Superwhisper Enterprise organization."
 ---
-## Setting Up Billing
 
-### Initial Billing Configuration
+import EnterpriseSupport from '/snippets/enterprise-support.mdx';
+
+## Setting up billing
+
+### Initial billing configuration
 
 From your dashboard, select the **Billing** tab to set up your billing information and create your subscription.
 
-![Billing Setup](/images/enterprise/billing_setup.png)
+![Billing Setup](/images/screens/dashboard/billing.png)
 
 **Important:** Billing information is required in order to provision licenses to members.
 
-### Seat-Based Pricing
+### Seat-based pricing
 
 Superwhisper Enterprise is seat-based:
 
@@ -21,15 +24,13 @@ Superwhisper Enterprise is seat-based:
 - Purchase more seats to invite additional members
 - Remove seats you aren't using
 
-## Managing Your Subscription
-
-![Subscription Management](/images/enterprise/billing_manage.png)
+## Managing your subscription
 
 - View your current seat count and usage in the Billing tab
 - Add or remove seats as your team size changes
 - View billing history and upcoming charges in the Billing tab
 
-## Seat Auto-Provisioning
+## Seat auto-provisioning
 
 Once your subscription is created, toggle **seat auto-provisioning** in the Billing tab. When enabled:
 
@@ -41,18 +42,20 @@ Useful for growing teams where manual seat management slows onboarding.
 
 Without seat auto-provisioning, owners get an email when members try to log in without available seats, prompting them to purchase seats and re-invite the member.
 
-## Keeping Costs Under Control
+## Keeping costs under control
 
-- **Wire up [SCIM deprovisioning](/enterprise/scim)** so departing employees are removed automatically and their seats freed
+- **Automate offboarding**: connect [SCIM deprovisioning](/enterprise/scim) so departing employees are removed automatically and their seats freed
 - **Quarterly seat audit**: review the Members tab and remove anyone who hasn't activated or hasn't used the app in 60+ days
 - **Forecast before you add**: use the in-dashboard billing calculator before bulk-inviting a new team
-- **Enable seat auto-provisioning** if you're scaling fast and don't want to gate hires on a manual seat purchase
+- **Enable seat auto-provisioning**: skip manual seat purchases if you're scaling fast and don't want to gate hires on them
+
+## Invoices and VAT
+
+Download invoices from the **Billing** tab in your dashboard. To add a VAT ID or specific company details to your invoices, email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) with what should appear.
 
 ## Related
 
-- [Member Management](/enterprise/member-management), seat roles and the offboarding flow
-- [SCIM Provisioning](/enterprise/scim), automate deprovisioning to free seats
+- [Member Management](/enterprise/member-management): seat roles and the offboarding flow
+- [SCIM Provisioning](/enterprise/scim): automate deprovisioning to free seats
 
-## Support
-
-Questions about billing or subscription management? Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com), request a shared Slack channel, or schedule a call.
+<EnterpriseSupport />

@@ -1,111 +1,69 @@
 ---
-title: "Performance Tips"
-description: "Learn how to optimize Superwhisper's performance and responsiveness on your system."
+title: "Slow or Heavy on the Machine"
+description: "Speed up Superwhisper when dictations process slowly or the app uses too much memory. Model choice makes the biggest difference."
 ---
 
 ## Overview
 
-**By default, Superwhisper delivers fast performance.** However, if you're experiencing slowness or want to improve the app's responsiveness, the tips below point out the areas that tend to have the biggest impact on how fast the app runs. Several factors can affect Superwhisper's performance:
+If dictations process slowly or the app feels heavy, the tips below cover the areas with the biggest impact. Four factors drive performance:
 
 <CardGroup cols={2}>
   <Card title="System Resources" icon="computer">
-    Your computer's processing power, RAM, and available memory directly impact performance, especially when using local models.
+    Processing power and available memory matter most with local models.
   </Card>
   <Card title="Internet Connection" icon="wifi">
-    Cloud-based processing depends on your internet speed and stability for optimal performance.
+    Cloud processing depends on your connection speed and stability.
   </Card>
   <Card title="Model Selection" icon="microchip">
-    Different AI models will vary in performance based on your specific use case.
+    Models differ in speed. Switching models is the fastest win.
   </Card>
   <Card title="Processing Type" icon="gears">
-    Voice transcription and AI processing are separate operations with different performance implications.
+    Voice transcription and AI processing are separate steps with separate costs.
   </Card>
 </CardGroup>
 
 ---
-## Local vs Cloud Models
+## Local vs. cloud models
 
-The choice between local and cloud models can significantly affects performance:
+### Local models
 
-### Local Models
-
-Local models run offline, directly on your computer, which means that your system specifications directly influence processing speed.
+Local models run directly on your computer, so your hardware sets the processing speed.
 
 <Steps>
-  <Step title="Optimize Voice Model Active Duration">
+  <Step title="Tune Voice Model Active Duration">
     <img
     style={{ borderRadius: '0.5rem' }}
-    src="/images/common-issues/performance-tips-001.png"
+    src="/images/screens/mac/settings-voice-model.png"
     alt="Superwhisper Voice Model Active Duration"
     />
-    In Superwhisper's Advanced Settings, you can adjust how long voice models remain loaded:
+    In [advanced settings](/get-started/settings-advanced#voice-model), adjust how long voice models stay loaded:
     - Settings range from 10 seconds to 1 hour
-    - Shorter durations free up system resources but require reloading for new dictations
-    - Longer durations keep models ready but consume more system resources
+    - Shorter durations free memory but reload the model for each new dictation
+    - Longer durations keep the model ready but hold more memory
   </Step>
-  <Step title="Consider Your Hardware">
-    For optimal local model performance:
-    
-    - Ensure adequate RAM
-    - More powerful CPUs will process dictations faster
-    - If your Mac struggles with local models because of its specifications, consider closing resource-intensive applications when using Superwhisper
+  <Step title="Match the model to your hardware">
+    - Local models need free memory; close memory-heavy applications while dictating
+    - If your machine still struggles, pick a smaller model like **Parakeet Multilanguage** (494 MB), or switch that mode to a cloud model
   </Step>
 </Steps>
 
-### Cloud Models
+### Cloud models
 
-Cloud models process your dictations on remote servers:
-
-<Steps>
-  <Step title="Select the Appropriate Cloud Model">
-    Superwhisper uses different models for voice transcription and AI processing. Some are better for certain tasks or types of content.
-  </Step>
-  <Step title="Monitor Your Internet Connection">
-    Depending on your system specs, cloud models generally offer faster processing than local options, but require a stable internet connection.
-  </Step>
-</Steps>
+Cloud models process your dictation on remote servers, so they're fast on any hardware. They need a stable internet connection; on a slow or flaky connection, a local model can be quicker.
 
 ---
-## Optimizing Processing Speed
+## Speed up processing
 
 <Steps>
-  <Step title="Disable AI Processing When Not Needed">
-    Transcription and AI processing are separate operations:
-    
-    - Using voice mode only (without AI processing) provides the fastest results
-    - Consider this option when you don't need special formatting
+  <Step title="Skip AI processing when you don't need it">
+    Transcription and AI processing are separate steps. The [Voice to Text](/modes/built-in#voice-to-text) mode skips AI processing entirely and gives the fastest results when you don't need formatting.
   </Step>
-  <Step title="Choose the Right Model for Your Task">
-    Match the model to your specific needs:
-    
-    - Short dictations: Ultra Cloud model
-    - Local and fast: Parakeet model (English only)
-    - Offline reliability & privacy: Local models
-    - Longer dictations: Any model
+  <Step title="Pick a fast model">
+    - Fastest cloud results: **S1-Voice**
+    - Fast and local: **Parakeet Multilanguage**
+    - Offline and private: any local model
   </Step>
-  <Step title="Monitor Processing Times">
-    Use the History menu to identify performance bottlenecks:
-    
-    - Check processing time for voice transcription
-    - Check processing time for AI processing
-    - Identify which part of the process is causing delays and switch model if necessary
+  <Step title="Find the slow step in History">
+    Open a dictation in [History](/get-started/history) and compare the voice and AI processing times in the right sidebar. Whichever step is slow, switch that model.
   </Step>
 </Steps>
-
----
-## Related Documentation
-
-<CardGroup cols={2}>
-  <Card title="AI Models" icon="brain" href="../modes/modes">
-    Learn how to set your preferred AI models in Superwhisper
-  </Card>
-  <Card title="History" icon="clock-rotate-left" href="../get-started/interface-history">
-    Discover how to use the History panel for troubleshooting
-  </Card>
-  <Card title="Advanced Settings" icon="sliders" href="../get-started/settings-advanced">
-    Explore all available configuration options
-  </Card>
-  <Card title="Reporting Issues" icon="bug" href="../get-started/report">
-    Learn how to effectively report problems to the Superwhisper team
-  </Card>
-</CardGroup>
