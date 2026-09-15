@@ -37,7 +37,6 @@
             "pages": [
               "modes/modes",
               "modes/built-in",
-              "modes/super",
               {
                 "group": "Custom",
                 "pages": [
@@ -307,6 +306,10 @@
     },
     {
       "source": "/modes/voice",
+      "destination": "/modes/built-in"
+    },
+    {
+      "source": "/modes/super",
       "destination": "/modes/built-in"
     }
   ],
