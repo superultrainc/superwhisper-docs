@@ -37,6 +37,7 @@
             "pages": [
               "modes/modes",
               "modes/built-in",
+              "modes/switching-modes",
               {
                 "group": "Custom",
                 "pages": [
@@ -44,8 +45,7 @@
                   "modes/customizing-modes",
                   "modes/speaker-separated-meetings"
                 ]
-              },
-              "modes/switching-modes"
+              }
             ]
           },
           {
