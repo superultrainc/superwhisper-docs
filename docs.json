@@ -183,7 +183,7 @@
         },
         {
           "anchor": "Twitter",
-          "href": "https://x.com/superwhisperapp",
+          "href": "https://x.com/superwhisper",
           "icon": "twitter"
         },
         {
@@ -315,7 +315,7 @@
   ],
   "footer": {
     "socials": {
-      "x": "https://x.com/superwhisperapp",
+      "x": "https://x.com/superwhisper",
       "discord": "https://discord.gg/tF98XvJNvB",
       "youtube": "https://www.youtube.com/channel/UCBQpNBU5mrPKge6UETN8i8g"
     }
