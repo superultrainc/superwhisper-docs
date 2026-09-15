@@ -119,29 +119,48 @@ You can get most of the benefit with a chat assistant:
 
 ## Run it weekly
 
-Your history keeps growing, so the optimization pays off on a schedule: new recognition mistakes become replacements, and your modes stay tuned to how you actually dictate. One command schedules a weekly run (Mondays at 9:00) through launchd:
+Your history keeps growing, so the optimization pays off on a schedule: new recognition mistakes become replacements, and your modes stay tuned to how you actually dictate.
 
-<Tabs>
-  <Tab title="Claude Code">
-    ```bash
-    curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/schedule.sh | sh
-    ```
-  </Tab>
-  <Tab title="Codex">
-    ```bash
-    curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/schedule.sh | sh -s -- --codex
-    ```
-  </Tab>
-</Tabs>
+Your agent can set this up for you. Paste this into Claude Code or Codex:
 
-Each run appends its summary to `~/Library/Logs/superwhisper-optimize.log`, makes additive changes only, and backs up `settings.json` first. To stop the schedule:
+````text
+Set up a weekly launchd job on this Mac that runs my Superwhisper
+optimization unattended, Mondays at 9:00.
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-docs/main/skills/superwhisper-optimize/schedule.sh | sh -s -- --remove
-```
+1. Work out the exact command first. Find the absolute path to my agent
+   binary with `command -v claude` (or `command -v codex`) and use that
+   full path, not the bare name. launchd jobs start with a minimal
+   environment and do not read my shell profile, so a bare command name
+   will not resolve.
+
+   - Claude Code: <path>/claude -p "<prompt below>" --allowedTools "Skill,Bash,Read,Write,Edit"
+   - Codex: <path>/codex exec -C "<my superwhisper folder>" -s workspace-write --skip-git-repo-check "<prompt below>"
+
+   The prompt: "Run the superwhisper-optimize skill non-interactively:
+   fresh pass over my latest history, sensible defaults, additive
+   changes only."
+
+2. Find my Superwhisper folder the same way the skill does: read
+   `defaults read com.superduper.superwhisper appFolderDirectory` and
+   append `superwhisper`, else try ~/Documents/superwhisper and
+   ~/superwhisper. Confirm it contains modes/ and settings/settings.json.
+
+3. Write the plist to ~/Library/LaunchAgents/com.superwhisper.optimize-weekly.plist
+   with StartCalendarInterval Weekday 1, Hour 9, Minute 0. Build it with
+   `plutil` rather than writing XML by hand, so paths containing spaces,
+   apostrophes, or ampersands are escaped correctly.
+
+4. Append output to ~/Library/Logs/superwhisper-optimize.log.
+
+5. Run the command once yourself to prove it works before loading the job,
+   then `launchctl load` the plist and show me the plist and the log path.
+   Tell me how to remove it later.
+````
+
+Each run makes additive changes only and backs up `settings.json` first. To stop it, ask your agent to unload and delete `com.superwhisper.optimize-weekly`.
 
 <Note>
-The scheduled run pre-approves the agent's tools so it can work unattended. Skip the schedule if you'd rather review every change: running the skill manually gives you the interactive questions and a summary each time.
+An unattended run pre-approves the agent's tools so it can work without you. Skip the schedule if you'd rather review every change: running the skill manually gives you the interactive questions and a summary each time.
 </Note>
 
 ## Keep iterating

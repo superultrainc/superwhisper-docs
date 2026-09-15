@@ -6,12 +6,14 @@ description: "The method behind Superwhisper's model numbers: what we measure, t
 <img
   style={{ borderRadius: '0.5rem' }}
   src="/images/screens/benchmark-method.png"
-  alt="Eight datasets feed a suite of sixteen models to produce one blended score from word error rate, response time, and recall, weighted 3 to 1 toward accuracy: Superwhisper S1 Voice 84, ElevenLabs Scribe v2 81, OpenAI GPT Transcribe 80, Wispr Flow raw 75, Deepgram Nova 3 75, Gemini 3.5 Transcribe 69"
+  alt="Eight datasets are run through sixteen models, measuring word error rate, response time, and recall, and ranked by blended score: Superwhisper S1 Voice 84, ElevenLabs Scribe v2 81, OpenAI GPT Transcribe 80, Wispr Flow raw 75, Deepgram Nova 3 75, Gemini 3.5 Transcribe 69"
 />
 
-Every speed and accuracy figure in these docs comes from one benchmark suite: 16 speech models over 8 datasets, our own models and the ones we compete with, on the same audio and the same machines. The full leaderboard, with a page per model, is at [superwhisper.com/benchmarks](https://superwhisper.com/benchmarks).
+Every **measured** figure in these docs, meaning word error rates and response times, comes from one benchmark suite: 16 speech models over 8 datasets, our own models and the ones we compete with, on the same audio and the same machines. The full leaderboard, with a page per model, is at [superwhisper.com/benchmarks](https://superwhisper.com/benchmarks).
 
-This page explains how those numbers are produced, so you can judge whether they answer your question.
+The Speed and Accuracy columns in the model tables are a different thing: hand-assigned 1-to-10 ratings for comparing models at a glance. [What the model tables show](#what-the-model-tables-show) explains why both exist.
+
+This page covers how the measured numbers are produced, so you can judge whether they answer your question.
 
 ## What we measure
 
@@ -32,7 +34,7 @@ This page explains how those numbers are produced, so you can judge whether they
 
 ## How the blended score works
 
-The leaderboard's headline score puts accuracy and response time into one number out of 100, weighted three to one in favour of accuracy. A transcript you have to correct is not a fast transcript.
+The leaderboard's headline score puts accuracy and response time into one number out of 100, weighted three to one in favour of accuracy. A transcript you have to correct is not a fast transcript. Recall and F-score are reported alongside it but don't feed into the score.
 
 Both ends of the scale are fixed values rather than a ranking against the field:
 
@@ -68,9 +70,9 @@ Every run writes its clip-level output to the benchmark repository along with th
 Local models are run on M4 and M4 Max hardware, and each leaderboard row names the machine it ran on. Local model speed depends heavily on the hardware, so don't assume these figures carry over to an older Mac. This is why the docs avoid claims like "fastest on any machine" for local models.
 </Note>
 
-## What the docs tables show instead
+## What the model tables show
 
-The Speed and Accuracy columns on [Voice models](/models/voice) and [Language models](/models/language) are relative ratings from 1 to 10, not benchmark output. They exist to compare models against each other at a glance, including the many models that aren't in the benchmark suite.
+The Speed and Accuracy columns on [Voice models](/models/voice) and [Language models](/models/language) are relative ratings from 1 to 10, not benchmark output. They cover every model in the app, including the many that aren't in the benchmark suite, so they can be compared in one table.
 
 When you need a measured figure, use the leaderboard. When you're choosing between two models in the app, the ratings are the faster read.
 
