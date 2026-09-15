@@ -1,0 +1,77 @@
+---
+title: "How We Benchmark"
+description: "The method behind Superwhisper's model numbers: what we measure, the datasets we use, the hardware we run on, and where competitors beat us."
+---
+
+Every speed and accuracy figure in these docs comes from one benchmark suite: 16 speech models over 8 datasets, our own models and the ones we compete with, on the same audio and the same machines. The full leaderboard, with a page per model, is at [superwhisper.com/benchmarks](https://superwhisper.com/benchmarks).
+
+This page explains how those numbers are produced, so you can judge whether they answer your question.
+
+## What we measure
+
+<Steps>
+  <Step title="Word error rate (WER)">
+    The share of words that differ from a human transcript, counting every insertion, deletion, and substitution. Lower is better.
+  </Step>
+  <Step title="Response time">
+    Seconds from the end of speech to a finished transcript, measured on dictation-length clips of 8 to 15 seconds. This is measured directly, not estimated from throughput, and reported as the median over the same runs the accuracy comes from.
+  </Step>
+  <Step title="Speed">
+    How much faster than real time the model transcribes. At 20×, a minute of speech comes back in three seconds.
+  </Step>
+  <Step title="Recall and F-score">
+    How many of the custom vocabulary terms actually spoken the model got right, and that figure balanced against words it wrongly changed to match one. This is what tells you whether [custom vocabulary](/get-started/interface-vocabulary) will hold up on your jargon.
+  </Step>
+</Steps>
+
+## How the blended score works
+
+The leaderboard's headline score puts accuracy and response time into one number out of 100, weighted three to one in favour of accuracy. A transcript you have to correct is not a fast transcript.
+
+Both ends of the scale are fixed values rather than a ranking against the field:
+
+- **Accuracy** scores zero at a 30% word error rate. At roughly one word in three wrong, a transcript is faster to retype than to fix.
+- **Response time** scores full marks under one second, because you cannot beat instant, and zero at eight seconds.
+
+Because the anchors are fixed, a model's score doesn't move when another model joins or leaves the benchmark.
+
+Cloud and local models are ranked separately. A hosted model and one running on your laptop are answering different questions, and a combined ranking would mostly measure which of the two you happened to pick.
+
+## Datasets
+
+Eight sets, chosen to cover clean reading, spontaneous speech, meetings, and the specialist terms custom vocabulary is meant to catch. Each dataset counts once regardless of how many clips it holds, so a large easy corpus can't paper over a small hard one.
+
+| Dataset | What it tests |
+| --- | --- |
+| AMI Meetings | Multi-party meetings with overlapping speech and far-field microphones |
+| Common Voice, Australian English | Volunteer-recorded sentences from Australian speakers |
+| Common Voice, spontaneous English | Unscripted speech, with the pauses and restarts of ordinary talking |
+| Earnings 22 | Earnings calls in a mix of global English accents, heavy on company names and financial jargon |
+| Earnings 22 (with vocabulary) | The same calls, with the expected company and product names supplied as custom vocabulary |
+| LibriSpeech Other | Read audiobook speech from the harder half of the test split |
+| Loquacious | Long-form conversational English across a range of recording conditions |
+| Phonetic vocabulary | Sentences built around names and terms that sound like common words |
+
+## How the runs work
+
+Local models are measured by driving the real Superwhisper app, not a reimplementation of it, so the result comes from the same engines and decode settings you get in the product. Cloud models are called over their public APIs. Competitor apps with no API are driven as apps.
+
+Every run writes its clip-level output to the benchmark repository along with the machine it ran on and the commit that produced it.
+
+<Note>
+Local models are run on M4 and M4 Max hardware, and each leaderboard row names the machine it ran on. Local model speed depends heavily on the hardware, so don't assume these figures carry over to an older Mac. This is why the docs avoid claims like "fastest on any machine" for local models.
+</Note>
+
+## What the docs tables show instead
+
+The Speed and Accuracy columns on [Voice models](/models/voice) and [Language models](/models/language) are relative ratings from 1 to 10, not benchmark output. They exist to compare models against each other at a glance, including the many models that aren't in the benchmark suite.
+
+When you need a measured figure, use the leaderboard. When you're choosing between two models in the app, the ratings are the faster read.
+
+## Where competitors win
+
+The leaderboard publishes the rows where somebody else comes out ahead, because a benchmark that only shows your wins isn't a benchmark. As of the September 2026 run, S1-Voice leads on blended score and word error rate, while ElevenLabs Scribe v2 and OpenAI GPT Transcribe lead on vocabulary recall and F-score.
+
+<Card title="Full leaderboard" icon="chart-simple" href="https://superwhisper.com/benchmarks">
+  Every model, every dataset, with the runs behind each number.
+</Card>

@@ -6,7 +6,7 @@ description: "Compare Superwhisper's voice models. Cloud and local options for f
 Voice models turn your recorded audio into text. There are two types: cloud models run on hosted servers with no download, and local models run entirely on your device. Every mode pairs one voice model with an optional [language model](/models/language).
 
 <Note>
-Speed and accuracy columns are relative ratings from 1 to 10. Measured word error rates and latency for the headline models are published at [superwhisper.com/benchmarks](https://superwhisper.com/benchmarks).
+Speed and accuracy columns are relative ratings from 1 to 10, for comparing models at a glance. Measured word error rates and latency come from our benchmark suite: see [How We Benchmark](/models/benchmarks) for the method, or [the leaderboard](https://superwhisper.com/benchmarks) for every number.
 </Note>
 
 ## Superwhisper (Cloud)
@@ -17,11 +17,11 @@ Hosted by Superwhisper and optimized for low latency and accuracy. Works in 100+
 | -------- | ----- | --------- | ----- | -------- | ----- | ------- |
 | S1-Voice | multi | ✔        | 10    | 9        | Cloud | Pro     |
 
-S1-Voice is the most accurate model we ship, with a 6.8% word error rate on [our benchmarks](https://superwhisper.com/benchmarks).
+S1-Voice is the most accurate model we ship, with a 6.6% word error rate across the eight benchmark datasets. See [How We Benchmark](/models/benchmarks) for what that measures.
 
 ## Cohere Transcribe (Local)
 
-The most accurate local model, with an 8.4% word error rate. It runs on your device's GPU: Apple silicon on macOS, Vulkan on Windows. It isn't available on Windows ARM.
+The most accurate local model, with an 8.4% word error rate on Apple M4. It runs through MLX at 4-bit precision on your device's GPU: Apple silicon on macOS, Vulkan on Windows. It isn't available on Windows ARM.
 
 | Name              | Lang  | Translate | Speed | Accuracy | Size   | License |
 | ----------------- | ----- | --------- | ----- | -------- | ------ | ------- |

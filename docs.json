@@ -70,7 +70,7 @@
           },
           {
             "group": "Models",
-            "pages": ["models/voice", "models/language"]
+            "pages": ["models/voice", "models/language", "models/benchmarks"]
           },
           {
             "group": "Account & Billing",
