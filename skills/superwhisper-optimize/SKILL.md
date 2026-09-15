@@ -11,7 +11,7 @@ Tune the user's Superwhisper setup from their real dictation history. The goal: 
 
 1. **Confirm the CLI works**: run `superwhisper --version`. If it's missing, offer to install it (get the user's OK first — it downloads and installs a binary):
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/superultrainc/superwhisper-cli-release/main/install.sh | bash
+   curl -fsSL https://superwhisper.com/install-cli.sh | bash
    ```
 2. **Find the active Superwhisper folder on every run**: read `defaults read com.superduper.superwhisper appFolderDirectory`. When set, this is the parent directory; append `superwhisper` to it. Otherwise, check `~/superwhisper` and `~/Documents/superwhisper`. Confirm the active folder contains `modes/` and `settings/settings.json`; an old copy's existence alone does not establish that it is active. If the location is missing or ambiguous, ask for the location shown in Settings → Configuration → Advanced. In a non-interactive run, stop without changes and report the unresolved location. Use the confirmed path as `<superwhisper-folder>` for all file operations. Pass `--settings "<superwhisper-folder>/settings/settings.json"` before every `vocab` or `snippets` subcommand, including the examples below, so CLI reads and writes target the same settings even when a default path or environment override points elsewhere.
 3. **Ask what the user wants.** If the AskUserQuestion tool is available, use it with roughly these questions (adapt wording freely):
