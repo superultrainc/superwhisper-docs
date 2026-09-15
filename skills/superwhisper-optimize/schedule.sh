@@ -16,8 +16,23 @@ if [ "$1" = "--remove" ]; then
   exit 0
 fi
 
-CMD="claude -p \"$PROMPT\" --allowedTools \"Skill,Bash,Read,Write,Edit\""
-[ "$1" = "--codex" ] && CMD="codex exec --full-auto \"$PROMPT\""
+# Locate the active Superwhisper folder; the agent runs with this as its
+# working directory so its sandbox covers the files it needs to change.
+PARENT=$(defaults read com.superduper.superwhisper appFolderDirectory 2>/dev/null || true)
+if [ -n "$PARENT" ] && [ -d "$PARENT/superwhisper/modes" ]; then
+  SW_DIR="$PARENT/superwhisper"
+elif [ -d "$HOME/Documents/superwhisper/modes" ]; then
+  SW_DIR="$HOME/Documents/superwhisper"
+elif [ -d "$HOME/superwhisper/modes" ]; then
+  SW_DIR="$HOME/superwhisper"
+else
+  echo "Could not find your Superwhisper folder (no modes/ directory)." >&2
+  echo "Open Settings -> Configuration -> Advanced to see its location, then run this script from that folder." >&2
+  exit 1
+fi
+
+CMD="cd '$SW_DIR' && claude -p \"$PROMPT\" --allowedTools \"Skill,Bash,Read,Write,Edit\""
+[ "$1" = "--codex" ] && CMD="codex exec -C '$SW_DIR' -s workspace-write --skip-git-repo-check \"$PROMPT\""
 
 mkdir -p "$HOME/Library/LaunchAgents" "$HOME/Library/Logs"
 cat > "$PLIST" <<PLIST_EOF
@@ -45,5 +60,6 @@ PLIST_EOF
 launchctl unload "$PLIST" 2>/dev/null || true
 launchctl load "$PLIST"
 echo "Scheduled weekly optimization (Mondays 9:00)."
+echo "Superwhisper folder: $SW_DIR"
 echo "Log: $LOG"
 echo "Remove later with: sh schedule.sh --remove"
