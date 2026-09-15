@@ -54,10 +54,10 @@ For sensitive environments, **Cohere Transcribe** is the recommended starting po
 
 ### Local language models
 
-Superwhisper supports local language models on macOS, allowing AI post-processing to run entirely on your device. Local language model options are available directly in your mode's **Language Model** settings.
+Superwhisper supports local language models on macOS and Windows, letting AI post-processing run entirely on your device. Local language model options are available directly in your mode's **Language Model** settings.
 
 <Note>
-Local language models are currently supported on **macOS only**. Windows users can use cloud language models or configure a mode without AI post-processing to keep data local at the voice model stage.
+On Windows, local language models run on your GPU through Vulkan. Windows ARM (Snapdragon) devices don't support Vulkan yet, so they're limited to cloud language models or modes without AI post-processing.
 </Note>
 
 ### Transcription only (no AI post-processing)
