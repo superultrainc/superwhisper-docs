@@ -39,7 +39,7 @@
               "modes/built-in",
               "modes/switching-modes",
               {
-                "group": "Custom",
+                "group": "Custom Modes",
                 "pages": [
                   "modes/custom",
                   "modes/customizing-modes",
