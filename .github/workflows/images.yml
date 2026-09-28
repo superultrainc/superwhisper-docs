@@ -1,11 +1,12 @@
 name: Images
 
+# Runs on every pull request so it can be a required status check.
+# (A `paths:` filter would leave the check "expected" forever on PRs that
+# touch no images, which blocks merging.) PRs without image changes skip the
+# tool install and pass in seconds.
+
 on:
   pull_request:
-    paths:
-      - "images/**"
-      - "scripts/optimize-images.py"
-      - ".github/workflows/images.yml"
 
 jobs:
   check:
@@ -13,20 +14,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find changed images
+        id: changed
+        run: |
+          range="origin/${GITHUB_BASE_REF}...HEAD"
+          if git diff --name-only "$range" -- scripts/optimize-images.py .github/workflows/images.yml | grep -q .; then
+            echo "Optimiser or workflow changed: checking all of images/"
+            echo "paths=images" >> "$GITHUB_OUTPUT"
+          else
+            paths=$(git diff --name-only --diff-filter=AMR "$range" -- images/ | tr '\n' ' ')
+            echo "Changed images: ${paths:-none}"
+            echo "paths=$paths" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Install pngquant, gifsicle, Pillow
+        if: steps.changed.outputs.paths != ''
         run: |
           sudo apt-get update -q
           sudo apt-get install -y -q pngquant gifsicle python3-pil
 
       - name: Install oxipng
+        if: steps.changed.outputs.paths != ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release download --repo oxipng/oxipng --pattern '*x86_64-unknown-linux-musl.tar.gz' --output oxipng.tar.gz
-          tar -xzf oxipng.tar.gz
-          sudo install -m 755 "$(find . -type f -name oxipng -path '*musl*' | head -1)" /usr/local/bin/oxipng
+          gh release download v10.2.1 --repo oxipng/oxipng --pattern '*_amd64.deb' --output oxipng.deb
+          sudo dpkg -i oxipng.deb
           oxipng --version
 
       - name: Check images
-        run: python3 scripts/optimize-images.py --check
+        if: steps.changed.outputs.paths != ''
+        run: python3 scripts/optimize-images.py --check ${{ steps.changed.outputs.paths }}

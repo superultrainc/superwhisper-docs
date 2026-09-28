@@ -22,15 +22,20 @@ The preview serves at `http://localhost:3000`.
 
 Every image under `images/` must be sized and compressed to the repo standard
 (max 2048 px wide, 3200 px tall; PNGs through pngquant + oxipng). A CI check
-runs on every pull request that touches `images/`.
+runs on every pull request and fails if an added or changed image is not compliant.
 
 Before committing an image:
 
 ```
 brew install pngquant oxipng gifsicle && pip3 install pillow   # once
-python3 scripts/optimize-images.py images/screens/mac/new-screen.png
+python3 scripts/optimize-images.py --frame ~/Desktop/capture.png images/screens/mac/new-screen.png   # bare capture -> framed, sized, compressed
+python3 scripts/optimize-images.py images/screens/mac/new-screen.png                                # already framed -> sized, compressed
 python3 scripts/optimize-images.py --check
 ```
+
+`--frame` also saves the bare capture under `captures/` at the same path, so a
+screen can be re-framed later. Commit both. Highlights, numbered badges, arrows,
+and blurs come from a JSON spec beside the capture; see the skill for the format.
 
 Details, folder layout, and naming rules: [`skills/docs-images/SKILL.md`](skills/docs-images/SKILL.md).
 
