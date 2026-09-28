@@ -1,0 +1,32 @@
+name: Images
+
+on:
+  pull_request:
+    paths:
+      - "images/**"
+      - "scripts/optimize-images.py"
+      - ".github/workflows/images.yml"
+
+jobs:
+  check:
+    name: Images are sized and compressed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pngquant, gifsicle, Pillow
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q pngquant gifsicle python3-pil
+
+      - name: Install oxipng
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download --repo oxipng/oxipng --pattern '*x86_64-unknown-linux-musl.tar.gz' --output oxipng.tar.gz
+          tar -xzf oxipng.tar.gz
+          sudo install -m 755 "$(find . -type f -name oxipng -path '*musl*' | head -1)" /usr/local/bin/oxipng
+          oxipng --version
+
+      - name: Check images
+        run: python3 scripts/optimize-images.py --check

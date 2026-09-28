@@ -18,6 +18,22 @@ mint dev
 
 The preview serves at `http://localhost:3000`.
 
+### Images
+
+Every image under `images/` must be sized and compressed to the repo standard
+(max 2048 px wide, 3200 px tall; PNGs through pngquant + oxipng). A CI check
+runs on every pull request that touches `images/`.
+
+Before committing an image:
+
+```
+brew install pngquant oxipng gifsicle && pip3 install pillow   # once
+python3 scripts/optimize-images.py images/screens/mac/new-screen.png
+python3 scripts/optimize-images.py --check
+```
+
+Details, folder layout, and naming rules: [`skills/docs-images/SKILL.md`](skills/docs-images/SKILL.md).
+
 ### Google Analytics
 
 Google Analytics 4 is configured site-wide in `docs.json` under
