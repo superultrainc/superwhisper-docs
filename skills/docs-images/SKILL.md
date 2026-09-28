@@ -62,10 +62,10 @@ numeric suffix (`configuration-1.png`, `configuration-2.png`).
 
 ## Where screenshots come from
 
-Raw captures, annotation specs, and the render pipeline live outside this repo, in a
-private folder, because captures can contain real names, paths, and dictations. The
-pipeline produces framed 2x PNGs that are copied into `images/screens/` and then
-optimised here. Never commit a raw capture. If a screenshot shows real user data,
+Capture the app window at 2x (Retina), dark mode, default window size, with demo
+data only. Composite it on the standard gradient backdrop with even padding, then
+drop the framed PNG into `images/screens/<platform>/` and run the optimiser. Never
+commit a raw capture. If a screenshot shows real names, paths, or dictations,
 re-shoot it with demo data.
 
 ## Tool setup

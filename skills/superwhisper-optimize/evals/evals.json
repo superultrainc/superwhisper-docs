@@ -1,0 +1,26 @@
+{
+  "skill_name": "superwhisper-optimize",
+  "evals": [
+    {
+      "id": 0,
+      "eval_name": "full-optimization",
+      "prompt": "Superwhisper is installed on this Mac and its CLI is on my PATH as `superwhisper`. I moved my Superwhisper folder, it's at {SANDBOX}/superwhisper. Before any superwhisper command, export SUPERWHISPER_DB={SANDBOX}/db.sqlite and SUPERWHISPER_SETTINGS={SANDBOX}/superwhisper/settings/settings.json. Optimize my Superwhisper setup: fix the words it keeps getting wrong and build me better modes. I'm a founder, I dictate Slack messages, emails, and AI prompts all day. Don't ask me questions, use sensible defaults (build all the useful modes, match my tone from history).",
+      "expected_output": "Vocabulary/replacements added based on history; Write for me, Message, and Format selected text modes created as valid JSON files; existing files untouched; summary + restart reminder.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "eval_name": "vocab-only-fix",
+      "prompt": "superwhisper keeps butchering names when i dictate - my company superultrainc, my coworkers Austen and Neil, and product stuff like Parakeet and Cohere Transcribe come out mangled. fix my dictation vocabulary so these come out right. My superwhisper folder is at {SANDBOX}/superwhisper and before any superwhisper command export SUPERWHISPER_DB={SANDBOX}/db.sqlite and SUPERWHISPER_SETTINGS={SANDBOX}/superwhisper/settings/settings.json.",
+      "expected_output": "Vocabulary terms and/or replacements added for the named terms; no unnecessary mode creation; nothing existing removed.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "eval_name": "selected-text-mode",
+      "prompt": "set up a superwhisper mode where I select some text in any app, dictate an instruction like 'make this shorter' or 'fix the grammar', and it replaces the selection with the rewrite. My superwhisper folder is at {SANDBOX}/superwhisper. Before any superwhisper command export SUPERWHISPER_DB={SANDBOX}/db.sqlite and SUPERWHISPER_SETTINGS={SANDBOX}/superwhisper/settings/settings.json.",
+      "expected_output": "One new custom mode JSON with contextFromSelection true, output-only-rewrite prompt, valid key/filename, model IDs copied from existing modes; existing files untouched.",
+      "files": []
+    }
+  ]
+}
