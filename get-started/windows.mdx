@@ -3,7 +3,7 @@ title: "Superwhisper on Windows"
 description: "Install and set up Superwhisper on Windows 10 and 11. Covers requirements, fixes for DLL and Vulkan errors, file locations, and differences from macOS."
 ---
 
-Superwhisper runs natively on Windows 10 and 11. It's the same app and the same license as macOS; one purchase covers both platforms.
+Superwhisper runs natively on Windows 10 and 11, on x64 and ARM64. It's the same app and the same license as macOS; one purchase covers both platforms.
 
 ## Install
 
@@ -19,25 +19,28 @@ Bought the Mac version by mistake, or switching machines? Download the Windows i
 
 ## Requirements
 
-- Windows 10 or Windows 11 (64-bit)
-- **Local voice models** run on your GPU, and support depends on your hardware:
-  - **Cohere Transcribe** and **Whisper Large v3 Turbo** run through Vulkan. They need a Vulkan-capable GPU with current drivers, and they're the fastest options on machines that have one.
-  - **Parakeet Multilanguage** runs through ONNX Runtime and works on any Windows machine, including **ARM (Snapdragon) devices**. It trades some speed for that compatibility.
-  - On Windows ARM, Cohere Transcribe and Whisper Large v3 Turbo aren't supported yet. Use Parakeet Multilanguage or a cloud model.
-- **Cloud models** run on any machine. Use them when your GPU can't run local models, such as old integrated graphics or a virtual machine.
+Superwhisper runs on Windows 10 and 11, on x64 and ARM64 processors. A GPU is not required.
+
+- **Local voice models** depend on your hardware:
+  - **Cohere Transcribe** and **Whisper Large v3 Turbo** use Vulkan when your GPU and drivers support it. Without Vulkan, they fall back to the CPU, which is much slower.
+  - **Parakeet Multilanguage** runs through ONNX Runtime on x64 and ARM64 machines. It does not need Vulkan.
+  - Windows ARM has no Vulkan support in Superwhisper. On ARM, Cohere Transcribe and Whisper Large v3 Turbo are not supported yet. Use Parakeet Multilanguage or a cloud model.
+- **Cloud models** run on any machine. Use them when your hardware is too slow for local models, such as old integrated graphics or a virtual machine.
 
 ## Installation problems
 
-**The app won't launch, or you see an error like `vkGetPhysicalDeviceFeatures2 could not be located` or a missing DLL.**
+### The app won't launch, or shows a `vkGetPhysicalDeviceFeatures2` or missing DLL error
+
+You may see an error like `vkGetPhysicalDeviceFeatures2 could not be located`.
 
 1. Update your graphics drivers from your GPU vendor (Intel, NVIDIA, or AMD)
 2. Restart and launch Superwhisper again
-3. If the app opens but local models fail with this error, your GPU may not support Vulkan. Pick a cloud model instead; cloud models work without a GPU
+3. If the app opens but local models are very slow or fail, your GPU may not support Vulkan. Pick Parakeet Multilanguage or a cloud model instead
 4. If you're still stuck, email [support@superwhisper.com](mailto:support@superwhisper.com) with your Windows version and GPU model
 
 ## Where your files live
 
-Superwhisper stores all configuration, recordings, and modes in:
+Superwhisper stores configuration, modes, and recordings in this app data folder. Recordings are in its `recordings` subfolder.
 
 ```
 %LOCALAPPDATA%\com.superwhisper.app

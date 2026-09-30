@@ -1,21 +1,66 @@
 ---
-title: "API Overview"
-description: "Programmatic access to your organization's data"
+title: "API overview"
+description: "Use the Superwhisper API to read your organization's usage statistics. Build custom dashboards, export to your analytics platform, or feed internal tools."
 ---
 
-The Superwhisper API provides programmatic access to your organization's data. Use it to build custom dashboards, export data to your analytics platform, or integrate with your internal tools.
+The Superwhisper API gives programmatic access to your organization's usage statistics. All endpoints are read-only `GET` requests that return JSON, and the stats endpoint can also return CSV.
 
 ## Authentication
 
-All API requests require a bearer token. Generate one from your [organization dashboard](https://superwhisper.com/dashboard/configuration?tab=api-tokens) under **Settings > API Tokens**.
+All API requests require a bearer token. Tokens start with `sk-sw-`. Create one in your [organization dashboard](https://superwhisper.com/dashboard/configuration?tab=api-tokens) under **Configuration** → **API Tokens**.
 
 ```bash
-curl -H "Authorization: Bearer sw_tk_your_token_here" \
+curl -H "Authorization: Bearer sk-sw-your_token_here" \
   https://api.superwhisper.com/api/v1/stats/summary
 ```
+
+A missing or invalid token returns `401 Unauthorized`.
 
 ## Base URL
 
 ```
 https://api.superwhisper.com/api/v1
 ```
+
+## Endpoints
+
+| Method | Path | Description |
+| --- | --- | --- |
+| `GET` | `/stats/summary` | Totals for recordings, duration, words, and processing times in a date range |
+| `GET` | `/stats/dimensions` | The voice models, language models, and app names you can filter by |
+| `GET` | `/stats` | Time-series usage statistics with grouping, filtering, and pagination. Supports JSON and CSV |
+
+### Query parameters
+
+`/stats/summary` and `/stats` accept these parameters. All are optional.
+
+| Parameter | Applies to | Description |
+| --- | --- | --- |
+| `start_date` | `/stats/summary`, `/stats` | ISO 8601 start date, such as `2025-01-15`. Defaults to 7 days ago |
+| `end_date` | `/stats/summary`, `/stats` | ISO 8601 end date. Defaults to now |
+| `granularity` | `/stats` | Time bucket size: `hour`, `day`, `week`, or `month`. Defaults to `day` |
+| `group_by` | `/stats` | Group results by `member_email`, `voice_model`, `language_model`, or `app_name` |
+| `page` | `/stats` | Page number. Defaults to 1 |
+| `page_size` | `/stats` | Results per page, up to 1000. Defaults to 200 |
+| `format` | `/stats` | `json` (default) or `csv` |
+| `filter[member_email]` | `/stats/summary`, `/stats` | Comma-separated member email addresses |
+| `filter[voice_model]` | `/stats/summary`, `/stats` | Comma-separated voice models |
+| `filter[language_model]` | `/stats/summary`, `/stats` | Comma-separated language models |
+| `filter[app_name]` | `/stats/summary`, `/stats` | Comma-separated app names |
+
+Invalid parameters on `/stats` return `400`.
+
+## Example
+
+Export daily usage for one week, grouped by voice model, as CSV:
+
+```bash
+curl -H "Authorization: Bearer sk-sw-your_token_here" \
+  "https://api.superwhisper.com/api/v1/stats?start_date=2025-01-06&end_date=2025-01-12&granularity=day&group_by=voice_model&format=csv" \
+  -o stats.csv
+```
+
+## Related
+
+- [Usage analytics](/enterprise/usage-analytics) for what the data includes
+- [Configuration and models](/enterprise/configuration#api-tokens) for token management

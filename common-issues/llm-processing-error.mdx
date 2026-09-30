@@ -1,9 +1,11 @@
 ---
-title: "\"LLM Processing Error\""
-description: "Fix the \"LLM processing error\" in Superwhisper. Your transcription is safe in History; the AI formatting step failed."
+title: "AI formatting didn't run and pasted raw text"
+description: "Fix dictations where the AI step failed and Superwhisper pasted your raw transcription. Your words are safe in History."
 ---
 
-**"LLM processing error"** means the transcription worked but the AI processing step (the language model that formats your text) failed. Your words aren't lost: the raw transcription is saved in [History](/get-started/history), and you can [reprocess it](/get-started/history) once the cause is fixed.
+When the AI processing step (the language model that formats your text) fails on macOS, Superwhisper pastes your raw transcription instead. You see unformatted text where you expected the mode's output. Your words aren't lost: the dictation is saved in [History](/get-started/history), and you can [reprocess it](/get-started/history#reprocess-a-dictation) once the cause is fixed.
+
+On Windows, you may see an error instead. The messages are **Error during local LLM inference** or **Error while making chat query**. The fixes below apply to both.
 
 ## Fix the error
 
@@ -12,13 +14,13 @@ description: "Fix the \"LLM processing error\" in Superwhisper. Your transcripti
     Most language models run in the cloud, even in modes with a local voice model. If you're offline, switch the mode's **Language Model** to a local one like **S1-mini** or reconnect.
   </Step>
   <Step title="Retry from History">
-    Open the dictation in **History** and reprocess it. Transient provider errors clear on retry.
+    Open the dictation in [History](/get-started/history#reprocess-a-dictation) and reprocess it. Transient provider errors clear on retry.
   </Step>
   <Step title="Switch the language model">
     Edit the mode and pick a different **Language Model**. If the error follows one specific model, that provider is the problem.
   </Step>
   <Step title="Update Superwhisper">
-    **Settings → Configuration → Check for Updates**. Provider API changes are fixed in app updates.
+    Use **Check for Updates** in **Settings → Configuration**. Updates can include fixes for provider changes.
   </Step>
 </Steps>
 
@@ -26,9 +28,9 @@ description: "Fix the \"LLM processing error\" in Superwhisper. Your transcripti
 
 If the failing model is one you added under **Settings → Models library → Bring your own keys**:
 
-- **Re-check the key**: paste it fresh from the provider's dashboard. Expired or project-scoped keys fail with connection errors.
-- **Google Gemini keys that start with `AQ.`**: update to the latest Superwhisper version, then re-add the key.
-- **Check provider status**: an outage at the provider shows up in Superwhisper as a processing error.
+- **Re-check the key**: paste it fresh from the provider's dashboard. Expired or restricted keys can fail.
+- **Google Gemini keys**: if a Gemini key keeps failing, create a new key in Google AI Studio and paste it fresh.
+- **Check provider status**: an outage at the provider can make the AI step fail.
 
 Built-in cloud models need none of this. If you don't need your own keys, switch the mode back to a built-in model.
 

@@ -1,6 +1,6 @@
 ---
-title: "Wrong Microphone or System Audio Not Captured"
-description: "Fix Superwhisper using the wrong microphone, AirPods audio problems, and system-audio recordings that come out empty."
+title: "Wrong microphone or system audio not captured"
+description: "Fix Superwhisper using the wrong microphone or recording no system audio. Covers Bluetooth headsets and the system audio permission."
 ---
 
 ## Superwhisper uses the wrong microphone
@@ -14,21 +14,23 @@ The active input device shows in the **top-right of every settings pane**. Click
 />
 
 - **Use system default** follows whatever macOS or Windows has selected, which changes when a Bluetooth headset connects. If Superwhisper switches microphones on its own, the system default changed underneath it.
-- **Pin a specific microphone** to stop the switching. The star marks your preferred device.
+- **Star a microphone** to mark it as a priority device. Superwhisper prefers starred devices over the others.
+- **Exclude a device** with its exclude button in the same list. Superwhisper then stops offering that device, for example a virtual microphone you never use.
 
 ## AirPods and Bluetooth headsets sound worse
 
-When a Bluetooth headset's microphone is active, the audio quality drops. This is a Bluetooth limitation, not a Superwhisper setting, and it reduces transcription accuracy. For best results, pin your **built-in microphone** as the input and keep listening through the headset.
+When a Bluetooth headset's microphone is active, audio quality often drops. This is a Bluetooth limitation, not a Superwhisper setting, and it can reduce transcription accuracy. Try selecting your **built-in microphone** as the input and keep listening through the headset.
 
 ## System audio recordings come out empty or silent
 
 System audio (recording what your computer plays, for meetings) is a per-mode feature:
 
-1. **Enable it in the mode**: edit the mode and turn on **Record from System Audio**. See [audio options](/modes/modes#advanced-settings)
-2. **A still waveform is normal**: the waveform doesn't move during system-audio capture. Check [History](/get-started/history) to confirm the audio recorded
-3. **Check your org policy**: on an Enterprise license, your organization can disable system audio recording org-wide. If the option is missing, ask your admin
-4. **Bluetooth output can complicate capture**: if a meeting recorded silent while using Bluetooth audio, retry with built-in speakers or wired headphones and email [support@superwhisper.com](mailto:support@superwhisper.com) with the device model
+1. **Grant the permission**: system audio needs **Screen & System Audio Recording** permission. Open **System Settings → Privacy & Security → Screen & System Audio Recording** (called **Screen Recording** on macOS 14) and enable Superwhisper. Quit and reopen the app if macOS asks
+2. **Enable it in the mode**: edit the mode and turn on **Record from system audio**. It records applications on your main display along with your microphone. See [audio options](/modes/modes#advanced-settings)
+3. **A still waveform is normal**: the waveform doesn't move during system-audio capture. Check [History](/get-started/history) to confirm the audio recorded
+4. **Check your org policy**: on an Enterprise license, your organization can disable system audio recording org-wide. If the option is missing, ask your admin
+5. **Rule out your audio device**: if a meeting recorded silent, retry with built-in speakers or wired headphones. If that works, the device is the cause. If it still fails, email [support@superwhisper.com](mailto:support@superwhisper.com) with the device model and your macOS version
 
 ## Notifications and other apps in the recording
 
-System-audio capture records everything the computer plays, including notification sounds. Mute notifications during meetings you record, or record microphone-only modes when you don't need the other side.
+System audio capture records everything the computer plays, including notification sounds. Mute notifications during meetings you record, or record microphone-only modes when you don't need the other side.

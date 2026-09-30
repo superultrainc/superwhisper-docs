@@ -1,13 +1,19 @@
 ---
 title: "SAML 2.0"
-description: "Set up Single Sign-On with SAML 2.0 for your Superwhisper Enterprise account, with Okta, Microsoft Entra, Google, or any SAML provider."
+description: "Set up SAML 2.0 single sign-on for Superwhisper Enterprise. Works with Okta, Microsoft Entra, Google, or any SAML 2.0 provider."
 ---
 
 import EnterpriseSupport from '/snippets/enterprise-support.mdx';
 
 <Note>
-If you haven't created your enterprise account yet, start with [Getting Started](/enterprise/getting-started).
+If you haven't created your enterprise account yet, start with [Getting started](/enterprise/getting-started).
 </Note>
+
+## Which identity providers does Superwhisper support?
+
+Superwhisper supports SAML 2.0 single sign-on with **Google** (Google Workspace), **Okta**, **Microsoft** (Azure AD and Microsoft Entra ID), and any other SAML 2.0 compatible provider through the **Custom** option.
+
+Organization owners, admins, and IT members can configure SAML from the dashboard.
 
 ## Configuring SAML authentication
 
@@ -20,7 +26,7 @@ Invite IT or Security team members to help with SAML setup. Until SAML is fully 
 To invite technical team members:
 
 1. Go to the **Members** tab in your dashboard
-2. Invite via email as admin (see [Member Management](/enterprise/member-management) for detailed instructions)
+2. Invite via email as admin (see [Member management](/enterprise/member-management) for detailed instructions)
 
 This allows your technical team to:
 - Access the Authentication page for SAML configuration
@@ -66,11 +72,11 @@ https://superwhisper.com
 
 **Assertion Consumer Service URL:**
 ```
-https://api.superwhisper.com/_external/v1/auth/sso/saml5/callback/{customToYourInstance}
+https://api.superwhisper.com/_internal/v1/auth/sso/saml2/callback/{providerId}
 ```
 
 <Note>
-Your Assertion Consumer Service URL is unique to your organization. Copy it from the authentication screen.
+Your Assertion Consumer Service URL is unique to your organization, and `{providerId}` is filled in for you. The dashboard shows the exact Entity ID and Assertion Consumer Service URL for your org. Copy both from the authentication screen.
 </Note>
 
 #### 3. Upload SAML metadata
@@ -83,7 +89,7 @@ Use the **Test** button in the Single Sign-On section to verify your SAML config
 
 ## Next steps
 
-- [SCIM Provisioning](/enterprise/scim) to automate user provisioning and deprovisioning
-- [MDM & Silent Deployment](/enterprise/mdm-deployment) to roll the app out across your fleet with auto-activation through SSO
+- [SCIM provisioning](/enterprise/scim) to automate user provisioning and deprovisioning
+- [MDM and silent deployment](/enterprise/mdm-deployment) to roll the app out across your fleet with auto-activation through SSO
 
 <EnterpriseSupport />

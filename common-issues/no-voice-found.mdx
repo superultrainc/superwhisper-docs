@@ -1,9 +1,9 @@
 ---
-title: "\"No Voice Found\" or Stuck Processing"
-description: "Fix the \"No voice found\" error and dictations that never finish processing. Check your microphone, input levels, and connection."
+title: "\"No voice found\" or stuck processing"
+description: "Fix dictations that show \"No voice found\" or never finish processing. Check your microphone, input level, and connection."
 ---
 
-**"No voice found"** means the recording reached the transcription model with no detectable speech in it. The problem is almost always the audio input, not the model.
+**"No voice found"** means the recording had no detectable speech in it. History shows **No voice found in recording** for these dictations. The problem is almost always the audio input, not the model.
 
 ## Fix "No voice found"
 
@@ -31,7 +31,7 @@ description: "Fix the \"No voice found\" error and dictations that never finish 
 </Steps>
 
 <Note>
-Enable **Automatic volume adjustment** in **Settings → Sound**. It sets your microphone level so quiet input doesn't read as silence.
+Check that **Automatically increase microphone volume** is on in **Settings → Sound**. It sets the microphone input volume to maximum when a recording starts, so quiet input is less likely to read as silence. It works only when Superwhisper uses the system default device.
 </Note>
 
 ## Stuck on processing

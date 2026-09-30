@@ -1,6 +1,6 @@
 ---
-title: "Context Awareness"
-description: "How Superwhisper captures selected text, application, and clipboard context. Learn when each is captured and how to fix context issues."
+title: "Context awareness"
+description: "Learn how Superwhisper captures selected text, application, and clipboard context. Then fix context that is missing or wrong."
 ---
 
 ## Overview
@@ -13,13 +13,13 @@ Context awareness lets Superwhisper process your dictation with relevant informa
 Superwhisper can capture three types of context:
 
 <CardGroup cols={3}>
-  <Card title="Selected Text Context" icon="text-size">
+  <Card title="Selected text context" icon="text-size">
     Text that is highlighted/selected in your active window when you begin recording.
   </Card>
-  <Card title="Application Context" icon="window">
+  <Card title="Application context" icon="window">
     Text from active input fields, names, and title from your active window.
   </Card>
-  <Card title="Clipboard Context" icon="clipboard">
+  <Card title="Clipboard context" icon="clipboard">
     Content that has been copied to your clipboard before or during dictation.
   </Card>
 </CardGroup>
@@ -41,13 +41,13 @@ Enable only the context types a mode needs. Unnecessary context sends extra info
 Each context type is captured at a different point in the dictation:
 
 <Steps>
-  <Step title="Selected Text Context">
+  <Step title="Selected text context">
     Captured exactly when you start recording (when you toggle on dictation). The focus must remain on the application containing the selected text at this moment.
   </Step>
-  <Step title="Clipboard Context">
+  <Step title="Clipboard context">
     Captured either within three seconds before recording starts OR during dictation. The last item copied during this period will be used.
   </Step>
-  <Step title="Application Context">
+  <Step title="Application context">
     Captured after voice processing is complete, between the transcription and AI processing steps. This means your active window at this point determines what context is captured.
   </Step>
 </Steps>

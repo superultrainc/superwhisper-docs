@@ -1,65 +1,84 @@
 ---
 title: "Language"
-description: "Compare Superwhisper's language models. Cloud and local AI models that format and transform your transcriptions."
+description: "Compare Superwhisper's language models, cloud and local. They format and transform your transcriptions."
 ---
 
 Language models take your transcribed text and format or transform it according to your mode's instructions. There are two types: cloud models run on hosted servers, and local models run entirely on your device. Usage of every model below is covered by your license, with no API keys needed.
 
 <Note>
-Speed is a relative rating from 1 to 10. The Benchmark column is each model's published general-capability score, not a Superwhisper measurement; see [How We Benchmark](/models/benchmarks) for what we do measure ourselves.
+Speed is a relative rating from 1 to 10. Our benchmarks cover voice models only; see [How We Benchmark](/models/benchmarks) for what we measure.
 </Note>
 
 ## Superwhisper (Cloud)
 
 Hosted by Superwhisper and optimized for low latency and high-quality text processing.
 
-| Name        | Speed | Benchmark (0-100) | Size  | License |
-| ----------- | ----- | ----------------- | ----- | ------- |
-| S1-Language | 10    | ~80               | Cloud | Pro     |
+| Name        | Speed | Size  | License |
+| ----------- | ----- | ----- | ------- |
+| S1-Language | 10    | Cloud | Pro     |
 
 ## Superwhisper (Local)
 
-S1-mini runs entirely on your device, on macOS and Windows (Windows ARM devices need a cloud model instead). Pair it with a local voice model and nothing you dictate leaves your machine. It also works offline.
+S1-mini runs entirely on your device, on macOS and Windows (Windows ARM devices need a cloud model instead). It cleans up English punctuation, numbers, dates, and fillers. It works offline, and with a local voice model nothing you dictate leaves your machine.
 
-| Name    | Speed | Benchmark (0-100) | Size  | License |
-| ------- | ----- | ----------------- | ----- | ------- |
-| S1-mini | 9     | –                 | Local | Pro     |
+| Name    | Speed | Size   | License |
+| ------- | ----- | ------ | ------- |
+| S1-mini | 10    | 462 MB | Pro     |
+
+S1-mini is English only. It works only in Message and Mail modes, so it can't run Super, Note, Meeting, or Custom modes.
 
 ## Anthropic (Cloud)
 
 Anthropic's Claude models, available through Superwhisper.
 
-| Name              | Speed | Benchmark (0-100) | Size  | License |
-| ----------------- | ----- | ----------------- | ----- | ------- |
-| Claude 4.5 Sonnet | 8     | 89                | Cloud | Pro     |
-| Claude 4 Sonnet   | 8     | 87                | Cloud | Pro     |
-| Claude 3.7 Sonnet | 8     | 85                | Cloud | Pro     |
-| Claude 3.5 Sonnet | 8     | 89                | Cloud | Pro     |
-| Claude 3.5 Haiku  | 9     | 75                | Cloud | Pro     |
+| Name       | Speed | Size  | License |
+| ---------- | ----- | ----- | ------- |
+| Sonnet 5   | 9     | Cloud | Pro     |
+| Sonnet 4.6 | 9     | Cloud | Pro     |
+| Sonnet 4.5 | 8     | Cloud | Pro     |
+| Haiku 4.5  | 9     | Cloud | Pro     |
 
 ## OpenAI (Cloud)
 
 OpenAI's GPT models, available through Superwhisper.
 
-| Name         | Speed | Benchmark (0-100) | Size  | License |
-| ------------ | ----- | ----------------- | ----- | ------- |
-| GPT-5        | 7     | 91                | Cloud | Pro     |
-| GPT-5 mini   | 8     | 87                | Cloud | Pro     |
-| GPT-5 nano   | 9     | 83                | Cloud | Pro     |
-| GPT-4.1      | 7     | 90                | Cloud | Pro     |
-| GPT-4.1 mini | 8     | 86                | Cloud | Pro     |
-| GPT-4.1 nano | 9     | 80                | Cloud | Pro     |
+| Name         | Speed | Size  | License |
+| ------------ | ----- | ----- | ------- |
+| GPT-5.6 Luna | 10    | Cloud | Pro     |
+| GPT-5.4 mini | 10    | Cloud | Pro     |
+| GPT-5.4 nano | 10    | Cloud | Pro     |
+| GPT-5.2      | 9     | Cloud | Pro     |
+| GPT-5.1      | 7     | Cloud | Pro     |
+| GPT-5        | 7     | Cloud | Pro     |
+| GPT-5 mini   | 8     | Cloud | Pro     |
+| GPT-5 nano   | 9     | Cloud | Pro     |
+
+## Google (Cloud)
+
+Google's Gemini models, available through Superwhisper.
+
+| Name                  | Speed | Size  | License |
+| --------------------- | ----- | ----- | ------- |
+| Gemini 3.7 Flash      | 9     | Cloud | Pro     |
+| Gemini 3.5 Flash Lite | 10    | Cloud | Pro     |
+| Gemini 3.0 Flash      | 9     | Cloud | Pro     |
 
 ## Groq (Cloud)
 
-Fast inference hosted on Groq's LPU hardware.
+Inference hosted on Groq's LPU hardware.
 
-| Name       | Speed | Benchmark (0-100) | Size  | License |
-| ---------- | ----- | ----------------- | ----- | ------- |
-| Llama 3 8b | 10    | 67                | Cloud | Pro     |
+| Name         | Speed | Size  | License |
+| ------------ | ----- | ----- | ------- |
+| Llama 3.1 8B | 10    | Cloud | Pro     |
+
+Superwhisper updates its list of cloud language models from the server, so new models can appear in the app before this page changes.
+
+## Legacy models
+
+The app marks these older models as deprecated: GPT-4.1, GPT-4.1 mini, GPT-4.1 nano, GPT-4o, GPT-4o mini, GPT-3.5 Turbo, GPT-5.3 Instant, Sonnet 4, Sonnet 3.7, Sonnet 3.5, Sonnet 3, Haiku 3.5, Gemini 3.1 Flash Lite, and Grok 4.1 Fast. Use a current model from the tables above instead.
 
 ## Choosing a model
 
-S1-Language is the default and the right choice for most modes. Pick S1-mini when your mode uses a local voice model and you want the whole pipeline on-device. Reach for a larger model (GPT-5, Claude 4.5 Sonnet) only when a mode does heavy rewriting and quality matters more than speed.
+S1-Language is the default and the right choice for most modes. Pick S1-mini when you dictate English in a Message or Mail mode and want the whole pipeline on-device. Reach for a larger model (GPT-5.2, Sonnet 5, Gemini 3.7 Flash) only when a mode does heavy rewriting and quality matters more than speed.
 
 You can also add models from your own providers with your own API keys under **Settings → Models library → Bring your own keys**.

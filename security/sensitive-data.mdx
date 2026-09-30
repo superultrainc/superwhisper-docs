@@ -1,6 +1,6 @@
 ---
 title: "Sensitive Data Best Practices"
-description: "How to configure Superwhisper to protect healthcare, financial, and other regulated data, with guidance on local models, cloud commitments, and enterprise controls."
+description: "Configure Superwhisper for healthcare, financial, and other regulated data. See where data goes with local models, cloud models, and enterprise controls."
 ---
 
 Superwhisper can run with no audio or text leaving your device. Pair a local voice model with a local language model, and every stage of a dictation stays on your machine. This page shows where your data goes in each configuration, and how to lock it down for regulated work.
@@ -40,10 +40,10 @@ For the highest level of data protection, such as handling PHI (Protected Health
 
 Select a local voice model to ensure audio is transcribed on-device. The following options are available:
 
-| Model | Speed | Accuracy | Best For |
+| Model | Speed | Accuracy | Best for |
 | --- | --- | --- | --- |
 | Cohere Transcribe (Local) | Fast | Highest | The most accurate local model; first pick for sensitive work |
-| Parakeet Multilanguage (Local) | Fastest | High | All-around workflows and dictation; the only local option on Windows ARM |
+| Parakeet Multilanguage (Local) | Very fast | High | All-around workflows and dictation; the only local option on Windows ARM |
 | Whisper Large v3 Turbo (Local) | Fast | High | A balance of speed and quality |
 
 To change your voice model, open your mode settings and select from the local models listed under **Voice Model**.
@@ -95,7 +95,7 @@ You can review each provider's data usage policy directly:
 
 | Provider | Policy |
 | --- | --- |
-| Anthropic (Claude) | [API data usage policy](https://privacy.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers) |
+| Anthropic (Claude) | [Business Associate Agreements (BAA) for commercial customers](https://privacy.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers) |
 | OpenAI (GPT) | [API data usage policy](https://openai.com/policies/api-data-usage-policies) |
 | Deepgram | [API data usage policy](https://deepgram.com/privacy) |
 | Groq | [API data usage policy](https://groq.com/privacy-policy) |
@@ -170,12 +170,18 @@ Overview of all enterprise features
 
 ## Recommended configurations for healthcare and sensitive data
 
-| Use Case | Voice Model | Language Model | Notes |
+| Use case | Voice model | Language model | Notes |
 | --- | --- | --- | --- |
 | Device only (air-gapped) | Cohere Transcribe (Local) or Parakeet Multilanguage (Local) | S1-mini (Local) | No data leaves the device |
-| Healthcare | Nova Medical (Cloud), sign Superwhisper [BAA](https://docuseal.com/d/ehxSh1xq5RTGHh) | Claude 4.5 Sonnet (Anthropic, Cloud), sign Superwhisper [BAA](https://trust.mycroft.io/superwhisper) or Bring Your Own Keys | Covered by Superwhisper's zero-data-retention API terms or external provider agreement |
+| Healthcare | Nova Medical (Cloud), sign Superwhisper [BAA](https://docuseal.com/d/ehxSh1xq5RTGHh) | Sonnet 5 (Anthropic, Cloud), sign Superwhisper [BAA](https://docuseal.com/d/ehxSh1xq5RTGHh) or Bring Your Own Keys | Covered by Superwhisper's zero-data-retention API terms or external provider agreement |
 | Enterprise-managed environment | Local or enterprise-approved | Enterprise-configured custom model | Admin controls which providers are permitted |
 | Standard professional use | Local or cloud | Any cloud model | Covered by Superwhisper's zero-data-retention API terms |
+
+---
+
+## Does Superwhisper store my audio?
+
+All transcription history is stored **locally on your device**, and FileSync syncs configuration data only, not transcription content or audio. See [Account and data deletion](/security/account-deletion) for what Superwhisper holds, or visit the [Trust Center](https://trust.superwhisper.com).
 
 ---
 

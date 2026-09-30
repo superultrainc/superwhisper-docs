@@ -1,6 +1,6 @@
 ---
 title: "Switching Modes"
-description: "Switch between Superwhisper modes four ways: keyboard shortcut, menu bar, auto-activation rules, and deep links. Pick the method that fits your workflow."
+description: "Switch modes with a keyboard shortcut, the menu bar, auto-activation rules, or deep links. Pick the method that fits your workflow."
 ---
 
 <img
@@ -37,18 +37,26 @@ Superwhisper can switch modes automatically based on your active apps and websit
 
 ---
 ## Deep links
-Deep links let automation tools switch modes and start recording. Superwhisper supports two:
+Deep links let automation tools control Superwhisper. Superwhisper supports these:
 ```
 superwhisper://mode?key=YOUR_MODE_KEY
 superwhisper://record
+superwhisper://record/start
+superwhisper://record/stop
+superwhisper://settings
 ```
+
+- `record` toggles recording: it starts if idle and stops if recording.
+- `record/start` starts recording only if none is active.
+- `record/stop` stops recording only if one is active.
+- `settings` opens the Superwhisper settings window.
 
 **To find a mode's key:**
 1. Open `~/superwhisper/modes` (or `~/Documents/superwhisper/modes` on older installs)
 2. Quick Look the JSON files and match your mode by its `name` value
 3. Copy the `key` value into your deep link
 
-<Tip>Combine both deep links in an automation tool to switch modes and start recording in one action. Here's a [sample shortcut](https://www.icloud.com/shortcuts/a925e259d5e84806a700c2a58d4853a4) to start from.</Tip>
+<Tip>Combine the mode and record deep links in an automation tool to switch modes and start recording in one action. Here's a [sample shortcut](https://www.icloud.com/shortcuts/a925e259d5e84806a700c2a58d4853a4) to start from.</Tip>
 
 
 ---

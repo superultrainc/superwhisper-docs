@@ -1,6 +1,6 @@
 ---
-title: "Slow or Heavy on the Machine"
-description: "Speed up Superwhisper when dictations process slowly or the app uses too much memory. Model choice makes the biggest difference."
+title: "Slow dictations or heavy memory use"
+description: "Reduce slow dictation processing and high memory use in Superwhisper. Model choice and model load time usually matter most."
 ---
 
 ## Overview
@@ -15,7 +15,7 @@ If dictations process slowly or the app feels heavy, the tips below cover the ar
     Cloud processing depends on your connection speed and stability.
   </Card>
   <Card title="Model Selection" icon="microchip">
-    Models differ in speed. Switching models is the fastest win.
+    Models differ in processing time and memory use. Trying a different model is a quick test.
   </Card>
   <Card title="Processing Type" icon="gears">
     Voice transcription and AI processing are separate steps with separate costs.
@@ -30,38 +30,38 @@ If dictations process slowly or the app feels heavy, the tips below cover the ar
 Local models run directly on your computer, so your hardware sets the processing speed.
 
 <Steps>
-  <Step title="Tune Voice Model Active Duration">
+  <Step title="Tune Voice model active duration">
     <img
     style={{ borderRadius: '0.5rem' }}
     src="/images/screens/mac/settings-voice-model.png"
-    alt="Superwhisper Voice Model Active Duration"
+    alt="Superwhisper Voice model active duration setting"
     />
-    In [advanced settings](/get-started/settings-advanced#voice-model), adjust how long voice models stay loaded:
+    In **Settings → Advanced settings**, under **Voice model**, adjust **Voice model active duration**. See [advanced settings](/get-started/settings-advanced#voice-model). It sets how long voice models stay loaded:
     - Settings range from 10 seconds to 1 hour
     - Shorter durations free memory but reload the model for each new dictation
     - Longer durations keep the model ready but hold more memory
   </Step>
   <Step title="Match the model to your hardware">
     - Local models need free memory; close memory-heavy applications while dictating
-    - If your machine still struggles, pick a smaller model like **Parakeet Multilanguage** (494 MB), or switch that mode to a cloud model
+    - If your machine still struggles, pick a smaller model such as **Whisper Base**, or switch that mode to a cloud model
   </Step>
 </Steps>
 
 ### Cloud models
 
-Cloud models process your dictation on remote servers, so they're fast on any hardware. They need a stable internet connection; on a slow or flaky connection, a local model can be quicker.
+Cloud models process your dictation on remote servers, so your hardware matters less. They need a stable internet connection. On a slow or unstable connection, a local model can work better.
 
 ---
 ## Speed up processing
 
 <Steps>
   <Step title="Skip AI processing when you don't need it">
-    Transcription and AI processing are separate steps. The [Voice to Text](/modes/built-in#voice-to-text) mode skips AI processing entirely and gives the fastest results when you don't need formatting.
+    Transcription and AI processing are separate steps. The [Voice to Text](/modes/built-in#voice-to-text) mode skips AI processing entirely, so only the transcription step runs. Use it when you don't need formatting.
   </Step>
-  <Step title="Pick a fast model">
-    - Fastest cloud results: **S1-Voice**
-    - Fast and local: **Parakeet Multilanguage**
-    - Offline and private: any local model
+  <Step title="Try a different model">
+    - Cloud voice models, such as **S1-Voice**, move the work off your machine
+    - Local models, such as **Parakeet Multilanguage** (494 MB), run offline and keep audio on your device
+    - Smaller local models, such as **Whisper Tiny** or **Whisper Base**, use less memory
   </Step>
   <Step title="Find the slow step in History">
     Open a dictation in [History](/get-started/history) and compare the voice and AI processing times in the right sidebar. Whichever step is slow, switch that model.

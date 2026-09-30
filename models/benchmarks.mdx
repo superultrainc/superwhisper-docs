@@ -1,12 +1,12 @@
 ---
 title: "How We Benchmark"
-description: "The method behind Superwhisper's model numbers: what we measure, the datasets we use, the hardware we run on, and where competitors beat us."
+description: "How Superwhisper benchmarks speech models: what we measure, the datasets, and the hardware. It also shows where competitors beat us."
 ---
 
 <img
   style={{ borderRadius: '0.5rem' }}
   src="/images/screens/benchmark-method.png"
-  alt="Eight datasets are run through sixteen models, measuring word error rate, response time, and recall, and ranked by blended score: Superwhisper S1 Voice 84, ElevenLabs Scribe v2 81, OpenAI GPT Transcribe 80, Wispr Flow raw 75, Deepgram Nova 3 75, Gemini 3.5 Transcribe 69"
+  alt="Benchmark method: eight datasets, sixteen models, ranked by blended score"
 />
 
 Every **measured** figure in these docs, meaning word error rates and response times, comes from one benchmark suite: 16 speech models over 8 datasets, our own models and the ones we compete with, on the same audio and the same machines. The full leaderboard, with a page per model, is at [superwhisper.com/benchmarks](https://superwhisper.com/benchmarks).
@@ -67,7 +67,7 @@ Local models are measured by driving the real Superwhisper app, not a reimplemen
 Every run writes its clip-level output to the benchmark repository along with the machine it ran on and the commit that produced it.
 
 <Note>
-Local models are run on M4 and M4 Max hardware, and each leaderboard row names the machine it ran on. Local model speed depends heavily on the hardware, so don't assume these figures carry over to an older Mac. This is why the docs avoid claims like "fastest on any machine" for local models.
+Local models are run on M4 and M4 Max hardware, and each leaderboard row names the machine it ran on. Local model speed depends heavily on the hardware, so don't assume these figures carry over to an older Mac.
 </Note>
 
 ## What the model tables show
