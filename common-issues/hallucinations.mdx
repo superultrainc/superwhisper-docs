@@ -1,6 +1,6 @@
 ---
-title: "Gibberish, Repeated, or Made-Up Text"
-description: "Fix Superwhisper transcripts with words you never said, repeated phrases, or AI additions. Silence removal solves most cases."
+title: "Gibberish, repeated, or made-up text"
+description: "Fix transcripts with words you never said, repeated phrases, or AI additions. Start with silence removal, then trim your vocabulary."
 ---
 
 Words you never said, repeated phrases, or content the AI added on its own are called hallucinations. They come from one of two stages:
@@ -27,31 +27,31 @@ Hallucinations at the transcription stage have two main causes:
 </CardGroup>
 
 ---
-### Fix: silence removal
+### Fix: check that silence removal is on
     <img
     style={{ borderRadius: '0.5rem' }}
     src="/images/screens/mac/sound.png"
-    alt="Superwhisper's Silence Removal"
+    alt="Superwhisper's Silence removal setting"
     />
 <Steps>
-  <Step title="Open the Sound tab">
-    Go to the Sound tab in Superwhisper's settings.
+  <Step title="Open Sound settings">
+    Go to **Settings → Sound**.
   </Step>
-  <Step title="Enable Remove Silence">
-    Toggle on **Remove Silence**. It cuts silent periods from your audio before transcription, which removes most silence-related hallucinations.
+  <Step title="Enable Silence removal">
+    Make sure **Silence removal** is on. It cuts silent periods from your audio before transcription, which can reduce silence-related hallucinations. It is on by default in macOS 2.18.3 and later.
   </Step>
 </Steps>
 
 ---
 ### Fix: trim your vocabulary
 
-If hallucinations continue after enabling silence removal, check your Vocabulary tab and keep only essential terms. The transcription model performs best with a short, focused list.
+If hallucinations continue after enabling **Silence removal**, check your **Vocabulary** settings and keep only essential terms. The transcription model performs best with a short, focused list.
 
 <CardGroup cols={2}>
-  <Card title="Vocabulary Best Practices" icon="book" href="/get-started/interface-vocabulary">
+  <Card title="Vocabulary best practices" icon="book" href="/get-started/interface-vocabulary">
     How vocabulary and replacements improve transcription accuracy.
   </Card>
-  <Card title="Language Detection Issues" icon="language" href="/common-issues/language-detection">
+  <Card title="Transcribed in the wrong language" icon="language" href="/common-issues/language-detection">
     Dictation transcribed in the wrong language can also come from vocabulary.
   </Card>
 </CardGroup>
@@ -74,7 +74,7 @@ Built-in modes ship with tuned instructions. In custom modes, the prompt is your
 - Missing examples
 - Conflicting directives
 
-<Card title="Prompting Tips" icon="code" href="/modes/custom#prompting-tips">How to structure instructions, provide examples, and avoid the common causes of unexpected output.</Card>
+<Card title="Prompting tips" icon="code" href="/modes/custom#prompting-tips">How to structure instructions, provide examples, and avoid the common causes of unexpected output.</Card>
 
 ---
 ### Model capability
@@ -91,6 +91,6 @@ Context features improve results, but they can also mislead the AI:
 
 To limit this, enable context only in modes that need it, and avoid copying unrelated text while dictating.
 
-<Card title="Context Awareness" icon="wand-magic-sparkles" href="/common-issues/context">
+<Card title="Context awareness" icon="wand-magic-sparkles" href="/common-issues/context">
 How each context type works, when it's captured, and how to fix related issues.
 </Card>

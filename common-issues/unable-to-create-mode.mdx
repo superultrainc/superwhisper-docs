@@ -1,13 +1,13 @@
 ---
-title: "Modes Not Saving or Disappearing"
-description: "Fix Superwhisper modes that won't save, vanish after restart, or fail to create. Usually an iCloud folder move."
+title: "Modes not saving or disappearing"
+description: "Fix modes that will not save, vanish after a restart, or fail to create. Check where the Superwhisper folder lives."
 ---
 
 ## Overview
-When iCloud Documents syncing is enabled on your Mac, the Superwhisper folder may move to iCloud while the app still references the original location. This mismatch prevents Superwhisper from saving new modes and can cause other problems.
+If Superwhisper can't write to its folder, new modes fail to save. iCloud Documents syncing can move a folder in Documents and cause this. The fix is to point Superwhisper at a folder outside iCloud.
 
 <Note>
-This mainly affects older installs where the Superwhisper folder lived in ~/Documents. The current default is ~/superwhisper in your home directory, which iCloud Documents syncing doesn't touch.
+Older installs kept the Superwhisper folder in `~/Documents`. The current default is `~/superwhisper` in your home directory.
 </Note>
 
 ---
@@ -15,25 +15,25 @@ This mainly affects older installs where the Superwhisper folder lived in ~/Docu
 Redirect Superwhisper to a folder outside iCloud:
 
 <Steps>
-  <Step title="Open the Configuration Tab">
-    Access the Configuration section from the left sidebar menu in Superwhisper and go to "Advanced Settings."
+  <Step title="Open Advanced settings">
+    Open **Advanced settings** from the left sidebar in Superwhisper settings.
   </Step>
   
-  <Step title="Change Folder Location">
-    Scroll down to find the "Change Folder" option and click it.
+  <Step title="Change the folder location">
+    Scroll to **App folder location** and click **Change folder...**.
       <img style={{ borderRadius: '0.5rem' }} src="/images/screens/mac/settings-folder-location.png" alt="Superwhisper Folder Location" />
   </Step>
   
-  <Step title="Select a New Folder Location">
-    In the file browser that appears, navigate to your home folder (or another location outside iCloud) and click "Open".
+  <Step title="Select a new folder location">
+    In the file browser, choose your home folder or another location outside iCloud, and click **Open**.
   </Step>
   
-  <Step title="Confirm the Change">
-    Click "Confirm" in the dialog box to apply the folder location change.
+  <Step title="Confirm the change">
+    Click **Confirm** in the dialog to apply the change.
   </Step>
 </Steps>
 
-Superwhisper now references the new location, and modes save normally again.
+Superwhisper now uses the new location. Try saving a mode again.
 
 ## Modes missing on iPhone or another Mac
 

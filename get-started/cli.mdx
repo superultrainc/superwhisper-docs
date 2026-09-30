@@ -1,6 +1,6 @@
 ---
-title: "CLI & MCP Server"
-description: "Search, read, and export your Superwhisper history from the terminal. Run the CLI as an MCP server to give AI assistants access."
+title: "CLI and MCP server"
+description: "Search your Superwhisper history and control the app from the terminal on macOS. Run the CLI as an MCP server to give AI assistants access."
 ---
 
 The `superwhisper` CLI gives you terminal access to your local transcription history, vocabulary, and snippets. It can also run as an MCP (Model Context Protocol) server, so AI assistants like Claude Code can search and read your dictations.
@@ -12,7 +12,7 @@ The `superwhisper` CLI gives you terminal access to your local transcription his
 />
 
 <Note>
-The CLI is available on macOS and reads the same local database as the app; its commands run entirely on your device. If you connect an AI assistant over MCP, the transcripts it queries are sent to that assistant and handled under its own model and data settings.
+The CLI is available on macOS only. It reads the same local database as the app, and its commands run entirely on your device. If you connect an AI assistant over MCP, the transcripts it queries are sent to that assistant and handled under its own model and data settings.
 </Note>
 
 ## Install
@@ -21,7 +21,7 @@ The CLI is available on macOS and reads the same local database as the app; its 
 curl -fsSL https://superwhisper.com/install-cli.sh | bash
 ```
 
-The script installs the latest release to `/usr/local/bin`, or to `~/.local/bin` if that isn't writable. Binaries and checksums are published at [superultrainc/superwhisper-cli-release](https://github.com/superultrainc/superwhisper-cli-release).
+The script installs the latest release to `/usr/local/bin`, or to `~/.local/bin` if that isn't writable. If your shell can't find `superwhisper` after install, add `~/.local/bin` to your `PATH`. Binaries and checksums are published at [superultrainc/superwhisper-cli-release](https://github.com/superultrainc/superwhisper-cli-release).
 
 ## Commands
 
@@ -35,6 +35,12 @@ The script installs the latest release to `/usr/local/bin`, or to `~/.local/bin`
 | `export` | Export everything, oldest first, as `jsonl` or `markdown` |
 | `vocab` | List, add, or remove [vocabulary](/get-started/interface-vocabulary) terms |
 | `snippets` | List, set, or remove [replacements](/get-started/interface-vocabulary#replacements): the same From → To pairs as **Settings → Vocabulary** in the app |
+| `record` | Toggle recording in the running app |
+| `start` | Start recording. Does nothing if already recording |
+| `stop` | Stop recording. Does nothing if not recording |
+| `switch [mode]` | Switch the active mode by name or key. Without an argument, lists your modes |
+| `settings` | Open the settings window |
+| `transcribe <file>` | Send an audio file to the app to transcribe. [File transcription](/get-started/transcribe-files) needs Pro |
 | `completions` | Generate shell completions |
 | `doctor` | Diagnostic info about the database, for bug reports |
 | `mcp` | Run as an MCP server over stdio |
@@ -48,7 +54,11 @@ superwhisper read --raw
 superwhisper export -f markdown > dictations.md
 superwhisper vocab add "Superwhisper"
 superwhisper snippets set "my work email" "you@yourcompany.com"
+superwhisper switch Message
+superwhisper transcribe ~/Downloads/note.m4a
 ```
+
+The app-control commands (`record`, `start`, `stop`, `switch`, `settings`, and `transcribe`) send a request to the running app, so Superwhisper must be open for them to work.
 
 Most commands accept `--json` for machine-readable output. Point the CLI at a non-default install with `--db <path>` (or `SUPERWHISPER_DB`) and `--settings <path>` (or `SUPERWHISPER_SETTINGS`).
 

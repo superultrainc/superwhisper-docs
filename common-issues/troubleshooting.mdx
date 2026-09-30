@@ -1,6 +1,6 @@
 ---
-title: "Troubleshooting Overview"
-description: "Find the fix for your Superwhisper problem: errors, crashes, pasting, shortcuts, language, microphone, and performance."
+title: "Troubleshooting overview"
+description: "Find the fix for your Superwhisper problem by its symptom. Topics include errors, crashes, pasting, shortcuts, microphone, and performance."
 ---
 
 Find your problem below by its symptom. Superwhisper saves every dictation as you speak, so your recording is safe in [History](/get-started/history) and can be reprocessed after the fix.
@@ -13,16 +13,16 @@ Turn on **Error logging** in **Settings → Configuration** before reproducing a
 
 <CardGroup cols={2}>
   <Card title="&quot;No voice found&quot; or stuck processing" href="/common-issues/no-voice-found">
-    The recording had no detectable speech, or processing never finishes.
+    Fix recordings with no detectable speech, or processing that never ends.
   </Card>
-  <Card title="&quot;LLM processing error&quot;" href="/common-issues/llm-processing-error">
-    Transcription worked; the AI formatting step failed. Includes API-key fixes.
+  <Card title="AI formatting didn't run and pasted raw text" href="/common-issues/llm-processing-error">
+    You got the raw transcription because the AI step failed. Covers connection, model, and API-key checks.
   </Card>
   <Card title="App won't launch or install" href="/common-issues/app-wont-launch">
-    Windows DLL and Vulkan errors, installer problems, macOS launch failures.
+    Fix Windows DLL and Vulkan errors, installer problems, and macOS launch failures.
   </Card>
-  <Card title="Crashes during or after transcription" href="/common-issues/crashes">
-    Isolate whether it's the model, the mode, or the machine.
+  <Card title="Superwhisper crashes or quits unexpectedly" href="/common-issues/crashes">
+    Find out whether the model, the mode, or the machine causes the crash.
   </Card>
 </CardGroup>
 
@@ -30,16 +30,16 @@ Turn on **Error logging** in **Settings → Configuration** before reproducing a
 
 <CardGroup cols={2}>
   <Card title="Transcribed in English instead of my language" href="/common-issues/language-detection">
-    The vocabulary hint that fixes automatic language detection.
+    Set a fixed language or add a hint when Automatic picks English.
   </Card>
   <Card title="Gibberish, repeated, or made-up text" href="/common-issues/hallucinations">
-    Where hallucinations come from and how to stop them.
+    Find the stage that adds words you never said, and reduce it.
   </Card>
   <Card title="AI answers instead of transcribing" href="/modes/custom#prompting-tips">
-    The mode's prompt causes this. These tips fix it.
+    A mode's prompt causes this. Prompting tips help you fix it.
   </Card>
   <Card title="Text not pasting, pasting twice, or pasting old text" href="/common-issues/pasting-issues">
-    Delivery problems: permissions, clipboard restore, simulate keypresses.
+    Fix paste problems with permissions, clipboard content, and simulate keypresses.
   </Card>
 </CardGroup>
 
@@ -47,33 +47,33 @@ Turn on **Error logging** in **Settings → Configuration** before reproducing a
 
 <CardGroup cols={2}>
   <Card title="Shortcuts not working or misfiring" href="/common-issues/shortcuts-not-working">
-    Key conflicts, global vs. per-mode shortcuts, and push-to-talk behavior.
+    Check key conflicts, global and per-mode shortcuts, and push to talk.
   </Card>
   <Card title="Wrong microphone or system audio" href="/common-issues/microphone-and-system-audio">
-    Input switching, AirPods quality, empty meeting recordings.
+    Switch inputs, handle Bluetooth headsets, and fix empty meeting recordings.
   </Card>
   <Card title="Modes not saving or disappearing" href="/common-issues/unable-to-create-mode">
-    Usually caused by an iCloud folder move.
+    Check the Superwhisper folder location when modes will not save.
   </Card>
-  <Card title="Slow or heavy on the machine" href="/common-issues/performance-tips">
-    Model choice, keep-loaded duration, and processing-time diagnosis.
+  <Card title="Slow dictations or heavy memory use" href="/common-issues/performance-tips">
+    Adjust model choice and voice model load time, then find the slow step.
   </Card>
 </CardGroup>
 
 ## Other guides
 
 <CardGroup cols={2}>
-  <Card title="Realtime transcription unavailable" href="/common-issues/realtime">
-    Realtime needs a Nova cloud model or Parakeet Realtime.
+  <Card title="Realtime toggle missing or grayed out" href="/common-issues/realtime">
+    Realtime needs a Pro license and a Nova, Scribe, or Parakeet model.
   </Card>
-  <Card title="Context awareness issues" href="/common-issues/context">
-    How selected-text and clipboard context work, and when they backfire.
+  <Card title="Context awareness" href="/common-issues/context">
+    Learn when each context type is captured and why it can go wrong.
   </Card>
-  <Card title="Adapting to iOS 26.4" href="/common-issues/ios-26-keyboard-changes">
-    The keyboard return-to-app change and what still works.
+  <Card title="Keyboard doesn't return to your app on iOS 26.4" href="/common-issues/ios-26-keyboard-changes">
+    Swipe back manually after you start dictation on iOS.
   </Card>
-  <Card title="Logs, uninstall, and reporting" href="/common-issues/diagnostics">
-    Enable logging, find your files, uninstall cleanly, report bugs well.
+  <Card title="Logs, clean uninstall, and reporting bugs" href="/common-issues/diagnostics">
+    Turn on logging, find your files, uninstall cleanly, and report bugs.
   </Card>
 </CardGroup>
 

@@ -1,6 +1,6 @@
 ---
 title: "History"
-description: "Review, search, and reprocess past dictations in Superwhisper's History. Find where recordings are stored and how to delete or report them."
+description: "Review, search, and reprocess past dictations in History. Find where recordings are stored and how to delete or report them."
 ---
 
 Superwhisper saves every dictation as you speak: the audio, the transcription, and the AI result. Use History to review past dictations, retry failed ones, and diagnose unexpected results.
@@ -41,7 +41,7 @@ Retry a failed transcription or run an old dictation through a different mode wi
 
 ## Dictation stats
 
-Superwhisper tracks summary statistics across your recordings: total dictations, total words, total recording time, and average words per minute. On iOS, open the app's Settings to see them. On a Mac, the [CLI](/get-started/cli) prints them with `superwhisper stats`.
+Superwhisper tracks summary statistics across your recordings, such as words dictated and average words per minute. On macOS and Windows, open the **Home** tab in settings to see them. On iOS, open the app's Settings, where you can also reset your stats. On a Mac, the [CLI](/get-started/cli) also prints them with `superwhisper stats`.
 
 <img
   style={{ borderRadius: '0.5rem', display: 'block', margin: '0 auto' }} width="50%"
@@ -76,28 +76,23 @@ You can also ask in [Discord](https://discord.gg/tF98XvJNvB), but email reaches 
 | Platform | Location |
 | --- | --- |
 | macOS | `~/superwhisper/recordings` (older installs: `~/Documents/superwhisper/recordings`; [custom locations](/get-started/settings-advanced#app-folder-location) apply) |
-| Windows | `%LOCALAPPDATA%\com.superwhisper.app` |
+| Windows | The `recordings` folder inside the [app data folder](/get-started/windows#where-your-files-live), `%LOCALAPPDATA%\com.superwhisper.app` |
 | iOS | Inside the app. Open History in the iOS app |
 
 ## Delete recordings
 
-Superwhisper doesn't delete recordings on its own. Delete them periodically to manage disk space:
+You can delete recordings by hand or let Superwhisper delete them on a schedule.
 
 - **In the sidebar**: select recordings (hold Shift for several), right-click, **Delete**
 - **In Finder**: select a dictation and click the folder icon to open the recordings folder, then delete files directly
 
-On an Enterprise license, your organization can set an automatic [recording retention](/enterprise/configuration#recording-retention) period.
+### Delete recordings automatically
 
-<Accordion title="Automate cleanup with a cron job (macOS)">
-There's no built-in scheduled cleanup yet. This cron job deletes recording folders older than one day, every midnight:
+Use **Keep recordings for** to set how long Superwhisper keeps recording files on disk. It deletes older recordings automatically.
 
-```
-0 0 * * * /usr/bin/find "$HOME/superwhisper/recordings" -mindepth 1 -maxdepth 1 -type d -name "[0-9]*" -mmin +1440 -exec /bin/rm -rf {} \;
-```
+1. Open **Settings → Configuration**
+2. Set **Keep recordings for** to **Forever**, **1 day**, **1 week**, **2 weeks**, **1 month**, **6 months**, or **1 year**
 
-Add it with `crontab -e`. Adjust `-mmin +1440` (minutes) for a different age threshold, and the leading schedule fields for a different frequency. Preview what would be deleted first by running the `find` command with `-print` instead of `-exec ... \;`.
+The default is **Forever**. The same option is in the Windows preferences. If you choose a shorter period, Superwhisper warns you before it deletes existing recordings.
 
-<Warning>
-A wrong path in a cron job deletes the wrong files. If you moved your Superwhisper folder, update the path, and always run the preview first.
-</Warning>
-</Accordion>
+If your organization sets a [recording retention](/enterprise/configuration#recording-retention) period on an Enterprise license, the option is locked and shows that your organization manages it.

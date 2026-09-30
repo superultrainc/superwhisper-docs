@@ -1,15 +1,21 @@
 ---
 title: "MDM & Silent Deployment"
-description: "Deploy Superwhisper silently to Mac and Windows fleets using Jamf, Microsoft Intune, or any MDM that supports PKG and NSIS installers."
+description: "Deploy Superwhisper silently to Mac and Windows fleets using Jamf, Microsoft Intune, or any MDM that supports DMG and EXE installers."
 ---
 
 import EnterpriseSupport from '/snippets/enterprise-support.mdx';
 
-Roll Superwhisper out across your fleet without asking each user to download or install it manually. Superwhisper ships signed installers and supports the standard managed-app workflows in [Jamf](https://www.jamf.com/), [Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/), and other MDM tools. On macOS, each user must still grant microphone access.
+Roll Superwhisper out across your fleet without asking each user to download or install it manually. Superwhisper ships signed installers that work with [Jamf](https://www.jamf.com/), [Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune/), and other MDM tools. Your IT team builds the deployment. Superwhisper does not supply config profiles or preset preferences.
 
-<Info>
-Reach out to [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) to request the latest signed PKG (macOS) and NSIS EXE (Windows) installers, plus a config profile template for managed settings. We'll send the artifacts and version metadata for your MDM catalog.
-</Info>
+## Installers
+
+| Platform | Installer | Download |
+| --- | --- | --- |
+| macOS | Signed DMG | [superwhisper.dmg](https://builds.superwhisper.com/latest/superwhisper.dmg) |
+| Windows x64 | Machine-wide EXE | [x64 enterprise installer](https://fresh.superwhisper.com/download/enterprise/x64) |
+| Windows ARM | Machine-wide EXE | [ARM enterprise installer](https://fresh.superwhisper.com/download/enterprise/aarch64) |
+
+These links always serve the latest version.
 
 ## What MDM deployment gets you
 
@@ -22,19 +28,34 @@ Reach out to [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) t
 
 ### Install
 
-1. Upload the signed Superwhisper PKG to Jamf Admin or your distribution point
-2. Create a policy scoped to the target computer group
-3. Set the trigger (recurring check-in, login, or self-service) and frequency
-4. Run the policy
+The Superwhisper DMG is a drag-to-install disk image. It also holds a background image and an `/Applications` shortcut. Jamf Pro can't deploy it as it is, so build a PKG first:
+
+1. Build a PKG from the DMG. In Jamf Composer, drag in the DMG, choose **Convert to Source**, delete everything except `superwhisper.app`, and root the app at `Applications/`. Or build it from the command line on a Mac with Superwhisper installed:
+   ```
+   pkgbuild --component /Applications/superwhisper.app --install-location /Applications superwhisper.pkg
+   ```
+2. Upload the PKG to Jamf Pro or your distribution point
+3. Create a policy scoped to the target computer group
+4. Set the trigger (recurring check-in, login, or self-service) and frequency
+5. Run the policy
 
 ### Permissions
 
-Superwhisper needs **Accessibility** permission to paste text into other apps and **Microphone** permission to record audio. You can grant Accessibility access with a PPPC (Privacy Preferences Policy Control) profile:
+Superwhisper needs **Accessibility** permission for its keyboard shortcuts and to paste text into other apps and **Microphone** permission to record audio. You can grant Accessibility access with a PPPC (Privacy Preferences Policy Control) profile:
 
 1. Create a new **Configuration Profile** in Jamf
 2. Add a **Privacy Preferences Policy Control** payload
-3. Add Superwhisper with the **Accessibility** service set to **Allow**, using the app identifier and code signing requirement from the profile template we provide
+3. Add Superwhisper with the **Accessibility** service set to **Allow**, using the values below
 4. Scope the profile to the same computer group as the install policy
+
+| Field | Value |
+| --- | --- |
+| Identifier | `com.superduper.superwhisper` |
+| Identifier type | Bundle ID |
+| Team ID | `XDP69BYUP9` |
+| Code requirement | `anchor apple generic and identifier "com.superduper.superwhisper" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = XDP69BYUP9)` |
+
+You can also read the code requirement from an installed copy with `codesign -dr - /Applications/superwhisper.app`.
 
 macOS does not allow MDM to pre-grant microphone access. Each user must click **Allow** when Superwhisper requests it. If they previously denied access, they can enable Superwhisper in **System Settings → Privacy & Security → Microphone**.
 
@@ -49,32 +70,40 @@ See [Apple's PPPC reference](https://support.apple.com/guide/deployment/dep38df5
 
 ## macOS (Intune)
 
-Intune supports PKG installers for macOS. Upload the signed Superwhisper PKG as a **Line-of-business app** or **macOS app (PKG)** in the Intune admin center, then assign to the target group.
+Intune supports DMG apps for macOS. Upload the Superwhisper DMG as a **macOS app (DMG)** in the Intune admin center, then assign it to the target group.
 
-Deploy the supplied PPPC profile template through Intune to grant **Accessibility** access. Each user must grant **Microphone** access themselves, as described in [Permissions](#permissions). Use the same [verification steps](#verification) on a target Mac.
+Build a PPPC profile with the [values above](#permissions) and deploy it through Intune to grant **Accessibility** access. Each user must grant **Microphone** access themselves. Use the same [verification steps](#verification) on a target Mac.
 
 ## Windows (Intune)
 
 ### Install
 
-Superwhisper for Windows uses an NSIS-based EXE installer. Intune treats EXE installers as Win32 apps:
+Use the machine-wide enterprise installer from [Installers](#installers). It installs Superwhisper for all users in `C:\Program Files\superwhisper` and needs admin rights. The standard installer from superwhisper.com installs for one user only.
+
+Remove any per-user copy of Superwhisper before you deploy. An existing per-user install can make the machine-wide install fail.
+
+Intune treats EXE installers as Win32 apps:
 
 1. In the [Intune admin center](https://intune.microsoft.com/), go to **Apps > Windows > Add**
-2. Choose **Windows app (Win32)** and upload the Superwhisper EXE wrapped as an `.intunewin` package using the [Microsoft Win32 Content Prep Tool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool)
-3. Set the install command (see below) and assign to your target group as **Required**
+2. Choose **Windows app (Win32)** and upload the EXE wrapped as an `.intunewin` package using the [Microsoft Win32 Content Prep Tool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool)
+3. Set the install command (see below) and set **Install behavior** to **System**
+4. Add a detection rule: **Registry**, key path `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\superwhisper`, detection method **Key exists**
+5. Assign the app to your target group as **Required**
 
 ### Silent install command
 
-NSIS installers accept the `/S` flag for fully silent installation:
+The installer accepts the `/S` flag for fully silent installation:
 
 ```
-SuperwhisperSetup.exe /S
+superwhisper_<version>_x64-enterprise.exe /S
 ```
 
-For uninstall, run the app's uninstaller silently from Superwhisper's install directory (the exact path ships with the package metadata we send):
+On ARM devices, the file is `superwhisper_<version>_arm64-enterprise.exe`.
+
+To uninstall silently, run the uninstaller from the install directory:
 
 ```
-Uninstall.exe /S
+"C:\Program Files\superwhisper\uninstall.exe" /S
 ```
 
 ### Verification
@@ -85,18 +114,43 @@ Check the Intune admin center under **Apps > Monitor > App install status** for 
 
 If your organization is on Superwhisper Enterprise with [SAML SSO](/enterprise/saml-sso) configured, users open the app, sign in with their work email, and their license activates automatically. No license keys to push.
 
-For setups without SSO, contact [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) to discuss license distribution options.
+Without SSO, send members a join link or an email invite. See [Member Management](/enterprise/member-management#adding-members-to-your-organization).
 
 ## Updates
 
-Superwhisper checks for updates on launch by default. To manage updates through your MDM instead, deploy the new PKG or EXE as a replacement package on your usual schedule.
+On macOS, Superwhisper checks for updates on launch by default. If your MDM installs the app as root, standard users can't complete an in-app update. To manage updates through your MDM instead:
+
+1. Deploy a configuration profile for the `com.superduper.superwhisper` domain with `SUEnableAutomaticChecks` and `SUAutomaticallyUpdate` set to `false`
+2. Deploy each new DMG as a replacement package on your usual schedule
+
+On Windows, the machine-wide installer turns off in-app updates. Users see that updates are managed by their administrator. To update, deploy the new enterprise EXE through your MDM.
+
+## Network access
+
+If your fleet sits behind a VPN, proxy, or firewall, allow `*.superwhisper.com` and `superwhisper.com`. This covers every Superwhisper host, including cloud regions we add later. For the full host list, see the [Superwhisper Trust Center](https://trust.superwhisper.com).
+
+If the network blocks `api.superwhisper.com`, license activation fails or hangs.
+
+The Windows app detects proxies through WPAD and PAC files.
+
+### Third-party providers (optional)
+
+The app connects to these providers directly from each user's machine. Allow only the ones your team uses. On macOS 2.18.4 and later, turning off [Allow Cloud AI Models](/enterprise/configuration) also blocks members' own cloud API keys. To enforce your policy on older versions or other platforms, block the provider domains your organization has not approved.
+
+| Domain | Provider |
+| --- | --- |
+| `api.openai.com` | OpenAI |
+| `api.anthropic.com` | Anthropic |
+| `api.groq.com` | Groq |
+| `generativelanguage.googleapis.com` | Google Gemini |
+| `api.deepgram.com` | Deepgram (HTTPS and WebSocket) |
+| `api.elevenlabs.io` | ElevenLabs (HTTPS and WebSocket) |
+| Your endpoint | Azure OpenAI, [Amazon Bedrock](/enterprise/amazon-bedrock), self-hosted, or OpenAI-compatible models |
 
 ## Related
 
 - [SAML SSO](/enterprise/saml-sso): prerequisite for auto-activation after silent install
 - [SCIM Provisioning](/enterprise/scim): automate the user lifecycle alongside the deployment
 - [Member Management](/enterprise/member-management): roles, seats, and post-deployment offboarding
-
-<Note>Need installer packages, PPPC bundle and team IDs, or version metadata for your MDM? Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com).</Note>
 
 <EnterpriseSupport />

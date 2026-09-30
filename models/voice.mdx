@@ -1,9 +1,11 @@
 ---
 title: "Voice"
-description: "Compare Superwhisper's voice models. Cloud and local options for fast, accurate transcription in 100+ languages."
+description: "Compare Superwhisper's voice models, cloud and local. See which languages, speed, accuracy, and size each one offers."
 ---
 
 Voice models turn your recorded audio into text. There are two types: cloud models run on hosted servers with no download, and local models run entirely on your device. Every mode pairs one voice model with an optional [language model](/models/language).
+
+**Which languages are supported?** It depends on the voice model. S1-Voice and the multilingual Whisper models cover 100+ languages. Nova and Scribe support the languages shown in your mode's language menu. Parakeet Multilanguage covers 24. Cohere Transcribe covers 14: English, French, German, Italian, Spanish, Portuguese, Greek, Dutch, Polish, Chinese, Japanese, Korean, Vietnamese, and Arabic. Parakeet and the Whisper (English) models are English only. Pick a language in your mode's settings to see what the selected model supports.
 
 <Note>
 Speed and accuracy columns are relative ratings from 1 to 10, for comparing models at a glance. Measured word error rates and latency come from our benchmark suite: see [How We Benchmark](/models/benchmarks) for the method, or [the leaderboard](https://superwhisper.com/benchmarks) for every number.
@@ -15,13 +17,13 @@ Hosted by Superwhisper and optimized for low latency and accuracy. Works in 100+
 
 | Name     | Lang  | Translate | Speed | Accuracy | Size  | License |
 | -------- | ----- | --------- | ----- | -------- | ----- | ------- |
-| S1-Voice | multi | ✔        | 10    | 9        | Cloud | Pro     |
+| S1-Voice | multi | ✖        | 10    | 9        | Cloud | Pro     |
 
-S1-Voice is the most accurate model we ship, with a 6.6% word error rate across the eight benchmark datasets. See [How We Benchmark](/models/benchmarks) for what that measures.
+S1-Voice has the lowest word error rate on our benchmarks, 6.6% across the eight benchmark datasets. See [How We Benchmark](/models/benchmarks) for what that measures.
 
 ## Cohere Transcribe (Local)
 
-The most accurate local model, with an 8.4% word error rate on Apple M4. It runs through MLX at 4-bit precision on your device's GPU: Apple silicon on macOS, Vulkan on Windows. It isn't available on Windows ARM.
+The most accurate local model, with an 8.4% word error rate on Apple M4. It supports 14 languages (listed above), doesn't translate, and doesn't support realtime transcription. It runs through MLX at 4-bit precision on your device's GPU: Apple silicon on macOS, Vulkan on Windows. It isn't available on Windows ARM.
 
 | Name              | Lang  | Translate | Speed | Accuracy | Size   | License |
 | ----------------- | ----- | --------- | ----- | -------- | ------ | ------- |
@@ -29,13 +31,14 @@ The most accurate local model, with an 8.4% word error rate on Apple M4. It runs
 
 ## Nvidia Parakeet (Local)
 
-Based on Nvidia's [Parakeet](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) models, running locally through Argmax's [WhisperKit SDK](https://github.com/argmaxinc/whisperkit). They are the fastest local models on Apple silicon and process long recordings in parallel. They can struggle with punctuation and occasionally hallucinate on single-word recordings.
+Based on Nvidia's [Parakeet](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) models, running locally. On macOS they run through Argmax's [WhisperKit SDK](https://github.com/argmaxinc/whisperkit); on Windows they run through ONNX. They process long recordings in parallel. They can struggle with punctuation and occasionally hallucinate on single-word recordings.
 
 | Name                   | Lang  | Translate | Speed | Accuracy | Size   | License |
 | ---------------------- | ----- | --------- | ----- | -------- | ------ | ------- |
 | Parakeet               | en    | ✖        | 10    | 8        | 476 MB | Pro     |
 | Parakeet Multilanguage | multi | ✖        | 10    | 8        | 494 MB | Pro     |
-| Parakeet Japanese      | ja    | ✖        | 10    | 8        | 483 MB | Pro     |
+
+Parakeet Multilanguage covers 24 languages. On iOS, a **Parakeet Japanese** model is also available.
 
 <Info>
 Parakeet Multilanguage is the only local option on Windows ARM (Snapdragon) devices, which don't support Vulkan. See [Windows requirements](/get-started/windows#requirements).
@@ -75,6 +78,18 @@ The Nova series of cloud models, hosted by Deepgram. Nova models support [realti
 | Nova 3       | multi | ✖        | 7     | 8        | Cloud | Pro     |
 | Nova 2       | multi | ✖        | 7     | 7        | Cloud | Pro     |
 | Nova Medical | en    | ✖        | 10    | 7        | Cloud | Pro     |
+
+## ElevenLabs (Cloud)
+
+Scribe is ElevenLabs Scribe V2, hosted by ElevenLabs. It supports realtime transcription and detects the language automatically.
+
+| Name   | Lang  | Translate | Speed | Accuracy | Size  | License |
+| ------ | ----- | --------- | ----- | -------- | ----- | ------- |
+| Scribe | multi | ✖        | 8     | 10       | Cloud | Pro     |
+
+## Realtime transcription
+
+Realtime shows results as you record. It works with the Nova models, Scribe, and the Parakeet models. Cohere Transcribe and the Whisper models don't support it. On Nvidia (Parakeet) and ElevenLabs models, you can't turn on Realtime and **Identify Speakers** in the same mode.
 
 ## Choosing a model
 

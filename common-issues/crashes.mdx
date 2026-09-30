@@ -1,18 +1,18 @@
 ---
-title: "Crashes During or After Transcription"
-description: "Fix Superwhisper crashes during dictation or right after processing. Isolate the cause, then report it with logs."
+title: "Superwhisper crashes or quits unexpectedly"
+description: "Fix Superwhisper crashing or quitting during or after a dictation. Isolate the cause, then report it with logs."
 ---
 
-Your dictations are safe: Superwhisper saves audio every few seconds while you record, so a crashed dictation is saved in [History](/get-started/history) and can be reprocessed.
+Your dictations are safe: Superwhisper writes audio to disk while you record, so a crashed dictation usually appears in [History](/get-started/history) and can be reprocessed.
 
 ## Isolate the cause
 
 <Steps>
   <Step title="Update first">
-    **Settings → Configuration → Check for Updates**. Crash fixes ship in almost every release, and this resolves most reports.
+    Use **Check for Updates** in **Settings → Configuration**. Updates can include crash fixes.
   </Step>
   <Step title="Switch to a cloud model">
-    If crashes happen with a local model, edit the mode and select a cloud **Voice Model**. Local models are the heaviest workload in the app. If the crash stops, your machine is running out of memory for that model. Try a smaller one like **Parakeet Multilanguage** (494 MB), or close other memory-heavy apps.
+    If crashes happen with a local model, edit the mode and select a cloud **Voice Model**. Local models are the heaviest workload in the app. If the crash stops, your machine is running out of memory for that model. Try a smaller model such as **Whisper Base**, or close other memory-heavy apps.
   </Step>
   <Step title="Simplify the mode">
     Test with the plain **Voice to Text** mode. If the crash only happens in one mode, the cause is that mode's model or context settings. Rebuild the mode one setting at a time.
