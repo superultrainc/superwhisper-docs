@@ -1,0 +1,96 @@
+---
+title: "Muffle and other audio apps"
+description: "Fix silent, doubled, or unmuffled audio when you use Muffle with audio apps like FineTune, SoundSource, or eqMac. Set up the app, or use Lower."
+---
+
+**Muffle** keeps just the beat and bass of your music under your voice while you dictate. Choose it in **Settings → Sound → Sound while recording**. It needs macOS 14.2 or later and the **System Audio Recording** permission.
+
+## Why other audio apps get in the way
+
+Some apps route every app's audio through themselves, the same way Muffle does. When both run, they can capture each other:
+
+- Your audio goes silent until you switch the **Sound while recording** option.
+- Your audio plays twice, so it sounds doubled or echoey. This is easiest to hear on headphones.
+
+Superwhisper detects these apps and avoids the problem for you. Until the app is set up, it uses **Lower** instead of Muffle, which turns your audio down while you dictate.
+
+## FineTune
+
+Muffle works with FineTune once you hide Superwhisper in FineTune.
+
+<Steps>
+  <Step title="Keep Sound settings open">
+    Open **Settings → Sound** in Superwhisper with **Muffle** selected, and leave it open. FineTune only lists apps that are playing audio. While this page shows the setup note, Superwhisper stays listed in FineTune.
+  </Step>
+  <Step title="Open FineTune">
+    Click FineTune in the menu bar.
+  </Step>
+  <Step title="Edit the app list">
+    Click the pencil button at the top, next to the gear.
+  </Step>
+  <Step title="Hide Superwhisper">
+    Click the eye next to Superwhisper.
+  </Step>
+</Steps>
+
+Superwhisper shows **Muffle is now set up with FineTune.** Muffle then works normally, and your FineTune volume and EQ still apply.
+
+## SoundSource
+
+Muffle works with SoundSource once you exclude Superwhisper.
+
+<Steps>
+  <Step title="Open SoundSource">
+    Click SoundSource in the menu bar.
+  </Step>
+  <Step title="Open its settings">
+    Click the gear at the top right, then click **Settings**.
+  </Step>
+  <Step title="Go to the Audio tab">
+    Open the **Audio** tab.
+  </Step>
+  <Step title="Exclude Superwhisper">
+    Under **Excluded Applications**, click **Add Exclusion** and choose Superwhisper.
+  </Step>
+</Steps>
+
+Superwhisper shows **Muffle is now set up with SoundSource.** This can take a few seconds.
+
+## Apps that don't work with Muffle
+
+These apps make their own audio device the default output, so Muffle can't run alongside them:
+
+- Background Music
+- eqMac
+- Boom 3D
+- Sound Control
+
+While one of them runs, **Settings → Sound** shows **Muffle doesn't work with** and the app's name, and Superwhisper uses **Lower** instead. To use Muffle, quit the app. Otherwise, keep using Lower.
+
+## Apps we haven't tested yet
+
+Muffle still runs alongside these apps, and **Settings → Sound** notes that it may not work well:
+
+- Vorssaint
+- Fader
+- MacMix
+- Audio Hijack
+- Loopback
+
+If your audio cuts out while you dictate, switch **Sound while recording** to **Lower**.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="My audio went silent after dictating">
+    In **Settings → Sound**, switch **Sound while recording** to another option, such as **Lower**, then switch it back. Then check whether one of the apps above is running, and set it up or quit it.
+  </Accordion>
+  <Accordion title="My audio sounds doubled or echoey with FineTune or SoundSource">
+    Update Superwhisper with **Check for Updates** in **Settings → Configuration**. On older versions, hiding or excluding Superwhisper in the other app stops the silence, but your audio can still play twice.
+  </Accordion>
+  <Accordion title="Muffle isn't available or does nothing">
+    Muffle needs macOS 14.2 or later. It also needs the **System Audio Recording** permission. Open **System Settings → Privacy & Security → Screen & System Audio Recording** and turn on Superwhisper.
+  </Accordion>
+</AccordionGroup>
+
+If the problem continues, email [support@superwhisper.com](mailto:support@superwhisper.com) with your app version, your macOS version, and the audio apps you use.

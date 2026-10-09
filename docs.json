@@ -114,6 +114,7 @@
                 "pages": [
                   "common-issues/shortcuts-not-working",
                   "common-issues/microphone-and-system-audio",
+                  "common-issues/muffle-audio-apps",
                   "common-issues/unable-to-create-mode",
                   "common-issues/performance-tips"
                 ]
