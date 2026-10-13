@@ -217,10 +217,6 @@
   },
   "redirects": [
     {
-      "source": "/common-issues/muffle-audio-apps",
-      "destination": "/common-issues/microphone-and-system-audio"
-    },
-    {
       "source": "/enterprise/saml_sso",
       "destination": "/enterprise/saml-sso"
     },
