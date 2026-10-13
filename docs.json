@@ -63,7 +63,6 @@
               "get-started/transcribe-files",
               "get-started/coding-agents",
               "get-started/cli",
-              "get-started/sound-while-recording",
               "get-started/settings-advanced",
               "get-started/backing-up-settings",
               "get-started/community"
@@ -115,7 +114,6 @@
                 "pages": [
                   "common-issues/shortcuts-not-working",
                   "common-issues/microphone-and-system-audio",
-                  "common-issues/muffle-audio-apps",
                   "common-issues/unable-to-create-mode",
                   "common-issues/performance-tips"
                 ]
@@ -218,6 +216,10 @@
     }
   },
   "redirects": [
+    {
+      "source": "/common-issues/muffle-audio-apps",
+      "destination": "/common-issues/microphone-and-system-audio"
+    },
     {
       "source": "/enterprise/saml_sso",
       "destination": "/enterprise/saml-sso"

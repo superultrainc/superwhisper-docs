@@ -1,6 +1,6 @@
 ---
-title: "Wrong microphone or system audio not captured"
-description: "Fix Superwhisper using the wrong microphone or recording no system audio. Covers Bluetooth headsets and the system audio permission."
+title: "Microphone, system audio, and Muffle problems"
+description: "Fix the wrong microphone, empty system audio recordings, and Muffle problems with audio apps like FineTune, SoundSource, and eqMac."
 ---
 
 ## Superwhisper uses the wrong microphone
@@ -34,3 +34,34 @@ System audio (recording what your computer plays, for meetings) is a per-mode fe
 ## Notifications and other apps in the recording
 
 System audio capture records everything the computer plays, including notification sounds. Mute notifications during meetings you record, or record microphone-only modes when you don't need the other side.
+
+<h2 id="muffle-doesnt-work">Muffle is silent, doubled, or doesn't muffle</h2>
+
+Some apps send all of your Mac's audio through themselves, as Muffle does. When both run, your audio can go silent or play twice. Superwhisper finds these apps and uses **Lower** when Muffle can't run.
+
+Muffle also needs macOS 14.2 or later and the **System Audio Recording** permission. See [the permission step above](#system-audio-recordings-come-out-empty-or-silent).
+
+### Set up FineTune or SoundSource
+
+Open **Settings → Sound** with **Muffle** selected. A box names the app. Click **Set up**. Superwhisper restarts the app and tells it to leave Superwhisper alone. This takes 5 to 10 seconds.
+
+The box shows only while the current mode uses Muffle and the app is running.
+
+If the box says **Couldn't set it up automatically**, do it by hand:
+
+- **FineTune**: keep **Settings → Sound** open. Click FineTune in the menu bar, click the pencil, then click the eye next to Superwhisper
+- **SoundSource**: click SoundSource in the menu bar, then the gear, then **Settings → Audio**. Under **Excluded Applications**, click **Add Exclusion** and choose Superwhisper
+
+After setup, Superwhisper plays a short, quiet tone to confirm the app no longer reroutes it. The check needs the other app to be playing audio. Until it passes, Superwhisper uses **Lower**. If the box says to restart both apps, quit and reopen FineTune or SoundSource and Superwhisper.
+
+<h3 id="apps-that-dont-work-with-muffle">Apps that don't work with Muffle</h3>
+
+Background Music, eqMac, Boom 3D, and Sound Control. While one of them runs, Superwhisper uses **Lower**. Quit the app to use Muffle.
+
+<h3 id="apps-we-havent-tested-yet">Apps we haven't tested yet</h3>
+
+Vorssaint, Fader, MacMix, Audio Hijack, and Loopback. Muffle still runs alongside them. If your audio cuts out, switch to **Lower**.
+
+### Audio stays silent after dictating
+
+In **Settings → Sound**, switch **Sound while recording** to another option and back. If it's still silent, quit and reopen Superwhisper.
