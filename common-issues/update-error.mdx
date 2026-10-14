@@ -1,0 +1,37 @@
+---
+title: "Update error on macOS"
+description: "Fix \"An error occurred while running the updater\" when updating Superwhisper on macOS. Download the latest version, or run one Terminal command and retry."
+---
+
+## The error
+
+**You click Install Update and see "Update Error! An error occurred while running the updater. Please try again later."** macOS didn't start the helper Superwhisper uses to install updates. This affects Superwhisper 2.19.1 and earlier on some Macs. Version 2.19.2 and later install updates correctly on these Macs, so you only need to get past this once.
+
+## Fix 1: download the latest version
+
+1. Quit Superwhisper
+2. Download the latest version from [superwhisper.com](https://superwhisper.com)
+3. Drag the app into **Applications** and replace the old copy. Your history, modes, and settings are stored separately and stay intact
+4. Open Superwhisper
+
+## Fix 2: update from inside the app
+
+If you'd rather use the built-in updater:
+
+1. Click **Cancel Update** on the error
+2. Open **Terminal** and paste this command, then press Return:
+
+```bash
+for i in {1..120}; do launchctl kickstart gui/$(id -u)/com.superduper.superwhisper-sparkle-progress 2>/dev/null && break; sleep 1; done
+```
+
+3. Within two minutes, open the Superwhisper menu bar icon and choose **Check for Updates...**, then **Install Update**
+4. When prompted, click **Install and Relaunch**
+
+The command waits for the updater to start its helper, starts it once, then exits. It doesn't change any settings.
+
+<Note>
+Restarting your Mac can also clear this, but downloading the latest version is the quickest fix.
+</Note>
+
+If neither fix works, email [support@superwhisper.com](mailto:support@superwhisper.com) with your macOS version and your Superwhisper version (shown in the menu bar icon's menu).
