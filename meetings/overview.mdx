@@ -3,130 +3,105 @@ title: "Meetings"
 description: "Record, transcribe, and summarize meetings on your Mac with no bot in the call. Set up models, meeting detection, and calendar reminders."
 ---
 
-Meetings records your calls from your Mac, writes a live transcript that shows who said what, and turns it into a summary when the call ends. No bot joins the call. Superwhisper records your microphone and your Mac's audio directly.
+Meetings records your microphone and your Mac's audio, shows a live transcript with a label for each speaker, and writes a summary when the call ends. No bot joins the call.
 
 {/* IMAGE: images/screens/mac/meetings-tab.png | The Meetings tab with a Happening now card and past meetings grouped by day */}
 
 <Note>
-Meetings is available on macOS only, in Superwhisper 3.0 and later.
+Meetings needs macOS and Superwhisper 3.0 or later. It's a **Pro** feature. On the Free plan, it uses your free trial words. See [Plans](#plans).
 </Note>
 
-## What Meetings does
+Meetings live in their own **Meetings** tab. They don't appear in [History](/get-started/history) or count in your dictation stats.
 
-- **Records without a bot**: Superwhisper captures your microphone and the call audio on your Mac, so other attendees see no extra participant
-- **Live transcript**: the transcript updates as people talk, with a label for each speaker
-- **Speaker names**: in Zoom, Google Meet, Microsoft Teams, and Slack huddles, Superwhisper reads attendee names from the call. You can rename any speaker
-- **Private notes**: write your own notes while you record. The summary uses them as context
-- **Summaries**: when the call ends, a language model writes notes with decisions, open questions, and action items. [Templates](/meetings/summaries) change the format
-- **Share and ask**: drag the summary into another app, share a link, or [ask an AI agent](/meetings/share#ask-an-agent-about-your-meetings) about past meetings
-- **Runs fully offline if you want**: pick local models and nothing leaves your Mac. See [Private and offline meetings](/meetings/offline)
+## Permissions
 
-Meetings has its own **Meetings** tab in Superwhisper's settings window. Meetings don't appear in [History](/get-started/history), and they don't count in your dictation stats.
-
-## Requirements
-
-- **macOS 14 or later**
-- **Microphone** permission
-- **Screen & System Audio Recording** permission, to record the other side of the call. Open **System Settings → Privacy & Security → Screen & System Audio Recording** (called **Screen Recording** on macOS 14) and turn on Superwhisper
-- **Calendars** permission, only if you turn on [calendar integration](#calendar-integration)
-- **A plan with meeting access**: see [Plans](#plans)
+- **Microphone**: records your voice
+- **Screen & System Audio Recording**: records the other side of the call. Turn it on in **System Settings → Privacy & Security → Screen & System Audio Recording** (**Screen Recording** on macOS 14)
+- **Calendars** (optional): only for [calendar integration](#calendar-integration)
 
 ## Set up
 
-The first time you open the **Meetings** tab, a short tour explains how Meetings works and asks how Superwhisper should offer to record. To see the tour again, click the **i** (**How Meetings works**) next to the **Meetings** title.
+The first time you open the **Meetings** tab, a short tour asks how Superwhisper should offer to record. To replay it, click the **i** next to the **Meetings** title.
 
 {/* IMAGE: images/screens/mac/meetings-onboarding.png | The Meetings tour step that asks how Superwhisper should offer to record: Off, Notify, or Auto-record */}
 
-If the models aren't ready, the tab shows **Set up meetings**. Click it to choose the models meetings run on. You can change them any time in **Meeting settings**.
+If the tab shows **Set up meetings**, click it and choose your models.
 
 ### Meeting settings
 
-Click the gear on the **Meetings** tab to open **Meeting settings**. These settings apply to meetings only. Your dictation modes keep their own models.
+Click the gear on the **Meetings** tab. These settings apply to meetings only, not to your dictation modes.
 
 {/* IMAGE: images/screens/mac/meeting-settings.png | Meeting settings with Cohere Transcribe and Tiny Aya 3B selected, and the Notifications group */}
 
-| Setting | What it does |
-| --- | --- |
-| **Language** | Pins the transcription language. Leave it on **Auto** when you don't know what language a meeting will use |
-| **Voice** | The voice model that turns speech into text |
-| **LLM** | The language model that writes the summary |
-| **Recording suggestion** | Off, Notify, or Auto. See [Meeting detection](#meeting-detection) |
-| **Calendar integration** | Reminds you before calendar meetings and fills in titles and attendees |
-| **Agents** | Connects AI apps that can answer questions about your meetings. See [Ask an agent](/meetings/share#ask-an-agent-about-your-meetings) |
+- **Language**: pins the transcription language. **Auto** works for most meetings
+- **Voice**: the voice model that writes the transcript
+- **LLM**: the language model that writes the summary
+- **Recording suggestion**: see [Meeting detection](#meeting-detection)
+- **Calendar integration**: see [Calendar integration](#calendar-integration)
+- **Agents**: see [Ask an agent](/meetings/share#ask-an-agent-about-your-meetings)
 
 ### Choose models
 
-The **Voice** list shows the best models for meetings first:
+- **Voice**: the list starts with the best models for meetings. Cohere Transcribe is the most accurate local model. S1-Voice is the cloud default. Parakeet, Scribe, and Nova 3 follow
+- **LLM**: S1-Language is the cloud default. For local summaries, choose **Tiny Aya 3B** or **Qwen 3.5 2B**. S1-mini can't write summaries
 
-| Voice model | Runs | Notes |
-| --- | --- | --- |
-| Cohere Transcribe | Local | Most accurate local model. Use it to keep audio on your Mac |
-| S1-Voice | Cloud | Superwhisper's cloud model |
-| Parakeet, Parakeet Multilanguage, Parakeet Japanese | Local | Fast on Apple silicon |
-| Scribe | Cloud | ElevenLabs |
-| Nova 3 | Cloud | Deepgram |
+Voice models that can stream do so automatically. Meetings has no **Realtime** switch.
 
-Every other voice model you can use also appears below these.
+Speaker separation always runs on your Mac. Its model (about 150 MB) downloads before your first meeting.
 
-For the **LLM**, S1-Language is the cloud default. For local summaries, choose **Tiny Aya 3B** (Cohere, strong across 60+ languages, 2.1 GB) or **Qwen 3.5 2B** (smaller and faster, 1.3 GB). S1-mini can't write meeting summaries, so it isn't in the list.
-
-Meetings has no realtime switch. Voice models that can stream, stream automatically. See [Voice models](/models/voice) and [Language models](/models/language) for the full lists.
-
-Speaker separation always runs on your Mac. Superwhisper downloads its **Meeting Diarization** model (about 150 MB) automatically before your first meeting.
+To keep everything on your Mac, see [Private and offline meetings](/meetings/offline).
 
 ## Meeting detection
 
-Superwhisper can notice when a call starts and offer to record it. Set **Recording suggestion** in **Meeting settings**:
+Set **Recording suggestion** in **Meeting settings**:
 
-- **Off**: no prompts. Start every recording yourself from the **Meetings** tab
-- **Notify**: a **Meeting detected** prompt appears when a call starts. Click **Record** to start
-- **Auto**: Superwhisper starts recording supported meetings automatically
+- **Off**: no prompts. Start each recording from the **Meetings** tab
+- **Notify**: a **Meeting detected** prompt appears when a call starts. Click **Record**
+- **Auto**: recording starts by itself
 
-With either Notify or Auto, Superwhisper asks before it stops a recording.
-
-Detection works with **Zoom**, **Google Meet**, **Microsoft Teams**, and **Slack** huddles, in their desktop apps or in the browser. Superwhisper watches which app uses your microphone. In a browser, it also checks that the page is a call, so voice search or a dictation site doesn't start a meeting.
+Either way, Superwhisper asks before it stops a recording.
 
 {/* IMAGE: images/screens/mac/meeting-detected-prompt.png | The Meeting detected prompt with the Record button */}
 
-For any other meeting app, start the recording yourself. See [Record a meeting](/meetings/record).
+Detection works with **Zoom**, **Google Meet**, **Microsoft Teams**, and **Slack** huddles, in the desktop app or the browser. For other apps, [start the recording yourself](/meetings/record#start-a-recording).
 
 ## Calendar integration
 
-Turn on **Calendar integration** in **Meeting settings** to get a reminder before meetings on your calendar. Superwhisper reads the calendars synced to the macOS Calendar app, so Google, Microsoft 365, and iCloud calendars work once they're added there. macOS asks for Calendars permission the first time.
+Turn on **Calendar integration** to get a reminder about a minute before each meeting. Superwhisper reads the calendars in the macOS Calendar app, including Google, Microsoft 365, and iCloud accounts added there.
 
-- The reminder appears about a minute before the meeting starts. **Join & Record** opens the call link and starts recording. If you already joined, the button reads **Record**
-- The event title and attendees fill in the meeting's title and attendee list
-- Superwhisper skips all-day, cancelled, and declined events, and events with no call link and only one attendee
+- **Join & Record** opens the call link and starts recording. If you already joined, the button reads **Record**
+- The event title and attendees fill in the meeting
+- All-day, cancelled, and declined events get no reminder, and neither do events with one attendee and no call link
 
 {/* IMAGE: images/screens/mac/meeting-calendar-prompt.png | A calendar reminder that reads Starts in 1 min with the Join & Record button */}
 
-Calendar data stays on your Mac. If you turned down the permission, the setting shows **Calendar access is off**. Turn it on in **System Settings → Privacy & Security → Calendars**.
+Calendar data stays on your Mac. If the setting shows **Calendar access is off**, turn on Superwhisper in **System Settings → Privacy & Security → Calendars**.
 
 ## Plans
 
-Meetings uses your Pro access. On the Free plan, meetings use the same free trial words as other Pro features. When the free words run out, the app shows **Meetings require Pro**.
+On the Free plan, meetings use the same free trial words as other Pro features. When they run out, the app shows **Meetings require Pro**.
 
-- If the free words run out during a meeting, the recording stops and Superwhisper keeps the audio
-- Past meetings stay readable. They show **Free words used — this meeting is read-only** until you upgrade
-- Reading a meeting never uses words. Regenerating a summary needs Pro or free words
+- A meeting in progress stops recording, and Superwhisper keeps the audio
+- Past meetings stay readable, marked **Free words used — this meeting is read-only**
+- Reading a meeting is always free. Regenerating a summary needs Pro or free words
 
-See [Plans](/billing/plans) to compare Free and Pro.
+See [Plans](/billing/plans).
 
 <Info>
-On an Enterprise license, your admin controls Meetings with the **system audio** policy. If your organization turns it off, the Meetings tab is hidden. See [Enterprise configuration](/enterprise/configuration#allow-system-audio-recording).
+On an Enterprise license, the **system audio** policy turns Meetings on or off. See [Enterprise configuration](/enterprise/configuration#allow-system-audio-recording).
 </Info>
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Record a meeting" icon="record-vinyl" href="/meetings/record">
-    Start, pause, end, and discard recordings. Name speakers and take notes.
+    Start and end recordings, take notes, and name speakers.
   </Card>
   <Card title="Summaries and templates" icon="file-lines" href="/meetings/summaries">
-    Change what the summary looks like, or write your own template.
+    Change the summary format or write your own template.
   </Card>
   <Card title="Share and ask an agent" icon="share-nodes" href="/meetings/share">
-    Send a summary to other people or apps, and ask AI about past meetings.
+    Send a summary anywhere, and ask AI about past meetings.
   </Card>
   <Card title="Private and offline meetings" icon="lock" href="/meetings/offline">
     Keep audio, transcripts, and summaries on your Mac.
