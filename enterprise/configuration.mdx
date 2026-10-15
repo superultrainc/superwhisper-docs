@@ -22,21 +22,37 @@ Controls whether members can use Superwhisper's hosted cloud models.
 - **On** (default): members use Superwhisper's cloud models with no extra configuration.
 - **Off**: members are restricted to local models and any [custom models](#custom-models) you've configured, so all AI processing flows through vendors with your own API agreements.
 
+On macOS, onboarding sets up each member's first mode for them. With cloud models on, it uses S1-Voice and S1-Language. With cloud models off, it downloads Cohere Transcribe and S1-mini and sets the language to English. Local processing needs an Apple silicon Mac.
+
 See [Sensitive data best practices](/security/sensitive-data) for the privacy implications of each setup.
 
 ### Allow system audio recording
 
-Controls whether members can record system audio (the audio their computer is playing) in addition to microphone input. Useful for capturing meeting audio; some organizations disable it for compliance or data-loss-prevention reasons.
+Controls whether members can record system audio (the audio their computer is playing) in addition to microphone input. Some organizations turn it off for compliance or data-loss-prevention reasons.
 
-When off, members can only record from the microphone.
+When off, members can only record from the microphone, and [Meetings](/meetings/overview) is turned off: the Meetings tab is hidden, and members see **Meetings are disabled by your organization.**
 
 ### Allow speaker separation
 
-Controls whether members can use [Speaker-Separated Meetings](/modes/speaker-separated-meetings), which distinguishes between speakers in a recording. Disable this if your organization doesn't want speaker diarization performed on recordings.
+Controls whether members can use speaker separation, which labels each speaker in a recording. Disable this if your organization doesn't want speaker diarization performed on recordings.
+
+<Note>
+Meetings always separate speakers, on the member's Mac. To turn off Meetings, turn off [system audio recording](#allow-system-audio-recording).
+</Note>
+
+### Meeting sharing
+
+Controls who can open meeting summaries that members [share as a link](/meetings/share#share-a-link):
+
+- **Require organization sign-in** (default): viewers must sign in with an account in your organization
+- **Allow public links**: members can also create links that anyone can open
+- **Disable sharing**: members can't create share links. The app shows **Sharing is turned off for your organization**
+
+The restriction also applies to links members already created. Shared links expire after 30 days. A link holds only the summary text, title, and date, never audio or transcripts.
 
 ### Recording retention
 
-Set the maximum duration that members can keep recordings on disk. Recordings older than this are deleted automatically by the app on each member's machine.
+Set the maximum duration that members can keep recordings on disk. Recordings older than this are deleted automatically by the app on each member's machine. The limit applies to meetings as well as dictations.
 
 Available values: **No restriction** (default), **1 day**, **1 week**, **2 weeks**, **1 month**, **6 months**, **1 year**.
 

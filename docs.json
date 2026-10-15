@@ -42,10 +42,19 @@
                 "group": "Custom Modes",
                 "pages": [
                   "modes/custom",
-                  "modes/customizing-modes",
-                  "modes/speaker-separated-meetings"
+                  "modes/customizing-modes"
                 ]
               }
+            ]
+          },
+          {
+            "group": "Meetings",
+            "pages": [
+              "meetings/overview",
+              "meetings/record",
+              "meetings/summaries",
+              "meetings/share",
+              "meetings/offline"
             ]
           },
           {
@@ -302,7 +311,7 @@
     },
     {
       "source": "/modes/meeting",
-      "destination": "/modes/built-in"
+      "destination": "/meetings/overview"
     },
     {
       "source": "/modes/voice",
@@ -311,6 +320,14 @@
     {
       "source": "/modes/super",
       "destination": "/modes/built-in"
+    },
+    {
+      "source": "/modes/speaker-separated-meetings",
+      "destination": "/meetings/overview"
+    },
+    {
+      "source": "/meetings",
+      "destination": "/meetings/overview"
     }
   ],
   "footer": {

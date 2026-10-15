@@ -1,16 +1,16 @@
 ---
 title: "Advanced settings"
-description: "Superwhisper's advanced settings cover application behavior, the voice model, folder location, and text delivery. Learn what each option does."
+description: "Superwhisper's advanced settings cover application behavior, the voice model, audio processing, folder location, and text delivery. Learn what each option does."
 ---
 
-Advanced settings live in their own **Advanced settings** item in the settings sidebar, not under **Configuration**. Open **Settings → Advanced settings**, then pick a section. They control application behavior, performance, text delivery, and where Superwhisper stores its files.
+To open advanced settings, go to **Settings → Configuration** and click **Advanced settings** at the bottom of the page. They control application behavior, performance, text delivery, and where Superwhisper stores its files.
 
 ## Application
 
 <img
   style={{ borderRadius: '0.5rem' }}
   src="/images/screens/mac/settings-application.png"
-  alt="Superwhisper Application settings: Show in Dock, Start Recording on Menubar Click, Always close"
+  alt="Superwhisper Application settings: Show in Dock, Start Recording on Menubar Click, Close after transcription"
 />
 
 ### Show in Dock
@@ -19,8 +19,8 @@ Controls whether Superwhisper appears in your Dock.
 ### Start Recording on Menubar Click
 Left-clicking the menu bar icon starts or stops recording. Right-click the icon to open the regular menu.
 
-### Always close
-Closes the recording window after every dictation, whether or not the paste succeeded. Your text stays on the clipboard for manual pasting.
+### Close after transcription
+On (the default): the recording window closes when every dictation completes, even if Superwhisper didn't detect a paste. Off: the window stays open only when no paste was detected, so you can copy the result. The setting is unavailable when **Recording window** is set to **None** in **Configuration**.
 
 ## Voice model
 
@@ -31,6 +31,14 @@ Closes the recording window after every dictation, whether or not the paste succ
 />
 
 **Voice model active duration** controls how long the voice model stays loaded in memory. Longer durations make the next dictation start faster but hold memory from other applications. Shorter durations free memory but add load time when a new dictation starts.
+
+## Audio processing
+
+### Silence removal
+Removes silence from your recordings before processing. This improves accuracy, reduces [hallucinations](/common-issues/hallucinations), and speeds up long recordings with many pauses.
+
+### Dynamic normalization
+Adjusts the loudness and filtering of each recording based on its audio, so quiet and loud recordings transcribe equally well.
 
 ## App folder location
 
@@ -54,24 +62,30 @@ Syncs your Superwhisper configuration files across all installations registered 
 <img
   style={{ borderRadius: '0.5rem' }}
   src="/images/screens/mac/settings-text-input.png"
-  alt="Superwhisper Text input settings: paste result, auto-send, clipboard behaviour, simulate keypresses"
+  alt="Superwhisper Text input settings: clipboard content, clipboard history, paste result, auto-send, simulate keypresses"
 />
 
 ### Paste result text
 Delivers your result by pasting at the cursor. If you turn it off, Superwhisper still saves results to your clipboard; paste them manually.
 
 ### Hold shift to auto-send after paste
-Holding Shift when you finish a dictation simulates pressing Return. Useful for quick messages in chat applications.
+Holding Shift when you finish a dictation simulates pressing Return. Useful for quick messages in chat applications. This option shows only when **Paste result text** is on.
 
-### Clipboard behaviour
-By default, your result replaces whatever was on your clipboard. Set **Clipboard behaviour** to **Restore clipboard** to put your previous clipboard content back after pasting. **Restore clipboard delay** controls how long Superwhisper waits before restoring.
+### Clipboard content
+Sets what is on your clipboard after a dictation pastes:
+
+- **Keep what I have copied** (recommended, the default on new installs): what you had copied goes back on your clipboard once the dictation is pasted
+- **Replace with dictation**: the dictation stays on your clipboard, and what you had copied is gone
+
+### Clipboard history
+When on, clipboard history apps like Maccy, Paste, or Alfred keep a copy of each dictation.
 
 ### Simulate keypresses
 An alternative delivery method for applications that block direct pasting, such as secure fields. Superwhisper types the result as individual keystrokes instead.
 
 ## Agent plugins
 
-Find this under **Settings → Advanced settings → Agent Plugins**. Connect Superwhisper to coding agents like Claude Code, Codex, and DeepSeek. See [Coding agents](/get-started/coding-agents).
+Find this under **Settings → Configuration → Advanced settings → Agent Plugins**. The section shows only when a supported agent is installed on your Mac. Connect Superwhisper to coding agents like Claude Code, Codex, and DeepSeek. See [Coding agents](/get-started/coding-agents).
 
 ## AI models
 

@@ -59,6 +59,8 @@ You can also read the code requirement from an installed copy with `codesign -dr
 
 macOS does not allow MDM to pre-grant microphone access. Each user must click **Allow** when Superwhisper requests it. If they previously denied access, they can enable Superwhisper in **System Settings → Privacy & Security → Microphone**.
 
+[Meetings](/meetings/overview) also needs **Screen & System Audio Recording** to capture call audio. macOS doesn't let MDM pre-grant it either. Superwhisper asks for it as an optional step during onboarding, and users can turn it on later in **System Settings → Privacy & Security → Screen & System Audio Recording**. To turn off Meetings for everyone, turn off [system audio recording](/enterprise/configuration#allow-system-audio-recording) in the dashboard.
+
 See [Apple's PPPC reference](https://support.apple.com/guide/deployment/dep38df53c2a/web) for the permissions a profile can manage.
 
 ### Verification

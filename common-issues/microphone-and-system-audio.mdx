@@ -5,7 +5,7 @@ description: "Fix the wrong microphone, empty system audio recordings, and Muffl
 
 ## Superwhisper uses the wrong microphone
 
-The active input device shows in the **top-right of every settings pane**. Click it to switch:
+Click the **microphone button** at the top right of the **Home**, **Configuration**, and **Sound** pages to see and switch the active input device:
 
 <img
   style={{ borderRadius: '0.5rem' }}
@@ -23,17 +23,21 @@ When a Bluetooth headset's microphone is active, audio quality often drops. This
 
 ## System audio recordings come out empty or silent
 
-System audio (recording what your computer plays, for meetings) is a per-mode feature:
+System audio is what your computer plays, such as the other side of a call. [Meetings](/meetings/overview) records it automatically. In a dictation mode, it's a per-mode setting:
 
 1. **Grant the permission**: system audio needs **Screen & System Audio Recording** permission. Open **System Settings → Privacy & Security → Screen & System Audio Recording** (called **Screen Recording** on macOS 14) and enable Superwhisper. Quit and reopen the app if macOS asks
-2. **Enable it in the mode**: edit the mode and turn on **Record from system audio**. It records applications on your main display along with your microphone. See [audio options](/modes/modes#advanced-settings)
+2. **Enable it in the mode**: for a dictation mode, edit the mode and turn on **Record from system audio**. It records applications on your main display along with your microphone. See [audio options](/modes/modes#advanced-settings)
 3. **A still waveform is normal**: the waveform doesn't move during system-audio capture. Check [History](/get-started/history) to confirm the audio recorded
-4. **Check your org policy**: on an Enterprise license, your organization can disable system audio recording org-wide. If the option is missing, ask your admin
+4. **Check your org policy**: on an Enterprise license, your organization can disable system audio recording org-wide, which also hides Meetings. If the option is missing, ask your admin
 5. **Rule out your audio device**: if a meeting recorded silent, retry with built-in speakers or wired headphones. If that works, the device is the cause. If it still fails, email [support@superwhisper.com](mailto:support@superwhisper.com) with the device model and your macOS version
 
 ## Notifications and other apps in the recording
 
 System audio capture records everything the computer plays, including notification sounds. Mute notifications during meetings you record, or record microphone-only modes when you don't need the other side.
+
+## Muffle doesn't run during meetings
+
+While a meeting records, Superwhisper turns off Muffle and Lower so you hear the call at full volume. Muffle works again for dictations after the meeting ends.
 
 <h2 id="muffle-doesnt-work">Muffle is silent, doubled, or doesn't muffle</h2>
 

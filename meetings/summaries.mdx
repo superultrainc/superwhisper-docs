@@ -1,0 +1,94 @@
+---
+title: "Summaries and Templates"
+description: "See how Superwhisper writes meeting summaries with decisions and action items. Switch templates, edit the built-in instructions, or write your own."
+---
+
+When a recording ends, the language model chosen under **LLM** in [Meeting settings](/meetings/overview#meeting-settings) reads the transcript and your private notes and writes a summary. The text appears as it's written.
+
+{/* IMAGE: finished meeting with summary, action item checkboxes visible */}
+
+## What a summary contains
+
+The built-in **Summary** template writes notes for someone who missed the meeting:
+
+- **Title** and a three to five sentence overview
+- **A section per topic**, with the facts and the reasons behind them
+- **Decisions**: what was agreed, and why
+- **Open questions**: what is still unresolved
+- **Action items**: checkboxes with the owner's name, like `- [ ] @Sam send the revised quote`
+
+The summary uses the main language spoken in the meeting. A meeting in Spanish gets a summary in Spanish.
+
+Your [private notes](/meetings/record#take-private-notes) count as facts about the meeting. Use them to correct a name, add context the call didn't cover, or say what matters most to you.
+
+You can edit the title and summary text in the meeting window. Click an action item's checkbox to mark it done.
+
+## Templates
+
+A template is the set of instructions the language model follows when it writes the summary. A template changes only the instructions. The voice model, language model, and recording settings stay the same.
+
+Superwhisper includes three templates:
+
+| Template | What it writes |
+| --- | --- |
+| **Summary** | What was discussed, decisions made, and action items. The default for every meeting |
+| **Email follow up** | A follow-up email to the attendees, ready to send, with a subject line, recap, and next steps |
+| **Action items** | Decisions and commitments, with a minimal recap |
+
+### Switch templates
+
+Click the template button in the meeting window toolbar. It shows the template in use, **Summary** by default. Pick another template from the list.
+
+Each meeting keeps every version you generate. Switching back to a template you already ran shows its summary at once. A template you haven't run yet generates a new version from the same transcript.
+
+To pick a template before a meeting starts, use the arrow next to **Record** in the [meeting prompt](/meetings/record#start-a-recording).
+
+Choose **Regenerate** in the same menu to write the current template's summary again, for example after you add notes or rename speakers.
+
+### Write your own template
+
+1. Click the template button in the toolbar and choose **New template**
+2. Give the template a name
+3. Write the instructions: what to include, the structure, the tone, and who the summary is for
+4. Save it, then pick it in the toolbar to run it on the current meeting
+
+Ideas for templates:
+
+- **Client call notes**: requirements, budget, objections, and next steps
+- **Interview scorecard**: the candidate's answers by topic, with strengths and concerns
+- **Stand-up**: what each person did, what they'll do next, and what blocks them
+- **One-on-one**: topics, feedback given, and commitments from each side
+
+For more on writing instructions, see [prompting tips](/modes/custom#prompting-tips).
+
+### Manage templates
+
+Choose **All templates** in the template menu to open **Summary Templates**. From there you can:
+
+- **Edit** any template's instructions, including the built-in **Summary**. An unedited built-in template gets improvements from app updates
+- **Star** templates to show them in the toolbar menu. Templates without a star stay in **All templates**
+- **Rename** or **delete** your own templates
+
+Templates are saved on your Mac with your settings.
+
+<Info>
+If you used a custom meeting mode before Superwhisper 3.0 (a mode with system audio and speaker separation on), Superwhisper copied its instructions into a template. Find it in **All templates**.
+</Info>
+
+## Summary problems
+
+### "Not enough was said in this meeting to summarize."
+
+The meeting has fewer than about 25 words and no private notes. Superwhisper doesn't write a summary for it. Check the transcript: if the other side of the call is missing, see [The other side of the call is missing](/meetings/record#the-other-side-of-the-call-is-missing).
+
+### The summary shows the raw transcript
+
+The language model failed, so Superwhisper saved the transcript in its place. Check your internet connection for cloud models, or that a local model finished downloading. Then choose **Regenerate** in the template menu. See [LLM processing errors](/common-issues/llm-processing-error).
+
+### Names in the summary are wrong
+
+The summary uses speaker names from the transcript. Rename speakers with [Assign speakers](/meetings/record#name-speakers), then choose **Regenerate**.
+
+### Local summaries are short or miss the format
+
+Small local models follow long instructions less closely than cloud models. Keep custom templates short and specific. For long meetings in many languages, **Tiny Aya 3B** gives better results than **Qwen 3.5 2B**.

@@ -1,14 +1,14 @@
 ---
 title: "Built-in Modes"
-description: "See what each built-in mode does: Message, Super, Mail, Note, Meeting, and Voice to Text. Pick the right preset for your task."
+description: "See what each built-in mode does: Message, Super, Mail, Note, Voice to Text, and Meeting on Windows. Pick the right preset for your task."
 ---
 
-Superwhisper ships with ready-made modes, each tuned for one task. Create one from **+ Create mode** and pick its preset. This page covers the built-in presets; [Custom](/modes/custom) has its own pages.
+Superwhisper ships with ready-made modes, each tuned for one task. Create one with the **Create mode** button (the sparkle icon at the top of **Modes**) and pick its **Preset**. **Message** is the recommended preset. This page covers the built-in presets; [Custom](/modes/custom) has its own pages.
 
 <img
 style={{ borderRadius: '0.5rem' }}
 src="/images/screens/mac/modes-preset-picker.png"
-alt="The New Mode screen with the preset menu open, listing Super, Voice to Text, Message, Mail, Note, Meeting, and Custom"
+alt="The New Mode screen with the preset menu open, listing Message, Voice to Text, Mail, Note, Super, and Custom"
 />
 
 ## Message
@@ -130,16 +130,18 @@ Note Mode structures your dictation as a note. It:
 
 ## Meeting
 
-Meeting Mode structures your dictation into meeting minutes. It:
+On macOS, Superwhisper 3.0 replaced Meeting Mode with [Meetings](/meetings/overview), a separate tab that records calls, labels each speaker, and writes a summary when the call ends. The update removed the Meeting Mode preset. Meeting modes you customized became [summary templates](/meetings/summaries#templates).
+
+On Windows, Meeting Mode is still a preset. It structures your dictation into meeting minutes:
 
 - Organizes the text into attendees, action items, and key discussion points
 - Highlights key decisions
 - Preserves important context while removing redundant content
 
-By default, Meeting Mode doesn't separate speakers in the transcript. Enable speaker separation in the [Advanced Settings sidebar](/modes/modes#advanced-settings). Speaker labels appear in History's Segments view only; they aren't included in AI-generated summaries or action items. See [Speaker-Separated Meetings](/modes/speaker-separated-meetings) for the full workflow.
+To record the other side of a call, turn on **Record from system audio** in the mode's [advanced settings](/modes/modes#advanced-settings). **Identify Speakers** labels speakers in History's **Speakers** view, but the AI summary doesn't use the labels.
 
-<Card title="Speaker-Separated Meetings" icon="users" href="/modes/speaker-separated-meetings">
-To have AI process a transcript with speaker labels, combine a Voice to Text mode with a Custom mode. This guide walks through the full workflow.
+<Card title="Meetings" icon="users" href="/meetings/overview">
+Record, transcribe, and summarize meetings with no bot in the call.
 </Card>
 
 ## Voice to Text
