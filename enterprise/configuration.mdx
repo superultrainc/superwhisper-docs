@@ -30,7 +30,7 @@ See [Sensitive data best practices](/security/sensitive-data) for the privacy im
 
 Controls whether members can record system audio (the audio their computer is playing) in addition to microphone input. Some organizations turn it off for compliance or data-loss-prevention reasons.
 
-When off, members record from the microphone only, and [Meetings](/meetings/overview) is turned off.
+When off, members record from the microphone only, and [Meetings](/meetings/overview) is hidden. See [How policies affect Meetings](#how-policies-affect-meetings).
 
 ### Allow speaker separation
 
@@ -61,6 +61,20 @@ Useful for organizations with data-minimization policies or retention requiremen
 <Note>
 Retention enforcement runs on each member's device. It applies to recordings stored locally by Superwhisper, not to anything members have exported or saved elsewhere.
 </Note>
+
+## How policies affect Meetings
+
+[Meetings](/meetings/overview) depends on several of the policies above:
+
+| Policy | Effect on Meetings |
+| --- | --- |
+| **Allow system audio recording** off | Meetings is hidden: no **Meetings** tab, no meeting prompts, and no calendar reminders. Members see **Meetings are disabled by your organization.** |
+| **Allow cloud AI models** off | Meetings run on local models and your [custom models](#custom-models) only |
+| **Meeting sharing** | Sets who can open shared summaries, or turns share links off |
+| **Recording retention** | Deletes old meetings from members' Macs, the same as dictations |
+| **Allow speaker separation** | No effect. Meetings always separate speakers on the member's Mac |
+
+To turn off Meetings for your organization, turn off **Allow system audio recording**. No other policy hides it.
 
 ## Custom models
 
