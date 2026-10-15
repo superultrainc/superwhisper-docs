@@ -5,7 +5,7 @@ description: "Record, transcribe, and summarize meetings on your Mac with no bot
 
 Meetings records your calls from your Mac, writes a live transcript that shows who said what, and turns it into a summary when the call ends. No bot joins the call. Superwhisper records your microphone and your Mac's audio directly.
 
-{/* IMAGE: Meetings tab with a few meetings listed */}
+{/* IMAGE: images/screens/mac/meetings-tab.png | The Meetings tab with a Happening now card and past meetings grouped by day */}
 
 <Note>
 Meetings is available on macOS only, in Superwhisper 3.0 and later.
@@ -35,13 +35,15 @@ Meetings has its own **Meetings** tab in Superwhisper's settings window. Meeting
 
 The first time you open the **Meetings** tab, a short tour explains how Meetings works and asks how Superwhisper should offer to record. To see the tour again, click the **i** (**How Meetings works**) next to the **Meetings** title.
 
+{/* IMAGE: images/screens/mac/meetings-onboarding.png | The Meetings tour step that asks how Superwhisper should offer to record: Off, Notify, or Auto-record */}
+
 If the models aren't ready, the tab shows **Set up meetings**. Click it to choose the models meetings run on. You can change them any time in **Meeting settings**.
 
 ### Meeting settings
 
 Click the gear on the **Meetings** tab to open **Meeting settings**. These settings apply to meetings only. Your dictation modes keep their own models.
 
-{/* IMAGE: Meeting settings sheet, Models and Notifications groups */}
+{/* IMAGE: images/screens/mac/meeting-settings.png | Meeting settings with Cohere Transcribe and Tiny Aya 3B selected, and the Notifications group */}
 
 | Setting | What it does |
 | --- | --- |
@@ -84,7 +86,7 @@ With either Notify or Auto, Superwhisper asks before it stops a recording.
 
 Detection works with **Zoom**, **Google Meet**, **Microsoft Teams**, and **Slack** huddles, in their desktop apps or in the browser. Superwhisper watches which app uses your microphone. In a browser, it also checks that the page is a call, so voice search or a dictation site doesn't start a meeting.
 
-{/* IMAGE: "Meeting detected" prompt with Record button */}
+{/* IMAGE: images/screens/mac/meeting-detected-prompt.png | The Meeting detected prompt with the Record button */}
 
 For any other meeting app, start the recording yourself. See [Record a meeting](/meetings/record).
 
@@ -95,6 +97,8 @@ Turn on **Calendar integration** in **Meeting settings** to get a reminder befor
 - The reminder appears about a minute before the meeting starts. **Join & Record** opens the call link and starts recording. If you already joined, the button reads **Record**
 - The event title and attendees fill in the meeting's title and attendee list
 - Superwhisper skips all-day, cancelled, and declined events, and events with no call link and only one attendee
+
+{/* IMAGE: images/screens/mac/meeting-calendar-prompt.png | A calendar reminder that reads Starts in 1 min with the Join & Record button */}
 
 Calendar data stays on your Mac. If you turned down the permission, the setting shows **Calendar access is off**. Turn it on in **System Settings → Privacy & Security → Calendars**.
 
