@@ -39,5 +39,5 @@ models/benchmarks.mdx,benchmark-method.png,,0
 modes/built-in.mdx,modes-editor-cloud.png;modes-editor-voice.png;modes-preset-picker.png,,0
 modes/custom.mdx,modes-editor-custom-context.png;modes-editor-custom.png,,0
 modes/customizing-modes.mdx,history-detail.png,,1
-modes/modes.mdx,modes-editor-advanced.png;modes-editor-ai-processing.png;modes-editor-language.png;modes-editor-voice-model.png;modes-list.png,,1
+modes/modes.mdx,modes-editor-advanced.png;modes-editor-ai-processing.png;modes-editor-voice-model.png;modes-list.png,modes-editor-language.png,1
 modes/switching-modes.mdx,mode-switcher.png,,1

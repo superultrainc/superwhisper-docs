@@ -110,7 +110,7 @@ annotated screen from its raw, loop over `captures/screens/*/*.png` with `--fram
 images/
   screens/<platform>/<screen-name>.png   product screenshots; platform is mac, windows, ios, android, dashboard
   enterprise/                            enterprise-only flows
-  docs-banner-poster.jpg                 site assets
+  docs-banner.jpg                        site assets
 captures/
   screens/<platform>/<screen-name>.png   bare capture behind the image of the same path; written by --frame
   screens/<platform>/<screen-name>.json  its annotation spec, if any
