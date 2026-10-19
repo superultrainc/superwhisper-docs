@@ -50,17 +50,22 @@ Use **Activate for apps** in the mode editor (**Add apps and sites**) to switch 
 
 ---
 ### Advanced settings
-Below the auto-activation rules, you can select how your audio is handled during dictation:
+Open **Advanced settings** at the bottom of the mode editor to choose how your audio is handled during dictation:
+
+<Frame>
+  <img src="/images/screens/mac/modes-editor-advanced.png" alt="The mode editor's Advanced settings open, with Sound while recording, Record from system audio, and Identify Speakers" />
+</Frame>
+
 
 * **Sound while recording**: choose what happens to your music and video while you record. The options are **Keep Playing**, **Pause**, **Mute**, **Lower**, and **Muffle**, or the default you set for all modes. See [Sound while recording](/get-started/essential-settings#sound-while-recording). Superwhisper restores playback when recording ends
 * **Record from system audio** (Pro)
-  - Useful for meetings, video content, interviews, or live audio coming through your speakers
+  - Useful for video content, interviews, or live audio coming through your speakers. For calls on a Mac, use [Meetings](/meetings/overview)
   - When recording system audio, the waveform on the recording window doesn't move. Check [History](/get-started/history) to verify capture
 * **Identify Speakers** (Pro)
-  - Useful for meeting transcriptions
-  - Speaker separation results appear in the Segments tab of History
+  - Useful for interviews and recorded files with more than one speaker
+  - Speaker labels appear in the **Speakers** view of the recording in History
 
-<Note>Speaker-separated transcripts won't process through AI automatically within the same mode. See [Speaker-Separated Meetings](/modes/speaker-separated-meetings) for handling multi-speaker transcripts with AI processing.</Note>
+<Note>Speaker-separated transcripts don't go through AI processing in the same mode. To record a call with speaker labels and a summary on a Mac, use [Meetings](/meetings/overview).</Note>
 
 ---
 ### AI processing
@@ -81,7 +86,7 @@ alt="Superwhisper mode editor with the Language Model dropdown open"
 - The context checkboxes (**Application**, **Copied text**, **Selected text**) need a Pro license
 - AI processing varies by mode
    - [Voice to Text](/modes/built-in#voice-to-text) has no AI processing
-   - The [built-in modes](/modes/built-in) (Super, Message, Mail, Note, Meeting) use instructions tuned for their purpose
+   - The [built-in modes](/modes/built-in) (Message, Mail, Note, Super) use instructions tuned for their purpose
    - [Custom Mode](/modes/custom) lets you write your own AI processing instructions
    - [Super](/modes/built-in#super) and [Custom](/modes/custom) modes add context awareness
 

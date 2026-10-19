@@ -5,6 +5,10 @@ description: "Review, search, and reprocess past dictations in History. Find whe
 
 Superwhisper saves every dictation as you speak: the audio, the transcription, and the AI result. Use History to review past dictations, retry failed ones, and diagnose unexpected results.
 
+<Note>
+History holds dictations only. [Meetings](/meetings/overview) live in the **Meetings** tab.
+</Note>
+
 <img
   style={{ borderRadius: '0.5rem' }}
   src="/images/screens/mac/history-list.png"
@@ -15,13 +19,19 @@ Superwhisper saves every dictation as you speak: the audio, the transcription, a
 
 Open History from any of three places:
 
-- The **History** tab in settings
-- The **menu bar icon → History**
-- Right-click the **mini recording window**
+- **Home** in settings: the **Recent recordings** list shows your last five dictations. Click **See all** to open the full History
+- The **menu bar icon → History...**
+- Right-click the **mini recording window** and choose **Open History...**
+
+Click **Back to Home** at the top left to leave History.
+
+<Frame>
+  <img src="/images/screens/mac/home.png" alt="The Home page with the stats card, Recent recordings, and the See all button" />
+</Frame>
 
 ## Search recordings
 
-The search field in the left sidebar filters your past dictations.
+The **Search history** field at the top of History filters your past dictations.
 
 <Note>Search filters the original dictation only, not AI-processed results.</Note>
 
@@ -41,7 +51,7 @@ Retry a failed transcription or run an old dictation through a different mode wi
 
 ## Dictation stats
 
-Superwhisper tracks summary statistics across your recordings, such as words dictated and average words per minute. On macOS and Windows, open the **Home** tab in settings to see them. On iOS, open the app's Settings, where you can also reset your stats. On a Mac, the [CLI](/get-started/cli) also prints them with `superwhisper stats`.
+The **Home** tab in settings shows **Average speed** (words per minute), **Words**, **Apps used**, and time saved, for **This week** or **All time**. Meetings don't count. On iOS, open the app's Settings, where you can also reset your stats. On a Mac, the [CLI](/get-started/cli) also prints them with `superwhisper stats`.
 
 <img
   style={{ borderRadius: '0.5rem', display: 'block', margin: '0 auto' }} width="50%"
@@ -67,7 +77,7 @@ To report by email instead, send [support@superwhisper.com](mailto:support@super
 
 - What happened, and the steps to reproduce it
 - Screenshots of your Configuration pane and the mode's settings (including the prompt, for custom modes)
-- The recording folder: select the test recording in History, click the folder icon to reveal it in Finder, compress the folder, and attach it
+- The recording folder: open the test recording in History, click the **info** icon, then **Open file location** to reveal it in Finder, compress the folder, and attach it
 
 You can also ask in [Discord](https://discord.gg/tF98XvJNvB), but email reaches the team fastest.
 
@@ -83,12 +93,12 @@ You can also ask in [Discord](https://discord.gg/tF98XvJNvB), but email reaches 
 
 You can delete recordings by hand or let Superwhisper delete them on a schedule.
 
-- **In the sidebar**: select recordings (hold Shift for several), right-click, **Delete**
-- **In Finder**: select a dictation and click the folder icon to open the recordings folder, then delete files directly
+- **In History**: right-click a recording and choose **Delete**. To delete several, select them (hold Shift) and click **Delete** in the selection bar, or **Select all** first
+- **In Finder**: open a dictation's **info**, click **Open file location** to open the recordings folder, then delete files directly
 
 ### Delete recordings automatically
 
-Use **Keep recordings for** to set how long Superwhisper keeps recording files on disk. It deletes older recordings automatically.
+Use **Keep recordings for** to set how long Superwhisper keeps recording files on disk. It deletes older recordings automatically, including [meetings](/meetings/record#find-past-meetings).
 
 1. Open **Settings → Configuration**
 2. Set **Keep recordings for** to **Forever**, **1 day**, **1 week**, **2 weeks**, **1 month**, **6 months**, or **1 year**

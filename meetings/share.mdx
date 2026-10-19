@@ -1,0 +1,64 @@
+---
+title: "Share meetings and ask an agent"
+description: "Send a meeting summary to Slack, email, or your notes app, or share it as a link. Connect Claude, ChatGPT, or Cursor to ask questions about past meetings."
+---
+
+## Share a summary
+
+Click **Share** in the meeting toolbar. It shares the summary for the template you're viewing.
+
+<Frame>
+  <img src="/images/screens/mac/meeting-share-sheet.png" alt="The Share summary sheet with the draggable note, app buttons, and the share link row" />
+</Frame>
+
+- **Drag**: drag the note card into any app. It arrives as a Markdown file named after the meeting
+- **Open in an app**: click **Slack**, **Microsoft Teams**, **ChatGPT**, **Claude**, **Obsidian**, **Notion**, **Notes**, **Mail**, or **Gmail**, or search for another app. The app opens with the note ready to drop in
+- **Copy the file**: right-click the note card and choose **Copy file**
+- **Copy text**: the **More** menu (**…**) in the meeting window has **Copy summary** and **Copy transcript**
+
+### Share a link
+
+Click **Click to create link**, then **Copy share link**. Anyone with the link sees the summary on a Superwhisper web page.
+
+- **Uploaded**: the summary text, title, and date only. Audio, transcript, and private notes stay on your Mac
+- **Expires**: after 30 days
+- **Who can view**: anyone with the link. On an Enterprise license, choose **Everyone at** your organization (sign-in required) or **Anyone with the link**, if your admin allows it
+
+**Sharing is turned off for your organization** means your admin disabled links. See [Meeting sharing](/enterprise/configuration#meeting-sharing).
+
+## Ask an agent about your meetings
+
+Connect an AI app to ask questions across meetings, like "What did we decide about pricing last week?" The app reads your meetings through Superwhisper's MCP server.
+
+### Connect an agent
+
+1. In the **Meetings** tab, click the gear and scroll to **Agents**
+2. Turn on an app from the list: **Claude**, **ChatGPT**, **Cursor**, **Claude Code**, or **Codex CLI**. Only apps installed on your Mac appear
+3. Restart the app if it's open
+
+<Frame>
+  <img src="/images/screens/mac/meeting-settings-agents.png" alt="The Agents group in Meeting settings with Claude and ChatGPT connected" />
+</Frame>
+
+Superwhisper installs its [CLI](/get-started/cli) if needed and adds itself to the app's MCP settings. Star an app to make it the default. For other MCP apps, click **MCP command** under **Don't see your app?** and paste the settings into that app.
+
+To ask about one meeting, open the **More** menu (**…**) in the meeting window and choose **Talk with**.
+
+### What the agent can read
+
+The agent can list, search, and read meetings: summaries, action items, private notes, attendees, and transcripts. It can't change or delete them.
+
+<Warning>
+Meeting content an agent reads, including transcripts and private notes, goes to that agent's AI provider under the provider's terms. Don't connect an agent if a meeting must stay on your Mac.
+</Warning>
+
+### Read meetings from the terminal
+
+The [Superwhisper CLI](/get-started/cli) reads the same meetings:
+
+```bash
+superwhisper meetings                       # Recent meetings, newest first
+superwhisper meetings search "roadmap"      # Search meetings
+superwhisper meetings read                  # Latest meeting: summary, notes, attendees
+superwhisper meetings read --transcript     # Include the full transcript
+```

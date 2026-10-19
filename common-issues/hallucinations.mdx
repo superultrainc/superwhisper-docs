@@ -28,17 +28,15 @@ Hallucinations at the transcription stage have two main causes:
 
 ---
 ### Fix: check that silence removal is on
-    <img
-    style={{ borderRadius: '0.5rem' }}
-    src="/images/screens/mac/sound.png"
-    alt="Superwhisper's Silence removal setting"
-    />
+<Frame>
+  <img src="/images/screens/mac/settings-audio-processing.png" alt="Advanced settings Audio processing card with Silence removal and Dynamic normalization" />
+</Frame>
 <Steps>
-  <Step title="Open Sound settings">
-    Go to **Settings → Sound**.
+  <Step title="Open advanced settings">
+    Go to **Settings → Configuration** and click **Advanced settings** at the bottom of the page.
   </Step>
   <Step title="Enable Silence removal">
-    Make sure **Silence removal** is on. It cuts silent periods from your audio before transcription, which can reduce silence-related hallucinations. It is on by default in macOS 2.18.3 and later.
+    Under **Audio processing**, make sure **Silence removal** is on. It cuts silent periods from your audio before transcription, which can reduce silence-related hallucinations. It is on by default in macOS 2.18.3 and later.
   </Step>
 </Steps>
 

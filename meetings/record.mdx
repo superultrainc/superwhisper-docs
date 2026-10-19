@@ -1,0 +1,119 @@
+---
+title: "Record a meeting"
+description: "Start, pause, end, or discard a meeting recording in Superwhisper. Follow the live transcript, take private notes, and name each speaker."
+---
+
+Finish the [setup](/meetings/overview#set-up) before your first meeting.
+
+## Start a recording
+
+- **From a prompt**: click **Record** in the **Meeting detected** prompt. See [Meeting detection](/meetings/overview#meeting-detection)
+- **From a calendar reminder**: click **Join & Record** or **Record**. See [Calendar integration](/meetings/overview#calendar-integration)
+- **By hand**: in the **Meetings** tab, click **+**. Use this for any other app or an in-person meeting
+
+To pick a [summary template](/meetings/summaries) before the meeting starts, click the arrow next to **Record** in a prompt.
+
+The meeting window opens, and the meeting appears under **Happening now** in the **Meetings** tab.
+
+<Frame>
+  <img src="/images/screens/mac/meeting-window-recording.png" alt="A meeting window while recording, with the live transcript panel open and private notes" />
+</Frame>
+
+<Note>
+Meetings has no keyboard shortcut. Your dictation shortcut still works during a meeting, and your dictation stays out of the meeting recording.
+</Note>
+
+## During the meeting
+
+### Live transcript
+
+Click **Transcript** in the toolbar to show or hide the transcript. Search it with **Search transcript or speakers**.
+
+The transcript follows the language spoken, even when it changes mid-call. To pin one language, set **Language** in [Meeting settings](/meetings/overview#meeting-settings).
+
+### Private notes
+
+Type in the notes area of the meeting window. The summary treats your notes as facts about the meeting. Notes stay on your Mac and aren't part of a [share link](/meetings/share#share-a-link).
+
+### Speaker names
+
+Speakers show as **Speaker 1**, **Speaker 2**, and so on. When you record alone with no call audio, your lines show as **You**. In Zoom, Google Meet, Microsoft Teams, and Slack huddles, Superwhisper suggests names from the call.
+
+To rename a speaker:
+
+1. Click **Assign speakers** (the people icon) in the transcript panel
+2. Play a sample to hear who it is
+3. Click the name and type a new one
+
+The new name replaces the old one everywhere in the transcript. Give two speakers the same name to merge them.
+
+<Frame>
+  <img src="/images/screens/mac/meeting-assign-speakers.png" alt="The Assign speakers panel listing each speaker with a sample to play" />
+</Frame>
+
+### Pause, minimize, and switch models
+
+- **Pause**: click **Pause recording**, then **Resume recording** to continue
+- **Minimize**: press **Cmd-M**. The window shrinks to a small pill and keeps recording. Click the pill to bring it back
+- **Switch voice model**: change **Voice** in Meeting settings. If the current model streams, the change applies to your next meeting
+
+Muffle and Lower are off while a meeting records, so you hear the call at full volume.
+
+## End a recording
+
+Click **End recording** (the stop button), then confirm. The summary starts right away. See [Summaries and templates](/meetings/summaries).
+
+When the call ends, Superwhisper shows **Meeting ending in 9s**. Click **End meeting** to stop now, or choose **Keep recording** from its menu.
+
+{/* IMAGE: images/screens/mac/meeting-ending-prompt.png | The Meeting ending in 9s prompt with the End meeting button */}
+
+**Cmd-W** asks before it ends a recording. It never closes the window on its own.
+
+## Discard a recording
+
+Click **Discard this recording** (the trash button), then **Discard recording**. This deletes the audio and transcript and can't be undone.
+
+## Find past meetings
+
+The **Meetings** tab lists meetings by day, newest first. Open one to play the audio, edit the title, summary, or notes, or switch templates. The **More** menu (**…**) has **Copy summary**, **Copy transcript**, **Recording info**, and **Delete recording**.
+
+**Search meetings** looks through titles, summaries, notes, attendees, and speakers. Narrow it with filters:
+
+| Filter | Example | Finds meetings |
+| --- | --- | --- |
+| `attendee:` or `with:` | `with:alex` | With Alex invited |
+| `speaker:` | `speaker:sam` | Where Sam spoke |
+| `template:` | `template:email` | Summarized with a template |
+| `date:` or `on:` | `on:yesterday` | On `today`, `yesterday`, `7d` (the last 7 days), or a date like `2026-10-15` |
+| `after:` / `before:` | `after:2026-10-01` | In a date range |
+| `duration:` | `duration:>15m` | Longer than 15 minutes |
+
+<Frame>
+  <img src="/images/screens/mac/meetings-search.png" alt="Search meetings with a speaker filter applied" />
+</Frame>
+
+Meetings are saved on your Mac with your dictations. **Keep recordings for** in **Settings → Configuration** deletes old meetings too.
+
+## Troubleshooting
+
+### "Set up meeting models in the Meetings tab first"
+
+The meeting models aren't ready. In the **Meetings** tab, click **Set up meetings**.
+
+### "No microphone available."
+
+Connect a microphone, or [select one](/common-issues/microphone-and-system-audio#superwhisper-uses-the-wrong-microphone).
+
+### "Meetings are disabled by your organization."
+
+Your Enterprise admin turned off system audio recording, which turns off Meetings.
+
+### The other side of the call is missing
+
+Turn on **Screen & System Audio Recording** for Superwhisper. See [System audio recordings come out empty](/common-issues/microphone-and-system-audio#system-audio-recordings-come-out-empty-or-silent).
+
+### No "Meeting detected" prompt
+
+1. Set **Recording suggestion** to **Notify** or **Auto** in Meeting settings
+2. Check that the call is in Zoom, Google Meet, Microsoft Teams, or a Slack huddle. For other apps, start the recording by hand
+3. On the Free plan, check that you have free words left
