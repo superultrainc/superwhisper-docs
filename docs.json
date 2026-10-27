@@ -107,6 +107,7 @@
                   "common-issues/no-voice-found",
                   "common-issues/llm-processing-error",
                   "common-issues/app-wont-launch",
+                  "common-issues/update-error",
                   "common-issues/crashes"
                 ]
               },
