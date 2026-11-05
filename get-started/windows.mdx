@@ -29,7 +29,15 @@ Superwhisper runs on Windows 10 and 11, on x64 and ARM64 processors. A GPU is no
 
 ## Installation problems
 
-### The app won't launch, or shows a `vkGetPhysicalDeviceFeatures2` or missing DLL error
+### The app won't launch and shows `MSVCP140.dll was not found`
+
+Superwhisper needs the Microsoft Visual C++ Redistributable, which some Windows machines don't have. The error can also name `VCRUNTIME140.dll` or `VCRUNTIME140_1.dll`.
+
+1. Download the **Visual C++ Redistributable** for your processor from [Microsoft's download page](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version): `X64` for Intel and AMD, `ARM64` for Snapdragon
+2. Run it and follow the prompts
+3. Restart your PC, then launch Superwhisper again
+
+### The app won't launch, or shows a `vkGetPhysicalDeviceFeatures2` or missing GPU DLL error
 
 You may see an error like `vkGetPhysicalDeviceFeatures2 could not be located`.
 
