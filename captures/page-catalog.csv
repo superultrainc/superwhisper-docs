@@ -26,6 +26,7 @@ get-started/history.mdx,history-detail.png;history-list.png;history-process-agai
 get-started/interface-menu-bar.mdx,menu-bar-menu.png,,0
 get-started/interface-rec-window.mdx,mode-switcher.png;recording-window-main.png;recording-window-realtime.png;recording-window-recording.png,,4
 get-started/interface-vocabulary.mdx,vocabulary.png,,0
+get-started/ios-action-button.mdx,,shortcut-mode-name.png,1
 get-started/ios.mdx,keyboard-full-access.png;keyboard-globe-picker.png;keyboard-in-use.png;keyboard-recording.png;keyboard-settings.png;settings-home.png,,0
 get-started/quickstart.mdx,onboarding-permission-mic.png;onboarding-welcome.png;recording-window-recording.png,onboarding-shortcut.png,4
 get-started/settings-advanced.mdx,settings-application.png;settings-audio-processing.png;settings-experimental-models.png;settings-folder-location.png;settings-text-input.png;settings-voice-model.png,,0

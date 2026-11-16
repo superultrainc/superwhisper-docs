@@ -21,6 +21,7 @@ images/screens/ios/keyboard-in-use.png,ios,current,,get-started/ios.mdx,Superwhi
 images/screens/ios/keyboard-recording.png,ios,current,,get-started/ios.mdx,Superwhisper iOS keyboard recording with an active waveform,y,n,Not affected by the macOS 3.0 release
 images/screens/ios/keyboard-settings.png,ios,current,,get-started/ios.mdx,iOS Keyboards settings with the Superwhisper keyboard added,y,y,Not affected by the macOS 3.0 release
 images/screens/ios/settings-home.png,ios,current,,get-started/ios.mdx,Superwhisper iOS app settings screen,y,n,Not affected by the macOS 3.0 release
+images/screens/ios/shortcut-mode-name.png,ios,new,,get-started/ios-action-button.mdx,The Toggle Superwhisper Dictation shortcut in the Shortcuts app with the Mode name field at the top,n,n,
 images/screens/ios/stats-screen.png,ios,current,,get-started/history.mdx,"Superwhisper stats screen on iOS showing words per minute, minutes saved, and most used mode",y,n,Not affected by the macOS 3.0 release
 images/screens/mac/agent-plugins.png,mac,current,P3,get-started/coding-agents.mdx,Superwhisper Advanced settings showing the Agent Plugins section with install buttons per agent,y,y,Reach it from Configuration → Advanced settings. The card shows only when a supported agent is installed
 images/screens/mac/claude-code-plugin.png,mac,current,,get-started/coding-agents.mdx,"Claude Code plugin manager showing the superwhisper plugin with enable, update, and uninstall options",y,n,"Claude Code UI, not Superwhisper"
