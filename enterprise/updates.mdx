@@ -1,0 +1,86 @@
+---
+title: "Software and Model Updates"
+description: "How Superwhisper delivers app and model updates on Mac and Windows, what you can control, and how to manage timing and versions for your fleet."
+---
+
+import EnterpriseSupport from '/snippets/enterprise-support.mdx';
+
+Superwhisper delivers three kinds of updates: the app, local models, and cloud models. Each works differently. This page explains what each one does and what your IT team can control.
+
+## At a glance
+
+| | App | Local models | Cloud models |
+|---|---|---|---|
+| **Delivered by** | Built-in updater | Model download in the app | Superwhisper servers |
+| **Automatic** | Yes, by default | No. A person approves each update | Yes, no app update needed |
+| **Control timing** | Yes. Turn off the updater and deploy by MDM | Yes. Nothing installs until someone approves | No |
+| **Pin a version** | Yes, by deploying that version yourself | Not today | Not today |
+| **Org dashboard setting** | None | None | Turn cloud models off |
+
+## App updates
+
+### macOS
+
+- Superwhisper checks for a new version about once a day. Automatic checks and automatic install are on by default.
+- Users can turn off **Automatically check for updates** in **Settings → Configuration**. They can also click **Check for Updates** at any time.
+- A new release reaches every Mac at its next check. There is no staged rollout.
+- Updates are signed. The app installs only updates that pass the signature check.
+
+### Windows
+
+- **Per-user install.** Superwhisper checks shortly after launch and then every 3 hours. By default it downloads the update in the background. It installs the update when you are not recording, no Superwhisper window is in focus, and about 10 minutes have passed since your last recording. The app then restarts by itself. If a user turns off automatic updates, the app asks first and offers **Install Update**, **Remind Me Later**, and **Skip This Version**.
+- **Machine-wide enterprise install.** In-app updates are off. Users see that updates are managed by their administrator. You update by deploying a new enterprise installer.
+
+An admin cannot set the per-user update behavior by policy. Each user controls it in their own preferences.
+
+## Control timing and version for your fleet
+
+To own the schedule, turn off in-app updates and deploy each version yourself.
+
+<Steps>
+  <Step title="Turn off in-app updates">
+    - **Mac:** deploy a configuration profile for the `com.superduper.superwhisper` domain with `SUEnableAutomaticChecks` and `SUAutomaticallyUpdate` set to `false`. See [MDM & Silent Deployment](/enterprise/mdm-deployment#updates).
+    - **Windows:** use the machine-wide enterprise installer. It already turns off in-app updates.
+  </Step>
+  <Step title="Deploy the version you choose">
+    Push the new installer through your MDM on your own schedule. Test it on a pilot group first. Roll out to the rest when you are ready.
+  </Step>
+</Steps>
+
+<Warning>
+The Mac configuration profile follows standard macOS managed preferences. We have not yet tested it on a managed fleet. Test it on one device before you rely on it, and tell us what you see.
+</Warning>
+
+### Get an older version
+
+- **Mac:** previous releases are listed at [superwhisper.com/appcast.xml](https://superwhisper.com/appcast.xml), with download links. The updater never installs an older version over a newer one. To go back, turn off automatic checks, then reinstall the older version by hand.
+- **Windows enterprise:** the enterprise installer downloads support a version suffix. Use `https://fresh.superwhisper.com/download/enterprise/x64/v<version>` for x64, or the same path with `aarch64` for ARM. The `v` is required. For example, `.../x64/v1.6.9`. The links in [MDM & Silent Deployment](/enterprise/mdm-deployment#installers) always serve the latest version.
+
+## Local model updates
+
+Local models run on the device. Superwhisper checks for model updates when the app starts, on Mac and Windows.
+
+- A new version of a model shows an **Update available** pill. Nothing downloads until the user approves it.
+- Each download is verified before it installs. Superwhisper downloads models only from `models.superwhisper.com`.
+- Only some models update this way today, such as S1-mini. Other local models download once and stay on that version.
+- To keep a version, do not approve the update. There is no org setting to pin a model.
+
+Make sure your network allows `models.superwhisper.com`. See [Network access](/enterprise/mdm-deployment#network-access).
+
+## Cloud model updates
+
+Cloud models such as S1-Voice and S1-Language run on Superwhisper servers. We can improve them without an app update. You cannot pin a cloud model version today, for the org or for a user.
+
+If you need results that never change, turn off **Allow cloud AI models** in [Configuration & Models](/enterprise/configuration). Members then use local models and any [custom models](/enterprise/configuration#custom-models) you set up. A custom model runs on your own endpoint, so you control its version.
+
+## What your org dashboard controls
+
+The org dashboard has no update or version setting today. The closest control is **Allow cloud AI models**, described above.
+
+## Related
+
+- [MDM & Silent Deployment](/enterprise/mdm-deployment): silent install and update management
+- [Configuration & Models](/enterprise/configuration): org-wide model policy
+- [Choose your model](/get-started/choose-your-model): local and cloud models
+
+<EnterpriseSupport />
