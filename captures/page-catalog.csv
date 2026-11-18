@@ -8,6 +8,7 @@ common-issues/microphone-and-system-audio.mdx,input-device-dropdown.png;muffle-s
 common-issues/no-voice-found.mdx,input-device-dropdown.png,,1
 common-issues/performance-tips.mdx,settings-voice-model.png,,0
 common-issues/realtime.mdx,modes-editor-voice.png;recording-window-realtime.png,,1
+common-issues/report-an-issue.mdx,report-issue-dialog.png;report-issue-home.png,,0
 common-issues/unable-to-create-mode.mdx,settings-folder-location.png,,0
 enterprise/activate.mdx,member-onboarding-managed-by-org.png;member-onboarding-use-company-license.gif,,2
 enterprise/billing.mdx,billing.png,,0

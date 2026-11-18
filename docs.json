@@ -139,7 +139,8 @@
                   "common-issues/realtime",
                   "common-issues/context",
                   "common-issues/ios-26-keyboard-changes",
-                  "common-issues/diagnostics"
+                  "common-issues/diagnostics",
+                  "common-issues/report-an-issue"
                 ]
               }
             ]
