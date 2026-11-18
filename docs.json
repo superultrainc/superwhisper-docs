@@ -27,7 +27,13 @@
               "get-started/choose-your-model",
               "get-started/essential-settings",
               "get-started/windows",
-              "get-started/ios",
+              {
+                "group": "Superwhisper for iOS",
+                "root": "get-started/ios",
+                "pages": [
+                  "get-started/ios-action-button"
+                ]
+              },
               "get-started/android",
               "get-started/optimizing-with-ai"
             ]
@@ -133,7 +139,8 @@
                   "common-issues/realtime",
                   "common-issues/context",
                   "common-issues/ios-26-keyboard-changes",
-                  "common-issues/diagnostics"
+                  "common-issues/diagnostics",
+                  "common-issues/report-an-issue"
                 ]
               }
             ]
@@ -149,6 +156,7 @@
                   "enterprise/saml-sso",
                   "enterprise/scim",
                   "enterprise/mdm-deployment",
+                  "enterprise/updates",
                   "enterprise/member-management"
                 ]
               },
