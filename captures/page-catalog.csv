@@ -1,5 +1,5 @@
 page,images,planned,to_do
-billing/activate.mdx,license-activation.png;license-active.png;license-options.png,license-panel.png,2
+billing/activate.mdx,license-activation.png;license-active.png;license-options.png;license-panel.png,,1
 billing/manage-subscription.mdx,app-store-account.png,,0
 common-issues/diagnostics.mdx,configuration-2.png,,1
 common-issues/hallucinations.mdx,settings-audio-processing.png,,0
@@ -26,12 +26,12 @@ get-started/history.mdx,history-detail.png;history-list.png;history-process-agai
 get-started/interface-menu-bar.mdx,menu-bar-menu.png,,0
 get-started/interface-rec-window.mdx,mode-switcher.png;recording-window-main.png;recording-window-realtime.png;recording-window-recording.png,,4
 get-started/interface-vocabulary.mdx,vocabulary.png,,1
-get-started/ios-action-button.mdx,,shortcut-mode-name.png,1
+get-started/ios-action-button.mdx,shortcut-action-button.png;shortcut-add.png;shortcut-clipboard-prompt.png;shortcut-mode-name.png,,0
 get-started/ios.mdx,keyboard-full-access.png;keyboard-globe-picker.png;keyboard-in-use.png;keyboard-recording.png;keyboard-settings.png;settings-home.png,,0
 get-started/quickstart.mdx,onboarding-permission-mic.png;onboarding-welcome.png;recording-window-recording.png,onboarding-shortcut.png,4
 get-started/settings-advanced.mdx,settings-application.png;settings-audio-processing.png;settings-experimental-models.png;settings-folder-location.png;settings-text-input.png;settings-voice-model.png,,0
 get-started/transcribe-files.mdx,finder-open-with.png;menu-bar-transcribe-file.png,tray-transcribe-file.png,1
-get-started/windows.mdx,,settings-modes.png;tray-icon.png,2
+get-started/windows.mdx,settings-modes.png,tray-icon.png,1
 meetings/offline.mdx,meeting-settings.png,,0
 meetings/overview.mdx,meeting-settings.png;meetings-onboarding.png;meetings-tab.png,meeting-calendar-prompt.png;meeting-detected-prompt.png,3
 meetings/record.mdx,meeting-assign-speakers.png;meeting-window-recording.png;meetings-search.png,meeting-ending-prompt.png,1
