@@ -73,7 +73,14 @@ Detection works with **Zoom**, **Google Meet**, **Microsoft Teams**, and **Slack
 
 ## Calendar integration
 
-Turn on **Calendar integration** to get a reminder about a minute before each meeting. Superwhisper reads the calendars in the macOS Calendar app, including Google, Microsoft 365, and iCloud accounts added there.
+Connect a calendar in **Meeting settings** to get a reminder about a minute before each meeting. Turn on either source, or both:
+
+- **Apple Calendar** reads the calendar in the macOS Calendar app. It covers every account you added there, including Google, Microsoft 365, and iCloud
+- **Google Calendar** signs in to your Google account and doesn't need the macOS Calendar app
+
+Once a calendar is connected, **Show meetings in menu bar** appears. From 15 minutes before a meeting until it ends, the meeting's name and a countdown show beside the menu bar icon, so you can join and record from the menu.
+
+Each reminder works like this:
 
 - **Join & Record** opens the call link and starts recording. If you already joined, the button reads **Record**
 - The event title and attendees fill in the meeting
@@ -81,7 +88,9 @@ Turn on **Calendar integration** to get a reminder about a minute before each me
 
 {/* IMAGE: images/screens/mac/meeting-calendar-prompt.png | A calendar reminder that reads Starts in 1 min with the Join & Record button */}
 
-Calendar data stays on your Mac. If the setting shows **Calendar access is off**, turn on Superwhisper in **System Settings → Privacy & Security → Calendars**.
+**Apple Calendar:** calendar data stays on your Mac. If the setting shows **Calendar access is off**, turn on Superwhisper in **System Settings → Privacy & Security → Calendars**.
+
+**Google Calendar:** Superwhisper asks Google for read-only access. Your Mac reads your events directly from Google. Our server handles only sign-in and keeps an encrypted token so the app stays connected. Turn off **Google Calendar** to disconnect. That deletes the token from our server and revokes the access at Google. If sign-in fails, the setting shows **Google sign-in didn't complete**. Try again.
 
 ## Plans
 

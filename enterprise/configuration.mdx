@@ -52,11 +52,15 @@ Changes apply to existing links too. Links expire after 30 days and hold only th
 
 ### Recording retention
 
-Set the maximum duration that members can keep recordings on disk. Recordings older than this are deleted automatically by the app on each member's machine. The limit applies to meetings as well as dictations.
+Set the maximum duration that members can keep recordings on disk. Recordings older than this are deleted automatically by the app on each member's machine. On Mac 3.1.0 and later the limit applies to dictations only. Meetings stay until a member deletes them.
 
 Available values: **No restriction** (default), **1 day**, **1 week**, **2 weeks**, **1 month**, **6 months**, **1 year**.
 
 Useful for organizations with data-minimization policies or retention requirements under GDPR, HIPAA, or internal data-governance standards.
+
+<Warning>
+Retention does not delete meetings. A policy that covers meeting recordings needs members to delete them from the **Meetings** tab. Email [enterprise@superwhisper.com](mailto:enterprise@superwhisper.com) if your policy needs more.
+</Warning>
 
 <Note>
 Retention enforcement runs on each member's device. It applies to recordings stored locally by Superwhisper, not to anything members have exported or saved elsewhere.
@@ -71,7 +75,7 @@ Retention enforcement runs on each member's device. It applies to recordings sto
 | **Allow system audio recording** off | Meetings is hidden: no **Meetings** tab, no meeting prompts, and no calendar reminders. Members see **Meetings are disabled by your organization.** |
 | **Allow cloud AI models** off | Meetings run on local models and your [custom models](#custom-models) only |
 | **Meeting sharing** | Sets who can open shared summaries, or turns share links off |
-| **Recording retention** | Deletes old meetings from members' Macs, the same as dictations |
+| **Recording retention** | No effect on meetings on Mac 3.1.0 and later. It deletes dictations only |
 | **Allow speaker separation** | No effect. Meetings always separate speakers on the member's Mac |
 
 To turn off Meetings for your organization, turn off **Allow system audio recording**. No other policy hides it.
