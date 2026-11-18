@@ -5,6 +5,7 @@ Public Mintlify docs for Superwhisper. Pages are MDX; navigation and redirects l
 ## Rules
 
 - **Images.** Any file added or changed under `images/` must pass `python3 scripts/optimize-images.py --check` before commit. Load `skills/docs-images/SKILL.md` before touching images. CI enforces this on pull requests.
+- **Screenshot catalog.** After adding, replacing, or deleting an image or an `{/* IMAGE: ... */}` marker, run `python3 scripts/screenshot-catalog.py` and commit the updated `captures/*.csv`. See `skills/docs-images/SKILL.md`.
 - **Removed or renamed pages** get a redirect in `docs.json`.
 - **No raw screenshots.** Captures with real names, paths, or dictations never enter this repo. Re-shoot with demo data.
 

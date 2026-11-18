@@ -10,12 +10,23 @@ Superwhisper runs natively on Windows 10 and 11, on x64 and ARM64. It's the same
 1. Download the installer from [superwhisper.com/windows](https://superwhisper.com/windows)
 2. Run the installer and follow the prompts
 3. Superwhisper starts and adds an icon to your **system tray**. Click it to open settings
+
+{/* IMAGE: images/screens/windows/tray-icon.png | The Superwhisper icon in the Windows system tray with its menu open */}
+
 4. Allow **microphone access** when Windows asks
 5. Follow the setup wizard, then try your first dictation ([Quickstart](/get-started/quickstart))
 
 <Info>
 Bought the Mac version by mistake, or switching machines? Download the Windows installer and [enter the same key](/billing/activate).
 </Info>
+
+## Settings
+
+The settings window has a sidebar with Home, **Modes**, Vocabulary, Configuration, Sound, Models library, and History. On Mac, the **Modes** item is called **Transcribe**.
+
+<Frame>
+  <img src="/images/screens/windows/settings-modes.png" alt="The Superwhisper settings window on Windows with Modes selected in the sidebar" />
+</Frame>
 
 ## Requirements
 
@@ -29,7 +40,15 @@ Superwhisper runs on Windows 10 and 11, on x64 and ARM64 processors. A GPU is no
 
 ## Installation problems
 
-### The app won't launch, or shows a `vkGetPhysicalDeviceFeatures2` or missing DLL error
+### The app won't launch and shows `MSVCP140.dll was not found`
+
+Superwhisper needs the Microsoft Visual C++ Redistributable, which some Windows machines don't have. The error can also name `VCRUNTIME140.dll` or `VCRUNTIME140_1.dll`.
+
+1. Download the **Visual C++ Redistributable** for your processor from [Microsoft's download page](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version): `X64` for Intel and AMD, `ARM64` for Snapdragon
+2. Run it and follow the prompts
+3. Restart your PC, then launch Superwhisper again
+
+### The app won't launch, or shows a `vkGetPhysicalDeviceFeatures2` or missing GPU DLL error
 
 You may see an error like `vkGetPhysicalDeviceFeatures2 could not be located`.
 
@@ -57,8 +76,9 @@ Most features work the same. These aren't available on Windows yet:
 - **Hold Shift to Auto-Send**
 - **Simulate Keypresses**
 - **[Coding agent integrations](/get-started/coding-agents)** (Claude Code, OpenCode, Codex, Cursor, Pi, Grok, DeepSeek) and the [CLI](/get-started/cli)
+- **[Meetings](/meetings/overview)**: on Windows, use the [Meeting mode](/modes/built-in#meeting) with system audio instead
 
-Everything else works the same as on macOS, so the rest of these docs apply to both platforms. That includes modes and custom modes, vocabulary and replacements, local and cloud models, file transcription, [realtime transcription](/common-issues/realtime), system audio recording, and [speaker separation](/modes/speaker-separated-meetings).
+Everything else works the same as on macOS, so the rest of these docs apply to both platforms. That includes modes and custom modes, vocabulary and replacements, local and cloud models, file transcription, [realtime transcription](/common-issues/realtime), system audio recording, and speaker separation (**Identify Speakers** in a mode's [advanced settings](/modes/modes#advanced-settings)).
 
 ## Next steps
 

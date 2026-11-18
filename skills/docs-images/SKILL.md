@@ -52,6 +52,27 @@ and narrow, which is why the height limit is separate.
    ```
    Exit code 0 means every image is compliant.
 
+## Screenshot catalog
+
+`captures/screenshot-catalog.csv` lists every screenshot, shipped or planned, with its
+status. `captures/page-catalog.csv` lists every page that shows or plans one.
+`scripts/screenshot-catalog.py` keeps both in step with the pages.
+
+- **Plan a shot** with a marker in the page, where the image will go:
+  `{/* IMAGE: images/screens/mac/meetings-tab.png | What the reader should see */}`
+- **Ship a shot**: replace the marker with the `<img>` tag, then set the row's
+  `status` to `current`.
+- **App UI changed**: set `status` to `reshoot` (content changed), `restyle` (styling
+  only), or `check` (not sure), and say what changed in `notes`.
+- **Every time** you add, replace, or delete an image or marker, run
+  `python3 scripts/screenshot-catalog.py`. It rewrites the derived columns
+  (`platform`, `pages`, `alt`, `bare_capture`, `annotated`) and adds missing rows.
+  `status`, `priority`, and `notes` are yours to edit. `--check` exits 1 when a
+  catalog is stale.
+
+Statuses: `current`, `reshoot`, `restyle`, `new`, `check`. Priorities: `P1` (getting
+started and Meetings), `P2`, `P3`.
+
 ## Annotations
 
 To call out part of a screen, put a JSON spec beside the capture with the same
@@ -89,7 +110,7 @@ annotated screen from its raw, loop over `captures/screens/*/*.png` with `--fram
 images/
   screens/<platform>/<screen-name>.png   product screenshots; platform is mac, windows, ios, android, dashboard
   enterprise/                            enterprise-only flows
-  docs-banner-poster.jpg                 site assets
+  docs-banner.jpg                        site assets
 captures/
   screens/<platform>/<screen-name>.png   bare capture behind the image of the same path; written by --frame
   screens/<platform>/<screen-name>.json  its annotation spec, if any

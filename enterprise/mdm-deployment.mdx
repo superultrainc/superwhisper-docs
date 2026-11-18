@@ -59,6 +59,8 @@ You can also read the code requirement from an installed copy with `codesign -dr
 
 macOS does not allow MDM to pre-grant microphone access. Each user must click **Allow** when Superwhisper requests it. If they previously denied access, they can enable Superwhisper in **System Settings → Privacy & Security → Microphone**.
 
+[Meetings](/meetings/overview) also needs **Screen & System Audio Recording**, which MDM can't pre-grant either. Onboarding offers it as an optional step. To turn off Meetings for everyone, turn off [system audio recording](/enterprise/configuration#allow-system-audio-recording).
+
 See [Apple's PPPC reference](https://support.apple.com/guide/deployment/dep38df53c2a/web) for the permissions a profile can manage.
 
 ### Verification
@@ -118,12 +120,14 @@ Without SSO, send members a join link or an email invite. See [Member Management
 
 ## Updates
 
-On macOS, Superwhisper checks for updates on launch by default. If your MDM installs the app as root, standard users can't complete an in-app update. To manage updates through your MDM instead:
+On macOS, Superwhisper checks for updates about once a day by default. If your MDM installs the app as root, standard users can't complete an in-app update. To manage updates through your MDM instead:
 
 1. Deploy a configuration profile for the `com.superduper.superwhisper` domain with `SUEnableAutomaticChecks` and `SUAutomaticallyUpdate` set to `false`
 2. Deploy each new DMG as a replacement package on your usual schedule
 
 On Windows, the machine-wide installer turns off in-app updates. Users see that updates are managed by their administrator. To update, deploy the new enterprise EXE through your MDM.
+
+For how app and model updates work, and what you can control, see [Software and Model Updates](/enterprise/updates).
 
 ## Network access
 
@@ -151,6 +155,7 @@ The app connects to these providers directly from each user's machine. Allow onl
 
 - [SAML SSO](/enterprise/saml-sso): prerequisite for auto-activation after silent install
 - [SCIM Provisioning](/enterprise/scim): automate the user lifecycle alongside the deployment
+- [Software and Model Updates](/enterprise/updates): how updates are delivered and how to control timing and version
 - [Member Management](/enterprise/member-management): roles, seats, and post-deployment offboarding
 
 <EnterpriseSupport />

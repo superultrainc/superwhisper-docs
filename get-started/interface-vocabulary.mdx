@@ -68,7 +68,7 @@ Voice models are tuned for natural speech, so symbols like `@`, `.`, `/`, and `#
 
 ### Recommended replacements for symbols
 
-Set these up under **Replacements**:
+Add each one as a replacement (see [Managing the list](#managing-the-list)):
 
 | Say | Outputs |
 | --- | --- |
@@ -100,6 +100,11 @@ Replacements run after transcription, so they apply consistently regardless of w
 
 ## Managing the list
 
-Vocabulary words and replacements share the same interface. To remove an item, click the trash icon next to it.
+Vocabulary words and replacements share one list in **Settings → Vocabulary**. Type in the **New word or replacement** field at the top, then:
+
+- **Add a word**: press **Return** (**Add word**)
+- **Add a replacement**: press **⌘ Return** (**Replace with...**) to open a second field. Type the text it should become, then press **⌘ Return** again (**Add replacement**)
+
+To remove an item, click the **×** next to it. To add many words at once, click **Import CSV** at the top of the page.
 
 You can also manage both from the terminal with the [Superwhisper CLI](/get-started/cli): `superwhisper vocab` for vocabulary and `superwhisper snippets` for replacements.

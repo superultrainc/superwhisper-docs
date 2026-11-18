@@ -3,9 +3,17 @@ title: "App won't launch or install"
 description: "Fix Superwhisper launch and install failures on Windows and macOS, including missing DLL and Vulkan errors. Cloud models work without a GPU."
 ---
 
-## Windows: missing DLL or Vulkan error
+## Windows: `MSVCP140.dll was not found`
 
-**The app won't launch, or you see an error like `vkGetPhysicalDeviceFeatures2 could not be located` or a missing DLL.** Cohere Transcribe and the Whisper models use your GPU through Vulkan, and this error means your graphics drivers don't provide it. If Vulkan isn't available, these models fall back to the CPU.
+**The app won't launch and Windows reports a missing `MSVCP140.dll`, `VCRUNTIME140.dll`, or `VCRUNTIME140_1.dll`.** Superwhisper needs the Microsoft Visual C++ Redistributable, which isn't installed on every Windows machine.
+
+1. Download the **Visual C++ Redistributable** for your processor from [Microsoft's download page](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version): `X64` for Intel and AMD, `ARM64` for Snapdragon
+2. Run it and follow the prompts
+3. Restart your PC, then launch Superwhisper again
+
+## Windows: Vulkan or GPU DLL error
+
+**The app won't launch, or you see an error like `vkGetPhysicalDeviceFeatures2 could not be located` or a missing GPU DLL.** Cohere Transcribe and the Whisper models use your GPU through Vulkan, and this error means your graphics drivers don't provide it. If Vulkan isn't available, these models fall back to the CPU.
 
 1. Update your graphics drivers from your GPU vendor (Intel, NVIDIA, or AMD)
 2. Restart and launch Superwhisper again

@@ -14,11 +14,23 @@ Realtime transcription shows your words on screen as you speak, so you get immed
 
 - **Nova** (cloud): Nova 3, Nova 2, and Nova Medical. These need an internet connection
 - **Scribe** (cloud, ElevenLabs): needs an internet connection
-- **Parakeet** (local): the Parakeet models run on your device
+- **Parakeet** (local): the Parakeet models run on your device. On Windows, only the two **Parakeet Real-time** models support it. See [Realtime on Windows](#realtime-on-windows)
+
+## Realtime on Windows
+
+These voice models support Realtime on Windows:
+
+- **Nova 3**, **Nova 2**, and **Nova Medical** (cloud)
+- **Scribe** (cloud)
+- **Parakeet Real-time (English)** and **Parakeet Real-time (Multilingual)** (local)
+
+The two Parakeet Real-time models are experimental. They appear in the model list only when **Settings → AI Models → Show experimental models** is on. Each is a 2.4 GB download. They run through ONNX Runtime, so they don't need Vulkan.
+
+The standard **Parakeet** model on Windows doesn't support Realtime. Cohere Transcribe, the Whisper models, and S1-Voice don't support it either.
 
 ## Why the toggle is missing or grayed out
 
-- **Voice model**: your mode uses a model that doesn't support streaming, such as Cohere Transcribe or the Whisper models. Switch to one of the models above.
+- **Voice model**: your mode uses a model that doesn't support streaming, such as Cohere Transcribe or the Whisper models. Switch to one of the models above. On Windows, see [Realtime on Windows](#realtime-on-windows).
 - **License**: Realtime needs a Pro license.
 - **Identify Speakers**: for Scribe and Nova models, **Realtime** and **Identify Speakers** can't be on together. Turn **Identify Speakers** off to use Realtime, or keep it on and leave Realtime off.
 

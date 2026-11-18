@@ -1,0 +1,338 @@
+{
+  "images/screens/mac/agent-plugins.png": {
+    "steps": "Reach it from Configuration \u2192 Advanced settings. The card shows only when a supported agent is installed",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/claude-code-plugin.png": {
+    "steps": "Claude Code UI, not Superwhisper",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/cli-stats.png": {
+    "steps": "Terminal output. Re-shoot only if the CLI command list changes (0.2.0 added meetings)",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/configuration-1.png": {
+    "steps": "New top bar and sidebar (Meetings tab, no History tab)",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/configuration-2.png": {
+    "steps": "Show Recording window (Classic/Mini/None), Theme, Keep recordings for, error logging",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/finder-open-with.png": {
+    "steps": "Finder UI",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/history-detail.png": {
+    "steps": "Info sheet: Open file location button, Report issue, prompt with Show more",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/history-list.png": {
+    "steps": "History opens from Home \u2192 See all. Show Back to Home and Search history; no sidebar",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/history-process-again.png": {
+    "steps": "Process again picker in the new History layout",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/home.png": {
+    "steps": "Home with demo stats, Recent recordings, and the sidebar What's New stack",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/input-device-dropdown.png": {
+    "steps": "Round microphone button at the top right of Home, Configuration, and Sound",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/license-activation.png": {
+    "steps": "LicenseView was restyled. Compare with the app before re-shooting",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/license-active.png": {
+    "steps": "LicenseView was restyled. Compare with the app before re-shooting",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/meeting-assign-speakers.png": {
+    "steps": "Person icon in the transcript panel",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/meeting-calendar-prompt.png": {
+    "steps": "Calendar integration on, demo event with a call link starting within a minute",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/meeting-detected-prompt.png": {
+    "steps": "Start a Zoom or Meet test call with Recording suggestion on Notify",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/meeting-ending-prompt.png": {
+    "steps": "Shows when the call ends; countdown from 9s",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/meeting-settings-agents.png": {
+    "steps": "Scroll Meeting settings to Agents; at least one agent connected",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/meeting-settings.png": {
+    "steps": "Gear on the Meetings tab. Select Cohere Transcribe and Tiny Aya 3B so the shot serves the offline page too",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/meeting-share-sheet.png": {
+    "steps": "Share in the meeting toolbar; create a link first so the link row shows",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/meeting-summary.png": {
+    "steps": "Finished demo meeting on the built-in Summary template with Decisions and Action items",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/meeting-templates.png": {
+    "steps": "All templates in the template menu",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/meeting-window-recording.png": {
+    "steps": "Recording with the transcript panel open, demo speakers named, a few private notes",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/meetings-onboarding.png": {
+    "steps": "First step of How Meetings works (the i next to the Meetings title)",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/meetings-search.png": {
+    "steps": "Type a filter such as speaker:sam in Search meetings",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/meetings-tab.png": {
+    "steps": "Meetings tab with demo meetings across several days and a Happening now card",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/menu-bar-menu.png": {
+    "steps": "Menu labels did not change in 3.0",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/menu-bar-transcribe-file.png": {
+    "steps": "Menu labels did not change in 3.0",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/mode-switcher.png": {
+    "steps": "Dictation window looks unchanged. Confirm the hidden Meeting mode is not listed",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/models-library-voice.png": {
+    "steps": "Top bar now has Search models, Filters, and the Bring your own key button",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/modes-editor-advanced.png": {
+    "steps": "Mode editor with Advanced settings expanded",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/modes-editor-ai-processing.png": {
+    "steps": "Glass back button and new styling",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/modes-editor-cloud.png": {
+    "steps": "Glass back button and new styling",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/modes-editor-custom-context.png": {
+    "steps": "Glass back button and new styling",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/modes-editor-custom.png": {
+    "steps": "Show Custom instructions with Spoken input and AI Output example fields",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/modes-editor-language.png": {
+    "steps": "Glass back button and new styling",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/modes-editor-local.png": {
+    "steps": "Glass back button and new styling",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/modes-editor-voice-model.png": {
+    "steps": "Glass back button and new styling",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/modes-editor-voice.png": {
+    "steps": "Glass back button and new styling",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/modes-list.png": {
+    "steps": "New top bar with the round Create mode button; no Meeting mode in the list",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/modes-preset-picker.png": {
+    "steps": "Preset order Message (Recommended), Voice to text, Mail, Note, Super, Custom; no Meeting",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/muffle-setup.png": {
+    "steps": "Sound with Muffle selected while FineTune runs, so the setup box shows",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/onboarding-permission-mic.png": {
+    "steps": "Permissions step now has three rows: Microphone, Accessibility, System audio (Optional)",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/onboarding-shortcut.png": {
+    "steps": "Onboarding shortcut step with Right \u2318 selected",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/onboarding-welcome.png": {
+    "steps": "New welcome screen: Get Started and My company uses Superwhisper",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/recording-window-main.png": {
+    "steps": "Dictation window looks unchanged in 3.0. Annotated, so re-render from its capture if re-shot",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/recording-window-realtime.png": {
+    "steps": "Dictation window looks unchanged in 3.0",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/recording-window-recording.png": {
+    "steps": "Dictation window looks unchanged in 3.0",
+    "demo_data": "",
+    "app_version": "",
+    "captured": ""
+  },
+  "images/screens/mac/settings-application.png": {
+    "steps": "Always close is now Close after transcription",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/settings-audio-processing.png": {
+    "steps": "Configuration \u2192 Advanced settings \u2192 Audio processing card",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/settings-experimental-models.png": {
+    "steps": "Advanced settings restyle",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/settings-folder-location.png": {
+    "steps": "Advanced settings restyle",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/settings-text-input.png": {
+    "steps": "Clipboard content (Keep what I have copied / Replace with dictation) and Clipboard history replace the old clipboard rows",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/settings-voice-model.png": {
+    "steps": "Advanced settings restyle",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/sound.png": {
+    "steps": "Sound now has Sound effects (Simple/Classic/Off, Volume) and Recording; Silence removal moved to Advanced settings",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  },
+  "images/screens/mac/vocabulary.png": {
+    "steps": "One New word or replacement field, Import CSV and search in the top bar, \u00d7 to delete",
+    "demo_data": "",
+    "app_version": "3.0.1",
+    "captured": "2026-10-19"
+  }
+}

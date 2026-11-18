@@ -1,0 +1,107 @@
+---
+title: "Set up the Action Button shortcut"
+description: "Add the Superwhisper shortcut, assign it to the Action Button, pick a mode for it, and learn when it pastes for you."
+---
+
+<Note>
+This page applies only to Superwhisper on iOS. Your iPhone needs an Action Button. Without one, [use Control Center](#no-action-button) instead.
+</Note>
+
+The Superwhisper shortcut turns the Action Button into a record switch. Press it once to start a recording. Press it again to stop. Superwhisper copies your text to the clipboard.
+
+## Set it up
+
+<Steps>
+  <Step title="Add the shortcut">
+    In the Superwhisper app, tap the gear icon, tap **Shortcut**, then tap **Add shortcut**. The Shortcuts app opens. Confirm to add **Toggle Superwhisper Dictation**.
+
+    <img
+      style={{ borderRadius: '0.5rem', display: 'block', margin: '0 auto' }}
+      width="50%"
+      src="/images/screens/ios/shortcut-add.png"
+      alt="The Shortcut page in the Superwhisper app with the Add shortcut button"
+    />
+  </Step>
+  <Step title="Open the Action Button settings">
+    Go to **iOS Settings → Action Button**.
+  </Step>
+  <Step title="Choose the shortcut">
+    Swipe to **Shortcut**, tap **Choose a Shortcut…**, and select **Toggle Superwhisper** from your shortcuts.
+
+    <img
+      style={{ borderRadius: '0.5rem', display: 'block', margin: '0 auto' }}
+      width="50%"
+      src="/images/screens/ios/shortcut-action-button.png"
+      alt="iOS Settings Action Button page with the Toggle Superwhisper Dictation shortcut selected"
+    />
+  </Step>
+</Steps>
+
+## Use it
+
+1. Press the Action Button. Superwhisper starts recording.
+2. Speak.
+3. Press the Action Button again. Superwhisper stops and copies your text to the clipboard.
+4. Paste the text where you want it.
+
+The first time you use the shortcut, iOS asks to allow it to copy text to the clipboard. Tap **Always Allow** so it does not ask again.
+
+<img
+  style={{ borderRadius: '0.5rem', display: 'block', margin: '0 auto' }}
+  width="50%"
+  src="/images/screens/ios/shortcut-clipboard-prompt.png"
+  alt="iOS prompt asking to allow Toggle Superwhisper Dictation to copy a text item to the clipboard"
+/>
+
+<Warning>
+**Auto paste only works when the Superwhisper keyboard is open.** If you use the shortcut from another keyboard or from the Home Screen, the text stays on the clipboard. Paste it yourself.
+</Warning>
+
+To paste for you, switch to the [Superwhisper keyboard](/get-started/ios#dictate) in the app you are typing in. Then press the Action Button to start a session, and use the keyboard as usual.
+
+## Choose a mode for the shortcut
+
+By default the shortcut uses the mode that is active in Superwhisper. To always use one specific mode, edit the shortcut.
+
+<Steps>
+  <Step title="Open the shortcut">
+    Open the **Shortcuts** app. Tap the **…** on **Toggle Superwhisper Dictation** to edit it.
+  </Step>
+  <Step title="Set the mode name">
+    At the top of the shortcut, in the Superwhisper action, tap the **Mode name** field. Type the name of the mode exactly as it appears in Superwhisper.
+
+    <img
+      style={{ borderRadius: '0.5rem', display: 'block', margin: '0 auto' }}
+      width="50%"
+      src="/images/screens/ios/shortcut-mode-name.png"
+      alt="The Toggle Superwhisper Dictation shortcut in the Shortcuts app with Mode name set to Email at the top"
+    />
+  </Step>
+  <Step title="Save">
+    Tap **Done**.
+  </Step>
+</Steps>
+
+<Warning>
+**The shortcut switches Superwhisper to that mode, and it does not switch back.** After you use it, that mode stays active. Change the mode in the app or the keyboard when you want a different one.
+</Warning>
+
+- The name is not case sensitive.
+- If no mode matches the name, Superwhisper keeps the mode that is active now.
+- Leave the field empty to use the active mode.
+
+## Release the microphone sooner
+
+The shortcut action has a **Release mic immediately** option. Turn it on to free the microphone as soon as you stop, instead of waiting for the app's session timeout. Use it if other apps cannot reach the microphone after you dictate.
+
+## No Action Button?<a id="no-action-button" />
+
+Add the same shortcut to Control Center. In the app, tap the gear icon, then **Shortcut**. The app shows the Control Center steps on iPhones without an Action Button. You can also say "Toggle Superwhisper recording" to Siri.
+
+## Troubleshooting
+
+- **An error asks you to enable Live Activities.** Go to **iOS Settings → Apps → Superwhisper → Live Activities** and turn them on. The shortcut needs them.
+- **The text did not paste.** Auto paste needs the Superwhisper keyboard open. Otherwise paste from the clipboard.
+- **The shortcut uses the wrong mode.** Check the **Mode name** field for typos, and check that the mode exists on this iPhone. [Modes are stored per device](/get-started/ios#modes-and-settings-on-ios).
+- **The Action Button does nothing.** Repeat the steps above and confirm **Toggle Superwhisper** is the chosen shortcut.
+- **Still stuck.** Email [support@superwhisper.com](mailto:support@superwhisper.com) with your iPhone model, iOS version, and Superwhisper version.
