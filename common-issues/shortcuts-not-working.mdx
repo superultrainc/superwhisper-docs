@@ -7,7 +7,7 @@ description: "Fix keyboard shortcuts that do not trigger, start the wrong mode, 
 
 Superwhisper has two kinds of shortcuts, and mixing them up is the most common cause:
 
-- **Global shortcuts** (**Settings → Configuration**): **Toggle Recording**, **Push to Talk**, **Cancel Recording**, and **Change mode**. Recording shortcuts use whatever mode is active.
+- **Global shortcuts** (the **Shortcuts** tab): **Toggle Recording**, **Push to Talk**, **Cancel Recording**, **Change mode**, and **Send**. Recording shortcuts use whatever mode is active.
 - **Per-mode shortcuts**: each mode has its own **Keyboard shortcut** field in the mode editor that starts a recording in that specific mode.
 
 A per-mode shortcut switches to that mode and then starts recording. If a key starts the wrong mode, check whether the same key is assigned in both places, and give each shortcut its own key.
@@ -17,14 +17,14 @@ A per-mode shortcut switches to that mode and then starts recording. If a key st
 1. **Another app owns the key**: global shortcuts lose to system and app shortcuts. Test an uncommon combination to confirm, then pick a key no other app uses.
 2. **Check the recording window setting**: if the recording window is set to **None**, recording still works but shows nothing on screen. Dictate a line and check [History](/get-started/history).
 3. **Single modifier keys**: Modifier keys such as Command or Fn can work on their own as shortcuts, but some keyboards send Fn to the system instead of apps. Test with a regular combination.
-4. **Reset the shortcut**: clear it and record it again in **Settings → Configuration**
+4. **Reset the shortcut**: clear it and record it again in the **Shortcuts** tab
 5. **Quit and reopen Superwhisper**, then test again
 6. **Check for conflicts**: open **System Settings → Keyboard → Keyboard Shortcuts** and look for the same key combination
 7. **Still stuck**: email [support@superwhisper.com](mailto:support@superwhisper.com) with your app version and the key you use
 
 ## The old shortcut still fires after I changed it
 
-Reassign the shortcut in **Settings → Configuration**, then quit and reopen Superwhisper. Also check **System Settings → Keyboard → Keyboard Shortcuts** for the old key. If the old binding still fires, email [support@superwhisper.com](mailto:support@superwhisper.com) with your app version and the stuck key.
+Reassign the shortcut in the **Shortcuts** tab, then quit and reopen Superwhisper. Also check **System Settings → Keyboard → Keyboard Shortcuts** for the old key. If the old binding still fires, email [support@superwhisper.com](mailto:support@superwhisper.com) with your app version and the stuck key.
 
 ## Push to talk behavior
 
