@@ -92,6 +92,20 @@ Each reminder works like this:
 
 **Google Calendar:** Superwhisper asks Google for read-only access. Your Mac reads your events directly from Google. Our server handles only sign-in and keeps an encrypted token so the app stays connected. Turn off **Google Calendar** to disconnect. That deletes the token from our server and revokes the access at Google. If sign-in fails, the setting shows **Google sign-in didn't complete**. Try again.
 
+## Import meetings from other apps
+
+On Mac 3.3.0 and later, bring meetings over from Granola, Wispr Flow, or Otter. Imported meetings keep their transcript and notes, but not their audio.
+
+1. Click the gear on the **Meetings** tab and find **From other apps**
+2. Open the app's row and click the button there to go to its export
+3. Export your meetings:
+   - **Granola:** **Settings → Profile**, then **Generate CSV**. Granola emails you a download link, which can take a couple of hours
+   - **Wispr Flow:** **Settings → Data and Privacy**, then **Request a copy** under **Download your data**. Click **Download** when it's ready
+   - **Otter:** open a conversation, click **Export**, and save. On a paid plan, select several on **Home** to export them at once
+4. Drop the ZIP onto the **Import meetings** box, or click it to select files
+
+Superwhisper imports only meetings it doesn't have yet.
+
 ## Plans
 
 On the Free plan, meetings use the same free trial words as other Pro features. When they run out, the app shows **Meetings require Pro**.

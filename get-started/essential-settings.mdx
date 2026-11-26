@@ -16,7 +16,7 @@ There are four ways to access the Superwhisper settings:
 
 ## Keyboard shortcuts
 
-Open **Settings → Configuration**. 
+Open the **Shortcuts** tab in the sidebar. On Mac versions before 3.4.0, shortcuts are in **Settings → Configuration**.
 
 <img
   style={{ borderRadius: '0.5rem' }}
@@ -29,6 +29,15 @@ Open **Settings → Configuration**.
 - **Cancel Recording**: Cancels the recording without transcribing. Cancels immediately for short recordings; longer recordings ask for confirmation.
 - **Change mode**: Press-and-hold to open the mode changer, then tap the key or use arrows to cycle through modes. Modes can be changed before or during a dictation. The default is **⌥ ⇧ K**.
 - **Mouse shortcut**: Assign a mouse button: quick click toggles, press-and-hold acts as push-to-talk. Note that some mice can't detect sustained holds.
+- **Send** (Mac 3.4.0 and later): Press during a recording to stop it and send the result. Superwhisper pastes the text, then presses Return for you. Set it to a key or a double tap.
+
+### Double-tap shortcuts
+
+On Mac 3.4.0 and later, you can set **Toggle Recording** or **Send** to a double tap of a modifier key, such as **⌥**. Click the shortcut field, then tap the key twice.
+
+- A double tap owns its key. If another shortcut uses the key, the field says what uses it.
+- **Push to Talk** and a double-tap **Toggle Recording** can share one key.
+- A single-tap **Toggle Recording** and a double-tap **Send** can share one key.
 
 <Warning>
 **Global vs. mode-specific shortcuts.** The global shortcuts above start recording using the active mode. Separately, each mode has its own **Keyboard shortcut** that starts a recording in that specific mode. If a shortcut triggers the wrong mode, check whether it's assigned in both places.
@@ -54,7 +63,7 @@ Open **Settings → Sound**.
   alt="Superwhisper Sound settings showing sound effects and recording options"
 />
 
-- **Sound effects**: the sounds that play when recording starts and stops. Choose **Simple**, **Classic**, or **Off**, and set their **Volume**. Click a speaker icon to preview a sound
+- **Sound effects**: the sounds that play when recording starts and stops. Choose **Simple**, **Classic**, **Mechanical** (new in 3.3.1), or **Off**, and set their **Volume**. Click a speaker icon to preview a sound
 - **Sound while recording**: what happens to your music and videos while you dictate. See below
 - **Automatically increase microphone volume**: sets your microphone input to full volume when a recording starts. It works only when you use the system default device
 
